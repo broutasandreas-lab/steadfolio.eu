@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steadfolio - Learn investing without the noise</title>
+<meta name="description" content="Steadfolio is a guided investment education companion. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070b10;
+    --bg-2: #090f16;
+    --card: #0d1620;
+    --card-hover: #101c28;
+    --border: #1c2b3a;
+    --border-soft: #142330;
+    --teal: #22c58b;
+    --teal-bright: #34d399;
+    --teal-dim: #17442f;
+    --text: #eef4f1;
+    --text-dim: #9fb3ad;
+    --text-muted: #56685f;
+    --danger: #e8607a;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
+      radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  :focus-visible {
+    outline: 2px solid var(--teal-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- Nav ---------- */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(7,11,16,0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  nav.wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+  .brand-mark {
+    width: 32px; height: 32px; border-radius: 9px;
+    background: linear-gradient(155deg, var(--teal-bright), var(--teal));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
+  .nav-links a { transition: color 0.15s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    padding: 10px 20px; border-radius: 8px;
+    background: var(--teal); color: #06231a;
+    font-weight: 600; font-size: 14.5px;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+  .nav-mobile-hide { display: flex; }
+  @media (max-width: 720px) { .nav-mobile-hide { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 108px 0 96px;
+    position: relative;
+  }
+  .step-field {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+    overflow: hidden;
+  }
+  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; text-align: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em;
+    color: var(--teal-bright);
+    background: rgba(34,197,139,0.08); border: 1px solid rgba(34,197,139,0.25);
+    padding: 7px 14px; border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-bright); }
+  h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(38px, 6vw, 60px); line-height: 1.08; letter-spacing: -0.02em;
+    color: #fff;
+  }
+  h1 .accent { color: var(--teal-bright); }
+  .hero-sub {
+    margin: 26px auto 0; max-width: 560px;
+    font-size: 18px; color: var(--text-dim);
+  }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal); color: #06231a;
+    font-weight: 600; font-size: 15.5px;
+    padding: 15px 26px; border-radius: 10px;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--text-dim); font-weight: 500; font-size: 15.5px;
+    padding: 15px 20px; border-radius: 10px; border: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--text); }
+  .hero-note { margin-top: 22px; font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }
+
+  /* step field visual */
+  .steps-svg { position: absolute; opacity: 0.35; }
+
+  /* ---------- Section shared ---------- */
+  section { padding: 88px 0; }
+  .section-head { max-width: 620px; margin-bottom: 56px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .kicker {
+    font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 14px;
+  }
+  h2 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.015em; color: #fff;
+  }
+  .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+
+  /* ---------- Problem ---------- */
+  .problem { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
+  .problem-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: 14px; overflow: hidden;
+  }
+  .problem-card { background: var(--card); padding: 30px 26px; }
+  .problem-card .num { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+  .problem-card p.line {
+    margin-top: 14px; font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--text);
+    line-height: 1.4;
+  }
+  @media (max-width: 760px) { .problem-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- How it works (signature: literal steps) ---------- */
+  .how { position: relative; }
+  .step-path { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
+  .step-row {
+    display: grid; grid-template-columns: 56px 1fr; gap: 24px;
+    padding: 28px 0;
+  }
+  .step-row:not(:last-child) { border-bottom: 1px dashed var(--border); }
+  .step-marker {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--card); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 15px; color: var(--teal-bright);
+    align-self: start;
+  }
+  .step-row:nth-child(1) .step-marker,
+  .step-row:nth-child(2) .step-marker,
+  .step-row:nth-child(3) .step-marker { transform: translateY(0); }
+  .step-row:nth-child(1) { padding-left: 0; }
+  .step-row:nth-child(2) { padding-left: 20px; }
+  .step-row:nth-child(3) { padding-left: 40px; }
+  .step-content h3 {
+    font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px;
+  }
+  .step-content p { color: var(--text-dim); font-size: 15.5px; max-width: 480px; }
+  @media (max-width: 640px) {
+    .step-row:nth-child(1), .step-row:nth-child(2), .step-row:nth-child(3) { padding-left: 0; }
+  }
+
+  /* ---------- Features ---------- */
+  .features { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  }
+  .feature-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 28px; transition: border-color 0.2s, transform 0.2s;
+  }
+  .feature-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .feature-icon {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: var(--teal-dim); color: var(--teal-bright);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .feature-card h3 { font-family: var(--font-display); font-size: 17.5px; font-weight: 600; margin-bottom: 8px; }
+  .feature-card p { color: var(--text-dim); font-size: 14.5px; }
+  @media (max-width: 720px) { .feature-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Not-a-chatbot / mission ---------- */
+  .mission {
+    position: relative;
+    border-top: 1px solid var(--border-soft);
+  }
+  .mission-inner {
+    max-width: 780px; margin: 0 auto; text-align: center;
+  }
+  .mission blockquote {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(22px, 3.2vw, 30px); line-height: 1.4; color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .mission blockquote .hl { color: var(--teal-bright); }
+  .compare-row {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: center;
+    margin-top: 52px; max-width: 620px; margin-left: auto; margin-right: auto;
+  }
+  .compare-col { text-align: left; }
+  .compare-col.tool .compare-label { color: var(--text-muted); }
+  .compare-col.path .compare-label { color: var(--teal-bright); }
+  .compare-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .compare-col ul { list-style: none; }
+  .compare-col li { font-size: 14.5px; color: var(--text-dim); padding: 6px 0; }
+  .compare-vs { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+  @media (max-width: 620px) { .compare-row { grid-template-columns: 1fr; } .compare-vs { display: none; } }
+
+  /* ---------- Trust / compliance strip ---------- */
+  .trust-strip {
+    border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-2);
+    padding: 26px 0;
+  }
+  .trust-row {
+    display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 13px; color: var(--text-muted);
+  }
+  .trust-row span { display: flex; align-items: center; gap: 8px; }
+  .trust-row svg { flex-shrink: 0; color: var(--teal); }
+
+  /* ---------- Story ---------- */
+  .story-card {
+    max-width: 720px; margin: 0 auto;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 44px;
+  }
+  .story-card p { font-size: 17px; color: var(--text-dim); line-height: 1.75; }
+  .story-card p + p { margin-top: 16px; }
+  .story-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--teal-bright); }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta {
+    border-top: 1px solid var(--border-soft);
+    text-align: center;
+  }
+  .final-cta h2 { max-width: 600px; margin: 0 auto; }
+  .final-cta .section-sub { max-width: 480px; margin-left: auto; margin-right: auto; }
+  .final-cta .hero-ctas { margin-top: 36px; }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+  .footer-row {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-size: 13.5px; color: var(--text-muted);
+  }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a:hover { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+    <div class="nav-links nav-mobile-hide">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#mission">Why not just AI?</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <a href="#" class="nav-cta">Start learning</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="step-field" aria-hidden="true">
+    <svg class="steps-svg" width="260" height="200" style="top:60px; left:-60px;" viewBox="0 0 260 200" fill="none">
+      <path d="M0 200 L0 160 L50 160 L50 120 L100 120 L100 80 L150 80" stroke="#22c58b" stroke-width="1.5" stroke-dasharray="4 5"/>
+    </svg>
+    <svg class="steps-svg" width="240" height="180" style="bottom:20px; right:-50px;" viewBox="0 0 240 180" fill="none">
+      <path d="M240 180 L240 140 L190 140 L190 100 L140 100 L140 60 L90 60" stroke="#22c58b" stroke-width="1.5" stroke-dasharray="4 5"/>
+    </svg>
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><span class="dot"></span> For people starting from zero</span>
+    <h1>Investing doesn't have to<br>feel <span class="accent">complicated.</span></h1>
+    <p class="hero-sub">Steadfolio is a guided investment education companion. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia, built for people who felt lost before.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">Start learning with Sofia →</a>
+      <a href="#how" class="btn-secondary">See how it works</a>
+    </div>
+    <p class="hero-note">You don't need to know everything to start. You just need the right first step.</p>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="kicker" style="text-align:center;">The honest part</div>
+      <h2>Most people don't avoid investing because it's hard.<br>They avoid it because it feels unsafe to start.</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="num">01</span>
+        <p class="line">"I don't know where to even begin."</p>
+      </div>
+      <div class="problem-card">
+        <span class="num">02</span>
+        <p class="line">"I'm scared I'll lose money doing this wrong."</p>
+      </div>
+      <div class="problem-card">
+        <span class="num">03</span>
+        <p class="line">"Everyone talks like I should already know this."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="kicker" style="text-align:center;">How Steadfolio works</div>
+      <h2>Three steps. No detours.</h2>
+    </div>
+    <div class="step-path">
+      <div class="step-row">
+        <div class="step-marker">1</div>
+        <div class="step-content">
+          <h3>Tell Sofia where you're starting from</h3>
+          <p>A short profile - no jargon, no assumptions about what you already know. Sofia meets you at your actual level.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-marker">2</div>
+        <div class="step-content">
+          <h3>Learn through a structured path, not a search bar</h3>
+          <p>Foundation, Beginner, Intermediate, Advanced - each lesson builds on the last. You always know where you are and what's next.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-marker">3</div>
+        <div class="step-content">
+          <h3>Practice with real tools, safely</h3>
+          <p>ETF evaluator, DCA simulator, and historical scenarios - so you understand how markets actually behave before real money is involved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What's inside</div>
+      <h2>Built for learning, not for trading</h2>
+      <p class="section-sub">Every part of Steadfolio is designed around one job: helping you actually understand investing, at your own pace.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+        </div>
+        <h3>Historical Data</h3>
+        <p>Explore long-term index performance to understand real market behavior - not headlines or hype.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>DCA Simulator</h3>
+        <p>See how dollar-cost averaging plays out over time with real historical scenarios, risk-free.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        </div>
+        <h3>Portfolio Simulator</h3>
+        <p>Build and stress-test a hypothetical portfolio before ever putting in real money.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/></svg>
+        </div>
+        <h3>Panic Mode</h3>
+        <p>When markets drop and fear kicks in, get calm, factual context instead of doom-scrolling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission" id="mission">
+  <div class="wrap mission-inner">
+    <div class="kicker" style="text-align:center;">Why not just use a general AI tool?</div>
+    <blockquote>General-purpose AI tools know everything - except <span class="hl">you</span>. Steadfolio is built for one purpose only: to take you, step by step and safely, from fear to real understanding.</blockquote>
+    <div class="compare-row">
+      <div class="compare-col tool">
+        <div class="compare-label">General AI Tools</div>
+        <ul>
+          <li>You have to know what to ask</li>
+          <li>No memory of your progress</li>
+          <li>No built-in guardrails</li>
+          <li>Blank text box, every time</li>
+        </ul>
+      </div>
+      <div class="compare-vs">vs</div>
+      <div class="compare-col path">
+        <div class="compare-label">Steadfolio</div>
+        <ul>
+          <li>A structured path, start to finish</li>
+          <li>Remembers who you are</li>
+          <li>Built for safety, not sales</li>
+          <li>Always a clear next step</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-row">
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+  </div>
+</div>
+
+<section class="story">
+  <div class="wrap">
+    <div class="story-card">
+      <p>Steadfolio started from a simple, personal frustration: everywhere I looked for a place to learn investing, I found either oversimplified TikTok advice or dense, jargon-heavy content that assumed I already knew the basics.</p>
+      <p>There wasn't a middle ground - something that met me where I actually was, went at my pace, and never made me feel behind. So I built the one I wished existed.</p>
+      <p class="story-sign">- Built by people, for people who felt lost investing, too.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Your first step doesn't have to be a big one.</h2>
+    <p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">Start learning with Sofia →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+    <div class="footer-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

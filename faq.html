@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - Steadfolio</title>
+<meta name="description" content="Common questions about Steadfolio - is it financial advice, is it free, who is it for, and how it's different from a general AI tool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070b10;
+    --bg-2: #090f16;
+    --card: #0d1620;
+    --card-hover: #101c28;
+    --border: #1c2b3a;
+    --border-soft: #142330;
+    --teal: #22c58b;
+    --teal-bright: #34d399;
+    --teal-dim: #17442f;
+    --text: #eef4f1;
+    --text-dim: #9fb3ad;
+    --text-muted: #56685f;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font-body);
+    line-height: 1.6; overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
+      radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+  nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+  .brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
+  .nav-links a { transition: color 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--teal-bright); }
+  .nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
+  .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+  .nav-mobile-hide { display: flex; }
+  @media (max-width: 720px) { .nav-mobile-hide { display: none; } }
+
+  section { padding: 88px 0; }
+  .kicker { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 5.5vw, 54px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.6vw, 34px); letter-spacing: -0.015em; color: #fff; }
+  .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+
+  .page-hero { padding: 80px 0 20px; text-align: center; }
+  .page-hero .kicker { text-align: center; }
+  .page-hero p { max-width: 560px; margin: 20px auto 0; color: var(--text-dim); font-size: 17px; }
+
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+  .faq-item.open { border-color: var(--teal); }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 24px; background: none; border: none; cursor: pointer; text-align: left;
+    font-family: var(--font-display); font-size: 16.5px; font-weight: 600; color: var(--text);
+  }
+  .faq-q .plus { flex-shrink: 0; width: 22px; height: 22px; position: relative; }
+  .faq-q .plus::before, .faq-q .plus::after {
+    content: ''; position: absolute; background: var(--teal-bright); border-radius: 2px;
+    transition: transform 0.25s;
+  }
+  .faq-q .plus::before { width: 14px; height: 2px; top: 10px; left: 4px; }
+  .faq-q .plus::after { width: 2px; height: 14px; top: 4px; left: 10px; }
+  .faq-item.open .faq-q .plus::after { transform: rotate(90deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.28s ease; }
+  .faq-a-inner { padding: 0 24px 22px; color: var(--text-dim); font-size: 15px; line-height: 1.7; max-width: 640px; }
+  .faq-item.open .faq-a { max-height: 400px; }
+
+  .faq-section-label { max-width: 760px; margin: 40px auto 18px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+  .faq-section-label:first-of-type { margin-top: 0; }
+
+  .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
+  .trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+  .trust-row span { display: flex; align-items: center; gap: 8px; }
+  .trust-row svg { flex-shrink: 0; color: var(--teal); }
+
+  .final-cta { text-align: center; }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+  .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+
+  footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+  .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13.5px; color: var(--text-muted); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a:hover { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+    <div class="nav-links nav-mobile-hide">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#mission">Why not just AI?</a>
+      <a href="about.html">About</a>
+      <a href="faq.html" class="active">FAQ</a>
+    </div>
+    <a href="index.html#" class="nav-cta">Start learning</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Frequently asked</div>
+    <h1>Questions people actually ask.</h1>
+    <p>If you don't see your question here, it means we haven't written the answer down yet - not that it's a bad question.</p>
+  </div>
+</section>
+
+<section style="padding-top: 20px;">
+  <div class="wrap">
+
+    <div class="faq-section-label">The basics</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q"><span>Is Steadfolio financial advice?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. Steadfolio is an educational tool. Sofia never tells you what to buy, sell, or when to do it. Everything inside is designed to help you understand how investing works so that you can make your own informed decisions.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Is Steadfolio free?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes, you can start learning with Sofia for free. There's no requirement to connect a brokerage account or deposit any money to use the educational features.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Who is Steadfolio actually for?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">People who feel like they've missed the boat on understanding investing, and don't know where to start. If dense financial content makes you feel behind, or you've avoided starting because you're afraid of getting it wrong, Steadfolio is built for you.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-section-label">How it works</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q"><span>Do I need any prior knowledge to start?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. The Foundation track assumes zero prior knowledge. Sofia adjusts the pace based on what you already know, so you never feel talked down to or left behind.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Why not just use ChatGPT or another general AI tool?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">A general AI tool can answer a question, but it doesn't know what you've already learned, doesn't follow a structured curriculum, and has no built-in guardrails for emotional moments like a market drop. Steadfolio is narrow by design: one purpose, a clear path, and safety built in from the start.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What is Panic Mode?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">A dedicated space inside Steadfolio for when markets drop and fear kicks in. Instead of doom-scrolling headlines, you get calm, factual, historical context to help you think clearly.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-section-label">Trust and safety</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q"><span>Does Steadfolio recommend specific stocks or products?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No, never. Steadfolio doesn't recommend specific securities, funds, or products. The tools inside - like the ETF evaluator and DCA simulator - are designed to teach you how to evaluate things yourself.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Is my data safe?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Steadfolio is built as an educational environment and doesn't require you to connect real brokerage accounts or share sensitive financial credentials to learn.</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-row">
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+  </div>
+</div>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Still have a question?</h2>
+    <p class="section-sub">Start learning with Sofia - most things make more sense once you're inside.</p>
+    <div class="hero-ctas">
+      <a href="index.html#" class="btn-primary">Start learning with Sofia →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+    <div class="footer-links">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
