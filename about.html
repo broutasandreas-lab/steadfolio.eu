@@ -57,8 +57,22 @@
   .nav-mobile-hide { display: flex; }
   @media (max-width: 720px) { .nav-mobile-hide { display: none; } }
 
-  section { padding: 88px 0; }
-  .section-head { max-width: 620px; margin-bottom: 56px; }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+  .nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 720px) { .nav-toggle { display: flex; } }
+
+  .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { color: var(--text); }
+
+  section { padding: 72px 0; }
+  .section-head { max-width: 620px; margin-bottom: 44px; }
   .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
   .kicker { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
   h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 5.5vw, 54px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; }
@@ -82,7 +96,7 @@
   @media (max-width: 760px) { .values-grid { grid-template-columns: 1fr; } }
 
   .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
-  .trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+  .trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 13.5px; color: var(--text-dim); }
   .trust-row span { display: flex; align-items: center; gap: 8px; }
   .trust-row svg { flex-shrink: 0; color: var(--teal); }
 
@@ -92,7 +106,7 @@
   .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
 
   footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
-  .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13.5px; color: var(--text-muted); }
+  .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a:hover { color: var(--text-dim); }
 </style>
@@ -109,8 +123,18 @@
       <a href="about.html" class="active">About</a>
       <a href="faq.html">FAQ</a>
     </div>
-    <a href="https://sofia-steadfolio-investment-coach-779431658497.europe-west2.run.app/" class="nav-cta">Start learning</a>
+    <div class="nav-right">
+      <a href="https://sofia-steadfolio-investment-coach-779431658497.europe-west2.run.app/" class="nav-cta">Start learning</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#mission">Why not just AI?</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+  </div>
 </header>
 
 <section class="page-hero">
@@ -188,5 +212,24 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var toggle = document.getElementById("navToggle");
+    var panel = document.getElementById("mobileNav");
+    if (!toggle || !panel) return;
+    toggle.addEventListener("click", function () {
+      var isOpen = panel.classList.toggle("open");
+      toggle.classList.toggle("active", isOpen);
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    panel.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        panel.classList.remove("open");
+        toggle.classList.remove("active");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  })();
+</script>
 </body>
 </html>

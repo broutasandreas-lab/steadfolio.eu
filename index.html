@@ -88,9 +88,23 @@
   .nav-mobile-hide { display: flex; }
   @media (max-width: 720px) { .nav-mobile-hide { display: none; } }
 
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+  .nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 720px) { .nav-toggle { display: flex; } }
+
+  .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { color: var(--text); }
+
   /* ---------- Hero ---------- */
   .hero {
-    padding: 108px 0 96px;
+    padding: 92px 0 76px;
     position: relative;
   }
   .step-field {
@@ -133,14 +147,14 @@
     transition: border-color 0.15s, color 0.15s;
   }
   .btn-secondary:hover { border-color: var(--teal); color: var(--text); }
-  .hero-note { margin-top: 22px; font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }
+  .hero-note { margin-top: 22px; font-size: 13.5px; color: var(--text-dim); font-family: var(--font-mono); }
 
   /* step field visual */
   .steps-svg { position: absolute; opacity: 0.35; }
 
   /* ---------- Section shared ---------- */
-  section { padding: 88px 0; }
-  .section-head { max-width: 620px; margin-bottom: 56px; }
+  section { padding: 72px 0; }
+  .section-head { max-width: 620px; margin-bottom: 44px; }
   .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
   .kicker {
     font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em;
@@ -295,8 +309,18 @@
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
     </div>
-    <a href="https://sofia-steadfolio-investment-coach-779431658497.europe-west2.run.app/" class="nav-cta">Start learning</a>
+    <div class="nav-right">
+      <a href="https://sofia-steadfolio-investment-coach-779431658497.europe-west2.run.app/" class="nav-cta">Start learning</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#mission">Why not just AI?</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -411,6 +435,13 @@
         <h3>Panic Mode</h3>
         <p>When markets drop and fear kicks in, get calm, factual context instead of doom-scrolling.</p>
       </div>
+      <div class="feature-card" style="grid-column: 1 / -1;">
+        <div class="feature-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3>Market structure, explained</h3>
+        <p>Sofia also teaches you how the market actually works under the surface - like how large players interact with order flow - so you understand what's really happening, not just the headlines.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -483,5 +514,24 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var panel = document.getElementById('mobileNav');
+    if (!toggle || !panel) return;
+    toggle.addEventListener('click', function () {
+      var isOpen = panel.classList.toggle('open');
+      toggle.classList.toggle('active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    panel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        panel.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
