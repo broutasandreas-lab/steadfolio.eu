@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Steadfolio</title>
-<meta name="description" content="Why Steadfolio exists, what it is, and what it isn't - a guided investment education companion, not a source of financial advice.">
+<title>How the Market Actually Works Behind the Scenes - Steadfolio Blog</title>
+<meta name="description" content="An educational look at order flow, market makers, liquidity zones, and payment for order flow - what large players see that retail investors usually don't.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,12 +22,10 @@
     --text: #eef4f1;
     --text-dim: #9fb3ad;
     --text-muted: #56685f;
-    --danger: #e8607a;
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -48,14 +46,14 @@
   nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
   .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
   .brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
-  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
+  .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
   .nav-links a { transition: color 0.15s; }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
   .nav-links a.active { color: var(--teal-bright); }
   .nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
   .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
   .nav-mobile-hide { display: flex; }
-  @media (max-width: 720px) { .nav-mobile-hide { display: none; } }
+  @media (max-width: 780px) { .nav-mobile-hide { display: none; } }
 
   .nav-right { display: flex; align-items: center; gap: 14px; }
   .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
@@ -63,7 +61,7 @@
   .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  @media (max-width: 720px) { .nav-toggle { display: flex; } }
+  @media (max-width: 780px) { .nav-toggle { display: flex; } }
 
   .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
   .mobile-nav.open { display: flex; }
@@ -75,25 +73,13 @@
   .section-head { max-width: 620px; margin-bottom: 44px; }
   .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
   .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
-  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 5.5vw, 54px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; }
-  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.6vw, 34px); letter-spacing: -0.015em; color: #fff; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
   .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
 
-  .page-hero { padding: 80px 0 20px; text-align: center; }
+  .page-hero { padding: 64px 0 8px; text-align: center; }
   .page-hero .kicker { text-align: center; }
-  .page-hero p { max-width: 560px; margin: 20px auto 0; color: var(--text-dim); font-size: 17px; }
-
-  .story-card { max-width: 720px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 44px; }
-  .story-card p { font-size: 17px; color: var(--text-dim); line-height: 1.8; }
-  .story-card p + p { margin-top: 16px; }
-  .story-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--teal-bright); }
-
-  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
-  .value-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
-  .value-card .n { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
-  .value-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin-top: 12px; margin-bottom: 8px; }
-  .value-card p { font-size: 14.5px; color: var(--text-dim); }
-  @media (max-width: 760px) { .values-grid { grid-template-columns: 1fr; } }
+  .page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
 
   .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
   .trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
@@ -101,7 +87,7 @@
   .trust-row svg { flex-shrink: 0; color: var(--teal); }
 
   .final-cta { text-align: center; }
-  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
   .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
   .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
 
@@ -109,6 +95,31 @@
   .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a:hover { color: var(--text-dim); }
+
+  /* Blog index */
+  .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 900px; margin: 0 auto; }
+  .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+  .blog-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .blog-card .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 12px; }
+  .blog-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+  .blog-card p { font-size: 14.5px; color: var(--text-dim); flex-grow: 1; }
+  .blog-card .read-more { margin-top: 16px; font-size: 13.5px; color: var(--teal-bright); font-weight: 600; }
+  @media (max-width: 720px) { .blog-grid { grid-template-columns: 1fr; } }
+
+  /* Article body */
+  .article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+  .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+  .article-body { max-width: 700px; margin: 0 auto; }
+  .article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+  .article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+  .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+  .article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+  .article-body li { margin-bottom: 8px; }
+  .article-body strong { color: var(--text); }
+  .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+  .callout strong { color: var(--teal-bright); }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+  .back-link:hover { color: var(--teal-bright); }
 </style>
 </head>
 <body>
@@ -119,10 +130,10 @@
     <div class="nav-links nav-mobile-hide">
       <a href="index.html#how">How it works</a>
       <a href="index.html#features">Features</a>
-      <a href="index.html#mission">Why not just AI?</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html" class="active">About</a>
-      <a href="faq.html">FAQ</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="about.html" class="">About</a>
+      <a href="faq.html" class="">FAQ</a>
+
     </div>
     <div class="nav-right">
       <a href="https://sofia-steadfolio-investment-coach-779431658497.europe-west2.run.app/" class="nav-cta">Start learning</a>
@@ -132,57 +143,59 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html#how">How it works</a>
     <a href="index.html#features">Features</a>
-    <a href="index.html#mission">Why not just AI?</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="faq.html">FAQ</a>
+
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="kicker">About Steadfolio</div>
-    <h1>Built for the moment before you feel ready.</h1>
-    <p>Steadfolio exists because most people don't avoid investing out of laziness - they avoid it because nothing out there was built for exactly where they're starting from.</p>
+
+<section class="page-hero" style="padding-bottom: 0;">
+  <div class="wrap article-header">
+    <a href="blog.html" class="back-link">← Back to Blog</a>
+    <div class="kicker">Market Structure</div>
+    <h1>How the Market Actually Works Behind the Scenes</h1>
+    <p class="article-meta">8 min read - Educational content, not financial advice</p>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="story-card">
-      <p>Steadfolio started from a simple, personal frustration: everywhere I looked for a place to learn investing, I found either oversimplified social media advice or dense, jargon-heavy content that assumed I already knew the basics.</p>
-      <p>There wasn't a middle ground - something that met me where I actually was, went at my pace, and never made me feel behind. So I built the one I wished existed.</p>
-      <p>Sofia, the AI coach inside Steadfolio, isn't designed to sell you anything or tell you what to buy. It's designed to do one job well: help you actually understand how investing works, structured step by step, so that whatever you decide to do next, you decide it with real understanding behind it.</p>
-      <p class="story-sign">- Built by people, for people who felt lost investing, too.</p>
+<section style="padding-top: 32px;">
+  <div class="wrap article-body">
+
+    <p>Most beginner content explains <em>what</em> to invest in, but almost none of it explains how the market itself actually functions - who's on the other side of your trade, and why prices move the way they do. Understanding this doesn't require becoming a professional trader, but it does help you avoid feeling blindsided by things retail investors are rarely taught.</p>
+
+    <h2>Who's actually on the other side of your order?</h2>
+    <p>When you place an order to buy or sell, it doesn't just disappear into "the market" abstractly. It's matched against other orders, often facilitated by <strong>market makers</strong> - firms whose job is to provide liquidity by constantly buying and selling, profiting from the small difference between buy and sell prices (the "spread").</p>
+
+    <h2>What is "order flow," and why does it matter?</h2>
+    <p>"Order flow" simply refers to the stream of buy and sell orders coming into the market. Large financial firms and high-frequency trading firms have far more visibility into this flow than an individual investor does - they can observe patterns in where orders are concentrated, especially around widely-watched price levels.</p>
+
+    <h3>A concept worth knowing: liquidity zones</h3>
+    <p>Many retail traders place stop-loss or limit orders at round, "obvious" price levels - for example, exactly at €100.00. Because so many people do this, these levels can become areas of concentrated orders, sometimes referred to as liquidity zones. This is part of why prices can sometimes move sharply toward a round number before reversing.</p>
+
+    <div class="callout">
+      <strong>Worth remembering:</strong> This is a structural feature of how markets work, not evidence of a conspiracy against any single individual. Large players react to concentrated liquidity patterns, not to specific retail investors.
     </div>
+
+    <h2>What is payment for order flow (PFOF)?</h2>
+    <p>Some brokers - particularly commission-free ones - generate revenue by routing your orders through specific market makers, who pay the broker for that order flow. This is legal and regulated, but it means the broker's incentives aren't always perfectly aligned with getting you the absolute best execution price on every trade.</p>
+
+    <h2>Why this matters more for traders than long-term investors</h2>
+    <p>All of this matters far more if you're placing frequent trades with tight stop-losses than if you're a long-term, buy-and-hold investor. Someone dollar-cost averaging into a diversified fund over years is largely insulated from these short-term mechanics - they matter most to active, short-term trading.</p>
+
+    <h2>A few practical takeaways</h2>
+    <ul>
+      <li>Avoid placing stop-losses at obvious round numbers when trading actively.</li>
+      <li>A long-term, buy-and-hold approach reduces your exposure to these short-term dynamics significantly.</li>
+      <li>Understanding market structure helps you interpret sharp, sudden price moves without panicking or assuming something is "broken."</li>
+    </ul>
+
+    <p>None of this is a reason to distrust markets - it's simply how they're built. Understanding the mechanics behind the scenes is part of what separates reacting to headlines from actually understanding what you're looking at.</p>
+
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-      <div class="kicker" style="text-align:center;">What we stand for</div>
-      <h2>Three things we won't compromise on</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card">
-        <span class="n">01</span>
-        <h3>Education, not advice</h3>
-        <p>We never tell you what to buy or when. We help you understand so you can decide for yourself.</p>
-      </div>
-      <div class="value-card">
-        <span class="n">02</span>
-        <h3>Structure over noise</h3>
-        <p>A clear path beats an endless feed of hot takes. Every lesson builds on the last one.</p>
-      </div>
-      <div class="value-card">
-        <span class="n">03</span>
-        <h3>No shame, ever</h3>
-        <p>Wherever you're starting from is fine. Steadfolio meets you there - it doesn't judge you for it.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div class="trust-strip">
   <div class="wrap trust-row">
@@ -207,7 +220,6 @@
     <span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
     <div class="footer-links">
       <a href="index.html#how">How it works</a>
-      <a href="index.html#features">Features</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
@@ -234,5 +246,6 @@
     });
   })();
 </script>
+
 </body>
 </html>

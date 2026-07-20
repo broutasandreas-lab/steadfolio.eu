@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Steadfolio</title>
-<meta name="description" content="Why Steadfolio exists, what it is, and what it isn't - a guided investment education companion, not a source of financial advice.">
+<title>What Is Dollar-Cost Averaging? - Steadfolio Blog</title>
+<meta name="description" content="A plain-language explanation of dollar-cost averaging (DCA): what it is, how it works, and why it removes the guesswork of timing the market.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,12 +22,10 @@
     --text: #eef4f1;
     --text-dim: #9fb3ad;
     --text-muted: #56685f;
-    --danger: #e8607a;
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -48,14 +46,14 @@
   nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
   .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
   .brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
-  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
+  .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
   .nav-links a { transition: color 0.15s; }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
   .nav-links a.active { color: var(--teal-bright); }
   .nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
   .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
   .nav-mobile-hide { display: flex; }
-  @media (max-width: 720px) { .nav-mobile-hide { display: none; } }
+  @media (max-width: 780px) { .nav-mobile-hide { display: none; } }
 
   .nav-right { display: flex; align-items: center; gap: 14px; }
   .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
@@ -63,7 +61,7 @@
   .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  @media (max-width: 720px) { .nav-toggle { display: flex; } }
+  @media (max-width: 780px) { .nav-toggle { display: flex; } }
 
   .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
   .mobile-nav.open { display: flex; }
@@ -75,25 +73,13 @@
   .section-head { max-width: 620px; margin-bottom: 44px; }
   .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
   .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
-  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 5.5vw, 54px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; }
-  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.6vw, 34px); letter-spacing: -0.015em; color: #fff; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
   .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
 
-  .page-hero { padding: 80px 0 20px; text-align: center; }
+  .page-hero { padding: 64px 0 8px; text-align: center; }
   .page-hero .kicker { text-align: center; }
-  .page-hero p { max-width: 560px; margin: 20px auto 0; color: var(--text-dim); font-size: 17px; }
-
-  .story-card { max-width: 720px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 44px; }
-  .story-card p { font-size: 17px; color: var(--text-dim); line-height: 1.8; }
-  .story-card p + p { margin-top: 16px; }
-  .story-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--teal-bright); }
-
-  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
-  .value-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
-  .value-card .n { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
-  .value-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin-top: 12px; margin-bottom: 8px; }
-  .value-card p { font-size: 14.5px; color: var(--text-dim); }
-  @media (max-width: 760px) { .values-grid { grid-template-columns: 1fr; } }
+  .page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
 
   .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
   .trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
@@ -101,7 +87,7 @@
   .trust-row svg { flex-shrink: 0; color: var(--teal); }
 
   .final-cta { text-align: center; }
-  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
   .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
   .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
 
@@ -109,6 +95,31 @@
   .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a:hover { color: var(--text-dim); }
+
+  /* Blog index */
+  .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 900px; margin: 0 auto; }
+  .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+  .blog-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .blog-card .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 12px; }
+  .blog-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+  .blog-card p { font-size: 14.5px; color: var(--text-dim); flex-grow: 1; }
+  .blog-card .read-more { margin-top: 16px; font-size: 13.5px; color: var(--teal-bright); font-weight: 600; }
+  @media (max-width: 720px) { .blog-grid { grid-template-columns: 1fr; } }
+
+  /* Article body */
+  .article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+  .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+  .article-body { max-width: 700px; margin: 0 auto; }
+  .article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+  .article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+  .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+  .article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+  .article-body li { margin-bottom: 8px; }
+  .article-body strong { color: var(--text); }
+  .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+  .callout strong { color: var(--teal-bright); }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+  .back-link:hover { color: var(--teal-bright); }
 </style>
 </head>
 <body>
@@ -119,10 +130,10 @@
     <div class="nav-links nav-mobile-hide">
       <a href="index.html#how">How it works</a>
       <a href="index.html#features">Features</a>
-      <a href="index.html#mission">Why not just AI?</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html" class="active">About</a>
-      <a href="faq.html">FAQ</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="about.html" class="">About</a>
+      <a href="faq.html" class="">FAQ</a>
+
     </div>
     <div class="nav-right">
       <a href="https://sofia-steadfolio-investment-coach-779431658497.europe-west2.run.app/" class="nav-cta">Start learning</a>
@@ -132,57 +143,58 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html#how">How it works</a>
     <a href="index.html#features">Features</a>
-    <a href="index.html#mission">Why not just AI?</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="faq.html">FAQ</a>
+
   </div>
 </header>
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="kicker">About Steadfolio</div>
-    <h1>Built for the moment before you feel ready.</h1>
-    <p>Steadfolio exists because most people don't avoid investing out of laziness - they avoid it because nothing out there was built for exactly where they're starting from.</p>
+
+<section class="page-hero" style="padding-bottom: 0;">
+  <div class="wrap article-header">
+    <a href="blog.html" class="back-link">← Back to Blog</a>
+    <div class="kicker">Foundations</div>
+    <h1>What Is Dollar-Cost Averaging, and Why Does It Work?</h1>
+    <p class="article-meta">6 min read - Educational content, not financial advice</p>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="story-card">
-      <p>Steadfolio started from a simple, personal frustration: everywhere I looked for a place to learn investing, I found either oversimplified social media advice or dense, jargon-heavy content that assumed I already knew the basics.</p>
-      <p>There wasn't a middle ground - something that met me where I actually was, went at my pace, and never made me feel behind. So I built the one I wished existed.</p>
-      <p>Sofia, the AI coach inside Steadfolio, isn't designed to sell you anything or tell you what to buy. It's designed to do one job well: help you actually understand how investing works, structured step by step, so that whatever you decide to do next, you decide it with real understanding behind it.</p>
-      <p class="story-sign">- Built by people, for people who felt lost investing, too.</p>
+<section style="padding-top: 32px;">
+  <div class="wrap article-body">
+
+    <p>If you've spent any time reading about investing, you've probably run into the term "dollar-cost averaging," or DCA. It sounds technical, but the idea behind it is almost embarrassingly simple - which is exactly why it works so well for beginners.</p>
+
+    <h2>The problem DCA solves</h2>
+    <p>Most new investors get stuck on one question before they even start: <strong>"Is now a good time to invest?"</strong> Prices go up, prices go down, and nobody - not even professional fund managers - can reliably predict which direction is next. Waiting for the "perfect" moment often means waiting forever, or jumping in right before a dip and feeling like you got it wrong.</p>
+    <p>Dollar-cost averaging removes that question entirely.</p>
+
+    <h2>How it actually works</h2>
+    <p>Instead of investing one large amount at a single point in time, you invest a <strong>fixed amount at regular intervals</strong> - for example, €100 every month, regardless of whether prices are up or down that day.</p>
+    <ul>
+      <li>When prices are high, your fixed €100 buys fewer shares.</li>
+      <li>When prices are low, that same €100 buys more shares.</li>
+      <li>Over time, this naturally averages out your purchase price - hence the name.</li>
+    </ul>
+
+    <h3>A simple example</h3>
+    <p>Imagine you invest €100 every month into the same fund for four months, and the price per share moves like this: €10, €8, €12, €10. With a lump sum, timing matters enormously. With DCA, you simply buy more shares when it's cheaper and fewer when it's expensive - without ever having to guess which month was "the right one."</p>
+
+    <h2>Why this matters more than the math</h2>
+    <p>The real value of DCA isn't just mathematical - it's psychological. It turns investing into a <strong>routine</strong> instead of a decision you have to agonize over every time. That routine is what keeps people actually investing consistently, instead of freezing up during uncertain markets or panic-selling when prices drop.</p>
+
+    <div class="callout">
+      <strong>Worth remembering:</strong> DCA doesn't guarantee profit or protect against loss in a market that declines over the long run - it's a way of managing the timing risk of investing, not a way of eliminating market risk altogether.
     </div>
+
+    <h2>Who tends to benefit most</h2>
+    <p>Dollar-cost averaging tends to suit people who are investing a portion of regular income (like a monthly paycheck) rather than a single lump sum they already have sitting in cash. It also tends to suit people early in their investing journey, since it lowers the emotional stakes of any single decision.</p>
+
+    <p>Inside Steadfolio, the DCA Simulator lets you see exactly how this plays out using real historical data - so instead of just reading about the concept, you can watch how it would have worked across different real market periods.</p>
+
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-      <div class="kicker" style="text-align:center;">What we stand for</div>
-      <h2>Three things we won't compromise on</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card">
-        <span class="n">01</span>
-        <h3>Education, not advice</h3>
-        <p>We never tell you what to buy or when. We help you understand so you can decide for yourself.</p>
-      </div>
-      <div class="value-card">
-        <span class="n">02</span>
-        <h3>Structure over noise</h3>
-        <p>A clear path beats an endless feed of hot takes. Every lesson builds on the last one.</p>
-      </div>
-      <div class="value-card">
-        <span class="n">03</span>
-        <h3>No shame, ever</h3>
-        <p>Wherever you're starting from is fine. Steadfolio meets you there - it doesn't judge you for it.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div class="trust-strip">
   <div class="wrap trust-row">
@@ -207,7 +219,6 @@
     <span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
     <div class="footer-links">
       <a href="index.html#how">How it works</a>
-      <a href="index.html#features">Features</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
@@ -234,5 +245,6 @@
     });
   })();
 </script>
+
 </body>
 </html>
