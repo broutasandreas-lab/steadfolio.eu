@@ -179,6 +179,31 @@
   }
   @media (max-width: 760px) { .problem-grid { grid-template-columns: 1fr; } }
 
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
+  .why-card { text-align: center; padding: 8px 12px; }
+  .why-icon {
+    width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 18px;
+    background: var(--teal-dim); color: var(--teal-bright);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .why-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; }
+  @media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; } }
+
+  .demo { background: var(--bg-2); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+
+  .screenshot-frame {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; margin: 0 auto;
+  }
+  .screenshot-topbar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
+  .screenshot-topbar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+  .screenshot-frame img { display: block; width: 100%; height: auto; }
+  .gallery-caption { padding: 14px 16px 16px; font-size: 13.5px; color: var(--text-dim); }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr; } }
+
   /* ---------- How it works (signature: literal steps) ---------- */
   .how { position: relative; }
   .step-path { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
@@ -204,6 +229,8 @@
     font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px;
   }
   .step-content p { color: var(--text-dim); font-size: 15.5px; max-width: 480px; }
+  .topic-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .topic-chips span { font-family: var(--font-mono); font-size: 12px; color: var(--teal-bright); background: var(--teal-dim); border: 1px solid rgba(34,197,139,0.25); border-radius: 100px; padding: 5px 12px; }
   @media (max-width: 640px) {
     .step-row:nth-child(1), .step-row:nth-child(2), .step-row:nth-child(3) { padding-left: 0; }
   }
@@ -224,6 +251,7 @@
     display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
   }
   .feature-card h3 { font-family: var(--font-display); font-size: 17.5px; font-weight: 600; margin-bottom: 8px; }
+  .feature-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
   .feature-card p { color: var(--text-dim); font-size: 14.5px; }
   @media (max-width: 720px) { .feature-grid { grid-template-columns: 1fr; } }
 
@@ -397,6 +425,38 @@
   </div>
 </section>
 
+<section class="why">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="kicker" style="text-align:center;">Why bother at all</div>
+      <h2>People don't actually want a portfolio.<br>They want what it leads to.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Keeping up with inflation</h3>
+        <p>Money sitting still quietly loses purchasing power every year. Investing is how it has a chance to keep up.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg>
+        </div>
+        <h3>Building real options later</h3>
+        <p>A home, a career change, retiring on your own terms - long-term investing is what makes those choices possible.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11zM9 11l2 2 4-4"/></svg>
+        </div>
+        <h3>Fewer money-related worries</h3>
+        <p>Understanding what you're doing - and why - replaces vague financial anxiety with an actual plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="how" id="how">
   <div class="wrap">
     <div class="section-head center" style="margin-left:auto;margin-right:auto;">
@@ -416,6 +476,12 @@
         <div class="step-content">
           <h3>Learn through a structured path, not a search bar</h3>
           <p>Foundation, Beginner, Intermediate, Advanced - each lesson builds on the last. You always know where you are and what's next.</p>
+          <div class="topic-chips">
+            <span>What is investing?</span>
+            <span>Stocks vs ETFs</span>
+            <span>Understanding risk</span>
+            <span>Your first portfolio</span>
+          </div>
         </div>
       </div>
       <div class="step-row">
@@ -424,6 +490,46 @@
           <h3>Practice with real tools, safely</h3>
           <p>ETF evaluator, DCA simulator, and historical scenarios - so you understand how markets actually behave before real money is involved.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="kicker" style="text-align:center;">See it in action</div>
+      <h2>Not another chatbot. Your investing teacher.</h2>
+      <p class="section-sub" style="text-align:center; max-width:520px; margin-left:auto; margin-right:auto;">A real conversation - this is what asking Sofia an "obvious" question actually feels like.</p>
+    </div>
+    <div class="screenshot-frame" style="max-width:560px;">
+      <div class="screenshot-topbar"><span></span><span></span><span></span></div>
+      <img src="screenshots/screenshot-chat-demo.png" alt="Sofia answering: Is €50 enough to start investing?" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="kicker" style="text-align:center;">More than a chat window</div>
+      <h2>Real tools, not just answers</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="screenshot-frame">
+        <div class="screenshot-topbar"><span></span><span></span><span></span></div>
+        <img src="screenshots/screenshot-dca-simulator.png" alt="DCA and Compounding Simulator showing growth over 15 years" loading="lazy">
+        <p class="gallery-caption">Watch how consistent small investments compound over time</p>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-topbar"><span></span><span></span><span></span></div>
+        <img src="screenshots/screenshot-historical-scenario.png" alt="Historical Scenario Challenge simulating the 2008 financial crisis" loading="lazy">
+        <p class="gallery-caption">Practice staying calm through real historical market crises</p>
+      </div>
+      <div class="screenshot-frame">
+        <div class="screenshot-topbar"><span></span><span></span><span></span></div>
+        <img src="screenshots/screenshot-dashboard.png" alt="Steadfolio dashboard with lesson progress and portfolio evaluator" loading="lazy">
+        <p class="gallery-caption">Track your progress and evaluate your own holdings, all in one place</p>
       </div>
     </div>
   </div>
@@ -441,35 +547,40 @@
         <div class="feature-icon">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
         </div>
-        <h3>Historical Data</h3>
+        <span class="feature-tag">Historical Data</span>
+        <h3>See how markets really moved</h3>
         <p>Explore long-term index performance to understand real market behavior - not headlines or hype.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         </div>
-        <h3>DCA Simulator</h3>
-        <p>See how dollar-cost averaging plays out over time with real historical scenarios, risk-free.</p>
+        <span class="feature-tag">DCA Simulator</span>
+        <h3>Watch small amounts grow over time</h3>
+        <p>See how investing a little, regularly, plays out over time with real historical scenarios, risk-free.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
         </div>
-        <h3>Portfolio Simulator</h3>
+        <span class="feature-tag">Portfolio Simulator</span>
+        <h3>Test your ideas before risking real money</h3>
         <p>Build and stress-test a hypothetical portfolio before ever putting in real money.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/></svg>
         </div>
-        <h3>Panic Mode</h3>
+        <span class="feature-tag">Panic Mode</span>
+        <h3>Stay calm when the market drops</h3>
         <p>When markets drop and fear kicks in, get calm, factual context instead of doom-scrolling.</p>
       </div>
       <div class="feature-card" style="grid-column: 1 / -1;">
         <div class="feature-icon">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
         </div>
-        <h3>Market structure, explained</h3>
+        <span class="feature-tag">Market Structure</span>
+        <h3>Understand what's really happening</h3>
         <p>Sofia also teaches you how the market actually works under the surface - like how large players interact with order flow - so you understand what's really happening, not just the headlines.</p>
       </div>
     </div>
