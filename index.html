@@ -204,6 +204,13 @@
   .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr; } }
 
+  .quick-faq { background: var(--bg-2); border-top: 1px solid var(--border-soft); }
+  .quick-faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
+  .quick-faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
+  .quick-faq-item h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .quick-faq-item p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+  @media (max-width: 640px) { .quick-faq-grid { grid-template-columns: 1fr; } }
+
   /* ---------- How it works (signature: literal steps) ---------- */
   .how { position: relative; }
   .step-path { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
@@ -611,6 +618,36 @@
           <li>Always a clear next step</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="quick-faq">
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="kicker" style="text-align:center;">Quick answers</div>
+      <h2>The questions everyone asks first</h2>
+    </div>
+    <div class="quick-faq-grid">
+      <div class="quick-faq-item">
+        <h3>Can I start with €50?</h3>
+        <p>Yes - most brokers allow fractional shares today, so there's no real minimum that locks you out.</p>
+      </div>
+      <div class="quick-faq-item">
+        <h3>Can I lose money?</h3>
+        <p>Yes, values can go up and down - which is exactly why Steadfolio starts with education before real money is involved.</p>
+      </div>
+      <div class="quick-faq-item">
+        <h3>Is investing better than a savings account?</h3>
+        <p>Over the long term, investing gives your money a better chance to outpace inflation - though it comes with more short-term ups and downs.</p>
+      </div>
+      <div class="quick-faq-item">
+        <h3>Do I need to know what an ETF is first?</h3>
+        <p>No - Sofia explains it in plain language the moment it's relevant, right when you need it.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="faq.html" class="btn-secondary">See all FAQs →</a>
     </div>
   </div>
 </section>
