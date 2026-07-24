@@ -9,400 +9,384 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #070b10;
-    --bg-2: #090f16;
-    --card: #0d1620;
-    --card-hover: #101c28;
-    --border: #1c2b3a;
-    --border-soft: #142330;
-    --teal: #22c58b;
-    --teal-bright: #34d399;
-    --teal-dim: #17442f;
-    --text: #eef4f1;
-    --text-dim: #9fb3ad;
-    --text-muted: #56685f;
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg); color: var(--text); font-family: var(--font-body);
-    line-height: 1.6; overflow-x: hidden;
-    background-image:
-      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
-      radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
-  }
-  a { color: inherit; text-decoration: none; }
-  :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
-  @media (prefers-reduced-motion: reduce) {
-    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-  }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-
-  header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
-  nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
-  .brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
-  .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
-  .nav-links a { transition: color 0.15s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--text); }
-  .nav-links a.active { color: var(--teal-bright); }
-  .nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
-  .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
-  .nav-mobile-hide { display: flex; }
-  @media (max-width: 780px) { .nav-mobile-hide { display: none; } }
-
-  .nav-right { display: flex; align-items: center; gap: 14px; }
-  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
-  .nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
-  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.active span:nth-child(2) { opacity: 0; }
-  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  @media (max-width: 780px) { .nav-toggle { display: flex; } }
-
-  .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
-  .mobile-nav a:last-child { border-bottom: none; }
-  .mobile-nav a:hover { color: var(--text); }
-
-  section { padding: 72px 0; }
-  .section-head { max-width: 620px; margin-bottom: 44px; }
-  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-  .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
-  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
-  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
-  .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
-
-  .page-hero { padding: 64px 0 8px; text-align: center; }
-  .page-hero .kicker { text-align: center; }
-  .page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
-
-  .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
-  .trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
-  .trust-row span { display: flex; align-items: center; gap: 8px; }
-  .trust-row svg { flex-shrink: 0; color: var(--teal); }
-
-  .final-cta { text-align: center; }
-  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
-  .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
-
-  footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
-  .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a:hover { color: var(--text-dim); }
-
-  /* Blog index */
-  .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 900px; margin: 0 auto; }
-  .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
-  .blog-card:hover { border-color: var(--teal); transform: translateY(-2px); }
-  .blog-card .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 12px; }
-  .blog-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
-  .blog-card p { font-size: 14.5px; color: var(--text-dim); flex-grow: 1; }
-  .blog-card .read-more { margin-top: 16px; font-size: 13.5px; color: var(--teal-bright); font-weight: 600; }
-  @media (max-width: 720px) { .blog-grid { grid-template-columns: 1fr; } }
-
-  /* Article body */
-  .article-header { max-width: 700px; margin: 0 auto; text-align: center; }
-  .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
-  .article-body { max-width: 700px; margin: 0 auto; }
-  .article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
-  .article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
-  .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
-  .article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
-  .article-body li { margin-bottom: 8px; }
-  .article-body strong { color: var(--text); }
-  .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
-  .callout strong { color: var(--teal-bright); }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
-  .back-link:hover { color: var(--teal-bright); }
+:root {
+--bg: #070b10;
+--bg-2: #090f16;
+--card: #0d1620;
+--card-hover: #101c28;
+--border: #1c2b3a;
+--border-soft: #142330;
+--teal: #22c58b;
+--teal-bright: #34d399;
+--teal-dim: #17442f;
+--text: #eef4f1;
+--text-dim: #9fb3ad;
+--text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif;
+--font-body: 'Inter', sans-serif;
+--font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+background: var(--bg); color: var(--text); font-family: var(--font-body);
+line-height: 1.6; overflow-x: hidden;
+background-image:
+radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
+radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
+}
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) {
+* { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
+.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 780px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 780px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--text); }
+section { padding: 72px 0; }
+.section-head { max-width: 620px; margin-bottom: 44px; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+.page-hero { padding: 64px 0 8px; text-align: center; }
+.page-hero .kicker { text-align: center; }
+.page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a:hover { color: var(--text-dim); }
+/* Blog index */
+.blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 900px; margin: 0 auto; }
+.blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+.blog-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.blog-card .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 12px; }
+.blog-card h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+.blog-card p { font-size: 14.5px; color: var(--text-dim); flex-grow: 1; }
+.blog-card .read-more { margin-top: 16px; font-size: 13.5px; color: var(--teal-bright); font-weight: 600; }
+@media (max-width: 720px) { .blog-grid { grid-template-columns: 1fr; } }
+/* Article body */
+.article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+.article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+.article-body { max-width: 700px; margin: 0 auto; }
+.article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+.article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--text); }
+.callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+.callout strong { color: var(--teal-bright); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+.back-link:hover { color: var(--teal-bright); }
 </style>
 </head>
 <body>
-
 <header>
-  <nav class="wrap">
-    <a href="index.html" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
-    <div class="nav-links nav-mobile-hide">
-      <a href="index.html#how">How it works</a>
-      <a href="index.html#features">Features</a>
-    <a href="index.html#mission">Why not just AI?</a>
-      <a href="index.html#mission">Why not just AI?</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="about.html" class="">About</a>
-      <a href="faq.html" class="">FAQ</a>
-
-    </div>
-    <div class="nav-right">
-      <a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html#how">How it works</a>
-    <a href="index.html#features">Features</a>
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
-    <a href="faq.html">FAQ</a>
-
-  </div>
+<nav class="wrap">
+<a href="index.html" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="about.html" class="">About</a>
+<a href="faq.html" class="">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
 </header>
 
-
 <section class="page-hero">
-  <div class="wrap">
-    <div class="kicker">The Steadfolio Blog</div>
-    <h1>Investing, explained without the noise.</h1>
-    <p>Short, honest reads on how investing actually works - no hype, no hot takes, no sales pitch.</p>
-  </div>
+<div class="wrap">
+<div class="kicker">The Steadfolio Blog</div>
+<h1>Investing, explained without the noise.</h1>
+<p>Short, honest reads on how investing actually works - no hype, no hot takes, no sales pitch.</p>
+</div>
 </section>
 
 <section style="padding-top: 24px;">
-  <div class="wrap">
-    <div class="blog-grid">
+<div class="wrap">
+<div class="blog-grid">
 
-      <a href="blog-dollar-cost-averaging.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>What Is Dollar-Cost Averaging, and Why Does It Work?</h3>
-        <p>The simple habit that removes the guesswork of "when" to invest - explained without the jargon.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-dollar-cost-averaging.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>What Is Dollar-Cost Averaging, and Why Does It Work?</h3>
+<p>The simple habit that removes the guesswork of "when" to invest - explained without the jargon.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-how-to-evaluate-etf.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>How to Evaluate an ETF Before You Invest</h3>
-        <p>Five things worth checking before you put money into any fund - in plain language.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-how-to-evaluate-etf.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>How to Evaluate an ETF Before You Invest</h3>
+<p>Five things worth checking before you put money into any fund - in plain language.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-beginner-investing-mistakes.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>5 Mistakes Almost Every Beginner Investor Makes</h3>
-        <p>The patterns that quietly cost new investors the most - and how to notice them in yourself.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-beginner-investing-mistakes.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>5 Mistakes Almost Every Beginner Investor Makes</h3>
+<p>The patterns that quietly cost new investors the most - and how to notice them in yourself.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-how-markets-really-work.html" class="blog-card">
-        <div class="tag">Market Structure</div>
-        <h3>How the Market Actually Works Behind the Scenes</h3>
-        <p>Order flow, market makers, and what large players see that retail investors usually don't.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-how-markets-really-work.html" class="blog-card">
+<div class="tag">Market Structure</div>
+<h3>How the Market Actually Works Behind the Scenes</h3>
+<p>Order flow, market makers, and what large players see that retail investors usually don't.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-what-is-index-fund.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>What Is an Index Fund, and Why Do People Recommend Them?</h3>
-        <p>Passive vs active investing, and why "boring" is often the point.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-what-is-index-fund.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>What Is an Index Fund, and Why Do People Recommend Them?</h3>
+<p>Passive vs active investing, and why "boring" is often the point.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-how-much-money-to-start-investing.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>How Much Money Do You Actually Need to Start Investing?</h3>
-        <p>Why the old idea that you need thousands of euros first is outdated.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-how-much-money-to-start-investing.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>How Much Money Do You Actually Need to Start Investing?</h3>
+<p>Why the old idea that you need thousands of euros first is outdated.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-compound-interest-explained.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>Compound Interest, Explained Simply</h3>
-        <p>What it actually is, and why time matters more than the amount you invest.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-compound-interest-explained.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>Compound Interest, Explained Simply</h3>
+<p>What it actually is, and why time matters more than the amount you invest.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-emergency-fund-before-investing.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>Why You Need an Emergency Fund Before You Start Investing</h3>
-        <p>The step that usually belongs before your first investment, not after.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-emergency-fund-before-investing.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>Why You Need an Emergency Fund Before You Start Investing</h3>
+<p>The step that usually belongs before your first investment, not after.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-what-is-diversification.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>What Is Diversification, and Why Does It Matter?</h3>
-        <p>Why spreading your investments around reduces risk - and what it can't protect you from.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-what-is-diversification.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>What Is Diversification, and Why Does It Matter?</h3>
+<p>Why spreading your investments around reduces risk - and what it can't protect you from.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-understanding-risk-tolerance.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>Understanding Risk: What "Risk Tolerance" Actually Means</h3>
-        <p>Why the strategy you can emotionally stick with matters more than the "optimal" one.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-understanding-risk-tolerance.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>Understanding Risk: What "Risk Tolerance" Actually Means</h3>
+<p>Why the strategy you can emotionally stick with matters more than the "optimal" one.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-how-to-choose-a-broker.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>How to Choose a Brokerage Account: What Actually Matters</h3>
-        <p>Regulation, fees, available markets, and what to look for before signing up.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-how-to-choose-a-broker.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>How to Choose a Brokerage Account: What Actually Matters</h3>
+<p>Regulation, fees, available markets, and what to look for before signing up.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-understanding-market-volatility.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>Why Markets Go Up and Down: Understanding Volatility</h3>
-        <p>Why price swings happen, and how to think about them without panicking.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-understanding-market-volatility.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>Why Markets Go Up and Down: Understanding Volatility</h3>
+<p>Why price swings happen, and how to think about them without panicking.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-what-are-bonds.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>What Are Bonds, and Do Beginners Need Them?</h3>
-        <p>The other major building block besides stocks, explained simply.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-what-are-bonds.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>What Are Bonds, and Do Beginners Need Them?</h3>
+<p>The other major building block besides stocks, explained simply.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-robo-advisors-vs-learning-yourself.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>Robo-Advisors vs Learning to Invest Yourself</h3>
-        <p>What you gain and give up with automated investing - and why understanding still matters.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-robo-advisors-vs-learning-yourself.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>Robo-Advisors vs Learning to Invest Yourself</h3>
+<p>What you gain and give up with automated investing - and why understanding still matters.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-what-is-liquidity.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>What Is Liquidity, and Why Does It Matter?</h3>
-        <p>How quickly investments can turn into cash - and why mismatching this causes problems.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-what-is-liquidity.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>What Is Liquidity, and Why Does It Matter?</h3>
+<p>How quickly investments can turn into cash - and why mismatching this causes problems.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-lump-sum-vs-dollar-cost-averaging.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>Lump Sum vs Dollar-Cost Averaging</h3>
-        <p>Got a windfall to invest? What the data shows, and why the emotional trade-off matters more.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-lump-sum-vs-dollar-cost-averaging.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>Lump Sum vs Dollar-Cost Averaging</h3>
+<p>Got a windfall to invest? What the data shows, and why the emotional trade-off matters more.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-behavior-matters-more-than-strategy.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>Why Your Behavior Matters More Than Your Strategy</h3>
-        <p>The investor behavior gap - why timing decisions explain more than the investments themselves.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-behavior-matters-more-than-strategy.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>Why Your Behavior Matters More Than Your Strategy</h3>
+<p>The investor behavior gap - why timing decisions explain more than the investments themselves.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-building-an-investing-habit.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>How to Build an Investing Habit That Actually Sticks</h3>
-        <p>Why motivation alone fails, and what makes a regular habit survive the hard months.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-building-an-investing-habit.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>How to Build an Investing Habit That Actually Sticks</h3>
+<p>Why motivation alone fails, and what makes a regular habit survive the hard months.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-feeling-behind-on-investing.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>What to Do When You Feel Like You're Behind</h3>
-        <p>Why the comparison you're making probably isn't fair - and what to focus on instead.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-feeling-behind-on-investing.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>What to Do When You Feel Like You're Behind</h3>
+<p>Why the comparison you're making probably isn't fair - and what to focus on instead.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-understanding-fomo-investing.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>Understanding FOMO: Why Everyone Else's Gains Feel Bigger</h3>
-        <p>How fear of missing out works, and a simple way to tell information apart from impulse.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-understanding-fomo-investing.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>Understanding FOMO: Why Everyone Else's Gains Feel Bigger</h3>
+<p>How fear of missing out works, and a simple way to tell information apart from impulse.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-setting-a-financial-goal.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>How to Set a Financial Goal That Actually Guides You</h3>
-        <p>Why "grow my money" isn't a goal - and what makes one actually useful.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-setting-a-financial-goal.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>How to Set a Financial Goal That Actually Guides You</h3>
+<p>Why "grow my money" isn't a goal - and what makes one actually useful.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-investing-takes-time.html" class="blog-card">
-        <div class="tag">Mindset</div>
-        <h3>Investing Takes Time - You Don't Get Rich Overnight</h3>
-        <p>Why patience is structural, not just a platitude - with a well-known word from Warren Buffett.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-investing-takes-time.html" class="blog-card">
+<div class="tag">Mindset</div>
+<h3>Investing Takes Time - You Don't Get Rich Overnight</h3>
+<p>Why patience is structural, not just a platitude - with a well-known word from Warren Buffett.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-saving-vs-investing.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>Saving vs Investing: What's the Difference?</h3>
-        <p>Two different tools for two different jobs - and how to know which one your money needs.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-saving-vs-investing.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>Saving vs Investing: What's the Difference?</h3>
+<p>Two different tools for two different jobs - and how to know which one your money needs.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-is-crypto-good-for-beginners.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>Is Cryptocurrency a Good Investment for Beginners?</h3>
-        <p>What makes crypto structurally different from stocks, and how to think it through.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-is-crypto-good-for-beginners.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>Is Cryptocurrency a Good Investment for Beginners?</h3>
+<p>What makes crypto structurally different from stocks, and how to think it through.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-what-is-asset-allocation.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>What Is Asset Allocation, and How Do You Decide Yours?</h3>
-        <p>Why your stocks-vs-bonds mix matters more than picking individual investments.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-what-is-asset-allocation.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>What Is Asset Allocation, and How Do You Decide Yours?</h3>
+<p>Why your stocks-vs-bonds mix matters more than picking individual investments.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-      <a href="blog-how-to-research-an-investment.html" class="blog-card">
-        <div class="tag">Foundations</div>
-        <h3>How to Research an Investment (Without Chasing the "Perfect Stock")</h3>
-        <p>Why hunting for a hidden gem is usually unproductive, and what to focus on instead.</p>
-        <div class="read-more">Read the article →</div>
-      </a>
+<a href="blog-how-to-research-an-investment.html" class="blog-card">
+<div class="tag">Foundations</div>
+<h3>How to Research an Investment (Without Chasing the "Perfect Stock")</h3>
+<p>Why hunting for a hidden gem is usually unproductive, and what to focus on instead.</p>
+<div class="read-more">Read the article →</div>
+</a>
 
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
-
 <div class="trust-strip">
-  <div class="wrap trust-row">
-    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
-    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
-    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
-  </div>
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+</div>
 </div>
 
 <section class="final-cta">
-  <div class="wrap">
-    <h2>Ready to take the first step?</h2>
-    <p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
-    <div class="hero-ctas">
-      <a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
-    </div>
-  </div>
+<div class="wrap">
+<h2>Ready to take the first step?</h2>
+<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+</div>
+</div>
 </section>
 
 <footer>
-  <div class="wrap footer-row">
-    <span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
-    <div class="footer-links">
-      <a href="index.html#how">How it works</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="faq.html">FAQ</a>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-    </div>
-  </div>
+<div class="wrap footer-row">
+<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
 </footer>
 
 <script>
-  (function () {
-    var toggle = document.getElementById("navToggle");
-    var panel = document.getElementById("mobileNav");
-    if (!toggle || !panel) return;
-    toggle.addEventListener("click", function () {
-      var isOpen = panel.classList.toggle("open");
-      toggle.classList.toggle("active", isOpen);
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-    panel.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        panel.classList.remove("open");
-        toggle.classList.remove("active");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  })();
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
 </script>
-
 </body>
 </html>
