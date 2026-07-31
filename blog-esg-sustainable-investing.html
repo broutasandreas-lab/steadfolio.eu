@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESG and Sustainable Investing: What Beginners Should Know | Steadfolio</title>
+<meta name="description" content="What ESG investing actually means, how ESG funds are screened, the concept of greenwashing, and what to check before choosing a sustainable fund.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does ESG stand for in investing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ESG stands for Environmental, Social, and Governance - three categories of non-financial factors used to evaluate how a company operates, alongside its traditional financial performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do ESG funds perform worse than regular funds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Performance varies by fund and time period, and there's no consistent rule that ESG funds underperform or outperform standard funds. Fees and underlying holdings differ from fund to fund, so it's worth evaluating each one individually rather than assuming a category-wide answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is greenwashing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Greenwashing refers to a fund or company presenting itself as more environmentally or socially responsible than its actual practices or holdings reflect, often through marketing rather than substantive criteria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know what an ESG fund actually holds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the fund's published holdings and its specific ESG screening methodology, not just its name or marketing description. Two funds both labeled 'ESG' can apply very different criteria and end up holding quite different companies."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
+.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 780px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 780px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--text); }
+section { padding: 72px 0; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+.page-hero { padding: 64px 0 8px; text-align: center; }
+.page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a:hover { color: var(--text-dim); }
+.article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+.article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+.article-body { max-width: 700px; margin: 0 auto; }
+.article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+.article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--text); }
+.callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+.callout strong { color: var(--teal-bright); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+.back-link:hover { color: var(--teal-bright); }
+.faq-item { margin-bottom: 24px; }
+.faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a href="index.html" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="about.html" class="">About</a>
+<a href="faq.html" class="">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+<section class="page-hero" style="padding-bottom: 0;">
+<div class="wrap article-header">
+<a href="blog.html" class="back-link">← Back to Blog</a>
+<div class="kicker">Foundations</div>
+<h1>ESG and Sustainable Investing: What Beginners Should Know</h1>
+<p class="article-meta">4 min read - Educational content, not financial advice</p>
+</div>
+</section>
+
+<section style="padding-top: 32px;">
+<div class="wrap article-body">
+
+<p>ESG investing has grown from a niche label into a mainstream category of funds - but the term is often used loosely, and it's worth understanding what it actually measures before assuming a fund labeled "ESG" or "sustainable" automatically matches your expectations.</p>
+
+<h2>What ESG actually stands for</h2>
+<p>ESG stands for <strong>Environmental, Social, and Governance</strong> - three categories of non-financial factors used to evaluate how a company operates, alongside its traditional financial performance.</p>
+<ul>
+<li><strong>Environmental:</strong> How a company manages its environmental impact - emissions, resource use, waste, and climate-related risk.</li>
+<li><strong>Social:</strong> How it treats employees, customers, and the communities it operates in - labor practices, product safety, data privacy.</li>
+<li><strong>Governance:</strong> How the company itself is run - board structure, executive pay, shareholder rights, and transparency.</li>
+</ul>
+
+<h2>How ESG funds actually screen companies</h2>
+<p>ESG funds typically use one or more of these approaches, and it matters which:</p>
+<ul>
+<li><strong>Exclusionary screening:</strong> Simply excludes entire industries, like tobacco, weapons, or fossil fuels, regardless of how individual companies within them behave.</li>
+<li><strong>Best-in-class selection:</strong> Includes companies that score relatively well on ESG criteria compared to others in their own industry - meaning an oil company could still be included if it scores better than its industry peers.</li>
+<li><strong>ESG integration:</strong> Factors ESG scores into the investment decision alongside traditional financial analysis, without necessarily excluding anything outright.</li>
+</ul>
+<p>These approaches can lead to very different holdings, even for two funds both marketed under the same "ESG" or "sustainable" label.</p>
+
+<h2>Does ESG investing mean giving up returns?</h2>
+<p>There's no consistent, settled answer here - performance varies by fund, by time period, and by which specific companies each fund actually holds. Fees also vary between ESG and standard funds. Rather than assuming a category-wide answer either way, it's worth evaluating a specific ESG fund the same way you'd evaluate any other - checking its holdings, fees, and track record, much like the process covered in our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a>.</p>
+
+<h2>What is greenwashing?</h2>
+<p>Greenwashing refers to a fund or company presenting itself as more environmentally or socially responsible than its actual practices or holdings genuinely reflect - often through marketing language, a green-sounding name, or a logo, rather than substantive screening criteria.</p>
+<div class="callout">
+<strong>Worth remembering:</strong> A fund's name and marketing aren't the same as its actual holdings. If sustainability genuinely matters to your decision, the published holdings list and methodology document are what actually tell you what you're buying.
+</div>
+
+<h2>How to actually check what you're buying</h2>
+<h3>A short checklist</h3>
+<ul>
+<li>What specific screening methodology does the fund use - exclusion, best-in-class, or integration?</li>
+<li>What are the fund's actual top holdings, not just its category label?</li>
+<li>How does its expense ratio compare to a similar non-ESG fund tracking the same broad market?</li>
+<li>Who provides the ESG ratings or scores the fund relies on, and how are they calculated?</li>
+</ul>
+
+<h2>The bigger picture</h2>
+<p>ESG investing isn't a single, standardized strategy - it's a broad category covering many different approaches and priorities. Whether it fits your goals depends less on the label itself and more on whether a specific fund's actual criteria and holdings line up with what you personally care about.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What does ESG stand for in investing?</h3>
+<p>ESG stands for Environmental, Social, and Governance - three categories of non-financial factors used to evaluate how a company operates, alongside its traditional financial performance.</p>
+</div>
+<div class="faq-item">
+<h3>Do ESG funds perform worse than regular funds?</h3>
+<p>Performance varies by fund and time period, and there's no consistent rule that ESG funds underperform or outperform standard funds. Fees and underlying holdings differ from fund to fund, so it's worth evaluating each one individually rather than assuming a category-wide answer.</p>
+</div>
+<div class="faq-item">
+<h3>What is greenwashing?</h3>
+<p>Greenwashing refers to a fund or company presenting itself as more environmentally or socially responsible than its actual practices or holdings reflect, often through marketing rather than substantive criteria.</p>
+</div>
+<div class="faq-item">
+<h3>How do I know what an ESG fund actually holds?</h3>
+<p>Check the fund's published holdings and its specific ESG screening methodology, not just its name or marketing description. Two funds both labeled "ESG" can apply very different criteria and end up holding quite different companies.</p>
+</div>
+
+</div>
+</section>
+
+<div class="trust-strip">
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+</div>
+</div>
+
+<section class="final-cta">
+<div class="wrap">
+<h2>Ready to take the first step?</h2>
+<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap footer-row">
+<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+</body>
+</html>

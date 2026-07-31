@@ -55,6 +55,11 @@ position: sticky; top: 0; z-index: 100;
 background: rgba(7,11,16,0.82);
 backdrop-filter: blur(14px);
 border-bottom: 1px solid var(--border-soft);
+transition: background 0.25s, border-color 0.25s;
+}
+header.is-scrolled {
+background: rgba(7,11,16,0.94);
+border-bottom-color: var(--border);
 }
 nav.wrap {
 display: flex; align-items: center; justify-content: space-between;
@@ -227,10 +232,21 @@ font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(
 display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
 }
 .feature-card {
+position: relative;
 background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-padding: 28px; transition: border-color 0.2s, transform 0.2s;
+padding: 28px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
+overflow: hidden;
 }
-.feature-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.feature-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 0 40px -12px rgba(34,197,139,0.35); }
+.feature-card::before {
+content: ""; position: absolute; inset: 0; border-radius: 14px; pointer-events: none;
+background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(34,197,139,0.14), transparent 70%);
+opacity: 0; transition: opacity 0.25s;
+}
+.feature-card:hover::before { opacity: 1; }
+[data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
 .feature-icon {
 width: 38px; height: 38px; border-radius: 9px;
 background: var(--teal-dim); color: var(--teal-bright);
@@ -298,7 +314,8 @@ text-align: center;
 .final-cta .section-sub { max-width: 480px; margin-left: auto; margin-right: auto; }
 .final-cta .hero-ctas { margin-top: 36px; }
 /* ---------- Footer ---------- */
-footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+footer:hover { opacity: 1; }
 .footer-row {
 display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
 font-size: 13.5px; color: var(--text-muted);
@@ -392,13 +409,13 @@ font-size: 13.5px; color: var(--text-muted);
 <h2>Most people don't avoid investing because it's hard.<br>They avoid it because it feels unsafe to start.</h2>
 </div>
 <div class="problem-grid">
-<div class="problem-card">
+<div class="problem-card" data-reveal>
 <p class="line">"I don't know where to even begin."</p>
 </div>
-<div class="problem-card">
+<div class="problem-card" data-reveal>
 <p class="line">"I'm scared I'll lose money doing this wrong."</p>
 </div>
-<div class="problem-card">
+<div class="problem-card" data-reveal>
 <p class="line">"Everyone talks like I should already know this."</p>
 </div>
 </div>
@@ -412,21 +429,21 @@ font-size: 13.5px; color: var(--text-muted);
 <h2>People don't actually want a portfolio.<br>They want what it leads to.</h2>
 </div>
 <div class="why-grid">
-<div class="why-card">
+<div class="why-card" data-reveal>
 <div class="why-icon">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
 </div>
 <h3>Keeping up with inflation</h3>
 <p>Money sitting still quietly loses purchasing power every year. Investing is how it has a chance to keep up.</p>
 </div>
-<div class="why-card">
+<div class="why-card" data-reveal>
 <div class="why-icon">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg>
 </div>
 <h3>Building real options later</h3>
 <p>A home, a career change, retiring on your own terms - long-term investing is what makes those choices possible.</p>
 </div>
-<div class="why-card">
+<div class="why-card" data-reveal>
 <div class="why-icon">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11zM9 11l2 2 4-4"/></svg>
 </div>
@@ -523,7 +540,7 @@ font-size: 13.5px; color: var(--text-muted);
 <p class="section-sub">Every part of Steadfolio is designed around one job: helping you actually understand investing, at your own pace.</p>
 </div>
 <div class="feature-grid">
-<div class="feature-card">
+<div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
 </div>
@@ -531,7 +548,7 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>See how markets really moved</h3>
 <p>Explore long-term index performance to understand real market behavior - not headlines or hype.</p>
 </div>
-<div class="feature-card">
+<div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
 </div>
@@ -539,7 +556,7 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>Watch small amounts grow over time</h3>
 <p>See how investing a little, regularly, plays out over time with real historical scenarios, risk-free.</p>
 </div>
-<div class="feature-card">
+<div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
 </div>
@@ -547,7 +564,7 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>Test your ideas before risking real money</h3>
 <p>Build and stress-test a hypothetical portfolio before ever putting in real money.</p>
 </div>
-<div class="feature-card">
+<div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/></svg>
 </div>
@@ -555,7 +572,7 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>Stay calm when the market drops</h3>
 <p>When markets drop and fear kicks in, get calm, factual context instead of doom-scrolling.</p>
 </div>
-<div class="feature-card" style="grid-column: 1 / -1;">
+<div class="feature-card" data-reveal style="grid-column: 1 / -1;">
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
 </div>
@@ -602,19 +619,19 @@ font-size: 13.5px; color: var(--text-muted);
 <h2>The questions everyone asks first</h2>
 </div>
 <div class="quick-faq-grid">
-<div class="quick-faq-item">
+<div class="quick-faq-item" data-reveal>
 <h3>Can I start with €50?</h3>
 <p>Yes - most brokers allow fractional shares today, so there's no real minimum that locks you out.</p>
 </div>
-<div class="quick-faq-item">
+<div class="quick-faq-item" data-reveal>
 <h3>Can I lose money?</h3>
 <p>Yes, values can go up and down - which is exactly why Steadfolio starts with education before real money is involved.</p>
 </div>
-<div class="quick-faq-item">
+<div class="quick-faq-item" data-reveal>
 <h3>Is investing better than a savings account?</h3>
 <p>Over the long term, investing gives your money a better chance to outpace inflation - though it comes with more short-term ups and downs.</p>
 </div>
-<div class="quick-faq-item">
+<div class="quick-faq-item" data-reveal>
 <h3>Do I need to know what an ETF is first?</h3>
 <p>No - Sofia explains it in plain language the moment it's relevant, right when you need it.</p>
 </div>
@@ -696,6 +713,51 @@ a.addEventListener('click', function () {
 panel.classList.remove('open');
 toggle.classList.remove('active');
 toggle.setAttribute('aria-expanded', 'false');
+});
+});
+})();
+
+// Scroll-triggered fade-in-up reveal
+(function () {
+var items = document.querySelectorAll('[data-reveal]');
+if (!items.length) return;
+if (!('IntersectionObserver' in window)) {
+items.forEach(function (el) { el.classList.add('is-visible'); });
+return;
+}
+var observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+items.forEach(function (el, i) {
+el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
+observer.observe(el);
+});
+})();
+
+// Header darkens slightly on scroll
+(function () {
+var header = document.querySelector('header');
+if (!header) return;
+function onScroll() {
+header.classList.toggle('is-scrolled', window.scrollY > 8);
+}
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// Pointer-tracked glow on feature cards
+(function () {
+var cards = document.querySelectorAll('.feature-card');
+cards.forEach(function (card) {
+card.addEventListener('mousemove', function (e) {
+var rect = card.getBoundingClientRect();
+card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
 });
 });
 })();

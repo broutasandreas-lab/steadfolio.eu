@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is a Stock? A Plain-Language Guide for Beginners | Steadfolio</title>
+<meta name="description" content="What a stock actually is, how owning one works, how you can make money from it, and the risks worth understanding before you buy your first share.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a stock in simple terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A stock is a small ownership stake in a company. When you buy a share, you own a tiny slice of that business, including a proportional claim on its future profits and, in most cases, a vote on certain company decisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you actually make money from a stock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mainly two ways: the stock's price can rise over time, so shares are worth more than you paid (a capital gain), and some companies pay out a portion of profits directly to shareholders as dividends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between common and preferred stock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common stock usually comes with voting rights and variable dividends that depend on company performance. Preferred stock generally pays a fixed dividend and has a higher claim on assets if a company is liquidated, but typically no voting rights. Most beginner investors hold common stock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a stock's value go to zero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If a company fails and goes out of business, its stock can become worthless. This is one of the core reasons diversification - not concentrating money in a single company - matters so much."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
+.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 780px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 780px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--text); }
+section { padding: 72px 0; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+.page-hero { padding: 64px 0 8px; text-align: center; }
+.page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a:hover { color: var(--text-dim); }
+.article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+.article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+.article-body { max-width: 700px; margin: 0 auto; }
+.article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+.article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--text); }
+.callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+.callout strong { color: var(--teal-bright); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+.back-link:hover { color: var(--teal-bright); }
+.faq-item { margin-bottom: 24px; }
+.faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a href="index.html" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="about.html" class="">About</a>
+<a href="faq.html" class="">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+<section class="page-hero" style="padding-bottom: 0;">
+<div class="wrap article-header">
+<a href="blog.html" class="back-link">← Back to Blog</a>
+<div class="kicker">Foundations</div>
+<h1>What Is a Stock? A Plain-Language Guide for Beginners</h1>
+<p class="article-meta">4 min read - Educational content, not financial advice</p>
+</div>
+</section>
+
+<section style="padding-top: 32px;">
+<div class="wrap article-body">
+
+<p>Almost every conversation about investing starts here, and yet "stock" is one of those words people nod along to without ever quite pinning down. It's worth slowing down on, because everything else - ETFs, index funds, diversification - is built on top of this one idea.</p>
+
+<h2>What owning a stock actually means</h2>
+<p>A stock (also called a share or equity) represents a small ownership stake in a company. When a company wants to raise money to grow, it can sell pieces of itself to investors instead of only borrowing. Each share is one of those pieces. If a company has issued 1,000,000 shares and you own 100 of them, you own 0.01% of that company - a tiny amount, but real ownership all the same.</p>
+<p>That ownership comes with two practical things: a proportional claim on the company's future profits, and in most cases, the right to vote on certain major company decisions, like electing the board of directors.</p>
+
+<h2>How do you actually make money from a stock?</h2>
+<p>There are two main mechanisms, and it's worth understanding both separately:</p>
+<ul>
+<li><strong>Price appreciation (capital gains):</strong> If the company grows and becomes more valuable - or investors simply believe it will - demand for its shares tends to rise, and so does the price. If you eventually sell at a higher price than you paid, that difference is your gain.</li>
+<li><strong>Dividends:</strong> Some companies choose to distribute a portion of their profits directly to shareholders on a regular schedule, rather than reinvesting everything back into the business. Not all companies pay dividends - many growth-focused companies reinvest profits instead.</li>
+</ul>
+<p>Neither is guaranteed. Share prices can fall as easily as they rise, and dividends can be reduced or cancelled if a company's finances change.</p>
+
+<h2>Common stock vs preferred stock</h2>
+<p>Most of what people mean when they casually say "buying stock" is <strong>common stock</strong> - the standard type, which usually includes voting rights and dividends that vary depending on how well the company performs. <strong>Preferred stock</strong> is a less common variant that typically pays a fixed dividend and has a higher claim on company assets if the business is liquidated, but usually comes without voting rights. As a beginner, you'll overwhelmingly be dealing with common stock, especially through ETFs and index funds.</p>
+
+<h2>What actually moves a stock's price?</h2>
+<p>In the short term, a stock's price is simply whatever the last buyer and seller agreed on - driven by a mix of company news, broader market sentiment, economic data, and sometimes pure momentum that has little to do with the underlying business. Over the long term, prices tend to track a company's actual earnings and growth more closely, though "long term" here can mean years, not weeks.</p>
+<div class="callout">
+<strong>Worth remembering:</strong> Day-to-day price movements are mostly noise. What tends to matter far more, over long periods, is whether the underlying business keeps growing.
+</div>
+
+<h2>The risk worth understanding before you buy your first share</h2>
+<p>A single stock can lose most or all of its value if the underlying company struggles or fails - something an index or a diversified ETF is specifically designed to protect against by spreading that risk across many companies at once. This is the core reason many beginner investors start with <a href="blog-what-is-diversification.html" style="color: var(--teal-bright); text-decoration: underline;">diversified funds rather than individual stocks</a>, and only consider individual companies once they're comfortable evaluating them - a process our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an investment before buying</a> also touches on.</p>
+
+<h2>Where stocks fit into a broader portfolio</h2>
+<p>Stocks are one building block among several - alongside bonds, cash, and other asset types - that make up a portfolio. How much of your money goes into stocks versus other assets is a personal decision shaped by your goals and comfort with short-term ups and downs, not a one-size-fits-all number.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What is a stock in simple terms?</h3>
+<p>A stock is a small ownership stake in a company. When you buy a share, you own a tiny slice of that business, including a proportional claim on its future profits and, in most cases, a vote on certain company decisions.</p>
+</div>
+<div class="faq-item">
+<h3>How do you actually make money from a stock?</h3>
+<p>Mainly two ways: the stock's price can rise over time, so shares are worth more than you paid (a capital gain), and some companies pay out a portion of profits directly to shareholders as dividends.</p>
+</div>
+<div class="faq-item">
+<h3>What is the difference between common and preferred stock?</h3>
+<p>Common stock usually comes with voting rights and variable dividends that depend on company performance. Preferred stock generally pays a fixed dividend and has a higher claim on assets if a company is liquidated, but typically no voting rights. Most beginner investors hold common stock.</p>
+</div>
+<div class="faq-item">
+<h3>Can a stock's value go to zero?</h3>
+<p>Yes. If a company fails and goes out of business, its stock can become worthless. This is one of the core reasons diversification - not concentrating money in a single company - matters so much.</p>
+</div>
+
+</div>
+</section>
+
+<div class="trust-strip">
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+</div>
+</div>
+
+<section class="final-cta">
+<div class="wrap">
+<h2>Ready to take the first step?</h2>
+<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap footer-row">
+<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+</body>
+</html>

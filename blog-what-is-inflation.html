@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Inflation, and How Does It Affect Your Investments? | Steadfolio</title>
+<meta name="description" content="A plain-language explanation of inflation, why cash loses value over time, and how investing helps your money keep up with rising prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is inflation in simple terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inflation is the general rise in prices over time, which means each unit of currency buys less than it used to. If inflation is 3% a year, something that costs €100 today will typically cost about €103 a year from now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does inflation matter for savers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cash sitting in a low-interest account loses purchasing power if inflation is higher than the interest rate earned. Over years, this quietly erodes what your savings can actually buy, even though the number in the account stays the same or grows slowly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does investing protect against inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historically, assets like stocks have tended to grow faster than inflation over long time periods, though this isn't guaranteed for any specific year or short period. This is one of the main reasons people invest rather than only save."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is real return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real return is your investment return after subtracting inflation. If an investment grows 7% in a year and inflation was 3%, your real return - the actual increase in purchasing power - is roughly 4%, not 7%."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
+.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 780px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 780px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--text); }
+section { padding: 72px 0; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+.page-hero { padding: 64px 0 8px; text-align: center; }
+.page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a:hover { color: var(--text-dim); }
+.article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+.article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+.article-body { max-width: 700px; margin: 0 auto; }
+.article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+.article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--text); }
+.callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+.callout strong { color: var(--teal-bright); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+.back-link:hover { color: var(--teal-bright); }
+.faq-item { margin-bottom: 24px; }
+.faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a href="index.html" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="about.html" class="">About</a>
+<a href="faq.html" class="">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+<section class="page-hero" style="padding-bottom: 0;">
+<div class="wrap article-header">
+<a href="blog.html" class="back-link">← Back to Blog</a>
+<div class="kicker">Foundations</div>
+<h1>What Is Inflation, and How Does It Affect Your Investments?</h1>
+<p class="article-meta">4 min read - Educational content, not financial advice</p>
+</div>
+</section>
+
+<section style="padding-top: 32px;">
+<div class="wrap article-body">
+
+<p>Inflation is one of those economic terms that shows up constantly in the news, yet its actual, personal effect on your money is easy to underestimate. It's also one of the clearest, most concrete reasons people choose to invest at all.</p>
+
+<h2>What inflation actually is</h2>
+<p>Inflation is the general rise in prices across an economy over time, which means each unit of currency buys progressively less than it used to. If inflation runs at 3% a year, something that costs €100 today will typically cost roughly €103 a year from now - and the trend compounds over longer periods.</p>
+<p>It's usually measured by tracking the price of a broad basket of everyday goods and services - things like food, housing, and transport - and comparing how that basket's total cost changes year over year.</p>
+
+<h2>Why inflation matters so much for savers</h2>
+<p>Money sitting in cash, or in an account earning very little interest, quietly loses purchasing power if inflation is running higher than the interest being earned. The number in the account might stay the same or even grow slightly - but what that number can actually buy shrinks over time.</p>
+<div class="callout">
+<strong>Example:</strong> €10,000 sitting in an account earning 0.5% interest, with inflation running at 3%, effectively loses about 2.5% of its real purchasing power every year - even though the account balance is technically growing.
+</div>
+
+<h2>How investing helps address this</h2>
+<p>Historically, assets like stocks have tended to grow in value faster than inflation over long time periods - though this is not guaranteed for any specific year, and can vary significantly over shorter periods. This gap between investment growth and inflation is one of the central, practical reasons people choose to invest a portion of their savings rather than keep everything in cash.</p>
+<p>This connects to the concept of <a href="blog-compound-interest-explained.html" style="color: var(--teal-bright); text-decoration: underline;">compound interest</a>: growth that outpaces inflation, left to compound over years, is what actually builds real, spendable wealth over time - not just a bigger number on a statement.</p>
+
+<h2>What is "real return"?</h2>
+<p>Real return is your investment return after subtracting inflation - it reflects the actual change in your purchasing power, not just the raw percentage gain. If an investment grows 7% in a year while inflation runs at 3%, your real return is roughly 4%. This is a more honest way to evaluate whether an investment is genuinely building wealth, rather than just keeping pace with rising prices.</p>
+
+<h3>A quick way to estimate real return</h3>
+<ul>
+<li>Take your investment's percentage return for the period</li>
+<li>Subtract the inflation rate for the same period</li>
+<li>What's left is roughly your real, purchasing-power-adjusted return</li>
+</ul>
+
+<h2>Where does this leave cash and savings?</h2>
+<p>None of this means cash savings are pointless - quite the opposite. Cash still plays an essential role for near-term needs and emergencies, precisely because it doesn't lose value overnight the way investments can. Our guide on <a href="blog-emergency-fund-before-investing.html" style="color: var(--teal-bright); text-decoration: underline;">building an emergency fund before investing</a> covers why that stability matters, even while inflation is working against cash sitting idle for the long term.</p>
+
+<h2>The bigger picture</h2>
+<p>Inflation isn't a reason to panic, and it isn't something any individual investor can control. But understanding it reframes a common question - "why bother investing when I could just save?" - into a much more concrete one: "what's actually happening to my money's purchasing power if I don't?"</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What is inflation in simple terms?</h3>
+<p>Inflation is the general rise in prices over time, which means each unit of currency buys less than it used to. If inflation is 3% a year, something that costs €100 today will typically cost about €103 a year from now.</p>
+</div>
+<div class="faq-item">
+<h3>Why does inflation matter for savers?</h3>
+<p>Cash sitting in a low-interest account loses purchasing power if inflation is higher than the interest rate earned. Over years, this quietly erodes what your savings can actually buy, even though the number in the account stays the same or grows slowly.</p>
+</div>
+<div class="faq-item">
+<h3>Does investing protect against inflation?</h3>
+<p>Historically, assets like stocks have tended to grow faster than inflation over long time periods, though this isn't guaranteed for any specific year or short period. This is one of the main reasons people invest rather than only save.</p>
+</div>
+<div class="faq-item">
+<h3>What is real return?</h3>
+<p>Real return is your investment return after subtracting inflation. If an investment grows 7% in a year and inflation was 3%, your real return - the actual increase in purchasing power - is roughly 4%, not 7%.</p>
+</div>
+
+</div>
+</section>
+
+<div class="trust-strip">
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+</div>
+</div>
+
+<section class="final-cta">
+<div class="wrap">
+<h2>Ready to take the first step?</h2>
+<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap footer-row">
+<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+</body>
+</html>
