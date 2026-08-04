@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steadfolio - Learn investing without the noise</title>
-<meta name="description" content="Steadfolio is a guided investment education companion. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
+<title>SteadFolio - Learn investing without the noise</title>
+<meta name="description" content="SteadFolio is a guided investment education companion. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -120,13 +120,14 @@ overflow: hidden;
 .hero-inner { position: relative; max-width: 760px; margin: 0 auto; text-align: center; }
 .eyebrow {
 display: inline-flex; align-items: center; gap: 8px;
-font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em;
+font-family: var(--font-mono); font-size: 13.5px; font-weight: 600; letter-spacing: 0.06em;
 color: var(--teal-bright);
-background: rgba(34,197,139,0.08); border: 1px solid rgba(34,197,139,0.25);
-padding: 7px 14px; border-radius: 100px;
+background: rgba(34,197,139,0.16); border: 1px solid rgba(34,197,139,0.55);
+box-shadow: 0 0 24px -6px rgba(34,197,139,0.45);
+padding: 9px 18px; border-radius: 100px;
 margin-bottom: 28px;
 }
-.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-bright); }
+.eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px var(--teal-bright); }
 h1 {
 font-family: var(--font-display); font-weight: 700;
 font-size: clamp(38px, 6vw, 60px); line-height: 1.08; letter-spacing: -0.02em;
@@ -341,10 +342,10 @@ font-size: 13.5px; color: var(--text-muted);
 {
 "@context": "https://schema.org",
 "@type": "Organization",
-"name": "Steadfolio",
+"name": "SteadFolio",
 "url": "https://steadfolio.eu/",
 "logo": "https://steadfolio.eu/steadfolio-icon-1080.png",
-"description": "Steadfolio is a guided investment education platform with an AI coach, Sofia, that teaches beginners how investing works through structured, step-by-step lessons. Educational only - not financial advice, no product recommendations.",
+"description": "SteadFolio is a guided investment education platform with an AI coach, Sofia, that teaches beginners how investing works through structured, step-by-step lessons. Educational only - not financial advice, no product recommendations.",
 "sameAs": [
 "https://www.instagram.com/steadfolio/"
 ]
@@ -354,7 +355,7 @@ font-size: 13.5px; color: var(--text-muted);
 {
 "@context": "https://schema.org",
 "@type": "WebApplication",
-"name": "Steadfolio",
+"name": "SteadFolio",
 "applicationCategory": "EducationalApplication",
 "operatingSystem": "Web",
 "description": "An AI-guided investment education app for beginners. Sofia, the AI coach, teaches dollar-cost averaging, ETF evaluation, market structure, and more through structured lessons - never giving specific financial advice or product recommendations.",
@@ -371,7 +372,7 @@ font-size: 13.5px; color: var(--text-muted);
 <body>
 <header>
 <nav class="wrap">
-<a href="#" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="Steadfolio logo"></span>Steadfolio</a>
+<a href="#" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
 <div class="nav-links nav-mobile-hide">
 <a href="#how">How it works</a>
 <a href="#features">Features</a>
@@ -381,7 +382,7 @@ font-size: 13.5px; color: var(--text-muted);
 <a href="faq.html">FAQ</a>
 </div>
 <div class="nav-right">
-<a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
+<a href="https://app.steadfolio.eu/login" class="nav-cta">Login</a>
 <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div>
 </nav>
@@ -409,9 +410,7 @@ font-size: 13.5px; color: var(--text-muted);
 <h1>Investing doesn't have to<br>feel <span class="accent">complicated.</span></h1>
 <p class="hero-sub">Learn to invest with a guided AI companion - no sales pitch, no recommendations, just clear steps.</p>
 <div class="hero-ctas">
-<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
-</div>
-<div class="hero-visual">
+<a href="#how" class="btn-primary">How it works →</a>
 <div class="screenshot-frame">
 <div class="screenshot-topbar"><span></span><span></span><span></span></div>
 <img src="screenshots/screenshot-chat-demo.png" alt="Sofia answering: Is €50 enough to start investing?" loading="lazy">
@@ -475,7 +474,7 @@ font-size: 13.5px; color: var(--text-muted);
 <section class="how" id="how">
 <div class="wrap">
 <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">How Steadfolio works</div>
+<div class="kicker" style="text-align:center;">How SteadFolio works</div>
 <h2>Three steps. No detours.</h2>
 </div>
 <div class="step-path">
@@ -541,7 +540,7 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="section-head">
 <div class="kicker">What's inside</div>
 <h2>Built for learning, not for trading</h2>
-<p class="section-sub">Every part of Steadfolio is designed around one job: helping you actually understand investing, at your own pace.</p>
+<p class="section-sub">Every part of SteadFolio is designed around one job: helping you actually understand investing, at your own pace.</p>
 </div>
 <div class="feature-grid">
 <div class="feature-card" data-reveal>
@@ -591,7 +590,7 @@ font-size: 13.5px; color: var(--text-muted);
 <section class="mission" id="mission">
 <div class="wrap mission-inner">
 <div class="kicker" style="text-align:center;">Why not use a general AI tool?</div>
-<blockquote>General-purpose AI tools know everything - except <span class="hl">you</span>. Steadfolio is built for one purpose only: to take you, step by step and safely, from fear to real understanding.</blockquote>
+<blockquote>General-purpose AI tools know everything - except <span class="hl">you</span>. SteadFolio is built for one purpose only: to take you, step by step and safely, from fear to real understanding.</blockquote>
 <div class="compare-row">
 <div class="compare-col tool">
 <div class="compare-label">General AI Tools</div>
@@ -604,7 +603,7 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 <div class="compare-vs">vs</div>
 <div class="compare-col path">
-<div class="compare-label">Steadfolio</div>
+<div class="compare-label">SteadFolio</div>
 <ul>
 <li>A structured path, start to finish</li>
 <li>Remembers who you are</li>
@@ -629,7 +628,7 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 <div class="quick-faq-item" data-reveal>
 <h3>Can I lose money?</h3>
-<p>Yes, values can go up and down - which is exactly why Steadfolio starts with education before real money is involved.</p>
+<p>Yes, values can go up and down - which is exactly why SteadFolio starts with education before real money is involved.</p>
 </div>
 <div class="quick-faq-item" data-reveal>
 <h3>Is investing better than a savings account?</h3>
@@ -670,7 +669,7 @@ font-size: 13.5px; color: var(--text-muted);
 <section class="story">
 <div class="wrap">
 <div class="story-card">
-<p>Steadfolio started from a simple, personal frustration: everywhere I looked for a place to learn investing, I found either oversimplified social media advice or dense, jargon-heavy content that assumed I already knew the basics.</p>
+<p>SteadFolio started from a simple, personal frustration: everywhere I looked for a place to learn investing, I found either oversimplified social media advice or dense, jargon-heavy content that assumed I already knew the basics.</p>
 <p>There wasn't a middle ground - something that met me where I actually was, went at my pace, and never made me feel behind. So I built the one I wished existed.</p>
 <p class="story-sign">- Built by people, for people who felt lost investing, too.</p>
 </div>
@@ -689,7 +688,7 @@ font-size: 13.5px; color: var(--text-muted);
 
 <footer>
 <div class="wrap footer-row">
-<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
 <div class="footer-links">
 <a href="#how">How it works</a>
 <a href="#features">Features</a>
