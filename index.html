@@ -16,6 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="apple-touch-icon" href="favicon-64.png">
 <style>
 :root {
 --bg: #070b10;
@@ -75,11 +78,12 @@ height: 72px;
 }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
 .brand-mark {
-width: 32px; height: 32px; border-radius: 9px;
-background: linear-gradient(155deg, var(--teal-bright), var(--teal));
-display: flex; align-items: center; justify-content: center;
-font-family: var(--font-display); font-weight: 700; color: #06231a; font-size: 16px;
+width: 34px; height: 34px; border-radius: 9px;
+display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.hero-visual { max-width: 640px; margin: 44px auto 0; }
+.hero-visual .screenshot-frame { max-width: 100%; }
 .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
 .nav-links a { transition: color 0.15s; }
 .nav-links a:hover { color: var(--text); }
@@ -209,8 +213,10 @@ overflow: hidden; margin: 0 auto;
 .step-path { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
 .step-row {
 display: grid; grid-template-columns: 56px 1fr; gap: 24px;
-padding: 28px 0;
+padding: 28px 0; cursor: pointer; border-radius: 12px; transition: background 0.2s;
 }
+.step-row:hover, .step-row.is-active { background: rgba(34,197,139,0.05); }
+.step-row.is-active .step-marker { background: var(--teal); color: #06231a; border-color: var(--teal); transform: scale(1.08); }
 .step-row:not(:last-child) { border-bottom: 1px dashed var(--border); }
 .step-marker {
 width: 44px; height: 44px; border-radius: 10px;
@@ -365,7 +371,7 @@ font-size: 13.5px; color: var(--text-muted);
 <body>
 <header>
 <nav class="wrap">
-<a href="#" class="brand"><span class="brand-mark">S</span>Steadfolio</a>
+<a href="#" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="Steadfolio logo"></span>Steadfolio</a>
 <div class="nav-links nav-mobile-hide">
 <a href="#how">How it works</a>
 <a href="#features">Features</a>
@@ -401,12 +407,16 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="wrap hero-inner">
 <span class="eyebrow"><span class="dot"></span> For people starting from zero</span>
 <h1>Investing doesn't have to<br>feel <span class="accent">complicated.</span></h1>
-<p class="hero-sub">Steadfolio is a guided investment education companion. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia, built for people who felt lost before.</p>
+<p class="hero-sub">Learn to invest with a guided AI companion - no sales pitch, no recommendations, just clear steps.</p>
 <div class="hero-ctas">
 <a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
-<a href="#how" class="btn-secondary">See how it works</a>
 </div>
-<p class="hero-note">You don't need to know everything to start. You just need the right first step.</p>
+<div class="hero-visual">
+<div class="screenshot-frame">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-chat-demo.png" alt="Sofia answering: Is €50 enough to start investing?" loading="lazy">
+</div>
+</div>
 </div>
 </section>
 
@@ -496,20 +506,6 @@ font-size: 13.5px; color: var(--text-muted);
 <p>ETF evaluator, DCA simulator, and historical scenarios - so you understand how markets actually behave before real money is involved.</p>
 </div>
 </div>
-</div>
-</div>
-</section>
-
-<section class="demo">
-<div class="wrap">
-<div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">See it in action</div>
-<h2>Not another chatbot. Your investing teacher.</h2>
-<p class="section-sub" style="text-align:center; max-width:520px; margin-left:auto; margin-right:auto;">A real conversation - this is what asking Sofia an "obvious" question actually feels like.</p>
-</div>
-<div class="screenshot-frame" style="max-width:680px;">
-<div class="screenshot-topbar"><span></span><span></span><span></span></div>
-<img src="screenshots/screenshot-chat-demo.png" alt="Sofia answering: Is €50 enough to start investing?" loading="lazy">
 </div>
 </div>
 </section>
@@ -766,6 +762,17 @@ card.addEventListener('mousemove', function (e) {
 var rect = card.getBoundingClientRect();
 card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
 card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+});
+});
+})();
+// Interactive step highlighting in How It Works
+(function () {
+var rows = document.querySelectorAll('.step-row');
+if (!rows.length) return;
+rows.forEach(function (row) {
+row.addEventListener('click', function () {
+rows.forEach(function (r) { r.classList.remove('is-active'); });
+row.classList.add('is-active');
 });
 });
 })();
