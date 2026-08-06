@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Are Dividends, and How Do They Work? | Steadfolio</title>
-<meta name="description" content="A plain-language guide to dividends: how they're paid, dividend yield explained, dividend vs growth stocks, and what dividend reinvestment (DRIP) means.">
+<title>What Happens During a Stock Market Crash? | Steadfolio</title>
+<meta name="description" content="What defines a stock market crash, how it differs from a correction or a bear market, and how long-term investors have historically weathered them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,38 +21,10 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are dividends in simple terms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A dividend is a portion of a company's profit paid out directly to shareholders, usually on a quarterly or annual schedule, as a reward for owning the stock."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is dividend yield?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dividend yield is the annual dividend payment expressed as a percentage of the current share price. For example, a stock priced at €100 paying €3 a year in dividends has a 3% yield. It changes as the share price moves, even if the dividend itself stays the same."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is a high dividend yield always good?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not necessarily. An unusually high yield can sometimes signal that a stock's price has fallen sharply due to underlying problems, which can be a warning sign rather than a bargain. It's worth understanding why a yield is high before assuming it's simply a good deal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is dividend reinvestment (DRIP)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dividend reinvestment automatically uses the cash from dividend payments to buy more shares of the same investment, rather than paying it out as cash. Over long periods, this compounding effect can meaningfully increase total returns."
-      }
-    }
+    {"@type":"Question","name":"What counts as a stock market crash?","acceptedAnswer":{"@type":"Answer","text":"There's no single official threshold, but a crash generally refers to a sudden, sharp drop in prices - often 10% or more within a very short period, such as a few days - rather than a slower decline over months."}},
+    {"@type":"Question","name":"What is the difference between a correction, a bear market, and a crash?","acceptedAnswer":{"@type":"Answer","text":"A correction is typically a decline of roughly 10% from a recent high. A bear market usually refers to a decline of 20% or more, often over a longer period. A crash specifically describes a very sudden, sharp drop, regardless of the total percentage lost."}},
+    {"@type":"Question","name":"How long does it typically take markets to recover from a crash?","acceptedAnswer":{"@type":"Answer","text":"Recovery time has varied significantly across historical crashes, from months to several years, and there's no way to predict in advance how long any specific future recovery will take."}},
+    {"@type":"Question","name":"Should I sell everything during a crash?","acceptedAnswer":{"@type":"Answer","text":"Selling during a crash locks in the loss and removes any chance of participating in the eventual recovery. Many long-term investors instead focus on sticking with their existing plan rather than making reactive decisions during periods of high stress."}}
   ]
 }
 </script>
@@ -69,7 +41,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-body);
 background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
-@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
 .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
 header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
 nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
@@ -79,22 +50,17 @@ nav.wrap { display: flex; align-items: center; justify-content: space-between; h
 .nav-links a { transition: color 0.15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links a.active { color: var(--teal-bright); }
-.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
-.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; }
 .nav-mobile-hide { display: flex; }
 @media (max-width: 780px) { .nav-mobile-hide { display: none; } }
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
-.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
 @media (max-width: 780px) { .nav-toggle { display: flex; } }
 .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
 .mobile-nav.open { display: flex; }
 .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
 .mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--text); }
 section { padding: 72px 0; }
 .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
 h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
@@ -108,12 +74,10 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 
 .trust-row svg { flex-shrink: 0; color: var(--teal); }
 .final-cta { text-align: center; }
 .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
-.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; }
 footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
 .footer-links { display: flex; gap: 24px; }
-.footer-links a:hover { color: var(--text-dim); }
 .footer-social { display: flex; align-items: center; gap: 14px; }
 .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
 .footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
@@ -126,10 +90,12 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
 .article-body li { margin-bottom: 8px; }
 .article-body strong { color: var(--text); }
+.article-body table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+.article-body th, .article-body td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); color: var(--text-dim); }
+.article-body th { color: var(--text); font-family: var(--font-display); font-weight: 600; font-size: 14px; }
 .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
 .callout strong { color: var(--teal-bright); }
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
-.back-link:hover { color: var(--teal-bright); }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
 </style>
@@ -143,8 +109,8 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <a href="index.html#features">Features</a>
 <a href="index.html#mission">Why not just AI?</a>
 <a href="blog.html" class="active">Blog</a>
-<a href="about.html" class="">About</a>
-<a href="faq.html" class="">FAQ</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
 </div>
 <div class="nav-right">
 <a href="https://app.steadfolio.eu" class="nav-cta">Start learning</a>
@@ -164,8 +130,8 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section class="page-hero" style="padding-bottom: 0;">
 <div class="wrap article-header">
 <a href="blog.html" class="back-link">← Back to Blog</a>
-<div class="kicker">Foundations</div>
-<h1>What Are Dividends, and How Do They Work?</h1>
+<div class="kicker">Market Structure</div>
+<h1>What Happens During a Stock Market Crash?</h1>
 <p class="article-meta">4 min read - Educational content, not financial advice</p>
 </div>
 </section>
@@ -173,53 +139,56 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section style="padding-top: 32px;">
 <div class="wrap article-body">
 
-<p>Dividends are one of the more approachable ideas in investing - the concept of "getting paid for owning something" makes intuitive sense. But there's more nuance to how they work, and what they actually mean for your returns, than the surface-level idea suggests.</p>
+<p>"Crash" is a dramatic word, and markets do occasionally live up to it. But the term gets used loosely in headlines, often for much smaller moves than an actual crash. Knowing the difference helps separate genuine risk from ordinary market noise.</p>
 
-<h2>What a dividend actually is</h2>
-<p>A dividend is a portion of a company's profit that it chooses to pay out directly to shareholders, usually on a quarterly or annual schedule, rather than reinvesting all of it back into the business. If you own shares of a company that pays dividends, you'll receive a cash payment proportional to how many shares you hold - typically deposited straight into your brokerage account.</p>
-<p>Not every company pays dividends. Many growth-focused companies, especially younger ones, choose to reinvest all their profits into expanding the business instead, on the theory that shareholders benefit more from growth than from cash payouts at that stage.</p>
+<h2>What defines a crash, specifically</h2>
+<p>There's no single official threshold, but a crash generally refers to a sudden, sharp drop in prices - often 10% or more within a very short window, sometimes just a few days - rather than a slower decline stretched over months. The speed is what distinguishes a crash from an ordinary downturn.</p>
 
-<h2>Understanding dividend yield</h2>
-<p>Dividend yield is the figure you'll see most often attached to a dividend-paying stock or fund. It's calculated as the annual dividend payment divided by the current share price, expressed as a percentage.</p>
+<h2>Crash vs correction vs bear market</h2>
+<table>
+<tr><th>Term</th><th>Typical meaning</th></tr>
+<tr><td>Correction</td><td>A decline of roughly 10% from a recent high, usually over weeks or months</td></tr>
+<tr><td>Bear market</td><td>A decline of 20% or more, often over a longer period</td></tr>
+<tr><td>Crash</td><td>A very sudden, sharp drop over a short period, regardless of the total percentage</td></tr>
+</table>
+<p>These categories overlap and aren't strictly defined - a crash can turn into a bear market if prices stay depressed, and a correction can either recover quickly or deepen into something more severe.</p>
+
+<h2>What typically triggers a crash</h2>
+<p>Crashes have historically been triggered by a wide range of causes - sudden economic shocks, financial system stress, geopolitical events, or a rapid shift in investor sentiment that feeds on itself as selling accelerates selling. Often, the specific trigger only becomes fully clear in hindsight, which is part of why crashes are so difficult to predict in advance.</p>
+
+<h2>How markets have historically recovered</h2>
+<p>Recovery time has varied enormously across past crashes - some recovered within months, others took years. There's no reliable formula for predicting how long any future recovery will take, which is exactly why trying to time an exit and a re-entry around a crash is so difficult, even for professional investors.</p>
 <div class="callout">
-<strong>Example:</strong> A stock trading at €100 that pays €3 per share annually in dividends has a dividend yield of 3%. If the share price falls to €75 while the dividend stays the same, the yield rises to 4% - the yield moves with the price even when the payment itself hasn't changed.</p>
+<strong>Worth remembering:</strong> Selling during a crash locks in the loss. Staying invested doesn't guarantee a positive outcome either, but it at least preserves the possibility of participating in an eventual recovery.
 </div>
-<p>This last point is worth sitting with: an unusually high yield isn't automatically good news. Sometimes it simply reflects a stock price that has fallen sharply because of underlying problems at the company - a pattern sometimes called a "dividend trap," where the high yield looks attractive right up until the dividend gets cut.</p>
 
-<h2>Dividend stocks vs growth stocks</h2>
-<p>This is a useful, if slightly oversimplified, way to think about the split in a portfolio:</p>
+<h2>What tends to separate calm investors from panicked ones</h2>
 <ul>
-<li><strong>Dividend-focused stocks:</strong> Often established, mature companies with steady cash flow, prioritizing regular payouts over rapid growth.</li>
-<li><strong>Growth-focused stocks:</strong> Often younger, faster-growing companies that reinvest profits, aiming for a higher share price over time instead of cash payments.</li>
+<li><strong>An emergency fund</strong> already in place, so a crash doesn't force a bad-timed sale to cover an unrelated expense</li>
+<li><strong>A long time horizon</strong> for the money that's actually invested, giving it time to recover</li>
+<li><strong>A plan decided in advance</strong>, rather than a decision made in the middle of a stressful, fast-moving period</li>
 </ul>
-<p>Neither approach is inherently better - they represent different trade-offs between receiving cash now versus the company (hopefully) growing your investment's value over time.</p>
-
-<h2>What is dividend reinvestment (DRIP)?</h2>
-<p>Many brokers offer a dividend reinvestment option, often shortened to DRIP, which automatically uses the cash from each dividend payment to buy more shares of the same investment instead of paying it out to you as cash. Over long time horizons, this creates a compounding effect: more shares generate more future dividends, which buy even more shares, and so on.</p>
-<p>This connects directly to the idea of <a href="blog-dollar-cost-averaging.html" style="color: var(--teal-bright); text-decoration: underline;">consistent, regular investing</a> - reinvested dividends function similarly to small, automatic additional contributions.</p>
-
-<h2>Do ETFs and index funds pay dividends too?</h2>
-<p>Yes. If a fund holds dividend-paying companies, it typically passes those dividends on to fund shareholders, either as cash payments or, in some fund structures, automatically reinvested. If you're evaluating a specific ETF, its dividend policy is one of several factors worth checking - alongside the fundamentals covered in our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a>.</p>
+<p>This connects directly to the ideas covered in our guides on <a href="blog-understanding-market-volatility.html" style="color: var(--teal-bright); text-decoration: underline;">understanding market volatility</a> and <a href="blog-behavior-matters-more-than-strategy.html" style="color: var(--teal-bright); text-decoration: underline;">why behavior matters more than strategy</a> - a crash is really a stress test of decisions made well before it ever happens.</p>
 
 <h2>The bigger picture</h2>
-<p>Dividends are one piece of total return, not the whole picture. A stock's total return combines both price appreciation and any dividends received - focusing on yield alone, without considering the underlying business and its price trajectory, tells only part of the story.</p>
+<p>Crashes are rare, dramatic, and genuinely uncomfortable to experience - but they're also a recurring, historical feature of markets, not a sign that something has permanently broken. Understanding what a crash actually is tends to replace panic with a clearer, calmer picture of what's happening and why.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
-<h3>What are dividends in simple terms?</h3>
-<p>A dividend is a portion of a company's profit paid out directly to shareholders, usually on a quarterly or annual schedule, as a reward for owning the stock.</p>
+<h3>What counts as a stock market crash?</h3>
+<p>There's no single official threshold, but a crash generally refers to a sudden, sharp drop in prices - often 10% or more within a very short period, such as a few days - rather than a slower decline over months.</p>
 </div>
 <div class="faq-item">
-<h3>What is dividend yield?</h3>
-<p>Dividend yield is the annual dividend payment expressed as a percentage of the current share price. For example, a stock priced at €100 paying €3 a year in dividends has a 3% yield. It changes as the share price moves, even if the dividend itself stays the same.</p>
+<h3>What is the difference between a correction, a bear market, and a crash?</h3>
+<p>A correction is typically a decline of roughly 10% from a recent high. A bear market usually refers to a decline of 20% or more, often over a longer period. A crash specifically describes a very sudden, sharp drop, regardless of the total percentage lost.</p>
 </div>
 <div class="faq-item">
-<h3>Is a high dividend yield always good?</h3>
-<p>Not necessarily. An unusually high yield can sometimes signal that a stock's price has fallen sharply due to underlying problems, which can be a warning sign rather than a bargain. It's worth understanding why a yield is high before assuming it's simply a good deal.</p>
+<h3>How long does it typically take markets to recover from a crash?</h3>
+<p>Recovery time has varied significantly across historical crashes, from months to several years, and there's no way to predict in advance how long any specific future recovery will take.</p>
 </div>
 <div class="faq-item">
-<h3>What is dividend reinvestment (DRIP)?</h3>
-<p>Dividend reinvestment automatically uses the cash from dividend payments to buy more shares of the same investment, rather than paying it out as cash. Over long periods, this compounding effect can meaningfully increase total returns.</p>
+<h3>Should I sell everything during a crash?</h3>
+<p>Selling during a crash locks in the loss and removes any chance of participating in the eventual recovery. Many long-term investors instead focus on sticking with their existing plan rather than making reactive decisions during periods of high stress.</p>
 </div>
 
 </div>
