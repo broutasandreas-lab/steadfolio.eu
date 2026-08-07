@@ -27,3 +27,6 @@ User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://steadfolio.eu/sitemap.xml
+
+# AI-readable site guide (https://llmstxt.org/)
+# https://steadfolio.eu/llms.txt
