@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SteadFolio - Learn investing without the noise</title>
-<meta name="description" content="SteadFolio is a guided investment education companion. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
+<meta name="description" content="SteadFolio is a guided investment education app with an AI coach, real portfolio tracking, goal check-ins, a budget calculator, and a watchlist. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -171,7 +171,41 @@ font-family: var(--font-display); font-weight: 600;
 font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.015em; color: #fff;
 }
 .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
-/* ---------- Problem ---------- */
+/* ---------- Interactive Calculator ---------- */
+.calc-section { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
+.calc-card { max-width: 880px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; position: relative; overflow: hidden; }
+.calc-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 500px 260px at 20% 0%, rgba(34,197,139,0.10), transparent); pointer-events: none; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; position: relative; }
+@media (max-width: 760px) { .calc-grid { grid-template-columns: 1fr; gap: 32px; } }
+.calc-controls { display: flex; flex-direction: column; gap: 30px; }
+.calc-field label { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px; }
+.calc-field .calc-value { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--teal-bright); text-transform: none; letter-spacing: 0; }
+.calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 100px; background: var(--border); outline: none; cursor: pointer; }
+.calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--teal); border: 3px solid #06231a; box-shadow: 0 0 0 3px rgba(34,197,139,0.3); cursor: pointer; transition: transform 0.15s; }
+.calc-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+.calc-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--teal); border: 3px solid #06231a; box-shadow: 0 0 0 3px rgba(34,197,139,0.3); cursor: pointer; }
+.calc-range-labels { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); margin-top: 8px; }
+.calc-results { display: flex; flex-direction: column; }
+.calc-result-main { text-align: center; }
+.calc-result-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.calc-result-value { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 42px); color: #fff; letter-spacing: -0.01em; }
+.calc-breakdown { display: flex; gap: 16px; margin-top: 20px; }
+.calc-breakdown-item { flex: 1; background: var(--bg-2); border: 1px solid var(--border-soft); border-radius: 10px; padding: 14px 16px; }
+.calc-breakdown-item .bd-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+.calc-breakdown-item .bd-value { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: var(--text); }
+.calc-breakdown-item.growth .bd-value { color: var(--teal-bright); }
+.calc-chart { width: 100%; height: auto; margin-top: 20px; }
+.calc-chart .line-deposited { fill: none; stroke: var(--text-muted); stroke-width: 2; stroke-dasharray: 4 4; }
+.calc-chart .line-value { fill: none; stroke: var(--teal-bright); stroke-width: 2.5; }
+.calc-chart .area-growth { fill: rgba(34,197,139,0.12); }
+.calc-chart-legend { display: flex; gap: 20px; margin-top: 10px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); }
+.calc-chart-legend span { display: flex; align-items: center; gap: 6px; }
+.calc-chart-legend .dot { width: 8px; height: 8px; border-radius: 50%; }
+.calc-disclaimer { font-size: 12.5px; color: var(--text-muted); margin-top: 18px; line-height: 1.5; }
+.calc-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 13px 22px; border-radius: 10px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; align-self: center; }
+.calc-cta:hover { background: var(--teal-bright); transform: translateY(-2px); }
+
+
 .problem { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
 .problem-grid {
 display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
@@ -349,7 +383,7 @@ font-size: 13.5px; color: var(--text-muted);
 "name": "SteadFolio",
 "url": "https://steadfolio.eu/",
 "logo": "https://steadfolio.eu/steadfolio-icon-1080.png",
-"description": "SteadFolio is a guided investment education platform with an AI coach, Sofia, that teaches beginners how investing works through structured, step-by-step lessons. Educational only - not financial advice, no product recommendations.",
+"description": "SteadFolio is a guided investment education platform with an AI coach, Sofia, real portfolio tracking, goal check-ins, a budget calculator, and a watchlist. Educational only - not financial advice, no product recommendations.",
 "sameAs": [
 "https://www.instagram.com/steadfolio/",
 "https://www.facebook.com/profile.php?id=61592617561199",
@@ -364,7 +398,7 @@ font-size: 13.5px; color: var(--text-muted);
 "name": "SteadFolio",
 "applicationCategory": "EducationalApplication",
 "operatingSystem": "Web",
-"description": "An AI-guided investment education app for beginners. Sofia, the AI coach, teaches dollar-cost averaging, ETF evaluation, market structure, and more through structured lessons - never giving specific financial advice or product recommendations.",
+"description": "An AI-guided investment education app for beginners. Track real portfolio holdings, set and check in on financial goals, calculate your budget, maintain a watchlist, and get XIRR and portfolio audit analysis - alongside structured lessons from Sofia, the AI coach. Never gives specific financial advice or product recommendations.",
 "offers": {
 "@type": "Offer",
 "price": "0",
@@ -422,6 +456,57 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="screenshot-frame">
 <div class="screenshot-topbar"><span></span><span></span><span></span></div>
 <img src="screenshots/screenshot-chat-demo.png" alt="Sofia answering: Is €50 enough to start investing?" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<section class="calc-section">
+<div class="wrap">
+<div class="calc-card">
+<div class="section-head center" style="margin-left:auto;margin-right:auto; position:relative;">
+<div class="kicker" style="text-align:center;">Try it yourself</div>
+<h2>See what consistency actually builds</h2>
+<p class="section-sub" style="text-align:center; max-width:480px; margin-left:auto; margin-right:auto;">Move the sliders - no signup, no calculations to do yourself.</p>
+</div>
+<div class="calc-grid">
+<div class="calc-controls">
+<div class="calc-field">
+<label>Monthly amount <span class="calc-value" id="calcMonthlyLabel">€300</span></label>
+<input type="range" min="50" max="2000" step="10" value="300" class="calc-slider" id="calcMonthly" aria-label="Monthly investment amount">
+<div class="calc-range-labels"><span>€50</span><span>€2,000</span></div>
+</div>
+<div class="calc-field">
+<label>Years investing <span class="calc-value" id="calcYearsLabel">15 years</span></label>
+<input type="range" min="5" max="30" step="1" value="15" class="calc-slider" id="calcYears" aria-label="Number of years investing">
+<div class="calc-range-labels"><span>5 years</span><span>30 years</span></div>
+</div>
+</div>
+<div class="calc-results">
+<div class="calc-result-main">
+<div class="calc-result-label">Estimated future value</div>
+<div class="calc-result-value" id="calcFutureValue">€0</div>
+</div>
+<div class="calc-breakdown">
+<div class="calc-breakdown-item">
+<div class="bd-label">You deposited</div>
+<div class="bd-value" id="calcDeposited">€0</div>
+</div>
+<div class="calc-breakdown-item growth">
+<div class="bd-label">Growth from compounding</div>
+<div class="bd-value" id="calcGrowth">€0</div>
+</div>
+</div>
+<svg class="calc-chart" id="calcChart" viewBox="0 0 400 140" preserveAspectRatio="none"></svg>
+<div class="calc-chart-legend">
+<span><span class="dot" style="background:var(--text-muted);"></span>Total deposited</span>
+<span><span class="dot" style="background:var(--teal-bright);"></span>Value with growth</span>
+</div>
+</div>
+</div>
+<p class="calc-disclaimer">Based on an approximate 8% average historical annual return. Not a guarantee - actual results vary. This is a simplified illustration, not investment advice.</p>
+<div style="text-align:center;">
+<a href="https://app.steadfolio.eu" class="calc-cta">See this with your real numbers → <span style="font-weight:400; opacity:0.8;">(full DCA Simulator inside SteadFolio)</span></a>
 </div>
 </div>
 </div>
@@ -583,6 +668,70 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>Stay calm when the market drops</h3>
 <p>When markets drop and fear kicks in, get calm, factual context instead of doom-scrolling.</p>
 </div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 2v10l7 7"/></svg>
+</div>
+<span class="feature-tag">Portfolio Tracking</span>
+<h3>Track your real holdings</h3>
+<p>Add your actual ETFs and stocks, and see your real portfolio value, allocation, and performance - not just simulations.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+</div>
+<span class="feature-tag">Named Goals</span>
+<h3>Set a goal, track it monthly</h3>
+<p>Name a real goal - a house, retirement, anything - and log simple monthly check-ins to see if you're on track.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 012-2h11a2 2 0 012 2v2h2a1 1 0 011 1v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><circle cx="16" cy="13" r="1.3" fill="currentColor"/></svg>
+</div>
+<span class="feature-tag">Budget Calculator</span>
+<h3>Know what you can actually invest</h3>
+<p>See how much of your income you can realistically invest, using established budgeting rules like 50/30/20.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+</div>
+<span class="feature-tag">Watchlist</span>
+<h3>Keep an eye on what you're considering</h3>
+<p>Track ETFs or stocks you're thinking about, without committing to them yet.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+</div>
+<span class="feature-tag">Portfolio Audit &amp; XIRR</span>
+<h3>Understand your real numbers</h3>
+<p>See your true annualized return (XIRR) and a full audit of your diversification and risk concentration.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg>
+</div>
+<span class="feature-tag">What-If Analysis</span>
+<h3>See what you could have done differently</h3>
+<p>Compare your actual results to what would have happened if you'd invested in a simple benchmark index instead.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1 3 3 6 3s6-2 6-3v-4.5"/></svg>
+</div>
+<span class="feature-tag">Financial Literacy Assessment</span>
+<h3>Know what you actually know</h3>
+<p>Quick assessments show your real knowledge level across topics, so lessons can meet you where you are.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+</div>
+<span class="feature-tag">Progress &amp; Streaks</span>
+<h3>Build a real habit, not just a course</h3>
+<p>Track your learning streak and progress across every topic - investing understanding compounds too.</p>
+</div>
 <div class="feature-card" data-reveal style="grid-column: 1 / -1;">
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
@@ -711,6 +860,7 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="footer-links">
 <a href="#how">How it works</a>
 <a href="#features">Features</a>
+<a href="pricing.html">Pricing</a>
 <a href="blog.html">Blog</a>
 <a href="about.html">About</a>
 <a href="faq.html">FAQ</a>
@@ -793,6 +943,93 @@ rows.forEach(function (r) { r.classList.remove('is-active'); });
 row.classList.add('is-active');
 });
 });
+})();
+
+// Interactive DCA calculator (client-side only, no backend calls)
+(function () {
+var monthlySlider = document.getElementById('calcMonthly');
+var yearsSlider = document.getElementById('calcYears');
+if (!monthlySlider || !yearsSlider) return;
+
+var monthlyLabel = document.getElementById('calcMonthlyLabel');
+var yearsLabel = document.getElementById('calcYearsLabel');
+var futureValueEl = document.getElementById('calcFutureValue');
+var depositedEl = document.getElementById('calcDeposited');
+var growthEl = document.getElementById('calcGrowth');
+var chartEl = document.getElementById('calcChart');
+
+function calculateDCA(monthlyAmount, years, annualRate) {
+annualRate = annualRate || 0.08;
+var monthlyRate = annualRate / 12;
+var months = years * 12;
+var futureValue = monthlyAmount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+var totalDeposited = monthlyAmount * months;
+var growthFromCompounding = futureValue - totalDeposited;
+return { futureValue: futureValue, totalDeposited: totalDeposited, growthFromCompounding: growthFromCompounding };
+}
+
+function formatEUR(num) {
+return '€' + Math.round(num).toLocaleString('en-US');
+}
+
+function buildSeries(monthlyAmount, years, annualRate) {
+var monthlyRate = annualRate / 12;
+var totalMonths = years * 12;
+var points = [];
+var steps = 24; // resolution of the chart
+for (var i = 0; i <= steps; i++) {
+var m = Math.round((totalMonths / steps) * i);
+var value = m === 0 ? 0 : monthlyAmount * ((Math.pow(1 + monthlyRate, m) - 1) / monthlyRate);
+var deposited = monthlyAmount * m;
+points.push({ value: value, deposited: deposited });
+}
+return points;
+}
+
+function drawChart(points) {
+var maxVal = Math.max.apply(null, points.map(function (p) { return p.value; })) || 1;
+var w = 400, h = 140, pad = 6;
+var n = points.length - 1;
+function x(i) { return pad + (i / n) * (w - pad * 2); }
+function y(val) { return h - pad - (val / maxVal) * (h - pad * 2); }
+
+var valuePath = '';
+var depositedPath = '';
+points.forEach(function (p, i) {
+var cmd = i === 0 ? 'M' : 'L';
+valuePath += cmd + x(i).toFixed(1) + ',' + y(p.value).toFixed(1) + ' ';
+depositedPath += cmd + x(i).toFixed(1) + ',' + y(p.deposited).toFixed(1) + ' ';
+});
+
+var areaPath = 'M' + x(0) + ',' + y(points[0].value) + ' ';
+points.forEach(function (p, i) { areaPath += 'L' + x(i).toFixed(1) + ',' + y(p.value).toFixed(1) + ' '; });
+for (var i = n; i >= 0; i--) { areaPath += 'L' + x(i).toFixed(1) + ',' + y(points[i].deposited).toFixed(1) + ' '; }
+areaPath += 'Z';
+
+chartEl.innerHTML =
+'<path class="area-growth" d="' + areaPath + '"></path>' +
+'<path class="line-deposited" d="' + depositedPath.trim() + '"></path>' +
+'<path class="line-value" d="' + valuePath.trim() + '"></path>';
+}
+
+function update() {
+var monthly = parseInt(monthlySlider.value, 10);
+var years = parseInt(yearsSlider.value, 10);
+
+monthlyLabel.textContent = formatEUR(monthly);
+yearsLabel.textContent = years + (years === 1 ? ' year' : ' years');
+
+var result = calculateDCA(monthly, years, 0.08);
+futureValueEl.textContent = formatEUR(result.futureValue);
+depositedEl.textContent = formatEUR(result.totalDeposited);
+growthEl.textContent = formatEUR(result.growthFromCompounding);
+
+drawChart(buildSeries(monthly, years, 0.08));
+}
+
+monthlySlider.addEventListener('input', update);
+yearsSlider.addEventListener('input', update);
+update();
 })();
 </script>
 </body>
