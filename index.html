@@ -1,450 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SteadFolio - Learn investing without the noise</title>
+  <meta name="description" content="SteadFolio is a guided investment education app with an AI coach, real portfolio tracking, goal check-ins, a budget calculator, and a watchlist. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
+  <meta name="msvalidate.01" content="742C981593A83CFE24CD04C580BF4ED2">
+
+  <!-- Schema.org JSON-LD (Combined Organization & WebApplication) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://steadfolio.eu/#organization",
-      "name": "SteadFolio",
-      "url": "https://steadfolio.eu/",
-      "logo": "https://steadfolio.eu/steadfolio-icon-1080.png",
-      "description": "SteadFolio is a guided investment education platform with an AI coach, Sofia, that teaches beginners how investing works through structured, step-by-step lessons. Educational only - not financial advice, no product recommendations.",
-      "sameAs": [
-        "https://www.instagram.com/steadfolio/",
-        "https://www.linkedin.com/company/steadfolio",
-        "https://www.trustpilot.com/review/steadfolio.com"
-      ]
-    },
-    {
-      "@type": "WebApplication",
-      "@id": "https://steadfolio.eu/#webapp",
-      "name": "SteadFolio",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "description": "An AI-guided investment education app for beginners. Sofia, the AI coach, teaches dollar-cost averaging, ETF evaluation, market structure, and more through structured lessons - never giving specific financial advice or product recommendations.",
-      "url": "https://steadfolio.eu/",
-      "provider": {
-        "@id": "https://steadfolio.eu/#organization"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://steadfolio.eu/#organization",
+        "name": "SteadFolio",
+        "url": "https://steadfolio.eu/",
+        "logo": "https://steadfolio.eu/steadfolio-icon-1080.png",
+        "description": "SteadFolio is a guided investment education platform with an AI coach, Sofia, that teaches beginners how investing works through structured, step-by-step lessons. Educational only - not financial advice, no product recommendations.",
+        "sameAs": [
+          "https://www.instagram.com/steadfolio/",
+          "https://www.facebook.com/profile.php?id=61592617561199",
+          "https://www.linkedin.com/company/steadfolio",
+          "https://www.trustpilot.com/review/steadfolio.com"
+        ]
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
+      {
+        "@type": "WebApplication",
+        "@id": "https://steadfolio.eu/#webapp",
+        "name": "SteadFolio",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "description": "An AI-guided investment education app for beginners. Sofia, the AI coach, teaches dollar-cost averaging, ETF evaluation, market structure, and more through structured lessons - never giving specific financial advice or product recommendations.",
+        "url": "https://steadfolio.eu/",
+        "provider": {
+          "@id": "https://steadfolio.eu/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
       }
-    }
-  ]
-}
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3SFS38ZZL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-V3SFS38ZZL');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SteadFolio - Learn investing without the noise</title>
-<meta name="description" content="SteadFolio is a guided investment education app with an AI coach, real portfolio tracking, goal check-ins, a budget calculator, and a watchlist. No sales pitch, no recommendations - just structured, step-by-step learning with Sofia.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
-<link rel="apple-touch-icon" href="favicon-64.png">
-<style>
-:root {
---bg: #070b10;
---bg-2: #090f16;
---card: #0d1620;
---card-hover: #101c28;
---border: #1c2b3a;
---border-soft: #142330;
---teal: #22c58b;
---teal-bright: #34d399;
---teal-dim: #17442f;
---text: #eef4f1;
---text-dim: #9fb3ad;
---text-muted: #56685f;
---danger: #e8607a;
---font-display: 'Space Grotesk', sans-serif;
---font-body: 'Inter', sans-serif;
---font-mono: 'IBM Plex Mono', monospace;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-background: var(--bg);
-color: var(--text);
-font-family: var(--font-body);
-line-height: 1.6;
-overflow-x: hidden;
-background-image:
-radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
-radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
-}
-a { color: inherit; text-decoration: none; }
-:focus-visible {
-outline: 2px solid var(--teal-bright);
-outline-offset: 3px;
-border-radius: 4px;
-}
-@media (prefers-reduced-motion: reduce) {
-* { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-}
-.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
-/* ---------- Nav ---------- */
-header {
-position: sticky; top: 0; z-index: 100;
-background: rgba(7,11,16,0.82);
-backdrop-filter: blur(14px);
-border-bottom: 1px solid var(--border-soft);
-transition: background 0.25s, border-color 0.25s;
-}
-header.is-scrolled {
-background: rgba(7,11,16,0.94);
-border-bottom-color: var(--border);
-}
-nav.wrap {
-display: flex; align-items: center; justify-content: space-between;
-height: 72px;
-}
-@media (max-width: 960px) { .wrap { padding: 0 20px; } }
-.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; white-space: nowrap; }
-.brand-mark {
-width: 34px; height: 34px; border-radius: 9px;
-display: flex; align-items: center; justify-content: center; overflow: hidden;
-}
-.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
-.hero-visual { max-width: 640px; margin: 44px auto 0; }
-.hero-visual .screenshot-frame { max-width: 100%; }
-.nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
-.nav-links a { transition: color 0.15s; }
-.nav-links a:hover { color: var(--text); }
-.nav-cta {
-padding: 10px 20px; border-radius: 8px;
-background: var(--teal); color: #06231a;
-font-weight: 600; font-size: 14.5px;
-transition: background 0.15s, transform 0.15s;
-}
-.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
-.nav-mobile-hide { display: flex; }
-@media (max-width: 960px) { .nav-mobile-hide { display: none; } }
-.nav-right { display: flex; align-items: center; gap: 14px; }
-.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
-.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-@media (max-width: 960px) { .nav-toggle { display: flex; } }
-.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
-.mobile-nav.open { display: flex; }
-.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
-.mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--text); }
-/* ---------- Hero ---------- */
-.hero {
-padding: 92px 0 76px;
-position: relative;
-}
-.step-field {
-position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
-overflow: hidden;
-}
-.hero-inner { position: relative; max-width: 760px; margin: 0 auto; text-align: center; }
-.eyebrow {
-display: inline-flex; align-items: center; gap: 8px;
-font-family: var(--font-mono); font-size: 13.5px; font-weight: 600; letter-spacing: 0.06em;
-color: var(--teal-bright);
-background: rgba(34,197,139,0.16); border: 1px solid rgba(34,197,139,0.55);
-box-shadow: 0 0 24px -6px rgba(34,197,139,0.45);
-padding: 9px 18px; border-radius: 100px;
-margin-bottom: 28px;
-}
-.eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px var(--teal-bright); }
-h1 {
-font-family: var(--font-display); font-weight: 700;
-font-size: clamp(38px, 6vw, 60px); line-height: 1.08; letter-spacing: -0.02em;
-color: #fff;
-}
-h1 .accent { color: var(--teal-bright); }
-.hero-sub {
-margin: 26px auto 0; max-width: 560px;
-font-size: 18px; color: var(--text-dim);
-}
-.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
-.btn-primary {
-display: inline-flex; align-items: center; gap: 8px;
-background: var(--teal); color: #06231a;
-font-weight: 600; font-size: 15.5px;
-padding: 15px 26px; border-radius: 10px;
-transition: background 0.15s, transform 0.15s;
-}
-.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
-.btn-secondary {
-display: inline-flex; align-items: center; gap: 8px;
-color: var(--text-dim); font-weight: 500; font-size: 15.5px;
-padding: 15px 20px; border-radius: 10px; border: 1px solid var(--border);
-transition: border-color 0.15s, color 0.15s;
-}
-.btn-secondary:hover { border-color: var(--teal); color: var(--text); }
-.hero-note { margin-top: 22px; font-size: 15px; color: var(--text-dim); font-family: var(--font-mono); }
-/* step field visual */
-.steps-svg { position: absolute; opacity: 0.35; }
-/* ---------- Section shared ---------- */
-section { padding: 72px 0; }
-.section-head { max-width: 620px; margin-bottom: 44px; }
-.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-.kicker {
-font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em;
-text-transform: uppercase; color: var(--teal); margin-bottom: 14px;
-}
-h2 {
-font-family: var(--font-display); font-weight: 600;
-font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.015em; color: #fff;
-}
-.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
-/* ---------- Interactive Calculator ---------- */
-.calc-section { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
-.calc-card { max-width: 880px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; position: relative; overflow: hidden; }
-.calc-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 500px 260px at 20% 0%, rgba(34,197,139,0.10), transparent); pointer-events: none; }
-.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; position: relative; }
-@media (max-width: 760px) { .calc-grid { grid-template-columns: 1fr; gap: 32px; } }
-.calc-controls { display: flex; flex-direction: column; gap: 30px; }
-.calc-field label { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px; }
-.calc-field .calc-value { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--teal-bright); text-transform: none; letter-spacing: 0; }
-.calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 100px; background: var(--border); outline: none; cursor: pointer; }
-.calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--teal); border: 3px solid #06231a; box-shadow: 0 0 0 3px rgba(34,197,139,0.3); cursor: pointer; transition: transform 0.15s; }
-.calc-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
-.calc-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--teal); border: 3px solid #06231a; box-shadow: 0 0 0 3px rgba(34,197,139,0.3); cursor: pointer; }
-.calc-range-labels { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); margin-top: 8px; }
-.calc-results { display: flex; flex-direction: column; }
-.calc-result-main { text-align: center; }
-.calc-result-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-.calc-result-value { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 42px); color: #fff; letter-spacing: -0.01em; }
-.calc-breakdown { display: flex; gap: 16px; margin-top: 20px; }
-.calc-breakdown-item { flex: 1; background: var(--bg-2); border: 1px solid var(--border-soft); border-radius: 10px; padding: 14px 16px; }
-.calc-breakdown-item .bd-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
-.calc-breakdown-item .bd-value { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: var(--text); }
-.calc-breakdown-item.growth .bd-value { color: var(--teal-bright); }
-.calc-chart { width: 100%; height: auto; margin-top: 20px; }
-.calc-chart .line-deposited { fill: none; stroke: var(--text-muted); stroke-width: 2; stroke-dasharray: 4 4; }
-.calc-chart .line-value { fill: none; stroke: var(--teal-bright); stroke-width: 2.5; }
-.calc-chart .area-growth { fill: rgba(34,197,139,0.12); }
-.calc-chart-legend { display: flex; gap: 20px; margin-top: 10px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); }
-.calc-chart-legend span { display: flex; align-items: center; gap: 6px; }
-.calc-chart-legend .dot { width: 8px; height: 8px; border-radius: 50%; }
-.calc-disclaimer { font-size: 12.5px; color: var(--text-muted); margin-top: 18px; line-height: 1.5; }
-.calc-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 13px 22px; border-radius: 10px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; align-self: center; }
-.calc-cta:hover { background: var(--teal-bright); transform: translateY(-2px); }
+    ]
+  }
+  </script>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3SFS38ZZL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V3SFS38ZZL');
+  </script>
 
-.problem { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
-.problem-grid {
-display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: 14px; overflow: hidden;
-}
-.problem-card { background: var(--card); padding: 30px 26px; }
-.problem-card p.line {
-font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--text);
-line-height: 1.4;
-}
-@media (max-width: 760px) { .problem-grid { grid-template-columns: 1fr; } }
-.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
-.why-card { text-align: center; padding: 8px 12px; }
-.why-icon {
-width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 18px;
-background: var(--teal-dim); color: var(--teal-bright);
-display: flex; align-items: center; justify-content: center;
-}
-.why-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-.why-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; }
-@media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; } }
-.demo { background: var(--bg-2); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
-.screenshot-frame {
-background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-overflow: hidden; margin: 0 auto;
-}
-.screenshot-topbar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
-.screenshot-topbar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
-.screenshot-frame img { display: block; width: 100%; height: auto; }
-.gallery-caption { padding: 14px 16px 16px; font-size: 13.5px; color: var(--text-dim); }
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr; } }
-.quick-faq { background: var(--bg-2); border-top: 1px solid var(--border-soft); }
-.quick-faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
-.quick-faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
-.quick-faq-item h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-.quick-faq-item p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-@media (max-width: 640px) { .quick-faq-grid { grid-template-columns: 1fr; } }
-/* ---------- How it works (signature: literal steps) ---------- */
-.how { position: relative; }
-.step-path { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
-.step-row {
-display: grid; grid-template-columns: 56px 1fr; gap: 24px;
-padding: 28px 0; cursor: pointer; border-radius: 12px; transition: background 0.2s;
-}
-.step-row:hover, .step-row.is-active { background: rgba(34,197,139,0.05); }
-.step-row.is-active .step-marker { background: var(--teal); color: #06231a; border-color: var(--teal); transform: scale(1.08); }
-.step-row:not(:last-child) { border-bottom: 1px dashed var(--border); }
-.step-marker {
-width: 44px; height: 44px; border-radius: 10px;
-background: var(--card); border: 1px solid var(--border);
-display: flex; align-items: center; justify-content: center;
-font-family: var(--font-mono); font-size: 15px; color: var(--teal-bright);
-align-self: start;
-}
-.step-row:nth-child(1) .step-marker,
-.step-row:nth-child(2) .step-marker,
-.step-row:nth-child(3) .step-marker { transform: translateY(0); }
-.step-row:nth-child(1) { padding-left: 0; }
-.step-row:nth-child(2) { padding-left: 20px; }
-.step-row:nth-child(3) { padding-left: 40px; }
-.step-content h3 {
-font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px;
-}
-.step-content p { color: var(--text-dim); font-size: 15.5px; max-width: 480px; }
-.topic-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.topic-chips span { font-family: var(--font-mono); font-size: 12px; color: var(--teal-bright); background: var(--teal-dim); border: 1px solid rgba(34,197,139,0.25); border-radius: 100px; padding: 5px 12px; }
-@media (max-width: 640px) {
-.step-row:nth-child(1), .step-row:nth-child(2), .step-row:nth-child(3) { padding-left: 0; }
-}
-/* ---------- Features ---------- */
-.features { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
-.feature-grid {
-display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-}
-.feature-card {
-position: relative;
-background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-padding: 28px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
-overflow: hidden;
-}
-.feature-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 0 40px -12px rgba(34,197,139,0.35); }
-.feature-card::before {
-content: ""; position: absolute; inset: 0; border-radius: 14px; pointer-events: none;
-background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(34,197,139,0.14), transparent 70%);
-opacity: 0; transition: opacity 0.25s;
-}
-.feature-card:hover::before { opacity: 1; }
-[data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
-.feature-icon {
-width: 38px; height: 38px; border-radius: 9px;
-background: var(--teal-dim); color: var(--teal-bright);
-display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
-}
-.feature-card h3 { font-family: var(--font-display); font-size: 17.5px; font-weight: 600; margin-bottom: 8px; }
-.feature-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-.feature-card p { color: var(--text-dim); font-size: 14.5px; }
-@media (max-width: 720px) { .feature-grid { grid-template-columns: 1fr; } }
-/* ---------- Not-a-chatbot / mission ---------- */
-.mission {
-position: relative;
-border-top: 1px solid var(--border-soft);
-}
-.mission-inner {
-max-width: 780px; margin: 0 auto; text-align: center;
-}
-.mission blockquote {
-font-family: var(--font-display); font-weight: 500;
-font-size: clamp(22px, 3.2vw, 30px); line-height: 1.4; color: var(--text);
-letter-spacing: -0.01em;
-}
-.mission blockquote .hl { color: var(--teal-bright); }
-.compare-row {
-display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: stretch;
-margin-top: 52px; max-width: 620px; margin-left: auto; margin-right: auto;
-}
-.compare-col { text-align: left; }
-.compare-col.tool .compare-label { color: var(--text-muted); }
-.compare-col.path .compare-label { color: var(--teal-bright); }
-.compare-label { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
-.compare-col ul { list-style: none; }
-.compare-col li { font-size: 14.5px; color: var(--text-dim); padding: 6px 0 6px 20px; position: relative; }
-.compare-col li::before { content: "•"; position: absolute; left: 2px; color: var(--text-muted); }
-.compare-col.path li::before { color: var(--teal-bright); }
-.compare-vs { display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 20px; font-weight: 700; color: var(--text); }
-@media (max-width: 620px) { .compare-row { grid-template-columns: 1fr; } .compare-vs { display: none; } }
-/* ---------- Trust / compliance strip ---------- */
-.trust-strip {
-border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
-background: var(--bg-2);
-padding: 26px 0;
-}
-.trust-row {
-display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
-font-family: var(--font-mono); font-size: 15px; color: var(--text-dim);
-}
-.trust-row span { display: flex; align-items: center; gap: 8px; }
-.trust-row svg { flex-shrink: 0; color: var(--teal); }
-/* ---------- Story ---------- */
-.story-card {
-max-width: 720px; margin: 0 auto;
-background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-padding: 44px;
-}
-.story-card p { font-size: 17px; color: var(--text-dim); line-height: 1.75; }
-.story-card p + p { margin-top: 16px; }
-.story-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--teal-bright); }
-/* ---------- Final CTA ---------- */
-.final-cta {
-border-top: 1px solid var(--border-soft);
-text-align: center;
-}
-.final-cta h2 { max-width: 600px; margin: 0 auto; }
-.final-cta .section-sub { max-width: 480px; margin-left: auto; margin-right: auto; }
-.final-cta .hero-ctas { margin-top: 36px; }
-/* ---------- Footer ---------- */
-footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
-footer:hover { opacity: 1; }
-.footer-row {
-display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-font-size: 13.5px; color: var(--text-muted);
-}
-.footer-links { display: flex; gap: 24px; }
-.footer-links a:hover { color: var(--text-dim); }
-.footer-social { display: flex; align-items: center; gap: 14px; }
-.footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
-.footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
-</style>
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Organization",
-"name": "SteadFolio",
-"url": "https://steadfolio.eu/",
-"logo": "https://steadfolio.eu/steadfolio-icon-1080.png",
-"description": "SteadFolio is a guided investment education platform with an AI coach, Sofia, real portfolio tracking, goal check-ins, a budget calculator, and a watchlist. Educational only - not financial advice, no product recommendations.",
-"sameAs": [
-"https://www.instagram.com/steadfolio/",
-"https://www.facebook.com/profile.php?id=61592617561199",
-"https://www.linkedin.com/company/steadfolio"
-]
-}
-</script>
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "WebApplication",
-"name": "SteadFolio",
-"applicationCategory": "EducationalApplication",
-"operatingSystem": "Web",
-"description": "An AI-guided investment education app for beginners. Track real portfolio holdings, set and check in on financial goals, calculate your budget, maintain a watchlist, and get XIRR and portfolio audit analysis - alongside structured lessons from Sofia, the AI coach. Never gives specific financial advice or product recommendations.",
-"offers": {
-"@type": "Offer",
-"price": "0",
-"priceCurrency": "EUR"
-},
-"url": "https://steadfolio.eu/"
-}
-</script>
-<meta name="msvalidate.01" content="742C981593A83CFE24CD04C580BF4ED2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" href="favicon-64.png">
+
+  <style>
+  :root {
+  --bg: #070b10;
+  --bg-2: #090f16;
+  --card: #0d1620;
+  --card-hover: #101c28;
+  --border: #1c2b3a;
+  --border-soft: #142330;
+  --teal: #22c58b;
+  --teal-bright: #34d399;
+  --teal-dim: #17442f;
+  --text: #eef4f1;
+  --text-dim: #9fb3ad;
+  --text-muted: #56685f;
+  --danger: #e8607a;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image:
+  radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
+  radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible {
+  outline: 2px solid var(--teal-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+  header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(7,11,16,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-soft);
+  transition: background 0.25s, border-color 0.25s;
+  }
+  header.is-scrolled {
+  background: rgba(7,11,16,0.94);
+  border-bottom-color: var(--border);
+  }
+  nav.wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+  }
+  @media (max-width: 960px) { .wrap { padding: 0 20px; } }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; white-space: nowrap; }
+  .brand-mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+  .hero-visual { max-width: 640px; margin: 44px auto 0; }
+  .hero-visual .screenshot-frame { max-width: 100%; }
+  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--text-dim); }
+  .nav-links a { transition: color 0.15s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+  padding: 10px 20px; border-radius: 8px;
+  background: var(--teal); color: #06231a;
+  font-weight: 600; font-size: 14.5px;
+  transition: background 0.15s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+  .nav-mobile-hide { display: flex; }
+  @media (max-width: 960px) { .nav-mobile-hide { display: none; } }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+  .nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 960px) { .nav-toggle { display: flex; } }
+  .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { color: var(--text); }
+  .hero {
+  padding: 92px 0 76px;
+  position: relative;
+  }
+  .step-field {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+  overflow: hidden;
+  }
+  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; text-align: center; }
+  .eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 13.5px; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--teal-bright);
+  background: rgba(34,197,139,0.16); border: 1px solid rgba(34,197,139,0.55);
+  box-shadow: 0 0 24px -6px rgba(34,197,139,0.45);
+  padding: 99px 18px; border-radius: 100px;
+  margin-bottom: 28px;
+  }
+  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px var(--teal-bright); }
+  h1 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(38px, 6vw, 60px); line-height: 1.08; letter-spacing: -0.02em;
+  color: #fff;
+  }
+  h1 .accent { color: var(--teal-bright); }
+  .hero-sub {
+  margin: 26px auto 0; max-width: 560px;
+  font-size: 18px; color: var(--text-dim);
+  }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+  .btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal); color: #06231a;
+  font-weight: 600; font-size: 15.5px;
+  padding: 15px 26px; border-radius: 10px;
+  transition: background 0.15s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text-dim); font-weight: 500; font-size: 15.5px;
+  padding: 15px 20px; border-radius: 10px; border: 1px solid var(--border);
+  transition: border-color 0.15s, color 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--text); }
+  .hero-note { margin-top: 22px; font-size: 15px; color: var(--text-dim); font-family: var(--font-mono); }
+  .steps-svg { position: absolute; opacity: 0.35; }
+  section { padding: 72px 0; }
+  .section-head { max-width: 620px; margin-bottom: 44px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .kicker {
+  font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 14px;
+  }
+  h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.015em; color: #fff;
+  }
+  .section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
+  .calc-section { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
+  .calc-card { max-width: 880px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; position: relative; overflow: hidden; }
+  .calc-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 500px 260px at 20% 0%, rgba(34,197,139,0.10), transparent); pointer-events: none; }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; position: relative; }
+  @media (max-width: 760px) { .calc-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .calc-controls { display: flex; flex-direction: column; gap: 30px; }
+  .calc-field label { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px; }
+  .calc-field .calc-value { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--teal-bright); text-transform: none; letter-spacing: 0; }
+  .calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 100px; background: var(--border); outline: none; cursor: pointer; }
+  .calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--teal); border: 3px solid #06231a; box-shadow: 0 0 0 3px rgba(34,197,139,0.3); cursor: pointer; transition: transform 0.15s; }
+  .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+  .calc-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--teal); border: 3px solid #06231a; box-shadow: 0 0 0 3px rgba(34,197,139,0.3); cursor: pointer; }
+  .calc-range-labels { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); margin-top: 8px; }
+  .calc-results { display: flex; flex-direction: column; }
+  .calc-result-main { text-align: center; }
+  .calc-result-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .calc-result-value { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 42px); color: #fff; letter-spacing: -0.01em; }
+  .calc-breakdown { display: flex; gap: 16px; margin-top: 20px; }
+  .calc-breakdown-item { flex: 1; background: var(--bg-2); border: 1px solid var(--border-soft); border-radius: 10px; padding: 14px 16px; }
+  .calc-breakdown-item .bd-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+  .calc-breakdown-item .bd-value { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: var(--text); }
+  .calc-breakdown-item.growth .bd-value { color: var(--teal-bright); }
+  .calc-chart { width: 100%; height: auto; margin-top: 20px; }
+  .calc-chart .line-deposited { fill: none; stroke: var(--text-muted); stroke-width: 2; stroke-dasharray: 4 4; }
+  .calc-chart .line-value { fill: none; stroke: var(--teal-bright); stroke-width: 2.5; }
+  .calc-chart .area-growth { fill: rgba(34,197,139,0.12); }
+  .calc-chart-legend { display: flex; gap: 20px; margin-top: 10px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); }
+  .calc-chart-legend span { display: flex; align-items: center; gap: 6px; }
+  .calc-chart-legend .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .calc-disclaimer { font-size: 12.5px; color: var(--text-muted); margin-top: 18px; line-height: 1.5; }
+  .calc-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 13px 22px; border-radius: 10px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; align-self: center; }
+  .calc-cta:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .problem { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
+  .problem-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: 14px; overflow: hidden;
+  }
+  .problem-card { background: var(--card); padding: 30px 26px; }
+  .problem-card p.line {
+  font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--text);
+  line-height: 1.4;
+  }
+  @media (max-width: 760px) { .problem-grid { grid-template-columns: 1fr; } }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
+  .why-card { text-align: center; padding: 8px 12px; }
+  .why-icon {
+  width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 18px;
+  background: var(--teal-dim); color: var(--teal-bright);
+  display: flex; align-items: center; justify-content: center;
+  }
+  .why-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .why-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; }
+  @media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; } }
+  .demo { background: var(--bg-2); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+  .screenshot-frame {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  overflow: hidden; margin: 0 auto;
+  }
+  .screenshot-topbar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
+  .screenshot-topbar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+  .screenshot-frame img { display: block; width: 100%; height: auto; }
+  .gallery-caption { padding: 14px 16px 16px; font-size: 13.5px; color: var(--text-dim); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr; } }
+  .quick-faq { background: var(--bg-2); border-top: 1px solid var(--border-soft); }
+  .quick-faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
+  .quick-faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
+  .quick-faq-item h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .quick-faq-item p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+  @media (max-width: 640px) { .quick-faq-grid { grid-template-columns: 1fr; } }
+  .how { position: relative; }
+  .step-path { display: flex; flex-direction: column; gap: 0; max-width: 720px; margin: 0 auto; }
+  .step-row {
+  display: grid; grid-template-columns: 56px 1fr; gap: 24px;
+  padding: 28px 0; cursor: pointer; border-radius: 12px; transition: background 0.2s;
+  }
+  .step-row:hover, .step-row.is-active { background: rgba(34,197,139,0.05); }
+  .step-row.is-active .step-marker { background: var(--teal); color: #06231a; border-color: var(--teal); transform: scale(1.08); }
+  .step-row:not(:last-child) { border-bottom: 1px dashed var(--border); }
+  .step-marker {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--card); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 15px; color: var(--teal-bright);
+  align-self: start;
+  }
+  .step-row:nth-child(1) .step-marker,
+  .step-row:nth-child(2) .step-marker,
+  .step-row:nth-child(3) .step-marker { transform: translateY(0); }
+  .step-row:nth-child(1) { padding-left: 0; }
+  .step-row:nth-child(2) { padding-left: 20px; }
+  .step-row:nth-child(3) { padding-left: 40px; }
+  .step-content h3 {
+  font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px;
+  }
+  .step-content p { color: var(--text-dim); font-size: 15.5px; max-width: 480px; }
+  .topic-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .topic-chips span { font-family: var(--font-mono); font-size: 12px; color: var(--teal-bright); background: var(--teal-dim); border: 1px solid rgba(34,197,139,0.25); border-radius: 100px; padding: 5px 12px; }
+  @media (max-width: 640px) {
+  .step-row:nth-child(1), .step-row:nth-child(2), .step-row:nth-child(3) { padding-left: 0; }
+  }
+  .features { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
+  .feature-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  }
+  .feature-card {
+  position: relative;
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 28px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
+  overflow: hidden;
+  }
+  .feature-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 0 40px -12px rgba(34,197,139,0.35); }
+  .feature-card::before {
+  content: ""; position: absolute; inset: 0; border-radius: 14px; pointer-events: none;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(34,197,139,0.14), transparent 70%);
+  opacity: 0; transition: opacity 0.25s;
+  }
+  .feature-card:hover::before { opacity: 1; }
+  [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
+  .feature-icon {
+  width: 38px; height: 38px; border-radius: 9px;
+  background: var(--teal-dim); color: var(--teal-bright);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .feature-card h3 { font-family: var(--font-display); font-size: 17.5px; font-weight: 600; margin-bottom: 8px; }
+  .feature-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .feature-card p { color: var(--text-dim); font-size: 14.5px; }
+  @media (max-width: 720px) { .feature-grid { grid-template-columns: 1fr; } }
+  .mission {
+  position: relative;
+  border-top: 1px solid var(--border-soft);
+  }
+  .mission-inner {
+  max-width: 780px; margin: 0 auto; text-align: center;
+  }
+  .mission blockquote {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(22px, 3.2vw, 30px); line-height: 1.4; color: var(--text);
+  letter-spacing: -0.01em;
+  }
+  .mission blockquote .hl { color: var(--teal-bright); }
+  .compare-row {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: stretch;
+  margin-top: 52px; max-width: 620px; margin-left: auto; margin-right: auto;
+  }
+  .compare-col { text-align: left; }
+  .compare-col.tool .compare-label { color: var(--text-muted); }
+  .compare-col.path .compare-label { color: var(--teal-bright); }
+  .compare-label { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .compare-col ul { list-style: none; }
+  .compare-col li { font-size: 14.5px; color: var(--text-dim); padding: 6px 0 6px 20px; position: relative; }
+  .compare-col li::before { content: "•"; position: absolute; left: 2px; color: var(--text-muted); }
+  .compare-col.path li::before { color: var(--teal-bright); }
+  .compare-vs { display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 20px; font-weight: 700; color: var(--text); }
+  @media (max-width: 620px) { .compare-row { grid-template-columns: 1fr; } .compare-vs { display: none; } }
+  .trust-strip {
+  border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-2);
+  padding: 26px 0;
+  }
+  .trust-row {
+  display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 15px; color: var(--text-dim);
+  }
+  .trust-row span { display: flex; align-items: center; gap: 8px; }
+  .trust-row svg { flex-shrink: 0; color: var(--teal); }
+  .story-card {
+  max-width: 720px; margin: 0 auto;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 44px;
+  }
+  .story-card p { font-size: 17px; color: var(--text-dim); line-height: 1.75; }
+  .story-card p + p { margin-top: 16px; }
+  .story-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--teal-bright); }
+  .final-cta {
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+  }
+  .final-cta h2 { max-width: 600px; margin: 0 auto; }
+  .final-cta .section-sub { max-width: 480px; margin-left: auto; margin-right: auto; }
+  .final-cta .hero-ctas { margin-top: 36px; }
+  footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+  footer:hover { opacity: 1; }
+  .footer-row {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  font-size: 13.5px; color: var(--text-muted);
+  }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a:hover { color: var(--text-dim); }
+  .footer-social { display: flex; align-items: center; gap: 14px; }
+  .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
+  .footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+  </style>
 </head>
 <body>
 <header>
@@ -628,446 +589,8 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 </div>
 </div>
-<div class="step-row">
-<div class="step-marker">3</div>
-<div class="step-content">
-<h3>Practice with real tools, safely</h3>
-<p>ETF evaluator, DCA simulator, and historical scenarios - so you understand how markets actually behave before real money is involved.</p>
-</div>
-</div>
 </div>
 </div>
 </section>
-
-<section class="gallery">
-<div class="wrap">
-<div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">More than a chat window</div>
-<h2>Real tools, not just answers</h2>
-</div>
-<div class="gallery-grid">
-<div class="screenshot-frame">
-<div class="screenshot-topbar"><span></span><span></span><span></span></div>
-<img src="screenshots/screenshot-dca-simulator.png" alt="DCA and Compounding Simulator showing growth over 15 years" loading="lazy">
-<p class="gallery-caption">Watch how consistent small investments compound over time</p>
-</div>
-<div class="screenshot-frame">
-<div class="screenshot-topbar"><span></span><span></span><span></span></div>
-<img src="screenshots/screenshot-historical-scenario.png" alt="Historical Scenario Challenge simulating the 2008 financial crisis" loading="lazy">
-<p class="gallery-caption">Practice staying calm through real historical market crises</p>
-</div>
-<div class="screenshot-frame">
-<div class="screenshot-topbar"><span></span><span></span><span></span></div>
-<img src="screenshots/screenshot-etf-evaluator.png" alt="ETF Evaluator showing a real portfolio with holdings, gains, and weight breakdown" loading="lazy">
-<p class="gallery-caption">Evaluate your own holdings with real numbers, right inside the app</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="features" id="features">
-<div class="wrap">
-<div class="section-head">
-<div class="kicker">What's inside</div>
-<h2>Built for learning, not for trading</h2>
-<p class="section-sub">Every part of SteadFolio is designed around one job: helping you actually understand investing, at your own pace.</p>
-</div>
-<div class="feature-grid">
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
-</div>
-<span class="feature-tag">Historical Data</span>
-<h3>See how markets really moved</h3>
-<p>Explore long-term index performance to understand real market behavior - not headlines or hype.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-</div>
-<span class="feature-tag">DCA Simulator</span>
-<h3>Watch small amounts grow over time</h3>
-<p>See how investing a little, regularly, plays out over time with real historical scenarios, risk-free.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
-</div>
-<span class="feature-tag">Portfolio Simulator</span>
-<h3>Test your ideas before risking real money</h3>
-<p>Build and stress-test a hypothetical portfolio before ever putting in real money.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11z"/></svg>
-</div>
-<span class="feature-tag">Panic Mode</span>
-<h3>Stay calm when the market drops</h3>
-<p>When markets drop and fear kicks in, get calm, factual context instead of doom-scrolling.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 2v10l7 7"/></svg>
-</div>
-<span class="feature-tag">Portfolio Tracking</span>
-<h3>Track your real holdings</h3>
-<p>Add your actual ETFs and stocks, and see your real portfolio value, allocation, and performance - not just simulations.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
-</div>
-<span class="feature-tag">Named Goals</span>
-<h3>Set a goal, track it monthly</h3>
-<p>Name a real goal - a house, retirement, anything - and log simple monthly check-ins to see if you're on track.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 012-2h11a2 2 0 012 2v2h2a1 1 0 011 1v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><circle cx="16" cy="13" r="1.3" fill="currentColor"/></svg>
-</div>
-<span class="feature-tag">Budget Calculator</span>
-<h3>Know what you can actually invest</h3>
-<p>See how much of your income you can realistically invest, using established budgeting rules like 50/30/20.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-</div>
-<span class="feature-tag">Watchlist</span>
-<h3>Keep an eye on what you're considering</h3>
-<p>Track ETFs or stocks you're thinking about, without committing to them yet.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
-</div>
-<span class="feature-tag">Portfolio Audit &amp; XIRR</span>
-<h3>Understand your real numbers</h3>
-<p>See your true annualized return (XIRR) and a full audit of your diversification and risk concentration.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg>
-</div>
-<span class="feature-tag">What-If Analysis</span>
-<h3>See what you could have done differently</h3>
-<p>Compare your actual results to what would have happened if you'd invested in a simple benchmark index instead.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1 3 3 6 3s6-2 6-3v-4.5"/></svg>
-</div>
-<span class="feature-tag">Financial Literacy Assessment</span>
-<h3>Know what you actually know</h3>
-<p>Quick assessments show your real knowledge level across topics, so lessons can meet you where you are.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
-</div>
-<span class="feature-tag">Progress &amp; Streaks</span>
-<h3>Build a real habit, not just a course</h3>
-<p>Track your learning streak and progress across every topic - investing understanding compounds too.</p>
-</div>
-<div class="feature-card" data-reveal style="grid-column: 1 / -1;">
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-</div>
-<span class="feature-tag">Market Structure</span>
-<h3>Understand what's really happening</h3>
-<p>Sofia also teaches you how the market actually works under the surface - like how large players interact with order flow - so you understand what's really happening, not just the headlines.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="mission" id="mission">
-<div class="wrap mission-inner">
-<div class="kicker" style="text-align:center;">Why not use a general AI tool?</div>
-<blockquote>General-purpose AI tools know everything - except <span class="hl">you</span>. SteadFolio is built for one purpose only: to take you, step by step and safely, from fear to real understanding.</blockquote>
-<div class="compare-row">
-<div class="compare-col tool">
-<div class="compare-label">General AI Tools</div>
-<ul>
-<li>You have to know what to ask</li>
-<li>No memory of your progress</li>
-<li>No built-in guardrails</li>
-<li>Blank text box, every time</li>
-</ul>
-</div>
-<div class="compare-vs">vs</div>
-<div class="compare-col path">
-<div class="compare-label">SteadFolio</div>
-<ul>
-<li>A structured path, start to finish</li>
-<li>Remembers who you are</li>
-<li>Built for safety, not sales</li>
-<li>Always a clear next step</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-
-<section class="quick-faq">
-<div class="wrap">
-<div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">Quick answers</div>
-<h2>The questions everyone asks first</h2>
-</div>
-<div class="quick-faq-grid">
-<div class="quick-faq-item" data-reveal>
-<h3>Can I start with €50?</h3>
-<p>Yes - most brokers allow fractional shares today, so there's no real minimum that locks you out.</p>
-</div>
-<div class="quick-faq-item" data-reveal>
-<h3>Can I lose money?</h3>
-<p>Yes, values can go up and down - which is exactly why SteadFolio starts with education before real money is involved.</p>
-</div>
-<div class="quick-faq-item" data-reveal>
-<h3>Is investing better than a savings account?</h3>
-<p>Over the long term, investing gives your money a better chance to outpace inflation - though it comes with more short-term ups and downs.</p>
-</div>
-<div class="quick-faq-item" data-reveal>
-<h3>Do I need to know what an ETF is first?</h3>
-<p>No - Sofia explains it in plain language the moment it's relevant, right when you need it.</p>
-</div>
-</div>
-<div style="text-align:center; margin-top:32px;">
-<a href="faq.html" class="btn-secondary">See all FAQs →</a>
-</div>
-</div>
-</section>
-
-<section class="featured-guides">
-<div class="wrap">
-<div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">Featured Guides</div>
-<h2>Start with these two</h2>
-</div>
-<div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; max-width:760px; margin:0 auto;">
-<a href="blog-how-to-evaluate-etf.html" class="btn-secondary">How to Evaluate an ETF →</a>
-<a href="blog-what-is-index-fund.html" class="btn-secondary">What Is an Index Fund? →</a>
-</div>
-</div>
-</section>
-
-<div class="trust-strip">
-<div class="wrap trust-row">
-<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
-<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
-<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
-</div>
-</div>
-
-<section class="story">
-<div class="wrap">
-<div class="story-card">
-<p>SteadFolio started from a simple, personal frustration: everywhere I looked for a place to learn investing, I found either oversimplified social media advice or dense, jargon-heavy content that assumed I already knew the basics.</p>
-<p>There wasn't a middle ground - something that met me where I actually was, went at my pace, and never made me feel behind. So I built the one I wished existed.</p>
-<p class="story-sign">- Built by people, for people who felt lost investing, too.</p>
-</div>
-</div>
-</section>
-
-<section class="final-cta">
-<div class="wrap">
-<h2>Your first step doesn't have to be a big one.</h2>
-<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
-<div class="hero-ctas">
-<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
-</div>
-</div>
-</section>
-
-<footer>
-<div class="wrap footer-row">
-<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
-<div class="footer-social">
-<a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
-</a>
-<a href="https://www.instagram.com/steadfolio/" target="_blank" rel="noopener" aria-label="SteadFolio on Instagram">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-</a>
-<a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
-</a>
-</div>
-<div class="footer-links">
-<a href="#how">How it works</a>
-<a href="#features">Features</a>
-<a href="pricing.html">Pricing</a>
-<a href="blog.html">Blog</a>
-<a href="about.html">About</a>
-<a href="faq.html">FAQ</a>
-<a href="terms.html">Terms</a>
-<a href="privacy.html">Privacy</a>
-</div>
-</div>
-</footer>
-
-<script>
-(function () {
-var toggle = document.getElementById('navToggle');
-var panel = document.getElementById('mobileNav');
-if (!toggle || !panel) return;
-toggle.addEventListener('click', function () {
-var isOpen = panel.classList.toggle('open');
-toggle.classList.toggle('active', isOpen);
-toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-panel.querySelectorAll('a').forEach(function (a) {
-a.addEventListener('click', function () {
-panel.classList.remove('open');
-toggle.classList.remove('active');
-toggle.setAttribute('aria-expanded', 'false');
-});
-});
-})();
-
-// Scroll-triggered fade-in-up reveal
-(function () {
-var items = document.querySelectorAll('[data-reveal]');
-if (!items.length) return;
-if (!('IntersectionObserver' in window)) {
-items.forEach(function (el) { el.classList.add('is-visible'); });
-return;
-}
-var observer = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting) {
-entry.target.classList.add('is-visible');
-observer.unobserve(entry.target);
-}
-});
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-items.forEach(function (el, i) {
-el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
-observer.observe(el);
-});
-})();
-
-// Header darkens slightly on scroll
-(function () {
-var header = document.querySelector('header');
-if (!header) return;
-function onScroll() {
-header.classList.toggle('is-scrolled', window.scrollY > 8);
-}
-onScroll();
-window.addEventListener('scroll', onScroll, { passive: true });
-})();
-
-// Pointer-tracked glow on feature cards
-(function () {
-var cards = document.querySelectorAll('.feature-card');
-cards.forEach(function (card) {
-card.addEventListener('mousemove', function (e) {
-var rect = card.getBoundingClientRect();
-card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
-});
-});
-})();
-// Interactive step highlighting in How It Works
-(function () {
-var rows = document.querySelectorAll('.step-row');
-if (!rows.length) return;
-rows.forEach(function (row) {
-row.addEventListener('click', function () {
-rows.forEach(function (r) { r.classList.remove('is-active'); });
-row.classList.add('is-active');
-});
-});
-})();
-
-// Interactive DCA calculator (client-side only, no backend calls)
-(function () {
-var monthlySlider = document.getElementById('calcMonthly');
-var yearsSlider = document.getElementById('calcYears');
-if (!monthlySlider || !yearsSlider) return;
-
-var monthlyLabel = document.getElementById('calcMonthlyLabel');
-var yearsLabel = document.getElementById('calcYearsLabel');
-var futureValueEl = document.getElementById('calcFutureValue');
-var depositedEl = document.getElementById('calcDeposited');
-var growthEl = document.getElementById('calcGrowth');
-var chartEl = document.getElementById('calcChart');
-
-function calculateDCA(monthlyAmount, years, annualRate) {
-annualRate = annualRate || 0.08;
-var monthlyRate = annualRate / 12;
-var months = years * 12;
-var futureValue = monthlyAmount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
-var totalDeposited = monthlyAmount * months;
-var growthFromCompounding = futureValue - totalDeposited;
-return { futureValue: futureValue, totalDeposited: totalDeposited, growthFromCompounding: growthFromCompounding };
-}
-
-function formatEUR(num) {
-return '€' + Math.round(num).toLocaleString('en-US');
-}
-
-function buildSeries(monthlyAmount, years, annualRate) {
-var monthlyRate = annualRate / 12;
-var totalMonths = years * 12;
-var points = [];
-var steps = 24; // resolution of the chart
-for (var i = 0; i <= steps; i++) {
-var m = Math.round((totalMonths / steps) * i);
-var value = m === 0 ? 0 : monthlyAmount * ((Math.pow(1 + monthlyRate, m) - 1) / monthlyRate);
-var deposited = monthlyAmount * m;
-points.push({ value: value, deposited: deposited });
-}
-return points;
-}
-
-function drawChart(points) {
-var maxVal = Math.max.apply(null, points.map(function (p) { return p.value; })) || 1;
-var w = 400, h = 140, pad = 6;
-var n = points.length - 1;
-function x(i) { return pad + (i / n) * (w - pad * 2); }
-function y(val) { return h - pad - (val / maxVal) * (h - pad * 2); }
-
-var valuePath = '';
-var depositedPath = '';
-points.forEach(function (p, i) {
-var cmd = i === 0 ? 'M' : 'L';
-valuePath += cmd + x(i).toFixed(1) + ',' + y(p.value).toFixed(1) + ' ';
-depositedPath += cmd + x(i).toFixed(1) + ',' + y(p.deposited).toFixed(1) + ' ';
-});
-
-var areaPath = 'M' + x(0) + ',' + y(points[0].value) + ' ';
-points.forEach(function (p, i) { areaPath += 'L' + x(i).toFixed(1) + ',' + y(p.value).toFixed(1) + ' '; });
-for (var i = n; i >= 0; i--) { areaPath += 'L' + x(i).toFixed(1) + ',' + y(points[i].deposited).toFixed(1) + ' '; }
-areaPath += 'Z';
-
-chartEl.innerHTML =
-'<path class="area-growth" d="' + areaPath + '"></path>' +
-'<path class="line-deposited" d="' + depositedPath.trim() + '"></path>' +
-'<path class="line-value" d="' + valuePath.trim() + '"></path>';
-}
-
-function update() {
-var monthly = parseInt(monthlySlider.value, 10);
-var years = parseInt(yearsSlider.value, 10);
-
-monthlyLabel.textContent = formatEUR(monthly);
-yearsLabel.textContent = years + (years === 1 ? ' year' : ' years');
-
-var result = calculateDCA(monthly, years, 0.08);
-futureValueEl.textContent = formatEUR(result.futureValue);
-depositedEl.textContent = formatEUR(result.totalDeposited);
-growthEl.textContent = formatEUR(result.growthFromCompounding);
-
-drawChart(buildSeries(monthly, years, 0.08));
-}
-
-monthlySlider.addEventListener('input', update);
-yearsSlider.addEventListener('input', update);
-update();
-})();
-</script>
 </body>
 </html>
