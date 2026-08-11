@@ -89,6 +89,8 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 
 .broker-card li { padding: 3px 0; }
 .broker-card .compare-btn { display: block; width: 100%; text-align: center; font-size: 13px; padding: 9px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text); font-family: var(--font-body); cursor: pointer; appearance: none; -webkit-appearance: none; transition: border-color 0.15s, background 0.15s, color 0.15s; }
 .broker-card .compare-btn:hover { border-color: var(--teal); }
+.broker-card .review-link { display: block; text-align: center; font-size: 13px; padding: 9px; border-radius: 8px; color: var(--teal-bright); margin-bottom: 8px; transition: color 0.15s; }
+.broker-card .review-link:hover { color: var(--teal); }
 
 /* Table */
 /* Compare panel - opens once brokers are selected, universal for all screen sizes */
@@ -294,7 +296,8 @@ var brokers = [
     cardFeatures: ["Stock/ETF commission: €0", "FX fee: 0.15%", "Fractional shares: Yes", "AutoInvest (Pies): Yes"],
     tags: ["etf", "small", "fractional", "auto", "lowfee", "lowfx", "mobile", "beginner"],
     sourceName: "Trading 212 Help Centre - official fee schedule",
-    sourceUrl: "https://helpcentre.trading212.com/hc/en-us/articles/11471996799517-What-are-the-fees-in-the-Invest-ISAs-and-SIPP"
+    sourceUrl: "https://helpcentre.trading212.com/hc/en-us/articles/11471996799517-What-are-the-fees-in-the-Invest-ISAs-and-SIPP",
+    reviewUrl: "brokers/trading-212.html"
   },
   {
     id: "traderepublic", name: "Trade Republic",
@@ -339,7 +342,8 @@ var brokers = [
     cardFeatures: ["Core Selection ETFs: €1/trade", "Other ETFs: €3/trade", "No custody or inactivity fee", "No fractional shares"],
     tags: ["etf", "lowfee"],
     sourceName: "DEGIRO - official fee schedule (degiro.com/fees)",
-    sourceUrl: "https://www.degiro.com/uk/fees/calculator"
+    sourceUrl: "https://www.degiro.com/uk/fees/calculator",
+    reviewUrl: "brokers/degiro.html"
   },
   {
     id: "xtb", name: "XTB",
@@ -439,10 +443,12 @@ var brokers = [
 function renderCards() {
   var container = document.getElementById('brokerCards');
   container.innerHTML = brokers.map(function (b) {
+    var reviewLink = b.reviewUrl ? '<a href="' + b.reviewUrl + '" class="review-link">Full review →</a>' : '';
     return '<div class="broker-card" data-id="' + b.id + '" data-tags="' + b.tags.join(',') + '">' +
       '<h3>' + b.name + '</h3>' +
       '<div class="headline">' + b.headline + '</div>' +
       '<ul>' + b.cardFeatures.map(function (f) { return '<li>' + f + '</li>'; }).join('') + '</ul>' +
+      reviewLink +
       '<button type="button" class="compare-btn" data-compare="' + b.id + '">Select to compare</button>' +
       '</div>';
   }).join('');
