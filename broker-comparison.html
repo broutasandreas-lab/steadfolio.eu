@@ -91,15 +91,12 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 
 .broker-card .compare-btn:hover { border-color: var(--teal); }
 
 /* Table */
-.table-scroll { overflow-x: auto; margin-top: 20px; border: 1px solid var(--border); border-radius: 14px; -webkit-overflow-scrolling: touch; }
-@media (max-width: 860px) { .table-scroll { display: none; } }
-
-/* Mobile pick-to-compare */
-.mobile-compare { display: none; }
-@media (max-width: 860px) { .mobile-compare { display: block; margin-top: 20px; } }
-.compare-prompt { text-align: center; padding: 32px 20px; background: var(--card); border: 1px dashed var(--border); border-radius: 14px; color: var(--text-dim); font-size: 14.5px; }
+/* Compare panel - opens once brokers are selected, universal for all screen sizes */
+.mobile-compare { display: block; margin-top: 40px; }
+.compare-prompt { text-align: center; padding: 40px 24px; background: var(--card); border: 1px dashed var(--border); border-radius: 14px; color: var(--text-dim); font-size: 15px; }
 .compare-prompt strong { color: var(--teal-bright); }
-.mobile-compare-card { background: var(--card); border: 1px solid var(--teal); border-radius: 14px; padding: 22px; margin-bottom: 16px; }
+.mobile-compare-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.mobile-compare-card { background: var(--card); border: 1px solid var(--teal); border-radius: 14px; padding: 22px; }
 .mobile-compare-card h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 4px; }
 .mobile-compare-card .mc-headline { font-family: var(--font-mono); font-size: 12.5px; color: var(--teal-bright); margin-bottom: 16px; }
 .mobile-compare-card .mc-section { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin: 16px 0 8px; }
@@ -119,6 +116,8 @@ table.compare-table thead th:first-child { position: sticky; left: 0; z-index: 3
 table.compare-table tbody th { position: sticky; left: 0; background: var(--card); font-weight: 600; color: var(--text); z-index: 1; font-family: var(--font-body); font-size: 13.5px; text-transform: none; letter-spacing: 0; }
 table.compare-table .section-row td, table.compare-table .section-row th { background: var(--bg-2); color: var(--teal-bright); font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; padding-top: 16px; padding-bottom: 8px; }
 table.compare-table td.col-dimmed { opacity: 0.25; }
+table.compare-table th.col-selected, table.compare-table td.col-selected { background: rgba(34,197,139,0.10); }
+table.compare-table thead th.col-selected { background: rgba(34,197,139,0.18); color: var(--teal-bright); }
 table.compare-table td, table.compare-table tbody th { color: var(--text-dim); }
 table.compare-table .yes { color: var(--teal-bright); }
 table.compare-table .no { color: var(--text-muted); }
@@ -214,12 +213,9 @@ SteadFolio does not recommend a broker. We help you compare them.
 
 <section>
 <div class="wrap">
-<div class="kicker" style="text-align:center;">Full comparison</div>
-<h2 style="text-align:center;">Compare all 10 brokers side by side</h2>
-<p style="text-align:center; color:var(--text-dim); max-width:600px; margin:12px auto 0; font-size:15px;">Scroll horizontally on mobile. Fees shown may have conditions - check the source link for full terms.</p>
-<div class="table-scroll">
-<table class="compare-table" id="compareTable"></table>
-</div>
+<div class="kicker" style="text-align:center;">Compare</div>
+<h2 style="text-align:center;">Pick up to 3 brokers to compare</h2>
+<p style="text-align:center; color:var(--text-dim); max-width:600px; margin:12px auto 0; font-size:15px;">Select brokers from the cards above. Fees shown may have conditions - check the source link for full terms.</p>
 <div class="mobile-compare" id="mobileCompare"></div>
 <p class="source-note">Every fee is linked to its official source. Fields marked "Check source" were not published clearly enough on the broker's official pages to state a fixed number here - verify directly before deciding.</p>
 </div>
@@ -464,7 +460,7 @@ function renderTable() {
   var rows = [];
 
   rows.push('<thead><tr><th>Feature</th>' + brokers.map(function (b) {
-    return '<th id="table-' + b.id + '">' + b.name + '</th>';
+    return '<th id="table-' + b.id + '" data-id="' + b.id + '">' + b.name + '</th>';
   }).join('') + '</tr></thead>');
 
   var body = '<tbody>';
@@ -474,7 +470,7 @@ function renderTable() {
   }
   function dataRow(label, getter) {
     body += '<tr><th>' + label + '</th>' + brokers.map(function (b) {
-      return '<td data-tags="' + b.tags.join(',') + '">' + getter(b) + '</td>';
+      return '<td data-tags="' + b.tags.join(',') + '" data-id="' + b.id + '">' + getter(b) + '</td>';
     }).join('') + '</tr>';
   }
 
@@ -543,11 +539,11 @@ var mobileFields = [
 function renderMobileCompare() {
   var container = document.getElementById('mobileCompare');
   if (selectedIds.length === 0) {
-    container.innerHTML = '<div class="compare-prompt">Tap <strong>"Select to compare"</strong> on 2-3 brokers above to see them side by side here.</div>';
+    container.innerHTML = '<div class="compare-prompt"><strong>Select brokers to compare.</strong><br>Pick up to 3 broker cards above to see them compared side by side, right here.</div>';
     return;
   }
   var selected = brokers.filter(function (b) { return selectedIds.indexOf(b.id) !== -1; });
-  container.innerHTML = selected.map(function (b) {
+  var cardsHtml = selected.map(function (b) {
     var sectionsHtml = mobileFields.map(function (group) {
       var rowsHtml = group.rows.map(function (r) {
         return '<div class="mc-row"><span>' + r[0] + '</span><span>' + r[1](b) + '</span></div>';
@@ -561,6 +557,7 @@ function renderMobileCompare() {
       '<button type="button" class="mc-remove" data-remove="' + b.id + '">Remove from comparison</button>' +
       '</div>';
   }).join('');
+  container.innerHTML = '<div class="mobile-compare-cards">' + cardsHtml + '</div>';
 }
 
 function updateCardButtons() {
@@ -595,7 +592,6 @@ function toggleSelection(id) {
 // ============================================================
 (function () {
   renderCards();
-  renderTable();
   renderMobileCompare();
 
   document.getElementById('brokerCards').addEventListener('click', function (e) {
