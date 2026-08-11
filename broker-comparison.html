@@ -215,7 +215,6 @@ SteadFolio does not recommend a broker. We help you compare them.
 <div class="wrap">
 <div class="kicker" style="text-align:center;">Compare</div>
 <h2 style="text-align:center;">Pick up to 3 brokers to compare</h2>
-<p style="text-align:center; color:var(--text-dim); max-width:600px; margin:12px auto 0; font-size:15px;">Select brokers from the cards above. Fees shown may have conditions - check the source link for full terms.</p>
 <div class="mobile-compare" id="mobileCompare"></div>
 <p class="source-note">Every fee is linked to its official source. Fields marked "Check source" were not published clearly enough on the broker's official pages to state a fixed number here - verify directly before deciding.</p>
 </div>
@@ -539,7 +538,7 @@ var mobileFields = [
 function renderMobileCompare() {
   var container = document.getElementById('mobileCompare');
   if (selectedIds.length === 0) {
-    container.innerHTML = '<div class="compare-prompt"><strong>Select brokers to compare.</strong><br>Pick up to 3 broker cards above to see them compared side by side, right here.</div>';
+    container.innerHTML = '<div class="compare-prompt">Nothing selected yet. <strong>Tap "Select to compare"</strong> on the broker cards above.</div>';
     return;
   }
   var selected = brokers.filter(function (b) { return selectedIds.indexOf(b.id) !== -1; });
