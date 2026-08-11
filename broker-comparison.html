@@ -454,6 +454,14 @@ function boolCell(val) {
   return val; // string like "Check source"
 }
 
+function formatAvailability(b) {
+  var regions = [];
+  if (b.availability.greece) regions.push('Greece');
+  if (b.availability.europe) regions.push('EU');
+  if (b.availability.us) regions.push('US');
+  return regions.length ? regions.join(', ') : 'Check source';
+}
+
 function renderTable() {
   var table = document.getElementById('compareTable');
   var rows = [];
@@ -530,7 +538,7 @@ var mobileFields = [
     ["Minimum investment", function (b) { return b.features.minInvestment; }]
   ]},
   { section: "Availability & Regulation", rows: [
-    ["Available in Greece", function (b) { return boolCell(b.availability.greece); }],
+    ["Available in", function (b) { return formatAvailability(b); }],
     ["Regulator", function (b) { return b.regulator; }]
   ]}
 ];
