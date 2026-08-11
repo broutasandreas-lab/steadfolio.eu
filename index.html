@@ -135,6 +135,8 @@ font-size: clamp(38px, 6vw, 60px); line-height: 1.08; letter-spacing: -0.02em;
 color: #fff;
 }
 h1 .accent { color: var(--teal-bright); }
+.hero-break { display: none; }
+@media (min-width: 640px) { .hero-break { display: inline; } }
 .hero-sub {
 margin: 26px auto 0; max-width: 560px;
 font-size: 18px; color: var(--text-dim);
@@ -370,7 +372,8 @@ footer:hover { opacity: 1; }
 display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
 font-size: 13.5px; color: var(--text-muted);
 }
-.footer-links { display: flex; gap: 24px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.footer-links a { white-space: nowrap; }
 .footer-links a:hover { color: var(--text-dim); }
 .footer-social { display: flex; align-items: center; gap: 14px; }
 .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
@@ -387,7 +390,8 @@ font-size: 13.5px; color: var(--text-muted);
 "sameAs": [
 "https://www.instagram.com/steadfolio/",
 "https://www.facebook.com/profile.php?id=61592617561199",
-"https://www.linkedin.com/company/steadfolio"
+"https://www.linkedin.com/company/steadfolio",
+"https://www.trustpilot.com/review/steadfolio.eu"
 ]
 }
 </script>
@@ -449,7 +453,7 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 <div class="wrap hero-inner">
 <span class="eyebrow"><span class="dot"></span> For people starting from zero</span>
-<h1>Investing doesn't have to<br>feel <span class="accent">complicated.</span></h1>
+<h1>Investing doesn't have to <br class="hero-break">feel <span class="accent">complicated.</span></h1>
 <p class="hero-sub">Learn to invest with a guided AI companion - no sales pitch, no recommendations, just clear steps.</p>
 <div class="hero-ctas">
 <a href="#how" class="btn-primary">How it works →</a>
@@ -820,6 +824,7 @@ font-size: 13.5px; color: var(--text-muted);
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; color:var(--teal-bright); transition:color 0.15s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg> Read reviews on Trustpilot</a>
 </div>
 </div>
 
@@ -855,6 +860,9 @@ font-size: 13.5px; color: var(--text-muted);
 </a>
 <a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
 </a>
 </div>
 <div class="footer-links">
