@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3SFS38ZZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V3SFS38ZZL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Journey with SteadFolio: From Beginner to Confident Investor</title>
+<meta name="description" content="A real look at how SteadFolio works, step by step - from onboarding, through learning and risk-free practice, to tracking your real portfolio and reflecting on progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { max-width: 1320px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 960px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+@media (max-width: 960px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+
+section { padding: 60px 0; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 46px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.page-hero { padding: 60px 0 8px; text-align: center; }
+.page-hero p { max-width: 620px; margin: 16px auto 0; color: var(--text-dim); font-size: 17px; }
+
+/* Journey timeline */
+.journey { max-width: 780px; margin: 0 auto; position: relative; }
+.stage { position: relative; padding: 0 0 64px 56px; border-left: 2px dashed var(--border); margin-left: 20px; }
+.stage:last-child { border-left: 2px dashed transparent; padding-bottom: 0; }
+.stage-num { position: absolute; left: -21px; top: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--card); border: 2px solid var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: var(--teal-bright); font-size: 16px; }
+.stage-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 8px; }
+.stage h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 12px; }
+.stage > p { color: var(--text-dim); font-size: 16px; margin-bottom: 16px; }
+.stage-tools { list-style: none; margin: 16px 0; display: grid; gap: 10px; }
+.stage-tools li { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 14.5px; color: var(--text-dim); }
+.stage-tools li strong { color: var(--text); }
+.connection { background: var(--bg-2); border: 1px solid var(--border-soft); border-left: 3px solid var(--teal); border-radius: 10px; padding: 16px 20px; margin-top: 18px; font-size: 14.5px; color: var(--text-dim); }
+.connection strong { color: var(--teal-bright); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+
+.loop-note { text-align: center; max-width: 560px; margin: 0 auto 60px; }
+.loop-note p { color: var(--text-dim); font-size: 15.5px; }
+
+.profile-box { max-width: 780px; margin: 60px auto 0; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; position: relative; overflow: hidden; }
+.profile-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 420px 260px at 50% 0%, rgba(34,197,139,0.12), transparent); pointer-events: none; }
+.profile-box h2 { position: relative; text-align: center; }
+.profile-box ul { position: relative; list-style: none; margin: 24px auto 0; max-width: 480px; }
+.profile-box li { display: flex; gap: 10px; padding: 8px 0; font-size: 15px; color: var(--text-dim); }
+.profile-box li svg { flex-shrink: 0; color: var(--teal-bright); margin-top: 3px; }
+.profile-box .companion-line { position: relative; text-align: center; margin-top: 24px; color: var(--text-dim); font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.profile-box .companion-line strong { color: var(--teal-bright); }
+
+.not-box { max-width: 780px; margin: 40px auto 0; }
+.not-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media (max-width: 620px) { .not-grid { grid-template-columns: 1fr; } }
+.not-item { background: var(--bg-2); border: 1px solid var(--border-soft); border-radius: 12px; padding: 20px 22px; font-size: 14.5px; color: var(--text-dim); }
+.not-item strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; margin-top: 60px; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+footer:hover { opacity: 1; }
+.footer-row { max-width: 1320px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13.5px; color: var(--text-muted); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.footer-links a { white-space: nowrap; }
+.footer-links a:hover { color: var(--text-dim); }
+.footer-social { display: flex; align-items: center; gap: 14px; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
+.footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="journey.html" class="active">Your Journey</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu/login" class="nav-cta">Login</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="journey.html">Your Journey</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+<section class="page-hero">
+<div class="wrap">
+<div class="kicker">Your Journey</div>
+<h1>From complete beginner to confident long-term investor - here's exactly how.</h1>
+<p>Not a feature list. A real path, step by step - what happens the day you sign up, and what happens six months later.</p>
+</div>
+</section>
+
+<section style="padding-top:20px;">
+<div class="wrap">
+<div class="journey">
+
+<div class="stage">
+<div class="stage-num">1</div>
+<div class="stage-label">Getting Started</div>
+<h3>A short conversation, not a form</h3>
+<p>You sign up, and Sofia asks a few quick questions - your experience level, your goal, your time horizon, your comfort with risk. No jargon, no long questionnaire before you see any value.</p>
+<p>Right after, a short, interactive welcome happens inside the chat itself - not a static tour. Sofia shows you the 2-3 things that matter most, in plain language, then gives you one clear first step. Not a menu of options to figure out on your own - usually, your first lesson in the Academy.</p>
+</div>
+
+<div class="stage">
+<div class="stage-num">2</div>
+<div class="stage-label">Learn</div>
+<h3>Building the foundation</h3>
+<p>12 structured tracks, from Foundations to Advanced, each ending in a short quiz. Sofia remembers which tracks you've completed - and quietly tracks which topics you got wrong, not to judge you, but to adjust how she explains things later.</p>
+<div class="connection">
+<strong>The connection</strong>
+The moment you finish a track, Sofia recommends one specific, relevant next step - not a generic "keep learning." Finish the Bonds track, and she points you to the ETF Evaluator, filtered to bond ETFs. Finish "Getting Started in Practice," and she points you to Paper Trading.
+</div>
+</div>
+
+<div class="stage">
+<div class="stage-num">3</div>
+<div class="stage-label">Practice</div>
+<h3>Real prices, zero real risk</h3>
+<p>Four practice tools, all using real market data, none of it with real money on the line:</p>
+<ul class="stage-tools">
+<li><strong>ETF Evaluator</strong> - compare ETFs on cost, historical performance, and geographic exposure, with an explicit warning if something overlaps with what you already hold.</li>
+<li><strong>DCA Simulator</strong> - visualize systematic investing using real historical data.</li>
+<li><strong>Portfolio Simulator</strong> - model a full allocation strategy before committing to one.</li>
+<li><strong>Historical Scenarios / Panic Mode</strong> - step into the decision seat during real historical events (2008, COVID-19, the dot-com crash), see what actually happened, and let Sofia walk you through the behavioral side of it - why panic-selling usually hurts more than the drop itself.</li>
+<li><strong>Paper Trading</strong> - €10,000 in virtual money, real prices, with an explicit nudge toward holding positions rather than quick in-and-out trades. Not a trading simulator - practice for long-term thinking.</li>
+</ul>
+<div class="connection">
+<strong>The connection</strong>
+When a paper position does well, a button appears: <em>"This worked out - add it to your real portfolio."</em> One click carries the symbol straight into your real Tracker.
+</div>
+</div>
+
+<div class="stage">
+<div class="stage-num">4</div>
+<div class="stage-label">Apply</div>
+<h3>Your actual portfolio</h3>
+<p>This is where practice turns into your real financial life:</p>
+<ul class="stage-tools">
+<li><strong>My Portfolio</strong> - real ETFs and stocks, added manually or via broker connection (SteadFolio+).</li>
+<li><strong>A real goal</strong> (My Status) - a name, an amount, a time horizon.</li>
+<li><strong>Budget Calculator</strong> - what you can realistically invest each month.</li>
+<li><strong>Watchlist</strong> - track things without committing to them yet.</li>
+</ul>
+<div class="connection">
+<strong>The connection</strong>
+If you've used the practice tools a fair amount but still don't have a real goal set up, Sofia mentions it - gently, on your next visit.
+</div>
+</div>
+
+<div class="stage">
+<div class="stage-num">5</div>
+<div class="stage-label">Reflect</div>
+<h3>Sofia checks in, so you don't have to go looking</h3>
+<p>Sofia speaks first when you come back (at most once a day), and picks whichever of these is actually most relevant right now:</p>
+<ul class="stage-tools">
+<li>You haven't done your goal's monthly check-in yet</li>
+<li>Your portfolio has shifted meaningfully since your last visit</li>
+<li>You have a DCA plan but haven't looked at it in weeks</li>
+<li>You've done a lot of practice - maybe it's time for a real goal</li>
+<li>One holding has grown into an outsized share of your portfolio (concentration risk) - always explained educationally, never as "sell this"</li>
+</ul>
+<p>Beyond that: <strong>My Progress</strong> (streak, level per topic), <strong>Portfolio Audit</strong> (full diversification analysis), and <strong>What-If</strong> (what would have happened if you'd invested elsewhere instead).</p>
+</div>
+
+<div class="stage">
+<div class="stage-num">6</div>
+<div class="stage-label">Repeat</div>
+<h3>The loop continues - and deepens</h3>
+<p>Every reflection point can lead back into Learn (a new lesson), Practice (a new scenario), or Apply (a new goal, a new position). It's not a straight line - it's a spiral that keeps returning and going a little deeper each time.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap">
+<div class="profile-box">
+<h2>What builds up behind the scenes</h2>
+<ul>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg>Your experience level and goals, from onboarding</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg>Completed lessons - and which topics could still use review</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg>Your real portfolio and your real goal</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg>Which tools you've used, and how recently</li>
+</ul>
+<p class="companion-line">This isn't a chatbot that answers questions. It's a companion that <strong>remembers</strong> - without ever giving you personal investment advice. Educational, not advisory, the whole way through.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap not-box">
+<div class="section-head" style="text-align:center;">
+<div class="kicker" style="text-align:center;">Worth being clear about</div>
+<h2>What SteadFolio deliberately isn't</h2>
+</div>
+<div class="not-grid">
+<div class="not-item"><strong>Not a trading simulator</strong>No technical analysis, no day-trading tools, no goal of rapid in-and-out positions.</div>
+<div class="not-item"><strong>Not a sales pitch</strong>No specific product recommendations, no pressure to buy anything.</div>
+</div>
+</div>
+</section>
+
+<div class="trust-strip">
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+</div>
+</div>
+
+<section class="final-cta">
+<div class="wrap">
+<h2 style="margin:0;">Ready to start your own journey?</h2>
+<p style="color:var(--text-dim); margin-top:10px;">Start free, go at your own pace, and never feel like you're behind.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-row">
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
+<div class="footer-social">
+<a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
+</a>
+<a href="https://www.instagram.com/steadfolio/" target="_blank" rel="noopener" aria-label="SteadFolio on Instagram">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+</a>
+<a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
+</a>
+</div>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+</body>
+</html>
