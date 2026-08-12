@@ -267,8 +267,10 @@ align-self: start;
 .step-row:nth-child(2) .step-marker,
 .step-row:nth-child(3) .step-marker { transform: translateY(0); }
 .step-row:nth-child(1) { padding-left: 0; }
-.step-row:nth-child(2) { padding-left: 20px; }
-.step-row:nth-child(3) { padding-left: 40px; }
+.step-row:nth-child(2) { padding-left: 16px; }
+.step-row:nth-child(3) { padding-left: 32px; }
+.step-row:nth-child(4) { padding-left: 48px; }
+.step-row:nth-child(5) { padding-left: 60px; }
 .step-content h3 {
 font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px;
 }
@@ -276,7 +278,7 @@ font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(
 .topic-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .topic-chips span { font-family: var(--font-mono); font-size: 12px; color: var(--teal-bright); background: var(--teal-dim); border: 1px solid rgba(34,197,139,0.25); border-radius: 100px; padding: 5px 12px; }
 @media (max-width: 640px) {
-.step-row:nth-child(1), .step-row:nth-child(2), .step-row:nth-child(3) { padding-left: 0; }
+.step-row:nth-child(1), .step-row:nth-child(2), .step-row:nth-child(3), .step-row:nth-child(4), .step-row:nth-child(5) { padding-left: 0; }
 }
 /* ---------- Features ---------- */
 .features { border-top: 1px solid var(--border-soft); background: var(--bg-2); }
@@ -574,7 +576,8 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="wrap">
 <div class="section-head center" style="margin-left:auto;margin-right:auto;">
 <div class="kicker" style="text-align:center;">How SteadFolio works</div>
-<h2>Three steps. No detours.</h2>
+<h2>Learn. Practice. Apply. Reflect. Repeat.</h2>
+<p class="section-sub" style="text-align:center; max-width:520px; margin-left:auto; margin-right:auto;">A loop, not a straight line - and Sofia connects every step, remembering where you are.</p>
 </div>
 <div class="step-path">
 <div class="step-row">
@@ -600,8 +603,22 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="step-row">
 <div class="step-marker">3</div>
 <div class="step-content">
-<h3>Practice with real tools, safely</h3>
-<p>ETF evaluator, DCA simulator, and historical scenarios - so you understand how markets actually behave before real money is involved.</p>
+<h3>Practice with real tools, zero real risk</h3>
+<p>Paper Trading, the ETF evaluator, DCA simulator, and historical scenarios - so you understand how markets actually behave before real money is involved.</p>
+</div>
+</div>
+<div class="step-row">
+<div class="step-marker">4</div>
+<div class="step-content">
+<h3>Apply it to your real portfolio</h3>
+<p>Track your actual holdings, name a real goal, and see where your money really stands - not just simulations anymore.</p>
+</div>
+</div>
+<div class="step-row">
+<div class="step-marker">5</div>
+<div class="step-content">
+<h3>Reflect, track progress, and keep going</h3>
+<p>Sofia checks in on your goals, your learning streak, and how your portfolio is doing - then guides your next step, so the loop continues.</p>
 </div>
 </div>
 </div>
