@@ -240,6 +240,27 @@ overflow: hidden; margin: 0 auto;
 .gallery-caption { padding: 14px 16px 16px; font-size: 13.5px; color: var(--text-dim); }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+/* Meet Sofia */
+.sofia-section { background: var(--bg-2); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+.sofia-messages { display: flex; flex-direction: column; gap: 16px; max-width: 620px; margin: 40px auto 0; }
+.sofia-bubble { display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; }
+.sofia-bubble .sofia-avatar { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); color: #06231a; font-family: var(--font-display); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.sofia-bubble p { margin: 0; font-size: 15.5px; color: var(--text); line-height: 1.6; }
+
+/* Portfolio section */
+.portfolio-section { border-top: 1px solid var(--border-soft); }
+
+/* Loop section */
+.loop-section { background: var(--bg-2); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+.loop-flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; max-width: 800px; margin: 0 auto; }
+.loop-step { font-family: var(--font-mono); font-size: 13.5px; color: var(--teal-bright); background: var(--teal-dim); border: 1px solid rgba(34,197,139,0.3); border-radius: 100px; padding: 10px 18px; white-space: nowrap; }
+.loop-arrow { color: var(--text-muted); font-size: 16px; }
+@media (max-width: 640px) { .loop-flow { flex-direction: column; } .loop-arrow { transform: rotate(90deg); } }
+
+/* Grouped feature sections */
+.feature-group-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-bright); margin: 40px 0 16px; grid-column: 1 / -1; }
+.feature-group-label:first-child { margin-top: 0; }
 .quick-faq { background: var(--bg-2); border-top: 1px solid var(--border-soft); }
 .quick-faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
 .quick-faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
@@ -462,7 +483,7 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="wrap hero-inner">
 <span class="eyebrow"><span class="dot"></span> For people starting from zero</span>
 <h1>From complete beginner to <br class="hero-break">confident <span class="accent">long-term investor.</span></h1>
-<p class="hero-sub">SteadFolio helps you learn, practice, and understand long-term investing - one step at a time, with Sofia by your side. No sales pitch, no recommendations.</p>
+<p class="hero-sub">Learn investing. Practice without risking your money. Build your real portfolio. Stay on track with Sofia, your AI investing coach. No sales pitch, no recommendations.</p>
 <div class="hero-ctas">
 <a href="#how" class="btn-primary">How it works →</a>
 <div class="screenshot-frame">
@@ -632,11 +653,41 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 </section>
 
-<section class="gallery">
+<section class="sofia-section">
 <div class="wrap">
 <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">More than a chat window</div>
-<h2>Real tools, not just answers</h2>
+<div class="kicker" style="text-align:center;">Meet Sofia</div>
+<h2>More than a chatbot. A coach who remembers.</h2>
+<p class="section-sub" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">Sofia doesn't just answer questions. She knows your learning state, tracks recurring misconceptions, understands your real portfolio, and speaks up when it actually matters.</p>
+</div>
+<div class="sofia-messages">
+<div class="sofia-bubble">
+<div class="sofia-avatar">S</div>
+<p>You just completed the diversification lesson. Let's see how diversified your portfolio actually is.</p>
+</div>
+<div class="sofia-bubble">
+<div class="sofia-avatar">S</div>
+<p>Your portfolio is heavily concentrated in US technology. Want to understand the risk?</p>
+</div>
+<div class="sofia-bubble">
+<div class="sofia-avatar">S</div>
+<p>You've stopped your DCA contributions for two months. Want to review what changed?</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="practice-section">
+<div class="wrap">
+<div class="section-head center" style="margin-left:auto;margin-right:auto;">
+<div class="kicker" style="text-align:center;">Practice Before You Invest</div>
+<h2>Not ready to invest? Practice first.</h2>
+<p class="section-sub" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">Real market prices, real historical data, zero real risk - until you're ready.</p>
+</div>
+<div class="screenshot-frame" style="max-width:680px; margin: 0 auto 32px;">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-paper-trading.png" alt="Paper Trading tool showing €10,000 in virtual money, real ETF and stock prices, and buy/sell controls" loading="lazy">
+<p class="gallery-caption">Paper Trading - €10,000 virtual money, real prices, no real risk</p>
 </div>
 <div class="gallery-grid">
 <div class="screenshot-frame">
@@ -658,14 +709,51 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 </section>
 
+<section class="portfolio-section">
+<div class="wrap">
+<div class="section-head center" style="margin-left:auto;margin-right:auto;">
+<div class="kicker" style="text-align:center;">Your Portfolio</div>
+<h2>Turn what you learn into decisions about your own portfolio.</h2>
+<p class="section-sub" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">Real holdings, real diversification, real numbers - not just simulations anymore.</p>
+</div>
+<div class="screenshot-frame" style="max-width:780px; margin:0 auto;">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-my-portfolio.png" alt="My Portfolio dashboard showing total portfolio summary, asset allocation pie chart, and aggregated holdings across ETFs and stocks" loading="lazy">
+</div>
+</div>
+</section>
+
+<section class="loop-section">
+<div class="wrap">
+<div class="section-head center" style="margin-left:auto;margin-right:auto;">
+<div class="kicker" style="text-align:center;">The Loop</div>
+<h2>Your learning never happens in isolation.</h2>
+</div>
+<div class="loop-flow">
+<div class="loop-step">Lesson</div>
+<div class="loop-arrow">→</div>
+<div class="loop-step">Practice</div>
+<div class="loop-arrow">→</div>
+<div class="loop-step">Portfolio</div>
+<div class="loop-arrow">→</div>
+<div class="loop-step">Sofia feedback</div>
+<div class="loop-arrow">→</div>
+<div class="loop-step">Next lesson</div>
+</div>
+<p style="text-align:center; color:var(--text-dim); max-width:560px; margin:24px auto 0; font-size:15px;">Finish the diversification lesson, and Sofia checks your real portfolio's diversification. Practice DCA, and she connects it back to your actual monthly plan. Nothing you learn just sits there.</p>
+</div>
+</section>
+
+
 <section class="features" id="features">
 <div class="wrap">
 <div class="section-head">
 <div class="kicker">What's inside</div>
 <h2>Built for learning, not for trading</h2>
-<p class="section-sub">Every part of SteadFolio is designed around one job: helping you actually understand investing, at your own pace.</p>
+<p class="section-sub">The full toolkit, grouped by what it actually helps you do.</p>
 </div>
 <div class="feature-grid">
+<div class="feature-group-label">Learn</div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
@@ -674,6 +762,32 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>See how markets really moved</h3>
 <p>Explore long-term index performance to understand real market behavior - not headlines or hype.</p>
 </div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1 3 3 6 3s6-2 6-3v-4.5"/></svg>
+</div>
+<span class="feature-tag">Financial Literacy Assessment</span>
+<h3>Know what you actually know</h3>
+<p>Quick assessments show your real knowledge level across topics, so lessons can meet you where you are.</p>
+</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+</div>
+<span class="feature-tag">Progress &amp; Streaks</span>
+<h3>Build a real habit, not just a course</h3>
+<p>Track your learning streak and progress across every topic - investing understanding compounds too.</p>
+</div>
+<div class="feature-card" data-reveal style="grid-column: 1 / -1;">
+<div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+</div>
+<span class="feature-tag">Market Structure</span>
+<h3>Understand what's really happening</h3>
+<p>Sofia also teaches you how the market actually works under the surface - like how large players interact with order flow - so you understand what's really happening, not just the headlines.</p>
+</div>
+
+<div class="feature-group-label">Practice</div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
@@ -700,27 +814,21 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+</div>
+<span class="feature-tag">Paper Trading</span>
+<h3>Practice with real prices, zero real risk</h3>
+<p>Place simulated trades using live market prices and virtual money, so you can build confidence before investing for real.</p>
+</div>
+
+<div class="feature-group-label">Portfolio</div>
+<div class="feature-card" data-reveal>
+<div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 2v10l7 7"/></svg>
 </div>
 <span class="feature-tag">Portfolio Tracking</span>
 <h3>Track your real holdings</h3>
 <p>Add your actual ETFs and stocks, and see your real portfolio value, allocation, and performance - not just simulations.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
-</div>
-<span class="feature-tag">Named Goals</span>
-<h3>Set a goal, track it monthly</h3>
-<p>Name a real goal - a house, retirement, anything - and log simple monthly check-ins to see if you're on track.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 012-2h11a2 2 0 012 2v2h2a1 1 0 011 1v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><circle cx="16" cy="13" r="1.3" fill="currentColor"/></svg>
-</div>
-<span class="feature-tag">Budget Calculator</span>
-<h3>Know what you can actually invest</h3>
-<p>See how much of your income you can realistically invest, using established budgeting rules like 50/30/20.</p>
 </div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
@@ -746,37 +854,23 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>See what you could have done differently</h3>
 <p>Compare your actual results to what would have happened if you'd invested in a simple benchmark index instead.</p>
 </div>
+
+<div class="feature-group-label">Goals</div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1 3 3 6 3s6-2 6-3v-4.5"/></svg>
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
 </div>
-<span class="feature-tag">Financial Literacy Assessment</span>
-<h3>Know what you actually know</h3>
-<p>Quick assessments show your real knowledge level across topics, so lessons can meet you where you are.</p>
-</div>
-<div class="feature-card" data-reveal>
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
-</div>
-<span class="feature-tag">Progress &amp; Streaks</span>
-<h3>Build a real habit, not just a course</h3>
-<p>Track your learning streak and progress across every topic - investing understanding compounds too.</p>
+<span class="feature-tag">Named Goals</span>
+<h3>Set a goal, track it monthly</h3>
+<p>Name a real goal - a house, retirement, anything - and log simple monthly check-ins to see if you're on track.</p>
 </div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 012-2h11a2 2 0 012 2v2h2a1 1 0 011 1v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><circle cx="16" cy="13" r="1.3" fill="currentColor"/></svg>
 </div>
-<span class="feature-tag">Paper Trading</span>
-<h3>Practice with real prices, zero real risk</h3>
-<p>Place simulated trades using live market prices and virtual money, so you can build confidence before investing for real.</p>
-</div>
-<div class="feature-card" data-reveal style="grid-column: 1 / -1;">
-<div class="feature-icon">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-</div>
-<span class="feature-tag">Market Structure</span>
-<h3>Understand what's really happening</h3>
-<p>Sofia also teaches you how the market actually works under the surface - like how large players interact with order flow - so you understand what's really happening, not just the headlines.</p>
+<span class="feature-tag">Budget Calculator</span>
+<h3>Know what you can actually invest</h3>
+<p>See how much of your income you can realistically invest, using established budgeting rules like 50/30/20.</p>
 </div>
 </div>
 </div>
