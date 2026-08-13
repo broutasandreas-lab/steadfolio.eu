@@ -72,6 +72,10 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 
 .stage-tools li { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 14.5px; color: var(--text-dim); }
 .stage-tools li strong { color: var(--text); }
 .connection { background: var(--bg-2); border: 1px solid var(--border-soft); border-left: 3px solid var(--teal); border-radius: 10px; padding: 16px 20px; margin-top: 18px; font-size: 14.5px; color: var(--text-dim); }
+.stage-screenshot { margin-top: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.stage-screenshot .screenshot-topbar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
+.stage-screenshot .screenshot-topbar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.stage-screenshot img { display: block; width: 100%; height: auto; }
 .connection strong { color: var(--teal-bright); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-bottom: 6px; }
 
 .loop-note { text-align: center; max-width: 560px; margin: 0 auto 60px; }
@@ -228,6 +232,10 @@ The moment you finish a track, Sofia recommends one specific, relevant next step
 <strong>The connection</strong>
 When a paper position does well, a button appears: <em>"This worked out - add it to your real portfolio."</em> One click carries the symbol straight into your real Tracker.
 </div>
+<div class="stage-screenshot">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-paper-trading.png" alt="Paper Trading tool showing €10,000 in virtual money, real ETF and stock prices, and buy/sell controls" loading="lazy">
+</div>
 </div>
 
 <div class="stage">
@@ -260,6 +268,10 @@ If you've used the practice tools a fair amount but still don't have a real goal
 <li>One holding has grown into an outsized share of your portfolio (concentration risk) - always explained educationally, never as "sell this"</li>
 </ul>
 <p>Beyond that: <strong>My Progress</strong> (streak, level per topic), <strong>Portfolio Audit</strong> (full diversification analysis), and <strong>What-If</strong> (what would have happened if you'd invested elsewhere instead).</p>
+<div class="stage-screenshot">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-what-if.png" alt="What-If analysis comparing a real portfolio's actual result against benchmark indices like a Global Index ETF and the S&P 500" loading="lazy">
+</div>
 </div>
 
 <div class="stage">
