@@ -11,48 +11,22 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Is Inflation, and How Does It Affect Your Investments? | Steadfolio</title>
-<meta name="description" content="A plain-language explanation of inflation, why cash loses value over time, and how investing helps your money keep up with rising prices.">
+<title>ETF Domicile and Withholding Tax: What European Investors Should Know | SteadFolio</title>
+<meta name="description" content="Why an ETF's domicile (Ireland, Luxembourg, US) affects the withholding tax on your dividends, and why it matters for European investors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is inflation in simple terms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Inflation is the general rise in prices over time, which means each unit of currency buys less than it used to. If inflation is 3% a year, something that costs €100 today will typically cost about €103 a year from now."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does inflation matter for savers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cash sitting in a low-interest account loses purchasing power if inflation is higher than the interest rate earned. Over years, this quietly erodes what your savings can actually buy, even though the number in the account stays the same or grows slowly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does investing protect against inflation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Historically, assets like stocks have tended to grow faster than inflation over long time periods, though this isn't guaranteed for any specific year or short period. This is one of the main reasons people invest rather than only save."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is real return?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Real return is your investment return after subtracting inflation. If an investment grows 7% in a year and inflation was 3%, your real return - the actual increase in purchasing power - is roughly 4%, not 7%."
-      }
-    }
+    {"@type":"Question","name":"What does an ETF's domicile mean?","acceptedAnswer":{"@type":"Answer","text":"An ETF's domicile is the country where the fund is legally established, which is not necessarily the same country as the companies it invests in. Many UCITS ETFs available to European investors are domiciled in Ireland or Luxembourg, even when they track US or global indices."}},
+    {"@type":"Question","name":"Why is Ireland a common domicile for European ETFs?","acceptedAnswer":{"@type":"Answer","text":"Ireland has a tax treaty with the United States that reduces the withholding tax on US dividends received by Irish-domiciled funds, compared to funds domiciled elsewhere. This has made Ireland a common choice for UCITS ETFs that hold US stocks."}},
+    {"@type":"Question","name":"What is withholding tax on ETF dividends?","acceptedAnswer":{"@type":"Answer","text":"Withholding tax is a tax deducted at source, in the country where the dividend originates, before the money reaches the fund or the investor. For US dividends received by an Irish-domiciled UCITS ETF, the treaty-reduced withholding rate is typically 15%, compared to a standard 30% rate that can apply without the treaty benefit."}},
+    {"@type":"Question","name":"Does domicile affect my own personal tax bill?","acceptedAnswer":{"@type":"Answer","text":"Fund domicile mainly affects withholding tax deducted before dividends reach the fund. Separately, you may also owe personal tax on investment income or gains based on your own country of tax residence - these are two different layers, and both are worth understanding for your specific situation."}}
   ]
 }
 </script>
@@ -65,42 +39,35 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6;
 background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
-@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
 .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
 header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
 nav.wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
 .brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
 .nav-links a { transition: color 0.15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links a.active { color: var(--teal-bright); }
-.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
-.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; }
 .nav-mobile-hide { display: flex; }
-@media (max-width: 780px) { .nav-mobile-hide { display: none; } }
+@media (max-width: 960px) { .nav-mobile-hide { display: none; } }
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
-.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-@media (max-width: 780px) { .nav-toggle { display: flex; } }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+@media (max-width: 960px) { .nav-toggle { display: flex; } }
 .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
 .mobile-nav.open { display: flex; }
 .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
 .mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--text); }
 section { padding: 72px 0; }
 .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
 h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
 h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
-.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
 .page-hero { padding: 64px 0 8px; text-align: center; }
 .page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
 .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
@@ -109,13 +76,12 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 
 .trust-row svg { flex-shrink: 0; color: var(--teal); }
 .final-cta { text-align: center; }
 .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
-.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
-footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+footer:hover { opacity: 1; }
 .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
 .footer-links a { white-space: nowrap; }
-.footer-links a:hover { color: var(--text-dim); }
 .footer-social { display: flex; align-items: center; gap: 14px; }
 .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
 .footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
@@ -125,13 +91,12 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
 .article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
 .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
-.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body ul { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
 .article-body li { margin-bottom: 8px; }
 .article-body strong { color: var(--text); }
 .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
 .callout strong { color: var(--teal-bright); }
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
-.back-link:hover { color: var(--teal-bright); }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
 </style>
@@ -139,7 +104,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <body>
 <header>
 <nav class="wrap">
-<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>Steadfolio</a>
+<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
 <div class="nav-links nav-mobile-hide">
 <a href="index.html#how">How it works</a>
 <a href="index.html#features">Features</a>
@@ -149,8 +114,8 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <a href="broker-comparison.html">Compare Brokers</a>
 <a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
 <a href="blog.html" class="active">Blog</a>
-<a href="about.html" class="">About</a>
-<a href="faq.html" class="">FAQ</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
 </div>
 <div class="nav-right">
 <a href="https://app.steadfolio.eu/login" class="nav-cta">Login</a>
@@ -175,7 +140,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="wrap article-header">
 <a href="blog.html" class="back-link">← Back to Blog</a>
 <div class="kicker">Foundations</div>
-<h1>What Is Inflation, and How Does It Affect Your Investments?</h1>
+<h1>ETF Domicile and Withholding Tax: What European Investors Should Know</h1>
 <p class="article-meta">4 min read - Educational content, not financial advice</p>
 </div>
 </section>
@@ -183,59 +148,49 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section style="padding-top: 32px;">
 <div class="wrap article-body">
 
-<p>Inflation is one of those economic terms that shows up constantly in the news, yet its actual, personal effect on your money is easy to underestimate. It's also one of the clearest, most concrete reasons people choose to invest at all.</p>
+<p>Two ETFs can track the exact same index and hold the exact same underlying companies, yet quietly deliver different returns over time - because of where the fund itself is legally domiciled. It's one of the less obvious factors worth understanding as a European investor.</p>
 
-<h2>What inflation actually is</h2>
-<p>Inflation is the general rise in prices across an economy over time, which means each unit of currency buys progressively less than it used to. If inflation runs at 3% a year, something that costs €100 today will typically cost roughly €103 a year from now - and the trend compounds over longer periods.</p>
-<p>It's usually measured by tracking the price of a broad basket of everyday goods and services - things like food, housing, and transport - and comparing how that basket's total cost changes year over year.</p>
+<h2>What "domicile" actually means</h2>
+<p>An ETF's <strong>domicile</strong> is the country where the fund itself is legally established and regulated - not the country of the companies it invests in. A fund tracking the S&amp;P 500 (a US index) might be domiciled in Ireland, Luxembourg, or the United States itself, depending on which specific fund you're looking at. As covered in our guide on <a href="blog-what-are-ucits-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">UCITS ETFs</a>, most funds available to EU retail investors are domiciled in Ireland or Luxembourg.</p>
 
-<h2>Why inflation matters so much for savers</h2>
-<p>Money sitting in cash, or in an account earning very little interest, quietly loses purchasing power if inflation is running higher than the interest being earned. The number in the account might stay the same or even grow slightly - but what that number can actually buy shrinks over time.</p>
-<div class="callout">
-<strong>Example:</strong> €10,000 sitting in an account earning 0.5% interest, with inflation running at 3%, effectively loses about 2.5% of its real purchasing power every year - even though the account balance is technically growing.
-</div>
+<h2>Why domicile affects your actual returns: withholding tax</h2>
+<p><strong>Withholding tax</strong> is a tax deducted at source - in the country where a dividend originates - before that money ever reaches the fund or you. When a US company pays a dividend to a foreign-domiciled fund, the US government withholds a portion of it before the fund receives the rest.</p>
+<div class="callout"><strong>Why Ireland specifically:</strong> Ireland has a tax treaty with the United States that reduces the withholding rate on US-sourced dividends paid to Irish-domiciled funds - typically to 15%, compared to a standard 30% rate that can apply without treaty benefits. This is a major reason so many UCITS ETFs tracking US indices are domiciled in Ireland rather than elsewhere.</div>
 
-<h2>How investing helps address this</h2>
-<p>Historically, assets like stocks have tended to grow in value faster than inflation over long time periods - though this is not guaranteed for any specific year, and can vary significantly over shorter periods. This gap between investment growth and inflation is one of the central, practical reasons people choose to invest a portion of their savings rather than keep everything in cash.</p>
-<p>This connects to the concept of <a href="blog-compound-interest-explained.html" style="color: var(--teal-bright); text-decoration: underline;">compound interest</a>: growth that outpaces inflation, left to compound over years, is what actually builds real, spendable wealth over time - not just a bigger number on a statement.</p>
+<h2>A concrete way to think about the effect</h2>
+<p>Imagine a US company pays out $100 in dividends attributable to your holding. If the fund is domiciled somewhere without a favorable tax treaty and 30% is withheld, the fund receives $70. If it's domiciled in Ireland with the reduced 15% rate, the fund receives $85. Over many years and many dividend payments, that gap compounds - quietly reducing returns for funds domiciled in less tax-efficient locations, even when tracking the identical index.</p>
 
-<h2>What is "real return"?</h2>
-<p>Real return is your investment return after subtracting inflation - it reflects the actual change in your purchasing power, not just the raw percentage gain. If an investment grows 7% in a year while inflation runs at 3%, your real return is roughly 4%. This is a more honest way to evaluate whether an investment is genuinely building wealth, rather than just keeping pace with rising prices.</p>
+<h2>This is separate from your own personal tax situation</h2>
+<p>It's worth being clear about the distinction: fund domicile and withholding tax affect what happens <em>before</em> dividends reach the fund. Separately, once you receive income or gains from your investment, you may owe your own personal tax based on your country of tax residence - a completely separate layer, governed by your own country's rules, not the fund's domicile. Both matter, but they're not the same thing.</p>
 
-<h3>A quick way to estimate real return</h3>
+<h2>What this means practically for you</h2>
 <ul>
-<li>Take your investment's percentage return for the period</li>
-<li>Subtract the inflation rate for the same period</li>
-<li>What's left is roughly your real, purchasing-power-adjusted return</li>
+<li>When comparing two ETFs tracking the same index, domicile is one more factor worth checking alongside fees and tracking difference</li>
+<li>Ireland and Luxembourg are the most common domiciles for UCITS ETFs available to EU investors, generally for tax-efficiency reasons like the one above</li>
+<li>A fund's domicile is stated clearly on its factsheet and Key Information Document (KID)</li>
 </ul>
-
-<h2>Where does this leave cash and savings?</h2>
-<p>None of this means cash savings are pointless - quite the opposite. Cash still plays an essential role for near-term needs and emergencies, precisely because it doesn't lose value overnight the way investments can. Our guide on <a href="blog-emergency-fund-before-investing.html" style="color: var(--teal-bright); text-decoration: underline;">building an emergency fund before investing</a> covers why that stability matters, even while inflation is working against cash sitting idle for the long term.</p>
+<p>This fits naturally alongside the other checks covered in our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a> - domicile isn't usually the single deciding factor, but it's a real, quantifiable difference worth knowing about rather than ignoring.</p>
 
 <h2>The bigger picture</h2>
-<p>Inflation isn't a reason to panic, and it isn't something any individual investor can control. But understanding it reframes a common question - "why bother investing when I could just save?" - into a much more concrete one: "what's actually happening to my money's purchasing power if I don't?"</p>
+<p>None of this requires becoming a tax expert. The key takeaway is simply that "domicile" is a real, measurable factor - not fine print you can safely ignore - and that for European investors, it's part of why Ireland-domiciled UCITS ETFs are so common for US and global index exposure.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
-<h3>What is inflation in simple terms?</h3>
-<p>Inflation is the general rise in prices over time, which means each unit of currency buys less than it used to. If inflation is 3% a year, something that costs €100 today will typically cost about €103 a year from now.</p>
+<h3>What does an ETF's domicile mean?</h3>
+<p>An ETF's domicile is the country where the fund is legally established, which is not necessarily the same country as the companies it invests in. Many UCITS ETFs available to European investors are domiciled in Ireland or Luxembourg, even when they track US or global indices.</p>
 </div>
 <div class="faq-item">
-<h3>Why does inflation matter for savers?</h3>
-<p>Cash sitting in a low-interest account loses purchasing power if inflation is higher than the interest rate earned. Over years, this quietly erodes what your savings can actually buy, even though the number in the account stays the same or grows slowly.</p>
+<h3>Why is Ireland a common domicile for European ETFs?</h3>
+<p>Ireland has a tax treaty with the United States that reduces the withholding tax on US dividends received by Irish-domiciled funds, compared to funds domiciled elsewhere. This has made Ireland a common choice for UCITS ETFs that hold US stocks.</p>
 </div>
 <div class="faq-item">
-<h3>Does investing protect against inflation?</h3>
-<p>Historically, assets like stocks have tended to grow faster than inflation over long time periods, though this isn't guaranteed for any specific year or short period. This is one of the main reasons people invest rather than only save.</p>
+<h3>What is withholding tax on ETF dividends?</h3>
+<p>Withholding tax is a tax deducted at source, in the country where the dividend originates, before the money reaches the fund or the investor. For US dividends received by an Irish-domiciled UCITS ETF, the treaty-reduced withholding rate is typically 15%, compared to a standard 30% rate without the treaty benefit.</p>
 </div>
 <div class="faq-item">
-<h3>What is real return?</h3>
-<p>Real return is your investment return after subtracting inflation. If an investment grows 7% in a year and inflation was 3%, your real return - the actual increase in purchasing power - is roughly 4%, not 7%.</p>
+<h3>Does domicile affect my own personal tax bill?</h3>
+<p>Fund domicile mainly affects withholding tax deducted before dividends reach the fund. Separately, you may also owe personal tax on investment income or gains based on your own country of tax residence - these are two different layers.</p>
 </div>
-
-</div>
-</section>
-
 <div class="trust-strip">
 <div class="wrap trust-row">
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
@@ -247,7 +202,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section class="final-cta">
 <div class="wrap">
 <h2>Ready to take the first step?</h2>
-<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+<p class="section-sub" style="color:var(--text-dim); margin-top:10px;">Start free, go at your own pace, and never feel like you're behind.</p>
 <div class="hero-ctas">
 <a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
 </div>
@@ -256,7 +211,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 
 <footer>
 <div class="wrap footer-row">
-<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
 <div class="footer-social">
 <a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
@@ -266,6 +221,9 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </a>
 <a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
 </a>
 </div>
 <div class="footer-links">
