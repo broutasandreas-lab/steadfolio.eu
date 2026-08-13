@@ -69,7 +69,7 @@ section { padding: 60px 0; }
 h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4.6vw, 44px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
 h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 3vw, 27px); letter-spacing: -0.015em; color: #fff; }
 .page-hero { padding: 60px 0 8px; text-align: center; }
-.page-hero p { max-width: 640px; margin: 16px auto 0; color: var(--text-dim); font-size: 17px; }
+.page-hero p { max-width: 560px; margin: 16px auto 0; color: var(--text-dim); font-size: 17px; }
 .article-body { max-width: 760px; margin: 0 auto; }
 .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; text-align: center; }
 .article-body p { font-size: 16.5px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
@@ -86,6 +86,15 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 
 .tool-card p { font-size: 15px; margin-bottom: 10px; }
 .tool-card .tool-meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-soft); }
 .fact-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0 32px; }
+@media (max-width: 620px) { .pros-cons { grid-template-columns: 1fr; } }
+.pros-cons-col { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+.pros-cons-col.pros { border-left: 3px solid var(--teal); }
+.pros-cons-col.cons { border-left: 3px solid var(--text-muted); }
+.pros-cons-col h3 { font-family: var(--font-mono) !important; font-size: 12.5px !important; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px !important; }
+.pros-cons-col.pros h3 { color: var(--teal-bright); }
+.pros-cons-col.cons h3 { color: var(--text-muted); }
+.pros-cons-col ul { margin: 0 0 0 18px; font-size: 14.5px; }
 .fact-table th, .fact-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border-soft); color: var(--text-dim); }
 .fact-table th { color: var(--text); font-family: var(--font-display); font-weight: 600; font-size: 13px; }
 .fact-table td.highlight-col, .fact-table th.highlight-col { background: rgba(34,197,139,0.06); }
@@ -153,7 +162,7 @@ footer:hover { opacity: 1; }
 <a href="blog.html" class="back-link" style="justify-content:center; display:flex;">← Back to Blog</a>
 <div class="kicker">Comparison</div>
 <h1>Best Tools to Learn Investing in 2026</h1>
-<p>Learning to invest isn't one job - it's several: understanding the concepts, practicing without risk, and eventually tracking a real portfolio. Here's what actually fits each job, including where SteadFolio fits and where it doesn't.</p>
+<p>Learning to invest isn't one job - it's several. Here's what actually fits each one, including where SteadFolio fits and where it doesn't.</p>
 <p class="article-meta">Last updated: August 2026 - Educational content, not financial advice</p>
 </div>
 </section>
@@ -161,7 +170,18 @@ footer:hover { opacity: 1; }
 <section style="padding-top:20px;">
 <div class="wrap article-body">
 
-<p>Search "best app to learn investing" and most results are ranked lists where the site publishing the list conveniently comes out on top. We're not going to pretend we're neutral about SteadFolio - we built it - but we'll try to be honest about what it's actually good for, and what it isn't, alongside the other tools people commonly use.</p>
+<p>Most "best investing app" lists try to rank completely different types of tools against each other, which can be misleading. A beginner learning what an ETF is, someone practicing trades, and someone managing a real portfolio don't necessarily need the same tool. So instead of forcing everything into one ranking, we're comparing these tools based on what they're actually designed to help you do - including where SteadFolio fits, and where it doesn't.</p>
+
+<table class="fact-table">
+<tr><th>If you want to...</th><th>A good fit</th></tr>
+<tr><td>Learn investing from scratch, step by step</td><td class="highlight-col">SteadFolio</td></tr>
+<tr><td>Look up a specific finance term</td><td>Investopedia</td></tr>
+<tr><td>Learn general financial literacy first</td><td>Khan Academy or Zogo</td></tr>
+<tr><td>Practice placing trades risk-free</td><td class="highlight-col">SteadFolio or Investopedia Simulator</td></tr>
+<tr><td>Learn active trading (technical analysis, options)</td><td>TradeWize</td></tr>
+<tr><td>Track an existing real portfolio</td><td>getquin or <span style="color:var(--teal-bright);">SteadFolio</span></td></tr>
+<tr><td>Compare where to actually open an account</td><td class="highlight-col">SteadFolio's Broker Comparison</td></tr>
+</table>
 
 <h2>Job 1: Learn the concepts</h2>
 <p>Before anything else, this is where most beginners actually need to start - understanding what a stock, an ETF, diversification, and risk actually mean.</p>
@@ -220,12 +240,75 @@ footer:hover { opacity: 1; }
 <tr><th>Platform</th><th class="highlight-col">SteadFolio</th><th>Finelo</th><th>TradeWize</th></tr>
 <tr><td>Primary orientation</td><td class="highlight-col">Long-term investing</td><td>Investing + trading + crypto paths</td><td>Investing course + trading tracks (TA, options)</td></tr>
 <tr><td>Free tier</td><td class="highlight-col">Yes, substantial</td><td>Limited (subscription-oriented)</td><td>Yes - full free course (172 lessons)</td></tr>
-<tr><td>Typical paid price</td><td class="highlight-col">Free / SteadFolio+ pricing TBA</td><td>~$39.99/month (reported)</td><td>~$33/month (Premium)</td></tr>
+<tr><td>Typical paid price</td><td class="highlight-col">Free / SteadFolio+ pricing TBA</td><td>Low-cost intro offer, renews at ~$39.99/mo</td><td>~$33/month (Premium)</td></tr>
 <tr><td>AI component</td><td class="highlight-col">Sofia - adaptive teacher across the whole journey</td><td>AI personalization + chart analyzer</td><td>Coach Chad - reviews practice trades, chart reads</td></tr>
 <tr><td>Real portfolio tracking</td><td class="highlight-col">Yes (My Portfolio, Portfolio Audit, XIRR)</td><td>Not a core feature</td><td>Not a core feature</td></tr>
 <tr><td>No sales pitch / no product recommendations</td><td class="highlight-col">Yes, explicit positioning</td><td>Not a stated positioning</td><td>Not a stated positioning</td></tr>
 </table>
 <p style="font-size:13px; color:var(--text-muted);">Comparison based on publicly available information from each platform's own website as of August 2026. Pricing and features change - verify current details directly with each provider.</p>
+
+<h3>SteadFolio, in more depth</h3>
+<p>Most tools on this page do one job well: Investopedia and Khan Academy teach concepts, Investopedia Simulator lets you practice, getquin tracks a real portfolio. SteadFolio covers <strong>both worlds</strong> - learning and practice, plus the real-portfolio side - connected together, so what you learn carries through to what you actually do later.</p>
+<div class="pros-cons">
+<div class="pros-cons-col pros">
+<h3 style="margin:0;">Strengths</h3>
+<ul>
+<li>Covers the full arc - learn → practice → apply to a real portfolio → reflect - where most competitors only cover one or two steps</li>
+<li>Free tier is substantial: full lesson path, simulators, and Paper Trading, not a limited trial</li>
+<li>Real portfolio tracking (Portfolio Audit, XIRR) built in - something Finelo and TradeWize don't offer</li>
+<li>Explicit "no sales pitch, no product recommendations" positioning throughout</li>
+</ul>
+</div>
+<div class="pros-cons-col cons">
+<h3 style="margin:0;">Worth knowing</h3>
+<ul>
+<li>Not built for active trading, technical analysis, or options education - see TradeWize below for that</li>
+<li>Doesn't cover country-specific tax rules in depth (see our <a href="blog-etf-domicile-withholding-tax.html" style="color: var(--teal-bright); text-decoration: underline;">domicile and withholding tax guide</a> for a starting point)</li>
+</ul>
+</div>
+</div>
+
+<h3>Finelo, in more depth</h3>
+<p>Finelo offers short, gamified daily lessons - reportedly 270+ hours of content - spanning investing, trading, and crypto, with an AI-driven chart analyzer and personalization layer. It leans toward a broader "learn markets" scope rather than a narrow long-term-investing focus.</p>
+<div class="pros-cons">
+<div class="pros-cons-col pros">
+<h3 style="margin:0;">Strengths</h3>
+<ul>
+<li>Large volume of bite-sized content, useful for habit-forming daily learning</li>
+<li>Covers investing, trading, and crypto in one place if you want breadth</li>
+<li>AI chart-analysis tool for those interested in technical reading</li>
+</ul>
+</div>
+<div class="pros-cons-col cons">
+<h3 style="margin:0;">Limitations</h3>
+<ul>
+<li>Advertised low-cost intro plans auto-renew at a considerably higher rate (~$39.99/month) - a common source of user complaints, worth checking closely before subscribing</li>
+<li>Broader trading/crypto focus can dilute a long-term-investing goal specifically</li>
+<li>No stated "no product recommendations" positioning</li>
+</ul>
+</div>
+</div>
+
+<h3>TradeWize, in more depth</h3>
+<p>TradeWize centers on a free, structured course (172 lessons) covering investing fundamentals plus dedicated trading tracks - technical analysis, chart patterns, options - with an AI coach ("Coach Chad") that reviews practice trades and chart reads. Its premium tier (~$33/month) unlocks deeper trading-specific material.</p>
+<div class="pros-cons">
+<div class="pros-cons-col pros">
+<h3 style="margin:0;">Strengths</h3>
+<ul>
+<li>Full course is free - 172 lessons with no paywall on the core path</li>
+<li>Genuinely strong trading-specific curriculum (TA, chart patterns, options) if that's your goal</li>
+<li>AI coach gives direct feedback on practice trades, not just passive lessons</li>
+</ul>
+</div>
+<div class="pros-cons-col cons">
+<h3 style="margin:0;">Limitations</h3>
+<ul>
+<li>Trading-first orientation - less suited to someone whose goal is purely long-term, buy-and-hold investing</li>
+<li>No real-portfolio tracking or long-term goal-setting tools</li>
+<li>No stated "no product recommendations" positioning</li>
+</ul>
+</div>
+</div>
 
 <h3>Where we'd point you elsewhere</h3>
 <p>If your actual goal is learning <strong>active trading</strong> - technical analysis, chart patterns, options - TradeWize's dedicated trading tracks go considerably deeper on that than SteadFolio does, since that's genuinely not our focus. Similarly, if you want short, gamified daily lessons in many languages and don't mind a subscription, Finelo's format may suit your habits better than a structured, sequential path.</p>
