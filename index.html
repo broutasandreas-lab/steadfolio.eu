@@ -248,6 +248,19 @@ overflow: hidden; margin: 0 auto;
 .sofia-bubble .sofia-avatar { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(155deg, var(--teal-bright), var(--teal)); color: #06231a; font-family: var(--font-display); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
 .sofia-bubble p { margin: 0; font-size: 15.5px; color: var(--text); line-height: 1.6; }
 
+/* Sofia interactive demo */
+.sofia-demo { max-width: 560px; margin: 40px auto 0; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px; }
+.sofia-demo-log { display: flex; flex-direction: column; gap: 14px; }
+.sofia-demo-log .sofia-bubble { background: transparent; border: none; padding: 0; }
+.user-bubble { display: flex; justify-content: flex-end; }
+.user-bubble p { background: var(--teal-dim); color: var(--text); border: 1px solid rgba(34,197,139,0.3); border-radius: 14px 14px 4px 14px; padding: 12px 16px; font-size: 15px; max-width: 80%; margin: 0; }
+.sofia-demo-log .sofia-bubble p { background: var(--bg-2); border-radius: 14px 14px 14px 4px; padding: 12px 16px; max-width: 85%; }
+.sofia-demo-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.sofia-option-btn { font-family: var(--font-body); font-size: 13.5px; padding: 10px 16px; border-radius: 100px; border: 1px solid var(--border); background: transparent; color: var(--text-dim); cursor: pointer; appearance: none; -webkit-appearance: none; transition: border-color 0.15s, color 0.15s; }
+.sofia-option-btn:hover { border-color: var(--teal); color: var(--text); }
+.sofia-demo-cta { margin-top: 18px; text-align: center; }
+.sofia-demo-cta p { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; }
+
 /* Portfolio section */
 .portfolio-section { border-top: 1px solid var(--border-soft); }
 
@@ -561,53 +574,33 @@ font-size: 13.5px; color: var(--text-muted);
 </div>
 </section>
 
-<section class="problem">
-<div class="wrap">
-<div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">The honest part</div>
-<h2>Most people don't avoid investing because it's hard.<br>They avoid it because it feels unsafe to start.</h2>
-</div>
-<div class="problem-grid">
-<div class="problem-card" data-reveal>
-<p class="line">"I don't know where to even begin."</p>
-</div>
-<div class="problem-card" data-reveal>
-<p class="line">"I'm scared I'll lose money doing this wrong."</p>
-</div>
-<div class="problem-card" data-reveal>
-<p class="line">"Everyone talks like I should already know this."</p>
-</div>
-</div>
-</div>
-</section>
-
 <section class="why">
 <div class="wrap">
 <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-<div class="kicker" style="text-align:center;">Why bother at all</div>
-<h2>People don't actually want a portfolio.<br>They want what it leads to.</h2>
+<div class="kicker" style="text-align:center;">Why SteadFolio</div>
+<h2>Investing isn't difficult because there isn't enough information.<br>It's difficult because there's too much of it.</h2>
 </div>
 <div class="why-grid">
 <div class="why-card" data-reveal>
 <div class="why-icon">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-</div>
-<h3>Keeping up with inflation</h3>
-<p>Money sitting still quietly loses purchasing power every year. Investing is how it has a chance to keep up.</p>
-</div>
-<div class="why-card" data-reveal>
-<div class="why-icon">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg>
-</div>
-<h3>Building real options later</h3>
-<p>A home, a career change, retiring on your own terms - long-term investing is what makes those choices possible.</p>
-</div>
-<div class="why-card" data-reveal>
-<div class="why-icon">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a8 8 0 0116 0c0 6.5-8 11-8 11zM9 11l2 2 4-4"/></svg>
 </div>
-<h3>Fewer money-related worries</h3>
-<p>Understanding what you're doing - and why - replaces vague financial anxiety with an actual plan.</p>
+<h3>Know what you're doing</h3>
+<p>A structured path, not scattered content - so you actually understand what you're doing and why.</p>
+</div>
+<div class="why-card" data-reveal>
+<div class="why-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+</div>
+<h3>Practice before risking money</h3>
+<p>Simulators and Paper Trading let you build confidence with real prices, zero real risk.</p>
+</div>
+<div class="why-card" data-reveal>
+<div class="why-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 2v10l7 7"/></svg>
+</div>
+<h3>Understand your own portfolio</h3>
+<p>Not someone else's. See what you actually own, and why it matters.</p>
 </div>
 </div>
 </div>
@@ -673,22 +666,17 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="wrap">
 <div class="section-head center" style="margin-left:auto;margin-right:auto;">
 <div class="kicker" style="text-align:center;">Meet Sofia</div>
-<h2>More than a chatbot. A coach who remembers.</h2>
-<p class="section-sub" style="text-align:center; max-width:560px; margin-left:auto; margin-right:auto;">Sofia doesn't just answer questions. She knows your learning state, tracks recurring misconceptions, understands your real portfolio, and speaks up when it actually matters.</p>
+<h2>Try talking to your investing coach.</h2>
+<p class="section-sub" style="text-align:center; max-width:520px; margin-left:auto; margin-right:auto;">Not a generic chatbot. A coach who remembers your learning state, your portfolio, and what you've struggled with. Try it below - 2 questions, no signup needed.</p>
 </div>
-<div class="sofia-messages">
+<div class="sofia-demo" id="sofiaDemo">
+<div class="sofia-demo-log" id="sofiaLog">
 <div class="sofia-bubble">
 <div class="sofia-avatar">S</div>
-<p>You just completed the diversification lesson. Let's see how diversified your portfolio actually is.</p>
+<p>Hi, I'm Sofia. What would you like to understand about investing?</p>
 </div>
-<div class="sofia-bubble">
-<div class="sofia-avatar">S</div>
-<p>Your portfolio is heavily concentrated in US technology. Want to understand the risk?</p>
 </div>
-<div class="sofia-bubble">
-<div class="sofia-avatar">S</div>
-<p>You've stopped your DCA contributions for two months. Want to review what changed?</p>
-</div>
+<div class="sofia-demo-options" id="sofiaOptions"></div>
 </div>
 </div>
 </section>
@@ -1213,6 +1201,90 @@ drawChart(buildSeries(monthly, years, 0.08));
 monthlySlider.addEventListener('input', update);
 yearsSlider.addEventListener('input', update);
 update();
+})();
+
+// Interactive Sofia demo - client-side only, hard-stopped at 2 exchanges
+(function () {
+var log = document.getElementById('sofiaLog');
+var optionsBox = document.getElementById('sofiaOptions');
+if (!log || !optionsBox) return;
+
+var round = 0; // 0 = first question, 1 = second question, 2+ = done
+
+var starterQuestions = [
+{
+label: "I'm completely new to investing",
+answer: "Welcome! The best place to start is understanding what you're actually buying - stocks, ETFs, and how markets work. SteadFolio's Academy walks you through this step by step, starting from zero."
+},
+{
+label: "What is an ETF?",
+answer: "ETFs are baskets of investments that let you own many companies through a single investment. If you want, I can show you how an ETF would behave with €200/month over 10 years."
+},
+{
+label: "How much should I invest each month?",
+answer: "There's no fixed number - it depends on your budget and goals. SteadFolio's Budget Calculator helps you see what you can realistically invest, using rules like the 50/30/20 approach."
+}
+];
+
+var followUpQuestions = [
+{
+label: "I'm afraid of losing money if I start investing",
+answer: "That's completely normal. You don't need to start by putting real money at risk. Begin by learning the basics, then try a historical scenario or build a €10,000 virtual portfolio with Paper Trading - you'll see how markets behave before making any real decisions."
+},
+{
+label: "Tell me more about Paper Trading",
+answer: "Paper Trading gives you €10,000 in virtual money and real market prices, so you can practice buying and holding without any real risk. It's how most SteadFolio users get comfortable before investing for real."
+}
+];
+
+function addBubble(text, isUser) {
+var wrap = document.createElement('div');
+if (isUser) {
+wrap.className = 'user-bubble';
+wrap.innerHTML = '<p>' + text + '</p>';
+} else {
+wrap.className = 'sofia-bubble';
+wrap.innerHTML = '<div class="sofia-avatar">S</div><p>' + text + '</p>';
+}
+log.appendChild(wrap);
+log.scrollTop = log.scrollHeight;
+}
+
+function renderOptions(list, onPick) {
+optionsBox.innerHTML = '';
+list.forEach(function (item) {
+var btn = document.createElement('button');
+btn.type = 'button';
+btn.className = 'sofia-option-btn';
+btn.textContent = item.label;
+btn.addEventListener('click', function () { onPick(item); });
+optionsBox.appendChild(btn);
+});
+}
+
+function showHardStop() {
+optionsBox.innerHTML = '<div class="sofia-demo-cta"><p>That\'s the demo - Sofia remembers a lot more once you create an account.</p><a href="https://app.steadfolio.eu" class="btn-primary">Continue with Sofia → Create your free account</a></div>';
+}
+
+function pickStarter(item) {
+addBubble(item.label, true);
+setTimeout(function () {
+addBubble(item.answer, false);
+round = 1;
+renderOptions(followUpQuestions, pickFollowUp);
+}, 350);
+}
+
+function pickFollowUp(item) {
+addBubble(item.label, true);
+setTimeout(function () {
+addBubble(item.answer, false);
+round = 2;
+showHardStop();
+}, 350);
+}
+
+renderOptions(starterQuestions, pickStarter);
 })();
 </script>
 </body>
