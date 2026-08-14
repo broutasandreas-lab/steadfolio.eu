@@ -261,6 +261,21 @@ overflow: hidden; margin: 0 auto;
 /* Grouped feature sections */
 .feature-group-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-bright); margin: 40px 0 16px; grid-column: 1 / -1; }
 .feature-group-label:first-child { margin-top: 0; }
+
+/* Who it's for / not for */
+.fit-section { border-top: 1px solid var(--border-soft); }
+.fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; margin: 40px auto 0; }
+@media (max-width: 700px) { .fit-grid { grid-template-columns: 1fr; } }
+.fit-col { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px 30px; }
+.fit-col.yes { border-left: 3px solid var(--teal); }
+.fit-col.no { border-left: 3px solid var(--text-muted); }
+.fit-label { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; font-weight: 700; margin-bottom: 16px; }
+.fit-col.yes .fit-label { color: var(--teal-bright); }
+.fit-col.no .fit-label { color: var(--text-muted); }
+.fit-col ul { list-style: none; }
+.fit-col li { font-size: 15px; color: var(--text-dim); padding: 8px 0; padding-left: 22px; position: relative; }
+.fit-col.yes li::before { content: "✓"; position: absolute; left: 0; color: var(--teal-bright); }
+.fit-col.no li::before { content: "✕"; position: absolute; left: 0; color: var(--text-muted); }
 .quick-faq { background: var(--bg-2); border-top: 1px solid var(--border-soft); }
 .quick-faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
 .quick-faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; }
@@ -485,11 +500,12 @@ font-size: 13.5px; color: var(--text-muted);
 <h1>From complete beginner to <br class="hero-break">confident <span class="accent">long-term investor.</span></h1>
 <p class="hero-sub">Learn investing. Practice without risking your money. Build your real portfolio. Stay on track with Sofia, your AI investing coach. No sales pitch, no recommendations.</p>
 <div class="hero-ctas">
-<a href="#how" class="btn-primary">How it works →</a>
-<div class="screenshot-frame">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start Learning Free →</a>
+<a href="#how" class="btn-secondary">See How It Works</a>
+</div>
+<div class="screenshot-frame" style="max-width:680px; margin: 40px auto 0;">
 <div class="screenshot-topbar"><span></span><span></span><span></span></div>
 <img src="screenshots/screenshot-chat-demo.png" alt="Sofia answering: Is €50 enough to start investing?" loading="lazy">
-</div>
 </div>
 </div>
 </section>
@@ -727,7 +743,7 @@ font-size: 13.5px; color: var(--text-muted);
 <div class="wrap">
 <div class="section-head center" style="margin-left:auto;margin-right:auto;">
 <div class="kicker" style="text-align:center;">The Loop</div>
-<h2>Your learning never happens in isolation.</h2>
+<h2>Don't just learn investing. Learn from your own portfolio.</h2>
 </div>
 <div class="loop-flow">
 <div class="loop-step">Lesson</div>
@@ -778,13 +794,13 @@ font-size: 13.5px; color: var(--text-muted);
 <h3>Build a real habit, not just a course</h3>
 <p>Track your learning streak and progress across every topic - investing understanding compounds too.</p>
 </div>
-<div class="feature-card" data-reveal style="grid-column: 1 / -1;">
+<div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
 </div>
 <span class="feature-tag">Market Structure</span>
 <h3>Understand what's really happening</h3>
-<p>Sofia also teaches you how the market actually works under the surface - like how large players interact with order flow - so you understand what's really happening, not just the headlines.</p>
+<p>How large players and order flow actually move prices - background context, not the main focus.</p>
 </div>
 
 <div class="feature-group-label">Practice</div>
@@ -821,7 +837,7 @@ font-size: 13.5px; color: var(--text-muted);
 <p>Place simulated trades using live market prices and virtual money, so you can build confidence before investing for real.</p>
 </div>
 
-<div class="feature-group-label">Portfolio</div>
+<div class="feature-group-label">Apply</div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 2v10l7 7"/></svg>
@@ -855,7 +871,6 @@ font-size: 13.5px; color: var(--text-muted);
 <p>Compare your actual results to what would have happened if you'd invested in a simple benchmark index instead.</p>
 </div>
 
-<div class="feature-group-label">Goals</div>
 <div class="feature-card" data-reveal>
 <div class="feature-icon">
 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
@@ -898,6 +913,36 @@ font-size: 13.5px; color: var(--text-muted);
 <li>Remembers who you are</li>
 <li>Built for safety, not sales</li>
 <li>Always a clear next step</li>
+<li>Connects what you learn with what you actually own</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="fit-section">
+<div class="wrap">
+<div class="section-head center" style="margin-left:auto;margin-right:auto;">
+<div class="kicker" style="text-align:center;">Is this for you?</div>
+<h2>Who SteadFolio is - and isn't - for</h2>
+</div>
+<div class="fit-grid">
+<div class="fit-col yes">
+<div class="fit-label">SteadFolio is for you if...</div>
+<ul>
+<li>You're an absolute beginner and don't know where to start</li>
+<li>You're afraid of making an expensive mistake</li>
+<li>You've consumed investing content for years but still don't know what to actually do</li>
+<li>You want to understand investing before you put real money in</li>
+</ul>
+</div>
+<div class="fit-col no">
+<div class="fit-label">SteadFolio is not for...</div>
+<ul>
+<li>Day trading or short-term speculation</li>
+<li>Stock picks or buy/sell signals</li>
+<li>Options or forex trading</li>
+<li>Anyone looking for investment advice or recommendations</li>
 </ul>
 </div>
 </div>
