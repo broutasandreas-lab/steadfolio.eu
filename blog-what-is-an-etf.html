@@ -11,48 +11,22 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Is a Stock? A Plain-Language Guide for Beginners | Steadfolio</title>
-<meta name="description" content="What a stock actually is, how owning one works, how you can make money from it, and the risks worth understanding before you buy your first share.">
+<title>What Is an ETF? A Beginner's Guide (Simple Explanation) | SteadFolio</title>
+<meta name="description" content="What is an ETF? A simple, beginner-friendly explanation of ETFs - what they are, how they work, and why so many new investors start with them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a stock in simple terms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A stock is a small ownership stake in a company. When you buy a share, you own a tiny slice of that business, including a proportional claim on its future profits and, in most cases, a vote on certain company decisions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you actually make money from a stock?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mainly two ways: the stock's price can rise over time, so shares are worth more than you paid (a capital gain), and some companies pay out a portion of profits directly to shareholders as dividends."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between common and preferred stock?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Common stock usually comes with voting rights and variable dividends that depend on company performance. Preferred stock generally pays a fixed dividend and has a higher claim on assets if a company is liquidated, but typically no voting rights. Most beginner investors hold common stock."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can a stock's value go to zero?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. If a company fails and goes out of business, its stock can become worthless. This is one of the core reasons diversification - not concentrating money in a single company - matters so much."
-      }
-    }
+    {"@type":"Question","name":"What is an ETF in simple words?","acceptedAnswer":{"@type":"Answer","text":"An ETF (exchange-traded fund) is a single investment that holds many different stocks or bonds inside it. When you buy one share of an ETF, you're buying a small piece of everything it holds, all at once."}},
+    {"@type":"Question","name":"Is an ETF the same as a stock?","acceptedAnswer":{"@type":"Answer","text":"No. A stock is a share in one single company. An ETF is a share in a fund that holds many companies (or bonds) at the same time. ETFs are bought and sold on the stock exchange in the same way stocks are, which is why people sometimes confuse the two."}},
+    {"@type":"Question","name":"Are ETFs good for beginners?","acceptedAnswer":{"@type":"Answer","text":"Many beginners start with ETFs because a single ETF can spread your money across many companies at once, without needing to pick individual stocks yourself. This doesn't remove risk, but it does remove the need to bet everything on one company."}},
+    {"@type":"Question","name":"Can you lose money in an ETF?","acceptedAnswer":{"@type":"Answer","text":"Yes. An ETF's value goes up and down based on what it holds. If the stocks or bonds inside the ETF fall in value, the ETF falls too. ETFs reduce the risk of any single company hurting you badly, but they do not remove risk altogether."}}
   ]
 }
 </script>
@@ -65,42 +39,35 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6;
 background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
-@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
 .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
 header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
 nav.wrap { max-width: 1500px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
 .brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
 .nav-links a { transition: color 0.15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
 .nav-links a.active { color: var(--teal-bright); }
-.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
-.nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; }
 .nav-mobile-hide { display: flex; }
 @media (max-width: 1220px) { .nav-mobile-hide { display: none; } }
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
-.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
 @media (max-width: 1220px) { .nav-toggle { display: flex; } }
 .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
 .mobile-nav.open { display: flex; }
 .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
 .mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--text); }
 section { padding: 72px 0; }
 .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
 h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
 h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
-.section-sub { margin-top: 14px; color: var(--text-dim); font-size: 16.5px; }
 .page-hero { padding: 64px 0 8px; text-align: center; }
 .page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
 .trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
@@ -109,13 +76,12 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 
 .trust-row svg { flex-shrink: 0; color: var(--teal); }
 .final-cta { text-align: center; }
 .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
-.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
-footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+footer:hover { opacity: 1; }
 .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
 .footer-links a { white-space: nowrap; }
-.footer-links a:hover { color: var(--text-dim); }
 .footer-social { display: flex; align-items: center; gap: 14px; }
 .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
 .footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
@@ -128,10 +94,12 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
 .article-body li { margin-bottom: 8px; }
 .article-body strong { color: var(--text); }
+.fact-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14.5px; }
+.fact-table th, .fact-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); color: var(--text-dim); }
+.fact-table th { color: var(--text); font-family: var(--font-display); font-weight: 600; font-size: 13.5px; width: 44%; }
 .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
 .callout strong { color: var(--teal-bright); }
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
-.back-link:hover { color: var(--teal-bright); }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
 </style>
@@ -139,7 +107,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <body>
 <header>
 <nav class="wrap">
-<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>Steadfolio</a>
+<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
 <div class="nav-links nav-mobile-hide">
 <a href="index.html#how">How it works</a>
 <a href="index.html#features">Features</a>
@@ -165,7 +133,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <a href="pricing.html">Pricing</a>
 <a href="broker-comparison.html">Compare Brokers</a>
 <a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
-<a href="blog.html" class="active">Blog</a>
+<a href="blog.html">Blog</a>
 <a href="about.html">About</a>
 <a href="faq.html">FAQ</a>
 </div>
@@ -175,63 +143,81 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="wrap article-header">
 <a href="blog.html" class="back-link">← Back to Blog</a>
 <div class="kicker">Foundations</div>
-<h1>What Is a Stock? A Plain-Language Guide for Beginners</h1>
-<p class="article-meta">4 min read - Educational content, not financial advice</p>
+<h1>What Is an ETF? A Beginner's Guide</h1>
+<p class="article-meta">6 min read - Educational content, not financial advice</p>
 </div>
 </section>
 
 <section style="padding-top: 32px;">
 <div class="wrap article-body">
 
-<p>Almost every conversation about investing starts here, and yet "stock" is one of those words people nod along to without ever quite pinning down. It's worth slowing down on, because everything else - ETFs, index funds, diversification - is built on top of this one idea.</p>
+<p><strong>An ETF is a single investment that holds many different investments inside it.</strong> Instead of buying one company's stock, you buy one ETF share - and that one share gives you a small piece of everything the ETF holds. That's the whole idea, in one sentence. The rest of this guide explains it in more detail, in plain language.</p>
 
-<h2>What owning a stock actually means</h2>
-<p>A stock (also called a share or equity) represents a small ownership stake in a company. When a company wants to raise money to grow, it can sell pieces of itself to investors instead of only borrowing. Each share is one of those pieces. If a company has issued 1,000,000 shares and you own 100 of them, you own 0.01% of that company - a tiny amount, but real ownership all the same.</p>
-<p>That ownership comes with two practical things: a proportional claim on the company's future profits, and in most cases, the right to vote on certain major company decisions, like electing the board of directors.</p>
+<h2>A simple way to picture it</h2>
+<p>Think of an ETF like a fruit basket instead of a single apple. If you buy just one apple, and that apple goes bad, you've lost your whole snack. If you buy a basket with an apple, a banana, and an orange, one bad piece of fruit doesn't ruin everything - you still have the others.</p>
+<p>An ETF works the same way, but with companies instead of fruit. A single ETF might hold shares in 50, 500, or even thousands of different companies. When you buy one ETF, you're spreading your money across all of them at once, instead of putting it all into just one.</p>
 
-<h2>How do you actually make money from a stock?</h2>
-<p>There are two main mechanisms, and it's worth understanding both separately:</p>
+<h2>What "ETF" actually stands for</h2>
+<p><strong>ETF stands for Exchange-Traded Fund.</strong> Let's break that down into its three parts:</p>
 <ul>
-<li><strong>Price appreciation (capital gains):</strong> If the company grows and becomes more valuable - or investors simply believe it will - demand for its shares tends to rise, and so does the price. If you eventually sell at a higher price than you paid, that difference is your gain.</li>
-<li><strong>Dividends:</strong> Some companies choose to distribute a portion of their profits directly to shareholders on a regular schedule, rather than reinvesting everything back into the business. Not all companies pay dividends - many growth-focused companies reinvest profits instead.</li>
+<li><strong>Exchange-Traded</strong> - it's bought and sold on a stock exchange, the same place stocks are traded, and its price moves throughout the day.</li>
+<li><strong>Fund</strong> - it's not one company. It's a collected group ("fund") of many investments, managed together as one product.</li>
 </ul>
-<p>Neither is guaranteed. Share prices can fall as easily as they rise, and dividends can be reduced or cancelled if a company's finances change.</p>
+<p>Put those together, and you get: a fund of many investments, that you can buy and sell on the stock exchange, just like a single stock.</p>
 
-<h2>Common stock vs preferred stock</h2>
-<p>Most of what people mean when they casually say "buying stock" is <strong>common stock</strong> - the standard type, which usually includes voting rights and dividends that vary depending on how well the company performs. <strong>Preferred stock</strong> is a less common variant that typically pays a fixed dividend and has a higher claim on company assets if the business is liquidated, but usually comes without voting rights. As a beginner, you'll overwhelmingly be dealing with common stock, especially through ETFs and index funds.</p>
+<h2>How is an ETF different from a stock?</h2>
+<p>This is the question beginners ask most often, so let's be very clear about it.</p>
+<ul>
+<li><strong>A stock</strong> is a small ownership piece of one single company. If you buy Apple stock, you own a tiny piece of Apple, and only Apple.</li>
+<li><strong>An ETF</strong> is a small ownership piece of a whole collection of companies (or sometimes bonds) bundled together. If you buy an ETF that holds 500 companies, you own a tiny piece of all 500 at once.</li>
+</ul>
+<p>Buying and selling both works the same way - you place an order through a broker, just like you would for a stock. If you want to see the full picture of what a stock actually is first, our guide on <a href="blog-what-is-a-stock.html" style="color: var(--teal-bright); text-decoration: underline;">what a stock is</a> is a good place to start.</p>
 
-<h2>What actually moves a stock's price?</h2>
-<p>In the short term, a stock's price is simply whatever the last buyer and seller agreed on - driven by a mix of company news, broader market sentiment, economic data, and sometimes pure momentum that has little to do with the underlying business. Over the long term, prices tend to track a company's actual earnings and growth more closely, though "long term" here can mean years, not weeks.</p>
-<div class="callout">
-<strong>Worth remembering:</strong> Day-to-day price movements are mostly noise. What tends to matter far more, over long periods, is whether the underlying business keeps growing.
-</div>
+<h2>Why do people call this "diversification"?</h2>
+<p><strong>Diversification just means "not putting all your money in one place."</strong> An ETF does this automatically for you, because it already holds many companies inside it. If one company inside the ETF does badly, it's only a small part of the whole - it doesn't sink the entire investment the way it would if that company was your only holding.</p>
+<p>Our full guide on <a href="blog-what-is-diversification.html" style="color: var(--teal-bright); text-decoration: underline;">what diversification means</a> goes deeper into this idea, if you want to understand it more.</p>
 
-<h2>The risk worth understanding before you buy your first share</h2>
-<p>A single stock can lose most or all of its value if the underlying company struggles or fails - something an index or a diversified ETF is specifically designed to protect against by spreading that risk across many companies at once. This is the core reason many beginner investors start with <a href="blog-what-is-diversification.html" style="color: var(--teal-bright); text-decoration: underline;">diversified funds rather than individual stocks</a>, and only consider individual companies once they're comfortable evaluating them - a process our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an investment before buying</a> also touches on. If you're not yet sure what an ETF actually is, our simple guide on <a href="blog-what-is-an-etf.html" style="color: var(--teal-bright); text-decoration: underline;">what an ETF is</a> explains it in plain language.</p>
+<h2>What can an ETF actually hold?</h2>
+<p>Different ETFs hold different things. A few common examples:</p>
+<ul>
+<li><strong>Stock ETFs</strong> - hold shares of many companies, sometimes tracking a well-known list like the <a href="blog-what-is-the-sp-500.html" style="color: var(--teal-bright); text-decoration: underline;">S&amp;P 500</a>.</li>
+<li><strong>Bond ETFs</strong> - hold many bonds instead of stocks, generally considered steadier but with lower growth potential.</li>
+<li><strong>Sector ETFs</strong> - focus on one industry, like technology or healthcare, instead of the whole market.</li>
+</ul>
+<p>Most beginners start with broad stock ETFs, since they spread money across many industries and companies at once, rather than betting on just one part of the economy.</p>
 
-<h2>Where stocks fit into a broader portfolio</h2>
-<p>Stocks are one building block among several - alongside bonds, cash, and other asset types - that make up a portfolio. How much of your money goes into stocks versus other assets is a personal decision shaped by your goals and comfort with short-term ups and downs, not a one-size-fits-all number.</p>
+<h2>What does an ETF cost?</h2>
+<p>ETFs charge a small, ongoing fee, usually called an <strong>expense ratio</strong>. It's a small percentage of your money, taken automatically each year to cover the cost of running the fund - you never see a separate bill for it.</p>
+<div class="callout"><strong>In simple terms:</strong> If an ETF has a 0.20% expense ratio, that means roughly €0.20 per year for every €100 you have invested in it. Broad, popular ETFs usually charge less than this; more specialized ones sometimes charge more.</div>
+
+<h2>Is an ETF safe?</h2>
+<p>An ETF is not risk-free. Its price can go up, and its price can go down, just like a stock's can. What an ETF does is reduce one specific risk: the risk of a single company hurting you badly, since your money is spread across many companies instead of one.</p>
+<p>It doesn't protect you from the whole market falling at once. If the overall stock market drops, most stock ETFs will drop too, since they're built from stocks in that same market.</p>
+
+<h2>How do you actually buy one?</h2>
+<p>You buy an ETF through a broker, the same way you'd buy a stock - you search for its name or ticker symbol, choose how much you want to invest, and place the order. If you don't have a broker yet, our <a href="broker-comparison.html" style="color: var(--teal-bright); text-decoration: underline;">independent broker comparison</a> walks through the actual fees and features of popular options, without recommending any specific one.</p>
+<p>Before buying any specific ETF, it's worth running it through a simple checklist - our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a> covers exactly what to look at.</p>
+
+<h2>The one-sentence summary</h2>
+<p>An ETF lets you buy a small piece of many companies at once, in a single purchase, instead of having to choose and buy each company separately - which is exactly why so many beginners start there.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
-<h3>What is a stock in simple terms?</h3>
-<p>A stock is a small ownership stake in a company. When you buy a share, you own a tiny slice of that business, including a proportional claim on its future profits and, in most cases, a vote on certain company decisions.</p>
+<h3>What is an ETF in simple words?</h3>
+<p>An ETF (exchange-traded fund) is a single investment that holds many different stocks or bonds inside it. When you buy one share of an ETF, you're buying a small piece of everything it holds, all at once.</p>
 </div>
 <div class="faq-item">
-<h3>How do you actually make money from a stock?</h3>
-<p>Mainly two ways: the stock's price can rise over time, so shares are worth more than you paid (a capital gain), and some companies pay out a portion of profits directly to shareholders as dividends.</p>
+<h3>Is an ETF the same as a stock?</h3>
+<p>No. A stock is a share in one single company. An ETF is a share in a fund that holds many companies (or bonds) at the same time. ETFs are bought and sold on the stock exchange in the same way stocks are, which is why people sometimes confuse the two.</p>
 </div>
 <div class="faq-item">
-<h3>What is the difference between common and preferred stock?</h3>
-<p>Common stock usually comes with voting rights and variable dividends that depend on company performance. Preferred stock generally pays a fixed dividend and has a higher claim on assets if a company is liquidated, but typically no voting rights. Most beginner investors hold common stock.</p>
+<h3>Are ETFs good for beginners?</h3>
+<p>Many beginners start with ETFs because a single ETF can spread your money across many companies at once, without needing to pick individual stocks yourself. This doesn't remove risk, but it does remove the need to bet everything on one company.</p>
 </div>
 <div class="faq-item">
-<h3>Can a stock's value go to zero?</h3>
-<p>Yes. If a company fails and goes out of business, its stock can become worthless. This is one of the core reasons diversification - not concentrating money in a single company - matters so much.</p>
+<h3>Can you lose money in an ETF?</h3>
+<p>Yes. An ETF's value goes up and down based on what it holds. If the stocks or bonds inside the ETF fall in value, the ETF falls too. ETFs reduce the risk of any single company hurting you badly, but they do not remove risk altogether.</p>
 </div>
-
-</div>
-</section>
 
 <div class="trust-strip">
 <div class="wrap trust-row">
@@ -244,7 +230,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section class="final-cta">
 <div class="wrap">
 <h2>Ready to take the first step?</h2>
-<p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+<p class="section-sub" style="color:var(--text-dim); margin-top:10px;">Start free, go at your own pace, and never feel like you're behind.</p>
 <div class="hero-ctas">
 <a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
 </div>
@@ -253,7 +239,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 
 <footer>
 <div class="wrap footer-row">
-<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
 <div class="footer-social">
 <a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
@@ -263,6 +249,9 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </a>
 <a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
 </a>
 </div>
 <div class="footer-links">
