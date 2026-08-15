@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Is the S&P 500? A Beginner's Guide | SteadFolio</title>
-<meta name="description" content="A plain-language guide to the S&P 500: what it actually tracks, how companies are selected, how it's weighted, its historical returns, and how to invest in it.">
+<title>How to Buy Your First ETF (A Step-by-Step Guide for Beginners) | SteadFolio</title>
+<meta name="description" content="A step-by-step guide to buying your first ETF - choosing a broker, finding the right ticker, understanding order types, and what actually happens when you click buy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,10 +23,10 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What is the S&P 500?","acceptedAnswer":{"@type":"Answer","text":"The S&P 500 is a stock market index that tracks 500 large, publicly traded companies listed on US exchanges, weighted by their float-adjusted market capitalization. It's widely used as a proxy for the overall performance of the US stock market."}},
-    {"@type":"Question","name":"How are companies chosen for the S&P 500?","acceptedAnswer":{"@type":"Answer","text":"Companies must be US-based, listed on an eligible US exchange, have positive earnings in the most recent quarter and over the trailing four quarters combined, meet minimum market capitalization and liquidity requirements, and have been publicly traded for at least 12 months. A committee at S&P Dow Jones Indices makes the final selections."}},
-    {"@type":"Question","name":"What has the S&P 500's average historical return been?","acceptedAnswer":{"@type":"Answer","text":"Since its modern form began in 1957, the S&P 500 has returned roughly 10% per year on average before inflation, or around 6-7% per year after adjusting for inflation. This is a long-term historical average, not a guarantee - individual years vary enormously, including significant losses."}},
-    {"@type":"Question","name":"Can I invest directly in the S&P 500?","acceptedAnswer":{"@type":"Answer","text":"You cannot buy the index itself, but you can invest in ETFs or index funds designed to track its performance. European investors typically buy a UCITS-compliant ETF tracking the S&P 500, rather than a US-domiciled fund."}}
+    {"@type":"Question","name":"What's the difference between depositing money into a brokerage account and actually buying an ETF?","acceptedAnswer":{"@type":"Answer","text":"Depositing money transfers cash from your bank into your brokerage account, where it sits as uninvested cash. Buying an ETF is a separate, later step where you use that cash to purchase shares. Depositing money does not buy anything by itself."}},
+    {"@type":"Question","name":"Why might two ETFs that track the same index still produce different long-term results?","acceptedAnswer":{"@type":"Answer","text":"They can differ in their ongoing fee (the TER), their domicile and tax treatment, whether they accumulate or distribute dividends, and how closely they actually track the index (tracking difference). Small differences in ongoing fees compound over a long holding period, working against your returns."}},
+    {"@type":"Question","name":"What does UCITS affect for a European investor?","acceptedAnswer":{"@type":"Answer","text":"UCITS ETFs are structured under EU rules and are generally the ones available to retail investors in Europe. Non-UCITS ETFs, often US-domiciled, may not be offered to you at all, or may carry additional tax complications."}},
+    {"@type":"Question","name":"What's the practical difference between a market order and a limit order?","acceptedAnswer":{"@type":"Answer","text":"A market order buys immediately at the current price, which is simple and fine for most long-term ETF investors. A limit order only buys if the price reaches a level you set - useful if the exact price matters to you, less relevant for long-term investing."}}
   ]
 }
 </script>
@@ -143,7 +143,7 @@ footer:hover { opacity: 1; }
 <div class="wrap article-header">
 <a href="blog.html" class="back-link">← Back to Blog</a>
 <div class="kicker">Foundations</div>
-<h1>What Is the S&amp;P 500? A Beginner's Guide</h1>
+<h1>How to Buy Your First ETF (A Step-by-Step Guide for Beginners)</h1>
 <p class="article-meta">6 min read - Educational content, not financial advice</p>
 </div>
 </section>
@@ -151,68 +151,108 @@ footer:hover { opacity: 1; }
 <section style="padding-top: 32px;">
 <div class="wrap article-body">
 
-<p>If you've read even a little about investing, you've almost certainly run into the phrase "the market was up today" or "beating the S&P 500." It's probably the single most-referenced number in all of investing - and yet a lot of people who quote it couldn't fully explain what it actually is. Here's the plain-language version.</p>
+<p>You've decided you want to invest. You've read that ETFs are a sensible place to start. Then you open a broker app for the first time and freeze.</p>
 
-<h2>What the S&P 500 actually is</h2>
-<p>The <strong>S&P 500</strong> is a stock market index that tracks 500 large, publicly traded companies listed on US stock exchanges. It's maintained by S&P Dow Jones Indices, and it's widely treated as a proxy for the health of the US stock market as a whole - when financial news says "the market rose 1% today," it's very often talking about the S&P 500 specifically.</p>
-<p>It's important to understand that the S&P 500 isn't something you can buy directly - it's a <em>measurement</em>, not a product. You can only invest in it indirectly, through funds designed to track it (more on that below).</p>
+<p>There's a search bar, a ticker symbol you don't recognize, a "buy" button, an order type dropdown, and a number asking how many "units" you want. Nobody explained any of this. It feels like the moment before you're supposed to know something is far more confusing than actually knowing it.</p>
 
-<h2>How companies actually get selected</h2>
-<p>Membership in the S&P 500 isn't purely mechanical - a committee at S&P Dow Jones Indices makes the final decisions, guided by a published set of eligibility rules. To be considered, a company generally needs to meet criteria including:</p>
+<p>This guide walks through exactly what happens between deciding to invest and owning your first ETF, in order, with no steps skipped. If you're not yet sure what an ETF actually is, our guide on <a href="blog-what-is-an-etf.html" style="color: var(--teal-bright); text-decoration: underline;">what an ETF is</a> is a good place to start first.</p>
+
+<h2>The Simple Explanation</h2>
+
+<p>Buying an ETF works almost exactly like buying a stock. You open a brokerage account, put money into it, search for the ETF by its ticker symbol, tell the broker how much you want to buy, and confirm the order. Within a day or two, the ETF shows up in your account.</p>
+
+<p>The part that trips people up isn't the buying itself. It's everything around it: picking the right broker, finding the right ETF, and understanding what the numbers on the screen actually mean.</p>
+
+<h2>How It Actually Works</h2>
+
+<h3>1. Choose a broker</h3>
+<p>You can't buy an ETF directly from an index provider. You need a brokerage account, which acts as the middleman between you and the stock exchange. In Europe, this usually means comparing regulation, fees, the range of ETFs available, and whether the broker supports fractional shares.</p>
+<p>SteadFolio doesn't recommend specific brokers, since the right one depends on your country, the ETFs you want, and how much you plan to invest. Our <a href="broker-comparison.html" style="color: var(--teal-bright); text-decoration: underline;">broker comparison</a> lays out the tradeoffs without pushing you toward any one platform.</p>
+
+<h3>2. Open and verify your account</h3>
+<p>This is standard identity verification (KYC): a government ID, sometimes proof of address, and a short questionnaire about your income and investment experience. Brokers are legally required to ask this. It typically takes a day or two to get approved.</p>
+
+<h3>3. Fund the account</h3>
+<p>You transfer money from your bank into the brokerage account, usually by bank transfer or card. This money sits as cash inside the account until you use it to buy something. Depositing money does not buy anything by itself - that's a separate step.</p>
+
+<h3>4. Find the specific ETF</h3>
+<p>This is where most beginners get stuck, because "an S&amp;P 500 ETF" isn't one product. It's dozens of nearly identical products issued by different companies, each with its own ticker symbol.</p>
+<p>Two things matter here for a European investor:</p>
 <ul>
-<li>Headquartered in the United States, and listed on an eligible US exchange (like the NYSE or Nasdaq)</li>
-<li>Positive earnings in the most recent quarter, and positive earnings summed across the trailing four quarters</li>
-<li>A minimum float-adjusted market capitalization (a threshold that S&P reviews and adjusts periodically)</li>
-<li>Sufficient trading liquidity</li>
-<li>At least 12 months of public trading history since its IPO</li>
+<li><strong>UCITS status.</strong> <a href="blog-what-are-ucits-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">UCITS ETFs</a> are structured under EU rules and are generally the ones available to retail investors in Europe. Non-UCITS (often US-domiciled) ETFs may not be offered to you at all, or may carry tax complications.</li>
+<li><strong>Accumulating vs. distributing.</strong> An <a href="blog-accumulating-vs-distributing-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">accumulating ETF reinvests dividends</a> automatically. A distributing ETF pays them out to your cash balance. Neither is "better" universally, but they're taxed differently depending on your country, so this is worth checking rather than guessing.</li>
 </ul>
-<p>Because it's a fixed count of 500 companies, a new addition always means another company gets removed - companies can drop out due to shrinking market value, being acquired, or no longer meeting the criteria.</p>
+<p>You search for the ETF using its ticker (a short code like a stock symbol) rather than its full name, since several ETFs can share a similar name.</p>
 
-<h2>How the index is weighted</h2>
-<p>The S&P 500 is a <strong>float-adjusted market-capitalization-weighted</strong> index. In plain terms: bigger companies have a bigger influence on the index's overall movement than smaller ones. "Float-adjusted" means only the shares actually available for public trading count toward this calculation - shares held by founders, governments, or other companies in a way that keeps them off the open market are excluded.</p>
-<div class="callout"><strong>What this means practically:</strong> A handful of the very largest companies in the S&P 500 can have an outsized effect on how the whole index performs in a given day or year - the index isn't 500 equally-weighted companies, even though it contains 500 of them.</div>
-
-<h2>What it's actually used for</h2>
-<p>The S&P 500 functions as a <strong>benchmark</strong> - a reference point investors use to judge whether their own results are good, average, or poor. If your portfolio returned 6% in a year the S&P 500 returned 12%, that's useful context a raw percentage alone doesn't give you. This is exactly the kind of comparison our <a href="blog-how-to-choose-a-broker.html" style="color: var(--teal-bright); text-decoration: underline;">What-If analysis</a> style tools are built around - comparing your actual results to what a simple benchmark would have done instead.</p>
-
-<h2>Historical performance (with real caveats)</h2>
-<p>Since the index took its modern 500-company form in 1957, the S&P 500 has returned roughly <strong>10% per year on average</strong>, before adjusting for inflation - or somewhere around 6-7% per year in real, inflation-adjusted terms.</p>
-<div class="callout"><strong>This is a long-term average, not a promise.</strong> Individual years vary enormously - the index has had years with 30%+ gains and years with losses exceeding 35%. Averages smooth out a genuinely bumpy ride; see our guide on <a href="blog-understanding-market-volatility.html" style="color: var(--teal-bright); text-decoration: underline;">understanding market volatility</a> for more on why that matters for how you should actually think about returns.</div>
-
-<h2>How to actually invest in it</h2>
-<p>Since you can't buy the index directly, investors typically use <strong>ETFs or index funds</strong> built to track the S&P 500's performance as closely as possible. A few things worth knowing:</p>
+<h3>5. Choose an order type</h3>
+<p>The two you'll see most often:</p>
 <ul>
-<li><strong>US investors</strong> commonly use US-domiciled ETFs tracking the index directly.</li>
-<li><strong>European investors</strong> generally can't buy those same US funds through EU retail brokers - instead, they use <a href="blog-what-are-ucits-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">UCITS-compliant ETFs</a> that track the same index, usually domiciled in Ireland or Luxembourg.</li>
-<li>Whichever fund you consider, the same checklist applies - see our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a> for what to actually check (fees, tracking difference, fund size). Once you're ready to buy, our <a href="blog-how-to-buy-your-first-etf.html" style="color: var(--teal-bright); text-decoration: underline;">step-by-step guide to buying your first ETF</a> walks through the whole process.</li>
+<li><strong>Market order:</strong> buy immediately at the current price. Simple, and fine for most long-term ETF investors.</li>
+<li><strong>Limit order:</strong> buy only if the price reaches a level you set. Useful if you care about the exact price, less relevant if you're investing for the next twenty years.</li>
 </ul>
 
-<h2>S&P 500 vs. a single stock</h2>
-<p>Buying a fund that tracks the S&P 500 means owning a small slice of 500 different companies at once, instead of betting on the fortunes of just one. This is a direct, practical example of the concept covered in our guide on <a href="blog-what-is-diversification.html" style="color: var(--teal-bright); text-decoration: underline;">diversification</a> - if one company in the index performs badly, or even goes to zero, its effect on the index as a whole is limited by comparison to holding that single stock outright.</p>
+<h3>6. Decide how much to buy</h3>
+<p>Some brokers let you enter a euro amount and will buy a fractional share (say, 0.42 of a share) to match it. Others require you to buy in whole shares, so you enter a quantity, not an amount. This single difference changes how precisely you can invest a specific sum, so it's worth knowing before you start.</p>
 
-<h2>Is the S&P 500 risk-free?</h2>
-<p>No - and this is worth being direct about. While the S&P 500 is diversified across 500 companies, it is not diversified across countries, currencies, or asset classes - it's entirely US large-cap stocks. During a broad market downturn (a <a href="blog-stock-market-crash.html" style="color: var(--teal-bright); text-decoration: underline;">crash</a> or <a href="blog-bull-vs-bear-market.html" style="color: var(--teal-bright); text-decoration: underline;">bear market</a>), the index can fall sharply, and there's no guarantee any specific future period will resemble its historical average.</p>
+<h3>7. Place the order and confirm</h3>
+<p>You'll see a confirmation screen showing the estimated cost and any fees. Once you confirm, the trade executes (usually within seconds for a market order) and typically settles into your account within one to two business days.</p>
+
+<h2>A Real-World Example</h2>
+
+<p>Say you have €200 to invest and your broker supports fractional shares.</p>
+
+<p>You deposit €200. You search for the ticker of a UCITS-compliant, accumulating ETF tracking a broad global index. The current price per share is €89. You enter "€200" as the amount you want to invest. The broker calculates that this buys roughly 2.24 shares and shows you the exact cost including any trading fee, say €1.50.</p>
+
+<p>You confirm. Within a day, your account shows 2.24 shares of that ETF, and your cash balance drops close to zero. That's it. You now own a small slice of hundreds or thousands of companies, spread across a single position.</p>
+
+<div class="callout"><strong>The flow, step by step:</strong> €200 deposited → ETF ticker searched → 2.24 shares purchased at €89/share → position appears in your account.</div>
+
+<h2>A Common Misunderstanding</h2>
+
+<p>Many beginners assume that once they've picked "an <a href="blog-what-is-the-sp-500.html" style="color: var(--teal-bright); text-decoration: underline;">S&amp;P 500</a> ETF," the specific one they choose barely matters. It matters more than it seems.</p>
+
+<p>Two ETFs tracking the same index can differ in their total cost (the ongoing fee, called the TER), their domicile and tax treatment, whether they accumulate or distribute dividends, and how closely they actually track the index (called tracking difference). Over a long holding period, small differences in ongoing fees compound the same way returns do, just working against you instead of for you. Our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a> covers exactly what to check.</p>
+
+<p>This doesn't mean you need to obsess over picking the "perfect" ETF. It means the five minutes you spend checking the ticker, the fee, and the domicile before buying are worth more than most of the research beginners do afterward.</p>
+
+<h2>Why This Matters for a Beginner Investor</h2>
+
+<p>The mechanical part of buying an ETF - clicking the button - takes thirty seconds. The part that actually determines your outcome happens before that click: choosing a low-cost, appropriately diversified fund, and being clear on whether you're buying once or building a habit.</p>
+
+<p>Most successful long-term investors don't buy one ETF and stop. They set up a repeatable process, often a fixed amount invested on a regular schedule, known as <a href="blog-dollar-cost-averaging.html" style="color: var(--teal-bright); text-decoration: underline;">dollar-cost averaging (DCA)</a>. Your first purchase matters less as a single event and more as the first repetition of a habit you intend to keep.</p>
+
+<h2>Key Takeaway</h2>
+
+<p>Buying an ETF is mechanically simple. The real decisions happen earlier: which broker, which specific ETF, and whether this is a one-time purchase or the start of a routine.</p>
+
+<h2>Test Yourself</h2>
+<ul>
+<li>What's the difference between depositing money into a brokerage account and actually buying an ETF?</li>
+<li>Why might two ETFs that track the same index still produce different long-term results?</li>
+<li>What does "UCITS" affect for a European investor, and why does it matter which one you pick?</li>
+<li>What's the practical difference between a market order and a limit order?</li>
+</ul>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
-<h3>What is the S&P 500?</h3>
-<p>The S&P 500 is a stock market index that tracks 500 large, publicly traded companies listed on US exchanges, weighted by their float-adjusted market capitalization. It's widely used as a proxy for the overall performance of the US stock market.</p>
+<h3>What's the difference between depositing money and actually buying an ETF?</h3>
+<p>Depositing money transfers cash from your bank into your brokerage account, where it sits as uninvested cash. Buying an ETF is a separate, later step where you use that cash to purchase shares. Depositing money does not buy anything by itself.</p>
 </div>
 <div class="faq-item">
-<h3>How are companies chosen for the S&P 500?</h3>
-<p>Companies must be US-based, listed on an eligible US exchange, have positive earnings in the most recent quarter and over the trailing four quarters combined, meet minimum market capitalization and liquidity requirements, and have been publicly traded for at least 12 months. A committee at S&P Dow Jones Indices makes the final selections.</p>
+<h3>Why might two ETFs that track the same index still produce different long-term results?</h3>
+<p>They can differ in their ongoing fee (the TER), their domicile and tax treatment, whether they accumulate or distribute dividends, and how closely they actually track the index (tracking difference). Small differences in fees compound over a long holding period.</p>
 </div>
 <div class="faq-item">
-<h3>What has the S&P 500's average historical return been?</h3>
-<p>Since its modern form began in 1957, the S&P 500 has returned roughly 10% per year on average before inflation, or around 6-7% per year after adjusting for inflation. This is a long-term historical average, not a guarantee - individual years vary enormously, including significant losses.</p>
+<h3>What does UCITS affect for a European investor?</h3>
+<p>UCITS ETFs are structured under EU rules and are generally the ones available to retail investors in Europe. Non-UCITS ETFs, often US-domiciled, may not be offered to you at all, or may carry additional tax complications.</p>
 </div>
 <div class="faq-item">
-<h3>Can I invest directly in the S&P 500?</h3>
-<p>You cannot buy the index itself, but you can invest in ETFs or index funds designed to track its performance. European investors typically buy a UCITS-compliant ETF tracking the S&P 500, rather than a US-domiciled fund.</p>
+<h3>What's the practical difference between a market order and a limit order?</h3>
+<p>A market order buys immediately at the current price - simple, and fine for most long-term ETF investors. A limit order only buys if the price reaches a level you set - useful if the exact price matters to you.</p>
 </div>
 
-</div>
-</section>
+<h2>Final Takeaway</h2>
+<p>The intimidating part of buying your first ETF isn't the buying. It's the unfamiliar screen. Once you know that depositing, searching, and confirming are three separate steps, and that the specific ETF you pick matters more than which button you click, the whole process stops feeling like a test you might fail.</p>
 
 <div class="trust-strip">
 <div class="wrap trust-row">
