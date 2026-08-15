@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3SFS38ZZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V3SFS38ZZL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is the S&P 500? A Beginner's Guide | SteadFolio</title>
+<meta name="description" content="A plain-language guide to the S&P 500: what it actually tracks, how companies are selected, how it's weighted, its historical returns, and how to invest in it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is the S&P 500?","acceptedAnswer":{"@type":"Answer","text":"The S&P 500 is a stock market index that tracks 500 large, publicly traded companies listed on US exchanges, weighted by their float-adjusted market capitalization. It's widely used as a proxy for the overall performance of the US stock market."}},
+    {"@type":"Question","name":"How are companies chosen for the S&P 500?","acceptedAnswer":{"@type":"Answer","text":"Companies must be US-based, listed on an eligible US exchange, have positive earnings in the most recent quarter and over the trailing four quarters combined, meet minimum market capitalization and liquidity requirements, and have been publicly traded for at least 12 months. A committee at S&P Dow Jones Indices makes the final selections."}},
+    {"@type":"Question","name":"What has the S&P 500's average historical return been?","acceptedAnswer":{"@type":"Answer","text":"Since its modern form began in 1957, the S&P 500 has returned roughly 10% per year on average before inflation, or around 6-7% per year after adjusting for inflation. This is a long-term historical average, not a guarantee - individual years vary enormously, including significant losses."}},
+    {"@type":"Question","name":"Can I invest directly in the S&P 500?","acceptedAnswer":{"@type":"Answer","text":"You cannot buy the index itself, but you can invest in ETFs or index funds designed to track its performance. European investors typically buy a UCITS-compliant ETF tracking the S&P 500, rather than a US-domiciled fund."}}
+  ]
+}
+</script>
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { max-width: 1500px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 1220px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+@media (max-width: 1220px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+section { padding: 72px 0; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.page-hero { padding: 64px 0 8px; text-align: center; }
+.page-hero p { max-width: 560px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+footer:hover { opacity: 1; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.footer-links a { white-space: nowrap; }
+.footer-social { display: flex; align-items: center; gap: 14px; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
+.footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+.article-header { max-width: 700px; margin: 0 auto; text-align: center; }
+.article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+.article-body { max-width: 700px; margin: 0 auto; }
+.article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 44px 0 16px; }
+.article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--text); }
+.fact-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14.5px; }
+.fact-table th, .fact-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); color: var(--text-dim); }
+.fact-table th { color: var(--text); font-family: var(--font-display); font-weight: 600; font-size: 13.5px; width: 44%; }
+.callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--text-dim); }
+.callout strong { color: var(--teal-bright); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
+.faq-item { margin-bottom: 24px; }
+.faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="journey.html">Your Journey</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu/login" class="nav-cta">Login</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="journey.html">Your Journey</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+<section class="page-hero" style="padding-bottom: 0;">
+<div class="wrap article-header">
+<a href="blog.html" class="back-link">← Back to Blog</a>
+<div class="kicker">Foundations</div>
+<h1>What Is the S&amp;P 500? A Beginner's Guide</h1>
+<p class="article-meta">6 min read - Educational content, not financial advice</p>
+</div>
+</section>
+
+<section style="padding-top: 32px;">
+<div class="wrap article-body">
+
+<p>If you've read even a little about investing, you've almost certainly run into the phrase "the market was up today" or "beating the S&P 500." It's probably the single most-referenced number in all of investing - and yet a lot of people who quote it couldn't fully explain what it actually is. Here's the plain-language version.</p>
+
+<h2>What the S&P 500 actually is</h2>
+<p>The <strong>S&P 500</strong> is a stock market index that tracks 500 large, publicly traded companies listed on US stock exchanges. It's maintained by S&P Dow Jones Indices, and it's widely treated as a proxy for the health of the US stock market as a whole - when financial news says "the market rose 1% today," it's very often talking about the S&P 500 specifically.</p>
+<p>It's important to understand that the S&P 500 isn't something you can buy directly - it's a <em>measurement</em>, not a product. You can only invest in it indirectly, through funds designed to track it (more on that below).</p>
+
+<h2>How companies actually get selected</h2>
+<p>Membership in the S&P 500 isn't purely mechanical - a committee at S&P Dow Jones Indices makes the final decisions, guided by a published set of eligibility rules. To be considered, a company generally needs to meet criteria including:</p>
+<ul>
+<li>Headquartered in the United States, and listed on an eligible US exchange (like the NYSE or Nasdaq)</li>
+<li>Positive earnings in the most recent quarter, and positive earnings summed across the trailing four quarters</li>
+<li>A minimum float-adjusted market capitalization (a threshold that S&P reviews and adjusts periodically)</li>
+<li>Sufficient trading liquidity</li>
+<li>At least 12 months of public trading history since its IPO</li>
+</ul>
+<p>Because it's a fixed count of 500 companies, a new addition always means another company gets removed - companies can drop out due to shrinking market value, being acquired, or no longer meeting the criteria.</p>
+
+<h2>How the index is weighted</h2>
+<p>The S&P 500 is a <strong>float-adjusted market-capitalization-weighted</strong> index. In plain terms: bigger companies have a bigger influence on the index's overall movement than smaller ones. "Float-adjusted" means only the shares actually available for public trading count toward this calculation - shares held by founders, governments, or other companies in a way that keeps them off the open market are excluded.</p>
+<div class="callout"><strong>What this means practically:</strong> A handful of the very largest companies in the S&P 500 can have an outsized effect on how the whole index performs in a given day or year - the index isn't 500 equally-weighted companies, even though it contains 500 of them.</div>
+
+<h2>What it's actually used for</h2>
+<p>The S&P 500 functions as a <strong>benchmark</strong> - a reference point investors use to judge whether their own results are good, average, or poor. If your portfolio returned 6% in a year the S&P 500 returned 12%, that's useful context a raw percentage alone doesn't give you. This is exactly the kind of comparison our <a href="blog-how-to-choose-a-broker.html" style="color: var(--teal-bright); text-decoration: underline;">What-If analysis</a> style tools are built around - comparing your actual results to what a simple benchmark would have done instead.</p>
+
+<h2>Historical performance (with real caveats)</h2>
+<p>Since the index took its modern 500-company form in 1957, the S&P 500 has returned roughly <strong>10% per year on average</strong>, before adjusting for inflation - or somewhere around 6-7% per year in real, inflation-adjusted terms.</p>
+<div class="callout"><strong>This is a long-term average, not a promise.</strong> Individual years vary enormously - the index has had years with 30%+ gains and years with losses exceeding 35%. Averages smooth out a genuinely bumpy ride; see our guide on <a href="blog-understanding-market-volatility.html" style="color: var(--teal-bright); text-decoration: underline;">understanding market volatility</a> for more on why that matters for how you should actually think about returns.</div>
+
+<h2>How to actually invest in it</h2>
+<p>Since you can't buy the index directly, investors typically use <strong>ETFs or index funds</strong> built to track the S&P 500's performance as closely as possible. A few things worth knowing:</p>
+<ul>
+<li><strong>US investors</strong> commonly use US-domiciled ETFs tracking the index directly.</li>
+<li><strong>European investors</strong> generally can't buy those same US funds through EU retail brokers - instead, they use <a href="blog-what-are-ucits-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">UCITS-compliant ETFs</a> that track the same index, usually domiciled in Ireland or Luxembourg.</li>
+<li>Whichever fund you consider, the same checklist applies - see our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a> for what to actually check (fees, tracking difference, fund size).</li>
+</ul>
+
+<h2>S&P 500 vs. a single stock</h2>
+<p>Buying a fund that tracks the S&P 500 means owning a small slice of 500 different companies at once, instead of betting on the fortunes of just one. This is a direct, practical example of the concept covered in our guide on <a href="blog-what-is-diversification.html" style="color: var(--teal-bright); text-decoration: underline;">diversification</a> - if one company in the index performs badly, or even goes to zero, its effect on the index as a whole is limited by comparison to holding that single stock outright.</p>
+
+<h2>Is the S&P 500 risk-free?</h2>
+<p>No - and this is worth being direct about. While the S&P 500 is diversified across 500 companies, it is not diversified across countries, currencies, or asset classes - it's entirely US large-cap stocks. During a broad market downturn (a <a href="blog-stock-market-crash.html" style="color: var(--teal-bright); text-decoration: underline;">crash</a> or <a href="blog-bull-vs-bear-market.html" style="color: var(--teal-bright); text-decoration: underline;">bear market</a>), the index can fall sharply, and there's no guarantee any specific future period will resemble its historical average.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>What is the S&P 500?</h3>
+<p>The S&P 500 is a stock market index that tracks 500 large, publicly traded companies listed on US exchanges, weighted by their float-adjusted market capitalization. It's widely used as a proxy for the overall performance of the US stock market.</p>
+</div>
+<div class="faq-item">
+<h3>How are companies chosen for the S&P 500?</h3>
+<p>Companies must be US-based, listed on an eligible US exchange, have positive earnings in the most recent quarter and over the trailing four quarters combined, meet minimum market capitalization and liquidity requirements, and have been publicly traded for at least 12 months. A committee at S&P Dow Jones Indices makes the final selections.</p>
+</div>
+<div class="faq-item">
+<h3>What has the S&P 500's average historical return been?</h3>
+<p>Since its modern form began in 1957, the S&P 500 has returned roughly 10% per year on average before inflation, or around 6-7% per year after adjusting for inflation. This is a long-term historical average, not a guarantee - individual years vary enormously, including significant losses.</p>
+</div>
+<div class="faq-item">
+<h3>Can I invest directly in the S&P 500?</h3>
+<p>You cannot buy the index itself, but you can invest in ETFs or index funds designed to track its performance. European investors typically buy a UCITS-compliant ETF tracking the S&P 500, rather than a US-domiciled fund.</p>
+</div>
+
+</div>
+</section>
+
+<div class="trust-strip">
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+</div>
+</div>
+
+<section class="final-cta">
+<div class="wrap">
+<h2>Ready to take the first step?</h2>
+<p class="section-sub" style="color:var(--text-dim); margin-top:10px;">Start free, go at your own pace, and never feel like you're behind.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap footer-row">
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
+<div class="footer-social">
+<a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
+</a>
+<a href="https://www.instagram.com/steadfolio/" target="_blank" rel="noopener" aria-label="SteadFolio on Instagram">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+</a>
+<a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
+</a>
+</div>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+</body>
+</html>
