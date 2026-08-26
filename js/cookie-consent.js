@@ -135,15 +135,23 @@
       message: 'We use optional analytics to understand how SteadFolio is used and improve the experience. Essential functionality works without analytics.',
       accept: 'Accept analytics',
       reject: 'Reject non-essential',
-      settings: 'Cookie settings'
+      settings: 'Cookie settings',
+      policy: 'Cookie Policy'
     },
     el: {
       message: 'Χρησιμοποιούμε προαιρετικά analytics για να κατανοήσουμε πώς χρησιμοποιείται το SteadFolio και να βελτιώσουμε την εμπειρία. Οι βασικές λειτουργίες λειτουργούν χωρίς analytics.',
       accept: 'Αποδοχή analytics',
       reject: 'Απόρριψη μη απαραίτητων',
-      settings: 'Ρυθμίσεις cookies'
+      settings: 'Ρυθμίσεις cookies',
+      policy: 'Πολιτική cookies'
     }
   };
+
+  // /cookie-policy.html lives at the site root; pages one level down
+  // (e.g. /brokers/*.html) need a relative "../" prefix.
+  function cookiePolicyHref() {
+    return window.location.pathname.indexOf('/brokers/') !== -1 ? '../cookie-policy.html' : '/cookie-policy.html';
+  }
 
   function getLang() {
     var htmlLang = (document.documentElement.lang || '').toLowerCase();
@@ -155,14 +163,18 @@
     'max-width:640px;margin:0 auto;background:#0d1620;color:#eef4f1;border:1px solid #1c2b3a;' +
     'border-radius:14px;padding:18px 20px;box-shadow:0 12px 32px rgba(0,0,0,.35);' +
     'font-family:Inter,sans-serif;font-size:14px;line-height:1.5;}' +
-    '#sf-cookie-banner p{margin:0 0 14px;}' +
+    '#sf-cookie-banner p{margin:0 0 10px;}' +
+    '#sf-cookie-banner .sf-cc-policy-link{display:inline-block;margin:0 0 14px;font-size:12.5px;' +
+    'color:#9fb3ad;text-decoration:underline;}' +
+    '#sf-cookie-banner .sf-cc-policy-link:hover{color:#eef4f1;}' +
     '#sf-cookie-banner .sf-cc-actions{display:flex;gap:10px;flex-wrap:wrap;}' +
-    '#sf-cookie-banner button{flex:1 1 160px;cursor:pointer;border-radius:8px;padding:10px 16px;' +
-    'font-family:inherit;font-size:14px;font-weight:600;border:1px solid #1c2b3a;}' +
+    '#sf-cookie-banner button{flex:1 1 160px;cursor:pointer;border-radius:8px;padding:11px 16px;' +
+    'font-family:inherit;font-size:14px;font-weight:600;border:1.5px solid;line-height:1.3;}' +
     '#sf-cc-accept{background:#22c58b;color:#070b10;border-color:#22c58b;}' +
-    '#sf-cc-reject{background:transparent;color:#eef4f1;}' +
-    '#sf-cc-accept:hover{background:#34d399;}' +
-    '#sf-cc-reject:hover{background:#101c28;}' +
+    '#sf-cc-reject{background:#16222e;color:#eef4f1;border-color:#3a5165;}' +
+    '#sf-cc-accept:hover{background:#34d399;border-color:#34d399;}' +
+    '#sf-cc-reject:hover{background:#1c2e3d;border-color:#4d6b83;}' +
+    '#sf-cookie-banner button:focus-visible{outline:2px solid #34d399;outline-offset:2px;}' +
     '@media (max-width:480px){#sf-cookie-banner{left:8px;right:8px;bottom:8px;padding:16px;}}';
 
   function injectStyle() {
@@ -191,6 +203,11 @@
     var message = document.createElement('p');
     message.textContent = copy.message;
 
+    var policyLink = document.createElement('a');
+    policyLink.href = cookiePolicyHref();
+    policyLink.className = 'sf-cc-policy-link';
+    policyLink.textContent = copy.policy;
+
     var actions = document.createElement('div');
     actions.className = 'sf-cc-actions';
 
@@ -217,6 +234,7 @@
     actions.appendChild(acceptBtn);
     actions.appendChild(rejectBtn);
     banner.appendChild(message);
+    banner.appendChild(policyLink);
     banner.appendChild(actions);
     document.body.appendChild(banner);
   }
@@ -245,6 +263,11 @@
     }
     injectSettingsLink();
   }
+
+  // Exposed so any page (e.g. the Cookie Policy page's "Cookie settings"
+  // button) can reopen the same consent banner instead of building a
+  // second consent UI.
+  window.sfShowCookieBanner = showBanner;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
