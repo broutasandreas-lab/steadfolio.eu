@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/js/cookie-consent.js" data-clarity="1" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy | SteadFolio</title>
+<meta name="description" content="How SteadFolio uses cookies: which are essential, which are optional analytics cookies, and how to change your consent choice at any time.">
+<link rel="canonical" href="https://steadfolio.eu/cookie-policy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070b10;
+    --bg-2: #090f16;
+    --card: #0d1620;
+    --card-hover: #101c28;
+    --border: #1c2b3a;
+    --border-soft: #142330;
+    --teal: #22c58b;
+    --teal-bright: #34d399;
+    --teal-dim: #17442f;
+    --text: #eef4f1;
+    --text-dim: #9fb3ad;
+    --text-muted: #56685f;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font-body);
+    line-height: 1.6; overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent),
+      radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent);
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+  nav.wrap { max-width: 1500px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+  .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+  .nav-links a { transition: color 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--teal-bright); }
+  .nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; transition: background 0.15s, transform 0.15s; }
+  .nav-cta:hover { background: var(--teal-bright); transform: translateY(-1px); }
+  .nav-mobile-hide { display: flex; }
+  @media (max-width: 1220px) { .nav-mobile-hide { display: none; } }
+
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+  .nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 1220px) { .nav-toggle { display: flex; } }
+
+  .mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav a:hover { color: var(--text); }
+
+  section { padding: 72px 0; }
+  .kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+
+  .final-cta { text-align: center; }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 15px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+  .btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--text); font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .btn-secondary:hover { border-color: var(--teal); background: var(--card-hover); }
+
+  footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+  .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+  .footer-links a { white-space: nowrap; }
+  .footer-links a:hover { color: var(--text-dim); }
+
+  .footer-social { display: flex; align-items: center; gap: 14px; }
+  .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
+  .footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+
+  .legal-body { max-width: 780px; margin: 0 auto; }
+  .legal-body h2 { font-size: clamp(20px, 2.6vw, 24px); margin: 36px 0 14px; }
+  .legal-body h2:first-child { margin-top: 0; }
+  .legal-body p { font-size: 15.5px; color: var(--text-dim); line-height: 1.8; margin-bottom: 14px; }
+  .legal-body ul { margin: 0 0 14px 22px; color: var(--text-dim); font-size: 15.5px; line-height: 1.8; }
+  .legal-body li { margin-bottom: 6px; }
+  .legal-body strong { color: var(--text); }
+  .legal-updated { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 40px; }
+  .legal-notice { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 18px 22px; margin-bottom: 36px; font-size: 14px; color: var(--text-dim); }
+  .cookie-settings-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 36px; }
+  .cookie-settings-cta p { margin: 0; font-size: 14.5px; color: var(--text-dim); }
+  .cookie-table-wrap { overflow-x: auto; margin: 0 0 24px; border: 1px solid var(--border); border-radius: 10px; }
+  table.cookie-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+  table.cookie-table th, table.cookie-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+  table.cookie-table th { background: var(--bg-2); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal-bright); }
+  table.cookie-table td { color: var(--text-dim); }
+  table.cookie-table td code, table.cookie-table th code { font-family: var(--font-mono); color: var(--text); }
+  table.cookie-table tr:last-child td { border-bottom: none; }
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
+    <div class="nav-links nav-mobile-hide">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="journey.html">Your Journey</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+    <div class="nav-right">
+      <a href="https://app.steadfolio.eu/login" class="nav-cta">Login</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+<a href="index.html#how">How it works</a>
+<a href="index.html#features">Features</a>
+<a href="index.html#mission">Why not just AI?</a>
+<a href="journey.html">Your Journey</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+
+<section class="page-hero" style="padding-bottom: 0;">
+  <div class="wrap article-header">
+    <div class="kicker">Legal</div>
+    <h1>Cookie Policy</h1>
+  </div>
+</section>
+
+<section style="padding-top: 32px;">
+  <div class="wrap legal-body">
+    <p class="legal-updated">Last updated: August 26, 2026</p>
+
+    <div class="cookie-settings-cta">
+      <p>You can change your analytics-cookie choice at any time.</p>
+      <button type="button" class="btn-secondary" id="cookiePolicySettingsBtn">Cookie settings</button>
+    </div>
+
+    <h2>1. About this policy</h2>
+    <p>This Cookie Policy explains what cookies are, which cookies the SteadFolio marketing website (steadfolio.eu) uses, and how you can control them. It's written in plain language rather than as a legal essay. For how we handle personal data more broadly, see our <a href="privacy.html" style="color: var(--teal-bright); text-decoration: underline;">Privacy Policy</a>.</p>
+
+    <h2>2. What cookies are</h2>
+    <p>A cookie is a small text file that a website stores in your browser. Cookies let a site remember information between page loads or visits - like a choice you made, or whether you've been to the site before. Cookies can be "essential" (needed for the site to work as expected) or "optional" (used for things like understanding how a site is used).</p>
+
+    <h2>3. How SteadFolio uses cookies</h2>
+    <p>We keep this simple. On steadfolio.eu, cookies fall into two groups:</p>
+    <ul>
+      <li><strong>Essential</strong> - remembers your consent choice so we don't ask you again unnecessarily.</li>
+      <li><strong>Analytics (optional)</strong> - only set if you accept them, used to understand how the site is used so we can improve it.</li>
+    </ul>
+    <p>We currently do not use advertising cookies, and advertising consent is always kept denied - see section 8.</p>
+
+    <h2>4. Essential cookies</h2>
+    <p>Essential cookies are necessary for the site to function consistently and are set regardless of your analytics choice.</p>
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>steadfolio_consent_v1</code></td>
+            <td>SteadFolio (first-party, domain <code>.steadfolio.eu</code>)</td>
+            <td>Remembers whether you accepted or rejected optional analytics cookies, so the choice is applied consistently on steadfolio.eu and app.steadfolio.eu.</td>
+            <td>1 year</td>
+            <td>As soon as you make a choice in the cookie banner or Cookie settings.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Optional analytics cookies</h2>
+    <p>If you accept analytics, SteadFolio loads two analytics tools: Google Analytics and Microsoft Clarity. Both are optional and are only loaded after you accept - nothing from either tool is fetched or set before that, and nothing is set if you reject.</p>
+    <p>These tools help us understand things like page usage, navigation paths, and general usage patterns, so we can find where the site is confusing or where the product could be improved. Rejecting analytics does not block any essential site or app functionality - it only means these two tools are not used.</p>
+    <p>To be clear: rejecting analytics means we don't load these tools for you at all. It doesn't mean you are still tracked "in the background" through some other mechanism.</p>
+
+    <h2>6. Google Analytics</h2>
+    <p>We use Google Analytics 4 (via Google's <code>gtag.js</code>) to measure site usage. Google Consent Mode is implemented: analytics storage defaults to "denied" until you accept, and advertising storage (ad storage, ad user data, ad personalization) is always kept "denied" regardless of your choice.</p>
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>_ga</code></td>
+            <td>Google Analytics</td>
+            <td>Distinguishes one visitor from another.</td>
+            <td>Up to 2 years (per Google's default; most browsers cap first-party cookies at roughly 13 months in practice)</td>
+            <td>Only after you accept analytics.</td>
+          </tr>
+          <tr>
+            <td><code>_ga_&lt;container-id&gt;</code></td>
+            <td>Google Analytics</td>
+            <td>Persists session state for this specific GA4 property.</td>
+            <td>Up to 2 years (same browser cap as above may apply)</td>
+            <td>Only after you accept analytics.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The exact set of cookies Google sets can change as Google updates gtag.js, and browsers may enforce their own maximum cookie lifetime shorter than the value Google requests. We're describing Google's documented default behavior rather than guaranteeing a fixed expiry.</p>
+
+    <h2>7. Microsoft Clarity</h2>
+    <p>We use Microsoft Clarity to see aggregated navigation and interaction patterns (for example, which pages get visited) so we can improve the site. Clarity's script and its Consent API v2 are only loaded after you accept analytics; while consent is denied, Clarity is not fetched and does not set cookies.</p>
+    <p>Because advertising consent on SteadFolio always stays denied, we do not enable the advertising-linked identifiers Clarity can otherwise use (such as <code>MUID</code>, <code>SM</code>, <code>ANONCHK</code>, or <code>MR</code>, which Microsoft documents as tied to cross-site advertising signals). The cookies below are the ones Microsoft documents as part of Clarity's own session/analytics measurement, which may be set once you accept analytics:</p>
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>_clck</code></td>
+            <td>Microsoft Clarity</td>
+            <td>Persists a Clarity user identifier and preferences for this site, so behavior across visits can be attributed to the same browser.</td>
+            <td>1 year (per Microsoft's documentation)</td>
+            <td>Only after you accept analytics.</td>
+          </tr>
+          <tr>
+            <td><code>_clsk</code></td>
+            <td>Microsoft Clarity</td>
+            <td>Connects multiple page views into a single Clarity session recording.</td>
+            <td>1 day (per Microsoft's documentation)</td>
+            <td>Only after you accept analytics.</td>
+          </tr>
+          <tr>
+            <td><code>CLID</code></td>
+            <td>Microsoft Clarity</td>
+            <td>Records the first time Clarity saw this browser on any site using Clarity.</td>
+            <td>1 year (per Microsoft's documentation)</td>
+            <td>Only after you accept analytics.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Microsoft maintains its own cookie documentation, which can change; we've described it as accurately as we can rather than inventing figures. If Microsoft changes what Clarity sets, this page will be updated to match.</p>
+
+    <h2>8. Advertising</h2>
+    <p>SteadFolio currently does not enable advertising cookies. Advertising consent (ad storage, ad user data, ad personalization) is always kept "denied" in Google Consent Mode, whether you accept or reject analytics. There is no advertising-cookie table here because we don't set any.</p>
+
+    <h2>9. Your choices</h2>
+    <p>When you first visit steadfolio.eu, a banner asks whether you'd like to accept or reject optional analytics cookies. Essential functionality works the same either way. You can change your mind at any time - see the next section.</p>
+
+    <h2>10. Changing your settings</h2>
+    <p>Use the "Cookie settings" button at the top of this page, or the "Cookie settings" link in the site footer, to reopen the same consent choice at any time and switch between accepting and rejecting analytics. This opens the existing consent banner - there's no separate settings screen to keep in sync.</p>
+
+    <h2>11. Shared consent across steadfolio.eu and app.steadfolio.eu</h2>
+    <p>Your analytics choice is stored once and shared between steadfolio.eu and app.steadfolio.eu, so you're not asked the same question twice when you move between the marketing site and the app.</p>
+
+    <h2>12. Updates to this policy</h2>
+    <p>We may update this policy as our use of cookies changes. Material changes will be reflected here with an updated "last updated" date.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions about this Cookie Policy or our broader <a href="privacy.html" style="color: var(--teal-bright); text-decoration: underline;">Privacy Policy</a> can be sent to <strong>info@steadfolio.eu</strong>.</p>
+  </div>
+</section>
+
+
+<div class="trust-strip">
+  <div class="wrap trust-row">
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Educational tool - not financial advice</span>
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg> No product recommendations</span>
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
+  </div>
+</div>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Ready to take the first step?</h2>
+    <p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
+    <div class="hero-ctas">
+      <a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
+    <div class="footer-social">
+<a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
+</a>
+<a href="https://www.instagram.com/steadfolio/" target="_blank" rel="noopener" aria-label="SteadFolio on Instagram">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+</a>
+<a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
+</a>
+</div>
+<div class="footer-links">
+<a href="index.html#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<a href="cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById("navToggle");
+    var panel = document.getElementById("mobileNav");
+    if (toggle && panel) {
+      toggle.addEventListener("click", function () {
+        var isOpen = panel.classList.toggle("open");
+        toggle.classList.toggle("active", isOpen);
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      panel.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          panel.classList.remove("open");
+          toggle.classList.remove("active");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    var settingsBtn = document.getElementById("cookiePolicySettingsBtn");
+    if (settingsBtn) {
+      settingsBtn.addEventListener("click", function () {
+        if (window.sfShowCookieBanner) {
+          window.sfShowCookieBanner();
+        }
+      });
+    }
+  })();
+</script>
+
+<script src="/js/utm-forward.js" defer></script>
+</body>
+</html>
