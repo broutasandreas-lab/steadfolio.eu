@@ -112,6 +112,28 @@
   table.cookie-table td { color: var(--text-dim); }
   table.cookie-table td code, table.cookie-table th code { font-family: var(--font-mono); color: var(--text); }
   table.cookie-table tr:last-child td { border-bottom: none; }
+
+  .cookie-summary { font-size: 16.5px; color: var(--text-dim); line-height: 1.8; margin-bottom: 28px; max-width: 680px; }
+  .cookie-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
+  @media (max-width: 720px) { .cookie-cards { grid-template-columns: 1fr; } }
+  .cookie-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 20px 22px; }
+  .cookie-card .cookie-card-tag { display: inline-block; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 9px; border-radius: 6px; margin-bottom: 12px; }
+  .cookie-card.essential .cookie-card-tag { color: var(--teal-bright); background: var(--teal-dim); }
+  .cookie-card.analytics .cookie-card-tag { color: var(--teal-bright); background: var(--teal-dim); }
+  .cookie-card.advertising .cookie-card-tag { color: var(--text-dim); background: var(--bg-2); }
+  .cookie-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: #fff; margin-bottom: 8px; }
+  .cookie-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.65; margin: 0; }
+
+  .cookie-detail { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+  .cookie-detail summary { list-style: none; cursor: pointer; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 600; color: var(--text); font-size: 15px; }
+  .cookie-detail summary::-webkit-details-marker { display: none; }
+  .cookie-detail summary .toggle-label { font-family: var(--font-mono); font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em; color: var(--teal-bright); white-space: nowrap; }
+  .cookie-detail[open] summary { border-bottom: 1px solid var(--border-soft); }
+  .cookie-detail[open] summary .toggle-label::after { content: "Hide details"; }
+  .cookie-detail:not([open]) summary .toggle-label::after { content: "View cookie details"; }
+  .cookie-detail-body { padding: 18px 22px 22px; }
+  .cookie-detail-body p { font-size: 14.5px; color: var(--text-dim); line-height: 1.75; margin-bottom: 12px; }
+  .cookie-detail-body p:last-child { margin-bottom: 0; }
 </style>
 
 </head>
@@ -163,128 +185,142 @@
   <div class="wrap legal-body">
     <p class="legal-updated">Last updated: August 26, 2026</p>
 
+    <p class="cookie-summary">We use one essential cookie to remember your privacy choice. Optional analytics from Google Analytics and Microsoft Clarity help us understand how SteadFolio is used, and are only enabled if you accept them. We don't use advertising cookies.</p>
+
     <div class="cookie-settings-cta">
       <p>You can change your analytics-cookie choice at any time.</p>
       <button type="button" class="btn-secondary" id="cookiePolicySettingsBtn">Cookie settings</button>
     </div>
 
-    <h2>1. About this policy</h2>
-    <p>This Cookie Policy explains what cookies are, which cookies the SteadFolio marketing website (steadfolio.eu) uses, and how you can control them. It's written in plain language rather than as a legal essay. For how we handle personal data more broadly, see our <a href="privacy.html" style="color: var(--teal-bright); text-decoration: underline;">Privacy Policy</a>.</p>
-
-    <h2>2. What cookies are</h2>
-    <p>A cookie is a small text file that a website stores in your browser. Cookies let a site remember information between page loads or visits - like a choice you made, or whether you've been to the site before. Cookies can be "essential" (needed for the site to work as expected) or "optional" (used for things like understanding how a site is used).</p>
-
-    <h2>3. How SteadFolio uses cookies</h2>
-    <p>We keep this simple. On steadfolio.eu, cookies fall into two groups:</p>
-    <ul>
-      <li><strong>Essential</strong> - remembers your consent choice so we don't ask you again unnecessarily.</li>
-      <li><strong>Analytics (optional)</strong> - only set if you accept them, used to understand how the site is used so we can improve it.</li>
-    </ul>
-    <p>We currently do not use advertising cookies, and advertising consent is always kept denied - see section 8.</p>
-
-    <h2>4. Essential cookies</h2>
-    <p>Essential cookies are necessary for the site to function consistently and are set regardless of your analytics choice.</p>
-    <div class="cookie-table-wrap">
-      <table class="cookie-table">
-        <thead>
-          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>steadfolio_consent_v1</code></td>
-            <td>SteadFolio (first-party, domain <code>.steadfolio.eu</code>)</td>
-            <td>Remembers whether you accepted or rejected optional analytics cookies, so the choice is applied consistently on steadfolio.eu and app.steadfolio.eu.</td>
-            <td>1 year</td>
-            <td>As soon as you make a choice in the cookie banner or Cookie settings.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="cookie-cards">
+      <div class="cookie-card essential">
+        <span class="cookie-card-tag">Essential</span>
+        <h3>Always active</h3>
+        <p>Used to remember your cookie-consent choice. Set regardless of your analytics choice.</p>
+      </div>
+      <div class="cookie-card analytics">
+        <span class="cookie-card-tag">Optional</span>
+        <h3>Analytics</h3>
+        <p>Google Analytics and Microsoft Clarity. Only enabled after you accept analytics.</p>
+      </div>
+      <div class="cookie-card advertising">
+        <span class="cookie-card-tag">Not used</span>
+        <h3>Advertising</h3>
+        <p>SteadFolio doesn't use advertising cookies. Advertising consent stays denied.</p>
+      </div>
     </div>
 
-    <h2>5. Optional analytics cookies</h2>
-    <p>If you accept analytics, SteadFolio loads two analytics tools: Google Analytics and Microsoft Clarity. Both are optional and are only loaded after you accept - nothing from either tool is fetched or set before that, and nothing is set if you reject.</p>
-    <p>These tools help us understand things like page usage, navigation paths, and general usage patterns, so we can find where the site is confusing or where the product could be improved. Rejecting analytics does not block any essential site or app functionality - it only means these two tools are not used.</p>
-    <p>To be clear: rejecting analytics means we don't load these tools for you at all. It doesn't mean you are still tracked "in the background" through some other mechanism.</p>
+    <h2>How SteadFolio uses cookies</h2>
+    <p>A cookie is a small text file a website stores in your browser so it can remember things between visits. On steadfolio.eu, cookies fall into two groups: one essential cookie that remembers your consent choice, and optional analytics cookies that are only set if you accept them. For how we handle personal data more broadly, see our <a href="privacy.html" style="color: var(--teal-bright); text-decoration: underline;">Privacy Policy</a>.</p>
 
-    <h2>6. Google Analytics</h2>
-    <p>We use Google Analytics 4 (via Google's <code>gtag.js</code>) to measure site usage. Google Consent Mode is implemented: analytics storage defaults to "denied" until you accept, and advertising storage (ad storage, ad user data, ad personalization) is always kept "denied" regardless of your choice.</p>
-    <div class="cookie-table-wrap">
-      <table class="cookie-table">
-        <thead>
-          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>_ga</code></td>
-            <td>Google Analytics</td>
-            <td>Distinguishes one visitor from another.</td>
-            <td>Up to 2 years (per Google's default; most browsers cap first-party cookies at roughly 13 months in practice)</td>
-            <td>Only after you accept analytics.</td>
-          </tr>
-          <tr>
-            <td><code>_ga_&lt;container-id&gt;</code></td>
-            <td>Google Analytics</td>
-            <td>Persists session state for this specific GA4 property.</td>
-            <td>Up to 2 years (same browser cap as above may apply)</td>
-            <td>Only after you accept analytics.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>The exact set of cookies Google sets can change as Google updates gtag.js, and browsers may enforce their own maximum cookie lifetime shorter than the value Google requests. We're describing Google's documented default behavior rather than guaranteeing a fixed expiry.</p>
+    <h2>Optional analytics</h2>
+    <p>If you accept analytics, SteadFolio loads two tools - Google Analytics and Microsoft Clarity. Both are optional and only loaded after you accept; nothing from either tool is fetched or set before that, or if you reject. Rejecting analytics doesn't break SteadFolio - it only means these two tools aren't used.</p>
+    <p><strong>Google Analytics</strong> helps us understand which pages are used and how visitors move through the site.</p>
+    <p><strong>Microsoft Clarity</strong> helps us understand navigation and interaction patterns so we can improve the experience.</p>
 
-    <h2>7. Microsoft Clarity</h2>
-    <p>We use Microsoft Clarity to see aggregated navigation and interaction patterns (for example, which pages get visited) so we can improve the site. Clarity's script and its Consent API v2 are only loaded after you accept analytics; while consent is denied, Clarity is not fetched and does not set cookies.</p>
-    <p>Because advertising consent on SteadFolio always stays denied, we do not enable the advertising-linked identifiers Clarity can otherwise use (such as <code>MUID</code>, <code>SM</code>, <code>ANONCHK</code>, or <code>MR</code>, which Microsoft documents as tied to cross-site advertising signals). The cookies below are the ones Microsoft documents as part of Clarity's own session/analytics measurement, which may be set once you accept analytics:</p>
-    <div class="cookie-table-wrap">
-      <table class="cookie-table">
-        <thead>
-          <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>_clck</code></td>
-            <td>Microsoft Clarity</td>
-            <td>Persists a Clarity user identifier and preferences for this site, so behavior across visits can be attributed to the same browser.</td>
-            <td>1 year (per Microsoft's documentation)</td>
-            <td>Only after you accept analytics.</td>
-          </tr>
-          <tr>
-            <td><code>_clsk</code></td>
-            <td>Microsoft Clarity</td>
-            <td>Connects multiple page views into a single Clarity session recording.</td>
-            <td>1 day (per Microsoft's documentation)</td>
-            <td>Only after you accept analytics.</td>
-          </tr>
-          <tr>
-            <td><code>CLID</code></td>
-            <td>Microsoft Clarity</td>
-            <td>Records the first time Clarity saw this browser on any site using Clarity.</td>
-            <td>1 year (per Microsoft's documentation)</td>
-            <td>Only after you accept analytics.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Microsoft maintains its own cookie documentation, which can change; we've described it as accurately as we can rather than inventing figures. If Microsoft changes what Clarity sets, this page will be updated to match.</p>
+    <h2>Detailed cookie information</h2>
+    <p>The tables below list every cookie we set, in full technical detail.</p>
 
-    <h2>8. Advertising</h2>
-    <p>SteadFolio currently does not enable advertising cookies. Advertising consent (ad storage, ad user data, ad personalization) is always kept "denied" in Google Consent Mode, whether you accept or reject analytics. There is no advertising-cookie table here because we don't set any.</p>
+    <details class="cookie-detail">
+      <summary>Essential SteadFolio cookie <span class="toggle-label"></span></summary>
+      <div class="cookie-detail-body">
+        <p>Necessary for the site to function consistently, and set regardless of your analytics choice.</p>
+        <div class="cookie-table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>steadfolio_consent_v1</code></td>
+                <td>SteadFolio (first-party, domain <code>.steadfolio.eu</code>)</td>
+                <td>Remembers whether you accepted or rejected optional analytics cookies, so the choice is applied consistently on steadfolio.eu and app.steadfolio.eu.</td>
+                <td>1 year</td>
+                <td>As soon as you make a choice in the cookie banner or Cookie settings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
 
-    <h2>9. Your choices</h2>
-    <p>When you first visit steadfolio.eu, a banner asks whether you'd like to accept or reject optional analytics cookies. Essential functionality works the same either way. You can change your mind at any time - see the next section.</p>
+    <details class="cookie-detail">
+      <summary>Google Analytics <span class="toggle-label"></span></summary>
+      <div class="cookie-detail-body">
+        <p>We use Google Analytics 4 (via Google's <code>gtag.js</code>) to measure site usage. Google Consent Mode is implemented: analytics storage defaults to "denied" until you accept, and advertising storage (ad storage, ad user data, ad personalization) is always kept "denied" regardless of your choice.</p>
+        <div class="cookie-table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>_ga</code></td>
+                <td>Google Analytics</td>
+                <td>Distinguishes one visitor from another.</td>
+                <td>Up to 2 years (per Google's default; most browsers cap first-party cookies at roughly 13 months in practice)</td>
+                <td>Only after you accept analytics.</td>
+              </tr>
+              <tr>
+                <td><code>_ga_&lt;container-id&gt;</code></td>
+                <td>Google Analytics</td>
+                <td>Persists session state for this specific GA4 property.</td>
+                <td>Up to 2 years (same browser cap as above may apply)</td>
+                <td>Only after you accept analytics.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The exact set of cookies Google sets can change as Google updates gtag.js, and browsers may enforce their own maximum cookie lifetime shorter than the value Google requests. We're describing Google's documented default behavior rather than guaranteeing a fixed expiry.</p>
+      </div>
+    </details>
 
-    <h2>10. Changing your settings</h2>
-    <p>Use the "Cookie settings" button at the top of this page, or the "Cookie settings" link in the site footer, to reopen the same consent choice at any time and switch between accepting and rejecting analytics. This opens the existing consent banner - there's no separate settings screen to keep in sync.</p>
+    <details class="cookie-detail">
+      <summary>Microsoft Clarity <span class="toggle-label"></span></summary>
+      <div class="cookie-detail-body">
+        <p>We use Microsoft Clarity to see aggregated navigation and interaction patterns (for example, which pages get visited) so we can improve the site. Clarity's script and its Consent API v2 are only loaded after you accept analytics; while consent is denied, Clarity is not fetched and does not set cookies.</p>
+        <p>Because advertising consent on SteadFolio always stays denied, we do not enable the advertising-linked identifiers Clarity can otherwise use (such as <code>MUID</code>, <code>SM</code>, <code>ANONCHK</code>, or <code>MR</code>, which Microsoft documents as tied to cross-site advertising signals). The cookies below are the ones Microsoft documents as part of Clarity's own session/analytics measurement, which may be set once you accept analytics:</p>
+        <div class="cookie-table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Duration</th><th>When set</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>_clck</code></td>
+                <td>Microsoft Clarity</td>
+                <td>Persists a Clarity user identifier and preferences for this site, so behavior across visits can be attributed to the same browser.</td>
+                <td>1 year (per Microsoft's documentation)</td>
+                <td>Only after you accept analytics.</td>
+              </tr>
+              <tr>
+                <td><code>_clsk</code></td>
+                <td>Microsoft Clarity</td>
+                <td>Connects multiple page views into a single Clarity session recording.</td>
+                <td>1 day (per Microsoft's documentation)</td>
+                <td>Only after you accept analytics.</td>
+              </tr>
+              <tr>
+                <td><code>CLID</code></td>
+                <td>Microsoft Clarity</td>
+                <td>Records the first time Clarity saw this browser on any site using Clarity.</td>
+                <td>1 year (per Microsoft's documentation)</td>
+                <td>Only after you accept analytics.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Microsoft maintains its own cookie documentation, which can change; we've described it as accurately as we can rather than inventing figures. If Microsoft changes what Clarity sets, this page will be updated to match.</p>
+      </div>
+    </details>
 
-    <h2>11. Shared consent across steadfolio.eu and app.steadfolio.eu</h2>
-    <p>Your analytics choice is stored once and shared between steadfolio.eu and app.steadfolio.eu, so you're not asked the same question twice when you move between the marketing site and the app.</p>
+    <h2>Your choices</h2>
+    <p>When you first visit steadfolio.eu, a banner asks whether you'd like to accept or reject optional analytics cookies. Essential functionality works the same either way.</p>
+    <p>Use the "Cookie settings" button at the top of this page, or the "Cookie settings" link in the site footer, to reopen that choice at any time and switch between accepting and rejecting analytics. This opens the existing consent banner - there's no separate settings screen to keep in sync.</p>
+    <p>Your choice is shared between steadfolio.eu and app.steadfolio.eu, so you're normally not asked twice when you move between the marketing site and the app.</p>
 
-    <h2>12. Updates to this policy</h2>
-    <p>We may update this policy as our use of cookies changes. Material changes will be reflected here with an updated "last updated" date.</p>
-
-    <h2>13. Contact</h2>
-    <p>Questions about this Cookie Policy or our broader <a href="privacy.html" style="color: var(--teal-bright); text-decoration: underline;">Privacy Policy</a> can be sent to <strong>info@steadfolio.eu</strong>.</p>
+    <h2>Updates & contact</h2>
+    <p>We may update this policy as our use of cookies changes. Material changes will be reflected here with an updated "last updated" date. Questions about this Cookie Policy or our broader <a href="privacy.html" style="color: var(--teal-bright); text-decoration: underline;">Privacy Policy</a> can be sent to <strong>info@steadfolio.eu</strong>.</p>
   </div>
 </section>
 
@@ -296,16 +332,6 @@
     <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> No sales pitch, ever</span>
   </div>
 </div>
-
-<section class="final-cta">
-  <div class="wrap">
-    <h2>Ready to take the first step?</h2>
-    <p class="section-sub">Start free, go at your own pace, and never feel like you're behind.</p>
-    <div class="hero-ctas">
-      <a href="https://app.steadfolio.eu" class="btn-primary">Start learning with Sofia →</a>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap footer-row">
