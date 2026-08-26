@@ -59,8 +59,19 @@
       ad_personalization: 'denied',
       analytics_storage: 'denied'
     });
-    if (hasClarity) ensureClarityStub();
+    clarityConsentDenied();
   }
+
+  // Microsoft Clarity Consent API v2. Queues safely via the stub above
+  // until the Clarity script (if ever loaded) is fetched and flushes it.
+  function clarityConsentV2(analyticsState) {
+    if (!hasClarity) return;
+    ensureClarityStub();
+    clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: analyticsState });
+  }
+
+  function clarityConsentDenied() { clarityConsentV2('denied'); }
+  function clarityConsentGranted() { clarityConsentV2('granted'); }
 
   function loadGaScript() {
     if (document.getElementById('sf-ga-script')) return;
@@ -88,9 +99,10 @@
     gtag('config', GA_ID);
     loadGaScript();
     if (hasClarity) {
-      ensureClarityStub();
       loadClarityScript();
-      clarity('consent');
+      // Send the granted state immediately; it queues until the script
+      // above finishes loading, then Clarity flushes it on init.
+      clarityConsentGranted();
     }
   }
 
@@ -98,8 +110,15 @@
     if (window.gtag) {
       gtag('consent', 'update', { analytics_storage: 'denied' });
     }
-    if (hasClarity && window.clarity) {
-      try { clarity('consent', false); } catch (e) { /* no-op if unsupported */ }
+    if (hasClarity) {
+      var clarityWasLoaded = !!document.getElementById('sf-clarity-script');
+      clarityConsentDenied();
+      if (clarityWasLoaded) {
+        // Legacy API, used only for its documented purpose: erase Clarity's
+        // cookies and end the already-tracked session. Consent V2 above is
+        // the actual consent-state signal.
+        try { clarity('consent', false); } catch (e) { /* no-op if unsupported */ }
+      }
     }
   }
 
