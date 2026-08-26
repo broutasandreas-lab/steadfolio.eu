@@ -106,10 +106,43 @@
     }
   }
 
+  // GA (gtag.js) sets "_ga" plus one "_ga_<container-id>" per measurement ID
+  // (e.g. "_ga_V3SFS38ZZL" for GA_ID above) on the registrable domain. Match
+  // by prefix rather than hard-coding the current property's cookie so a GA
+  // ID rotation doesn't leave stale cookies behind uncleaned.
+  function eraseCookie(name, domain) {
+    var parts = [name + '=', 'path=/', 'max-age=0', 'expires=Thu, 01 Jan 1970 00:00:00 GMT'];
+    if (domain) parts.push('domain=' + domain);
+    document.cookie = parts.join('; ');
+  }
+
+  function clearGaCookies() {
+    var names = document.cookie.split('; ').map(function (pair) {
+      var eq = pair.indexOf('=');
+      return eq === -1 ? pair : pair.substring(0, eq);
+    }).filter(function (name) {
+      return name === '_ga' || name.indexOf('_ga_') === 0;
+    });
+    if (!names.length) return;
+
+    // Cover every domain/path GA may have used to set the cookie: host-only
+    // (no domain attribute), the shared .steadfolio.eu domain, and the bare
+    // hostname, since a mismatched attribute silently no-ops the deletion.
+    var host = window.location.hostname;
+    var domains = [undefined, host];
+    if (host === 'steadfolio.eu' || host.indexOf('.steadfolio.eu') !== -1) {
+      domains.push('.steadfolio.eu');
+    }
+    names.forEach(function (name) {
+      domains.forEach(function (domain) { eraseCookie(name, domain); });
+    });
+  }
+
   function disableAnalytics() {
     if (window.gtag) {
       gtag('consent', 'update', { analytics_storage: 'denied' });
     }
+    clearGaCookies();
     if (hasClarity) {
       var clarityWasLoaded = !!document.getElementById('sf-clarity-script');
       clarityConsentDenied();
