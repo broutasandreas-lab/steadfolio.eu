@@ -4,25 +4,84 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/degiro.html",
+      "destination": "/brokers/degiro.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/etoro.html",
+      "destination": "/brokers/etoro.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/freedom24.html",
+      "destination": "/brokers/freedom24.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/interactive-brokers.html",
+      "destination": "/brokers/interactive-brokers.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/lightyear.html",
+      "destination": "/brokers/lightyear.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/revolut.html",
+      "destination": "/brokers/revolut.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/scalable-capital.html",
+      "destination": "/brokers/scalable-capital.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/trade-republic.html",
+      "destination": "/brokers/trade-republic.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/trading-212.html",
+      "destination": "/brokers/trading-212.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/xtb.html",
+      "destination": "/brokers/xtb.html",
+      "statusCode": 301
     }
   ],
   "headers": [
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     }
   ]

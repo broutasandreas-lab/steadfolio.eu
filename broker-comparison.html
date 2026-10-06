@@ -5,7 +5,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Broker Comparison 2026 | Compare Fees &amp; Features | SteadFolio</title>
-<meta name="description" content="Compare popular brokers for stocks and ETFs. See trading fees, ETF costs, FX fees, fractional shares, savings plans and more in one simple comparison.">
+<meta name="description" content="Compare 10 brokers for ETFs and stocks in Europe: trading and ETF fees, FX costs, savings plans, fractional shares, Greece availability and regulators, with official sources.">
+<link rel="canonical" href="https://steadfolio.eu/broker-comparison.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SteadFolio">
+<meta property="og:title" content="Broker Comparison 2026: Compare Fees &amp; Features">
+<meta property="og:description" content="Trading and ETF fees, FX costs, savings plans, fractional shares, availability and regulators for 10 brokers, each linked to its official source.">
+<meta property="og:url" content="https://steadfolio.eu/broker-comparison.html">
+<meta property="og:image" content="https://steadfolio.eu/logo-icon.png">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -145,17 +153,32 @@ footer:hover { opacity: 1; }
 .footer-social { display: flex; align-items: center; gap: 14px; }
 .footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
 .footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+.table-scroll { overflow-x: auto; margin-top: 28px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); }
+.table-scroll table.compare-table { min-width: 1180px; }
+table.compare-table tbody th a { color: var(--teal-bright); text-decoration: underline; }
+.summary-intro { max-width: 760px; margin: 14px auto 0; text-align: center; color: var(--text-dim); font-size: 14.5px; }
+.guide { max-width: 760px; }
+.guide h2 { margin: 40px 0 14px; }
+.guide p { color: var(--text-dim); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.guide ul { margin: 0 0 18px 22px; color: var(--text-dim); font-size: 15.5px; line-height: 1.75; }
+.guide li { margin-bottom: 8px; }
+.guide strong { color: var(--text); }
+.guide a { color: var(--teal-bright); text-decoration: underline; }
+.faq-item { margin-bottom: 20px; }
+.faq-item h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.data-notes { max-width: 900px; margin: 14px auto 0; padding-left: 20px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.data-notes li { margin-bottom: 4px; }
 </style>
 
 </head>
 <body>
 <header>
 <nav class="wrap">
-<a href="index.html" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
+<a href="/" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
 <div class="nav-links nav-mobile-hide">
-<a href="index.html#how">How it works</a>
-<a href="index.html#features">Features</a>
-<a href="index.html#mission">Why not just AI?</a>
+<a href="/#how">How it works</a>
+<a href="/#features">Features</a>
+<a href="/#mission">Why not just AI?</a>
 <a href="journey.html">Your Journey</a>
 <a href="pricing.html">Pricing</a>
 <a href="broker-comparison.html" class="active">Compare Brokers</a>
@@ -170,9 +193,9 @@ footer:hover { opacity: 1; }
 </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-<a href="index.html#how">How it works</a>
-<a href="index.html#features">Features</a>
-<a href="index.html#mission">Why not just AI?</a>
+<a href="/#how">How it works</a>
+<a href="/#features">Features</a>
+<a href="/#mission">Why not just AI?</a>
 <a href="journey.html">Your Journey</a>
 <a href="pricing.html">Pricing</a>
 <a href="broker-comparison.html" class="active">Compare Brokers</a>
@@ -186,8 +209,8 @@ footer:hover { opacity: 1; }
 <section class="page-hero">
 <div class="wrap">
 <div class="kicker">Broker Comparison 2026</div>
-<h1>Compare Brokers</h1>
-<p>Compare the features and costs that actually matter when choosing a broker for stocks and ETFs.</p>
+<h1>Compare Brokers for ETFs and Stocks</h1>
+<p>Compare the features and costs that actually matter when choosing a broker for stocks and ETFs in Europe: commissions, currency costs, savings plans, availability and regulation.</p>
 <div class="positioning">
 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l6 6 10-14"/></svg>
 SteadFolio does not recommend a broker. We help you compare them.
@@ -209,7 +232,7 @@ SteadFolio does not recommend a broker. We help you compare them.
 <button class="filter-chip" data-filter="beginner">I'm a beginner</button>
 </div>
 
-<div class="broker-grid" id="brokerCards"></div>
+<div class="broker-grid" id="brokerCards"><div class="broker-card" data-id="trading212" data-tags="etf,small,fractional,auto,lowfee,lowfx,mobile,beginner"><h3>Trading 212</h3><div class="headline">€0 commission on stocks &amp; ETFs</div><ul><li>Stock/ETF commission: €0</li><li>FX fee: 0.15%</li><li>Fractional shares: Yes</li><li>AutoInvest (Pies): Yes</li></ul><a href="brokers/trading-212.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="trading212">Select to compare</button></div><div class="broker-card" data-id="traderepublic" data-tags="etf,small,fractional,auto,lowfee,mobile,beginner"><h3>Trade Republic</h3><div class="headline">€1 flat fee per one-off trade</div><ul><li>€0 commission + €1 settlement fee</li><li>Savings plans from €1</li><li>Fractional shares: Yes</li><li>No custody or inactivity fee</li></ul><a href="brokers/trade-republic.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="traderepublic">Select to compare</button></div><div class="broker-card" data-id="ibkr" data-tags="etf,fractional,lowfx"><h3>Interactive Brokers</h3><div class="headline">€3 flat per trade, near-interbank FX</div><ul><li>€3 flat per trade (up to €6,000)</li><li>Near-interbank FX rates</li><li>150+ market access</li><li>No account minimum</li></ul><a href="brokers/interactive-brokers.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="ibkr">Select to compare</button></div><div class="broker-card" data-id="degiro" data-tags="etf,lowfee"><h3>DEGIRO</h3><div class="headline">€1 ETFs in the Core Selection</div><ul><li>Core Selection ETFs: €1/trade</li><li>Other ETFs: €3/trade</li><li>No custody or inactivity fee</li><li>No fractional shares</li></ul><a href="brokers/degiro.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="degiro">Select to compare</button></div><div class="broker-card" data-id="xtb" data-tags="etf,small,fractional,auto,lowfee,mobile,beginner"><h3>XTB</h3><div class="headline">€0 commission up to €100k/month turnover</div><ul><li>€0 commission (under €100k/mo turnover)</li><li>FX fee: 0.5%</li><li>Investment Plans (auto-invest): Yes</li><li>Fractional shares: Yes</li></ul><a href="brokers/xtb.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="xtb">Select to compare</button></div><div class="broker-card" data-id="etoro" data-tags="etf,fractional,mobile,beginner"><h3>eToro</h3><div class="headline">€0 commission on real ETFs</div><ul><li>ETF commission: €0</li><li>Stock commission: varies by region</li><li>Fractional shares: Yes</li><li>Social/copy trading platform</li></ul><a href="brokers/etoro.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="etoro">Select to compare</button></div><div class="broker-card" data-id="revolut" data-tags="etf,small,fractional,auto,mobile,beginner"><h3>Revolut</h3><div class="headline">0-10 commission-free orders/month, then €1</div><ul><li>Commission-free orders: 0 (Standard, Plus), 5 (Premium), 10 (Metal, Ultra)</li><li>Beyond allowance: €1 per executed order</li><li>Eligible ETP investment-plan buys: no commission</li><li>Fractional shares: Yes</li></ul><a href="brokers/revolut.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="revolut">Select to compare</button></div><div class="broker-card" data-id="scalable" data-tags="etf,small,auto,lowfee"><h3>Scalable Capital</h3><div class="headline">Free ETF savings plans from €1</div><ul><li>Savings plans: €0 on all plans</li><li>PRIME ETF buys ≥€250 on EIX: €0, even on FREE</li><li>Xetra/gettex orders: €1.99 (both plans)</li><li>Regulated German bank</li></ul><a href="brokers/scalable-capital.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="scalable">Select to compare</button></div><div class="broker-card" data-id="freedom24" data-tags="auto"><h3>Freedom24</h3><div class="headline">€2 + €0.02/share per order</div><ul><li>Smart plan: €2 + €0.02/share</li><li>Access to 15 exchanges</li><li>Recurring investment plans: Yes</li><li>No fractional shares</li></ul><a href="brokers/freedom24.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="freedom24">Select to compare</button></div><div class="broker-card" data-id="lightyear" data-tags="etf,lowfee,mobile"><h3>Lightyear</h3><div class="headline">€0 commission on ETF trades</div><ul><li>ETF commission: €0</li><li>EU stocks: €1/trade</li><li>FX fee: 0.35%</li><li>No savings plans / auto-invest</li></ul><a href="brokers/lightyear.html" class="review-link">Full review →</a><button type="button" class="compare-btn" data-compare="lightyear">Select to compare</button></div></div>
 </div>
 </section>
 
@@ -224,14 +247,52 @@ SteadFolio does not recommend a broker. We help you compare them.
 
 <section>
 <div class="wrap">
+<div class="kicker" style="text-align:center;">At a glance</div>
+<h2 style="text-align:center;">Key fees and features of all 10 brokers</h2>
+<p class="summary-intro">Figures last verified on <span class="js-last-verified">2026-08-11</span> against each broker's official pages, except where an update is noted below the table. "Check source" means the broker did not publish a clear, fixed figure. Open a broker's profile for details, examples and sources.</p>
+<div class="table-scroll">
+<table class="compare-table" id="summaryTable">
+<thead><tr><th scope="col">Broker</th><th scope="col">Stock commission</th><th scope="col">ETF commission</th><th scope="col">FX fee</th><th scope="col">Savings plan</th><th scope="col">Fractional shares</th><th scope="col">Available in Greece</th><th scope="col">Regulator</th></tr></thead>
+<tbody id="summaryBody"><tr><th scope="row"><a href="brokers/trading-212.html">Trading 212</a></th><td>€0</td><td>€0</td><td>0.15%</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>FCA (UK), CySEC (Cyprus), BaFin (Germany), FSC (Bulgaria)</td></tr><tr><th scope="row"><a href="brokers/trade-republic.html">Trade Republic</a></th><td>€0 + €1 settlement/trade</td><td>€0 + €1 settlement/trade (€0 in savings plans)</td><td>Check source</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>BaFin (Germany) - licensed bank</td></tr><tr><th scope="row"><a href="brokers/interactive-brokers.html">Interactive Brokers</a></th><td>€3/trade (up to €6,000), then 0.05%</td><td>€3/trade (up to €6,000), then 0.05%</td><td>Near interbank rate (IdealPro) - Check source for exact %</td><td><span class="no">No</span></td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>Central Bank of Ireland / FCA (UK), depending on entity</td></tr><tr><th scope="row"><a href="brokers/degiro.html">DEGIRO</a></th><td>€2-4.90/trade, varies by exchange</td><td>€1 (Core Selection on Tradegate) or €3 (other exchanges)</td><td>0.25%</td><td><span class="no">No</span></td><td><span class="no">No</span></td><td><span class="yes">Yes</span></td><td>AFM / DNB (Netherlands), BaFin (Germany, via flatexDEGIRO Bank)</td></tr><tr><th scope="row"><a href="brokers/xtb.html">XTB</a></th><td>€0 up to €100,000/month, then 0.2% (min €10)</td><td>€0 up to €100,000/month, then 0.2% (min €10)</td><td>0.5%</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>FCA (UK), KNF (Poland), CySEC (Cyprus)</td></tr><tr><th scope="row"><a href="brokers/etoro.html">eToro</a></th><td>Check source (varies by region - reported as $0-$2/trade)</td><td>€0</td><td>0% on EUR-denominated assets for EUR accounts; otherwise check source</td><td>Check source</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>CySEC (Cyprus - eToro Europe), FCA (UK)</td></tr><tr><th scope="row"><a href="brokers/revolut.html">Revolut</a></th><td>0 commission-free orders/month (Standard, Plus), 5 (Premium), 10 (Metal, Ultra); then €1 per executed order</td><td>As stocks; eligible ETP purchases via investment plans: no commission</td><td>Plan-dependent (fair-usage limits, weekend timing) - Check source</td><td>Investment plans (eligible ETPs)</td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td><td>Bank of Lithuania (Revolut Securities Europe UAB for investing; banking via Revolut Bank UAB)</td></tr><tr><th scope="row"><a href="brokers/scalable-capital.html">Scalable Capital</a></th><td>EIX: €0.99 (FREE) or €0 for orders ≥€250 (PRIME+, €4.99/mo); Xetra/gettex: €1.99 on both plans</td><td>€0 for PRIME ETF purchases ≥€250 on EIX (FREE plan too), else as stocks; Xetra/gettex: €1.99</td><td>Check source (no published FX % - card top-up spread ~0.99%/0.69%)</td><td><span class="yes">Yes</span></td><td>Check source</td><td><span class="no">No</span></td><td>BaFin (Germany) - Scalable Capital Bank GmbH</td></tr><tr><th scope="row"><a href="brokers/freedom24.html">Freedom24</a></th><td>€2 + €0.02/share (Smart plan)</td><td>€2 + €0.02/share (Smart plan)</td><td>Check source</td><td><span class="yes">Yes</span></td><td><span class="no">No</span></td><td><span class="yes">Yes</span></td><td>CySEC (Cyprus)</td></tr><tr><th scope="row"><a href="brokers/lightyear.html">Lightyear</a></th><td>€1/trade (EU stocks); 0.10% min $0.10 max $1 (US stocks)</td><td>€0</td><td>0.35%</td><td><span class="no">No</span></td><td>US stocks only (not ETFs)</td><td><span class="yes">Yes</span></td><td>Estonian Financial Supervisory Authority (EFSA)</td></tr></tbody>
+</table>
+</div>
+<ul class="data-notes" id="dataNotes"><li>Revolut (Greece): commission-free allowances, €1 commission beyond them, the investment-plan exception and plan prices verified 2026-10-06 (Ultra €60 is an introductory price). Currency exchange costs depend on plan and timing - check source.</li><li>Scalable Capital: the €0 PRIME ETF purchase terms on EIX (FREE plan too) and €1.99 Xetra/gettex fees verified 2026-10-06. The PRIME+ price and other figures were last verified 2026-08-11.</li></ul>
+</div>
+</section>
+
+<section style="padding-top: 0;">
+<div class="wrap guide">
+<h2>How to read this comparison</h2>
+<p>The cheapest broker on paper isn't always the cheapest for you. What you'll actually pay depends on how you invest:</p>
+<ul>
+<li><strong>Small monthly amounts:</strong> a fixed fee weighs heavily on small orders. €1 is 2% of a €50 purchase but 0.1% of €1,000. Free savings plans or €0-commission orders matter most here.</li>
+<li><strong>Mainly ETFs in euros:</strong> a UCITS ETF bought in euros on a European exchange needs no currency conversion at the broker, so the FX fee matters less than the ETF commission.</li>
+<li><strong>Shares priced in US dollars:</strong> the FX fee applies when you buy and again when you sell, so it can cost more than the commission.</li>
+<li><strong>Your country:</strong> availability, products and tax reporting differ by country. Check the broker supports where you live before comparing anything else.</li>
+<li><strong>Protection:</strong> look at who regulates the broker and how client assets and cash are held. EU deposit guarantees and investor compensation schemes cover different things.</li>
+</ul>
+<p>For the full step-by-step checklist, read <a href="blog-how-to-choose-a-broker.html">how to choose a brokerage account</a>. Not sure what you'd buy yet? Start with <a href="blog-how-to-evaluate-etf.html">how to evaluate an ETF</a>.</p>
+
+<h2>How we put this comparison together</h2>
+<p>Every figure comes from the broker's own official fee or help pages, linked from each profile. We record the date we last checked, and when a broker doesn't publish a clear fixed number we write "Check source" rather than estimate one. SteadFolio doesn't rank brokers or recommend one: the filters above only show which brokers have the features you select. Fees change often, so always confirm current terms with the broker before opening an account.</p>
+
+<h2>Frequently asked questions</h2>
+<div class="faq-item"><h3>Which broker has the lowest fees for ETFs?</h3><p>It depends on how you invest. Trade Republic and Lightyear charge €0 commission on ETF orders (Trade Republic adds a small settlement fee outside savings plans). DEGIRO charges €1 on ETFs within its Core Selection on Tradegate. The lowest-cost option depends on your exchange, order size, and whether you use a savings plan.</p></div>
+<div class="faq-item"><h3>What is the best broker for beginners in Europe?</h3><p>There is no single best broker - it depends on your country, how much you plan to invest, and whether you want fractional shares or automatic savings plans. This comparison lays out the actual fees and features of 10 popular brokers so you can compare them yourself.</p></div>
+<div class="faq-item"><h3>Is Trading 212 or DEGIRO cheaper?</h3><p>For most retail investors buying stocks and ETFs, Trading 212 charges €0 commission plus a 0.15% FX fee, while DEGIRO charges €1-3 per ETF trade depending on the exchange, plus a 0.25% FX fee. Which is cheaper overall depends on your trade size and frequency - check the full comparison table for details.</p></div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
 <div class="cta-banner">
 <div class="kicker" style="text-align:center;">Still not sure what matters for you?</div>
 <h2>Before choosing a broker, understand what kind of investor you are.</h2>
 <p>A broker is just the account. What you actually need first is a plan - your goals, your risk comfort, your timeline.</p>
 <div class="cta-row">
-<a href="https://app.steadfolio.eu" class="btn-primary">Build your investor profile with SteadFolio → Get Started Free</a>
+<a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="en_compare_profile">Build your investor profile with SteadFolio → Get Started Free</a>
 </div>
-<p style="margin-top:18px; font-size:13.5px; position:relative;"><a href="https://app.steadfolio.eu" style="color:var(--teal-bright); text-decoration:underline;">New to investing? Learn the basics before choosing a broker → Start Learning</a></p>
+<p style="margin-top:18px; font-size:13.5px; position:relative;"><a href="https://app.steadfolio.eu" style="color:var(--teal-bright); text-decoration:underline;" data-sf-cta="en_compare_learn">New to investing? Learn the basics before choosing a broker → Start Learning</a></p>
 <p style="margin-top:10px; font-size:13.5px; position:relative; color:var(--text-dim);">Want the full checklist first? Read <a href="blog-how-to-choose-a-broker.html" style="color:var(--teal-bright); text-decoration:underline;">how to choose a broker: what actually matters</a>.</p>
 </div>
 </div>
@@ -263,7 +324,7 @@ SteadFolio does not recommend a broker. We help you compare them.
 </a>
 </div>
 <div class="footer-links">
-<a href="index.html#how">How it works</a>
+<a href="/#how">How it works</a>
 <a href="blog.html">Blog</a>
 <a href="about.html">About</a>
 <a href="faq.html">FAQ</a>
@@ -384,32 +445,34 @@ var brokers = [
     id: "revolut", name: "Revolut",
     availability: { greece: true, europe: true, us: false },
     fees: {
-      stockCommission: "1-10 free trades/month by plan, then 0.25% (min €1) or 0.12% on Pro", etfCommission: "Same as stocks - part of the same trading allowance",
-      fx: "0.45%+ (fair usage allowance depends on plan)", accountFee: "€0 (Standard) - paid plans from ~€3.99/mo", inactivityFee: "€0", depositFee: "€0", withdrawalFee: "€0"
+      stockCommission: "0 commission-free orders/month (Standard, Plus), 5 (Premium), 10 (Metal, Ultra); then €1 per executed order", etfCommission: "As stocks; eligible ETP purchases via investment plans: no commission",
+      fx: "Plan-dependent (fair-usage limits, weekend timing) - Check source", accountFee: "€0 (Standard); Plus €3.49, Premium €10.99, Metal €17.99, Ultra €60/mo (introductory price)", inactivityFee: "€0", depositFee: "€0", withdrawalFee: "€0"
     },
-    features: { fractionalShares: true, savingsPlan: "Check source", autoInvesting: "Check source", minInvestment: "Check source", demoAccount: false },
-    regulator: "Bank of Lithuania (Revolut Bank UAB) for EEA clients",
-    headline: "1-10 free trades/month, by plan",
-    cardFeatures: ["Free trades/month: 1-10 (plan-dependent)", "Above allowance: 0.25% (min €1)", "No inactivity or withdrawal fee", "Fractional shares: Yes"],
-    tags: ["etf", "small", "fractional", "mobile", "beginner"],
-    sourceName: "Revolut Help Centre - official fee FAQ",
-    sourceUrl: "https://help.revolut.com/help/wealth/order-execution-fees-and-limits/commission-free-trading-allowance/",
+    features: { fractionalShares: true, savingsPlan: "Investment plans (eligible ETPs)", autoInvesting: "Yes (recurring buys via investment plans)", minInvestment: "Check source", demoAccount: false },
+    regulator: "Bank of Lithuania (Revolut Securities Europe UAB for investing; banking via Revolut Bank UAB)",
+    headline: "0-10 commission-free orders/month, then €1",
+    cardFeatures: ["Commission-free orders: 0 (Standard, Plus), 5 (Premium), 10 (Metal, Ultra)", "Beyond allowance: €1 per executed order", "Eligible ETP investment-plan buys: no commission", "Fractional shares: Yes"],
+    tags: ["etf", "small", "fractional", "auto", "mobile", "beginner"],
+    sourceName: "Revolut Help Centre (Greece) - trading fees",
+    sourceUrl: "https://help.revolut.com/en-GR/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+    updateNote: "Revolut (Greece): commission-free allowances, €1 commission beyond them, the investment-plan exception and plan prices verified 2026-10-06 (Ultra €60 is an introductory price). Currency exchange costs depend on plan and timing - check source.",
     reviewUrl: "brokers/revolut.html"
   },
   {
     id: "scalable", name: "Scalable Capital",
     availability: { greece: false, europe: true, us: false },
     fees: {
-      stockCommission: "€0.99/trade (Free plan) or €0 above €250 (PRIME+, €4.99/mo)", etfCommission: "€0 for PRIME ETFs ≥€250, else €0.99",
+      stockCommission: "EIX: €0.99 (FREE) or €0 for orders ≥€250 (PRIME+, €4.99/mo); Xetra/gettex: €1.99 on both plans", etfCommission: "€0 for PRIME ETF purchases ≥€250 on EIX (FREE plan too), else as stocks; Xetra/gettex: €1.99",
       fx: "Check source (no published FX % - card top-up spread ~0.99%/0.69%)", accountFee: "€0 (Free) / €4.99/mo (PRIME+)", inactivityFee: "€0", depositFee: "€0 (SEPA)", withdrawalFee: "€0"
     },
     features: { fractionalShares: "Check source", savingsPlan: true, autoInvesting: true, minInvestment: "€1 (savings plans)", demoAccount: false },
     regulator: "BaFin (Germany) - Scalable Capital Bank GmbH",
     headline: "Free ETF savings plans from €1",
-    cardFeatures: ["Savings plans: €0 on all plans", "PRIME ETFs ≥€250: €0", "PRIME+: €4.99/mo flat rate", "Regulated German bank"],
+    cardFeatures: ["Savings plans: €0 on all plans", "PRIME ETF buys ≥€250 on EIX: €0, even on FREE", "Xetra/gettex orders: €1.99 (both plans)", "Regulated German bank"],
     tags: ["etf", "small", "auto", "lowfee"],
-    sourceName: "Scalable Capital - official pricing page",
-    sourceUrl: "https://de.scalable.capital/en/prime-plus-broker",
+    sourceName: "Scalable Capital - official broker costs",
+    sourceUrl: "https://de.scalable.capital/en/trading-costs",
+    updateNote: "Scalable Capital: the €0 PRIME ETF purchase terms on EIX (FREE plan too) and €1.99 Xetra/gettex fees verified 2026-10-06. The PRIME+ price and other figures were last verified 2026-08-11.",
     reviewUrl: "brokers/scalable-capital.html"
   },
   {
@@ -461,6 +524,22 @@ function renderCards() {
       '<button type="button" class="compare-btn" data-compare="' + b.id + '">Select to compare</button>' +
       '</div>';
   }).join('');
+}
+
+// Mirrors the static rows in #summaryBody so the table always reflects brokers[].
+function summaryRow(b) {
+  return '<tr><th scope="row"><a href="' + b.reviewUrl + '">' + b.name + '</a></th>' +
+    '<td>' + b.fees.stockCommission + '</td><td>' + b.fees.etfCommission + '</td><td>' + b.fees.fx + '</td>' +
+    '<td>' + boolCell(b.features.savingsPlan) + '</td><td>' + boolCell(b.features.fractionalShares) + '</td>' +
+    '<td>' + boolCell(b.availability.greece) + '</td><td>' + b.regulator + '</td></tr>';
+}
+
+function renderSummary() {
+  var body = document.getElementById('summaryBody');
+  if (body) body.innerHTML = brokers.map(summaryRow).join('');
+  var notes = document.getElementById('dataNotes');
+  if (notes) notes.innerHTML = brokers.filter(function (b) { return b.updateNote; }).map(function (b) { return '<li>' + b.updateNote + '</li>'; }).join('');
+  document.querySelectorAll('.js-last-verified').forEach(function (el) { el.textContent = LAST_VERIFIED; });
 }
 
 function boolCell(val) {
@@ -614,6 +693,7 @@ function toggleSelection(id) {
 // ============================================================
 (function () {
   renderCards();
+  renderSummary();
   renderMobileCompare();
 
   document.getElementById('brokerCards').addEventListener('click', function (e) {
@@ -690,5 +770,6 @@ toggle.setAttribute("aria-expanded", "false");
 })();
 </script>
 <script src="/js/utm-forward.js" defer></script>
+<script src="/js/cta-tracking.js" defer></script>
 </body>
 </html>
