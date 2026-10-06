@@ -30,7 +30,7 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
   - 50 English articles (`/blog-*.html`),
   - 10 broker profiles (`/brokers/*.html`),
   - 4 Greek pages (`/el/`),
-  - **10 legacy root broker duplicates** (`/trade-republic.html` etc.).
+  - **10 legacy root broker duplicates** (`/trade-republic.html` etc.). These were removed in round 2 and now 301 to `/brokers/`; the site has 75 HTML files.
 - Content is server-rendered static HTML everywhere except `broker-comparison.html`, where all comparison content was injected by JavaScript.
 - Tracking: GA4 `G-V3SFS38ZZL` and Microsoft Clarity, both loaded only after consent by `js/cookie-consent.js`. `js/cta-tracking.js` sends a consent-gated `cta_click` event for links with `data-sf-cta`. `js/utm-forward.js` forwards UTM parameters to the app. Bing verification uses `a212012d8b844af8997798ca9d3907a9.txt`. robots.txt allows everything and lists the sitemap. `llms.txt` exists.
 
@@ -41,11 +41,11 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 | 1 | Broker profiles had no static inbound links; they were reachable only through `reviewUrl` links injected by JS | all 10 `/brokers/*.html` | High | Static link graph: 0 inbound links each | Cross-links on every profile, static summary table, "Choose a Broker" path | **Fixed** (now 9–11 static inbound links each) |
 | 2 | Comparison content was JS-only. Static HTML had the filter chips and headings but no broker data. FAQPage schema described questions not visible on the page | `/broker-comparison.html` | High | ~238 words of static text; FAQ questions absent from visible text | Pre-rendered cards (identical to JS output), static summary table re-rendered from `brokers[]`, guide, visible FAQ | **Fixed** |
 | 3 | Index fund guide was thin (~490 words, "2 min read"), with no canonical, schema or sources. Its H1 said "Why Do People **Recommend** Them?", at odds with the no-recommendation positioning | `/blog-what-is-index-fund.html` | High (priority page) | Page source | Full rewrite (see B) | **Fixed** |
-| 4 | Broker fees may be out of date. Third-party sites (not official) report Scalable Capital pricing changes from 2026-09-01 and changes to Revolut's trading-fee model after the 2026-08-11 verification | broker comparison, Scalable Capital and Revolut profiles (possibly others) | High (YMYL accuracy) | Web search results only; official sites blocked from this environment | **Not changed.** Needs human re-verification against official pages | **Open: human action** |
+| 4 | Broker fees out of date. Revolut (Greece) now offers 0 commission-free orders on Standard and Plus, 5 on Premium and 10 on Metal/Ultra. Revolut's investing entity was misattributed to Revolut Bank UAB. The Scalable Capital profile omitted €0 PRIME ETF purchases of €250+ on the FREE plan | `/broker-comparison.html` (data, static cards, summary), `/brokers/revolut.html`, `/brokers/scalable-capital.html`, `/brokers/trade-republic.html` (cross-reference) | High (YMYL accuracy) | Figures supplied by the site owner and matched by search-index snippets of help.revolut.com (en-GR) and de.scalable.capital/en/trading-costs. Official sites still blocked here, so not read first-hand | Corrected (round 2, 2026-10-06). Revolut commission beyond the allowance and paid-plan prices could not be confirmed, so they are marked "Check source" instead of showing old figures. No "verified" date moved; changed fields are labelled "updated 2026-10-06" | **Fixed; confirm before merge** |
 | 5 | 64 indexable pages had no canonical tag | see inventory | Medium | Parsed `<head>` | Self-referencing canonical added | **Fixed** |
 | 6 | FAQPage JSON-LD did not match visible FAQ. Four articles carried the "Is investing gambling?" questions copied from another page, and the gambling article's 4th question differed from its visible FAQ | `/blog-betting-20-vs-investing-20.html`, `/blog-investing-50-a-month.html`, `/blog-psychology-quick-money.html`, `/blog-waiting-perfect-time-invest.html`, `/blog-is-investing-gambling.html` | Medium | Schema vs visible-text comparison | Schema rebuilt from each page's visible FAQ | **Fixed** |
 | 7 | Six published, linked articles missing from sitemap.xml | `/blog-how-to-buy-your-first-etf.html`, `/blog-is-investing-gambling.html`, `/blog-investing-50-a-month.html`, `/blog-betting-20-vs-investing-20.html`, `/blog-psychology-quick-money.html`, `/blog-waiting-perfect-time-invest.html` | Medium | Sitemap vs files | Added | **Fixed** |
-| 8 | Ten legacy root broker pages duplicate `/brokers/*` (same content, older nav). They have no canonical, aren't in the sitemap and aren't linked, but any external or legacy link would index a duplicate | `/degiro.html`, `/etoro.html`, `/freedom24.html`, `/interactive-brokers.html`, `/lightyear.html`, `/revolut.html`, `/scalable-capital.html`, `/trade-republic.html`, `/trading-212.html`, `/xtb.html` | Medium | `diff` against `/brokers/*` | Proposal: 301 to `/brokers/*` and delete the files (see C, P1) | **Open: decision** (removal was declined in-session) |
+| 8 | Ten legacy root broker pages duplicate `/brokers/*` (same content, older nav). They have no canonical, aren't in the sitemap and aren't linked, but any external or legacy link would index a duplicate | `/degiro.html`, `/etoro.html`, `/freedom24.html`, `/interactive-brokers.html`, `/lightyear.html`, `/revolut.html`, `/scalable-capital.html`, `/trade-republic.html`, `/trading-212.html`, `/xtb.html` | Medium | `diff` against `/brokers/*` | `vercel.json` sends 301 (`statusCode: 301`) from each root URL straight to its `/brokers/` page, with no chains; checked with `@vercel/routing-utils`. The 10 files were then removed | **Fixed** (round 2) |
 | 9 | Inaccurate product claim: the ETF guide said the ETF Evaluator "walks you through these same seven checks on a real portfolio". No product page supports this | `/blog-how-to-evaluate-etf.html` | Medium (trust) | Homepage, journey and Greek ETF guide descriptions | Replaced with the description from the reviewed Greek guide | **Fixed** |
 | 10 | 37 older articles ended without any related-reading or next-step link (1–3 contextual links in total) | see B3 | Medium | Link counts | Four learning paths on the blog plus a "Read next" box | **Fixed** |
 | 11 | Author and editorial transparency is thin: articles are by "The SteadFolio Team", no person is named anywhere, and there was no sourcing or corrections information | site-wide, `/about.html` | Medium (E-E-A-T) | Repository contains no author details | About page now has "How we write our guides" (evidenced practices only) | **Partly fixed**; names and credentials need a human |
@@ -166,16 +166,16 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 | `/el/` | Greek | 57 | 153 | ✓ → ✓ | CollectionPage;BreadcrumbList | 244 | 4 → 4 | ✓ |  |
 | `/el/ti-einai-etf.html` | Greek | 65 | 158 | ✓ → ✓ | BlogPosting;BreadcrumbList | 3072 | 4 → 4 | ✓ |  |
 | `/el/ti-einai-sp-500.html` | Greek | 58 | 157 | ✓ → ✓ | BlogPosting;BreadcrumbList | 2200 | 4 → 4 | ✓ |  |
-| `/degiro.html` | Legacy duplicate | 67 | 137 | ✗ → ✗ | FAQPage | 564 | 0 → 0 | ✗ |  |
-| `/etoro.html` | Legacy duplicate | 61 | 139 | ✗ → ✗ | FAQPage | 496 | 0 → 0 | ✗ |  |
-| `/freedom24.html` | Legacy duplicate | 65 | 149 | ✗ → ✗ | FAQPage | 411 | 0 → 0 | ✗ |  |
-| `/interactive-brokers.html` | Legacy duplicate | 75 | 141 | ✗ → ✗ | FAQPage | 539 | 0 → 0 | ✗ |  |
-| `/lightyear.html` | Legacy duplicate | 65 | 122 | ✗ → ✗ | FAQPage | 435 | 0 → 0 | ✗ |  |
-| `/revolut.html` | Legacy duplicate | 71 | 131 | ✗ → ✗ | FAQPage | 509 | 0 → 0 | ✗ |  |
-| `/scalable-capital.html` | Legacy duplicate | 72 | 142 | ✗ → ✗ | FAQPage | 508 | 0 → 0 | ✗ |  |
-| `/trade-republic.html` | Legacy duplicate | 70 | 142 | ✗ → ✗ | FAQPage | 500 | 0 → 0 | ✗ |  |
-| `/trading-212.html` | Legacy duplicate | 67 | 157 | ✗ → ✗ | FAQPage | 553 | 0 → 0 | ✗ |  |
-| `/xtb.html` | Legacy duplicate | 59 | 125 | ✗ → ✗ | FAQPage | 453 | 0 → 0 | ✗ |  |
+| `/degiro.html` | Legacy duplicate | 67 | 137 | ✗ → ✗ | FAQPage | 564 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/etoro.html` | Legacy duplicate | 61 | 139 | ✗ → ✗ | FAQPage | 496 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/freedom24.html` | Legacy duplicate | 65 | 149 | ✗ → ✗ | FAQPage | 411 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/interactive-brokers.html` | Legacy duplicate | 75 | 141 | ✗ → ✗ | FAQPage | 539 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/lightyear.html` | Legacy duplicate | 65 | 122 | ✗ → ✗ | FAQPage | 435 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/revolut.html` | Legacy duplicate | 71 | 131 | ✗ → ✗ | FAQPage | 509 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/scalable-capital.html` | Legacy duplicate | 72 | 142 | ✗ → ✗ | FAQPage | 508 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/trade-republic.html` | Legacy duplicate | 70 | 142 | ✗ → ✗ | FAQPage | 500 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/trading-212.html` | Legacy duplicate | 67 | 157 | ✗ → ✗ | FAQPage | 553 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
+| `/xtb.html` | Legacy duplicate | 59 | 125 | ✗ → ✗ | FAQPage | 453 | 0 → 0 | ✗ | removed, 301 → `/brokers/` |
 
 ---
 
@@ -229,12 +229,14 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 
 **P1: accuracy and duplicates**
 
-1. **Re-verify all broker figures** against official pages and update `LAST_VERIFIED` in `broker-comparison.html` and each profile's "Fees last verified" date. Start with Scalable Capital and Revolut (see A2 #4).
-2. **Legacy root broker duplicates** (A2 #8). Proposed change, which needs your approval:
-   ```json
-   { "source": "/trade-republic.html", "destination": "/brokers/trade-republic.html", "permanent": true }
-   ```
-   Add one entry like this per broker to `vercel.json` `redirects`, then delete the ten root files. A lower-impact alternative is a `rel="canonical"` on each root file pointing to its `/brokers/` version.
+1. **Re-verify all broker figures** first-hand against official pages, then update `LAST_VERIFIED` in `broker-comparison.html` and each profile's "last verified" line. For Revolut and Scalable Capital, confirm:
+   - the round-2 corrections,
+   - the Revolut commission beyond the allowance (search snippets show €1 per order in Greece),
+   - Revolut paid-plan prices,
+   - Scalable Capital venue fees (snippets mention €1.99 on Xetra, with gettex following from 2026-09-01).
+
+   Replace each "Check source" with a figure only once it has been confirmed.
+2. ~~Legacy root broker duplicates~~: done in round 2 (A2 #8).
 3. **Real author attribution:** name the founder or authors on About and article bylines, with `Person` schema. Only use true, verifiable details.
 
 **P2: content and measurement**
@@ -261,8 +263,9 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 **Needs human confirmation (TODO)**
 
 - [ ] Author or founder name, role and any relevant (real) credentials, for About, bylines and schema.
-- [ ] Current broker fees, plans and country availability, especially Scalable Capital and Revolut.
-- [ ] Whether to redirect and remove the 10 legacy root broker files.
+- [ ] Round-2 broker corrections (Revolut allowances and entity, Scalable PRIME ETF terms): confirm first-hand on the official pages.
+- [ ] Revolut commission beyond the allowance, and paid-plan prices (currently "Check source").
+- [ ] Scalable Capital venue-specific fees (Xetra/gettex).
 - [ ] Whether `steadfolio-icon-1080.png` exists anywhere. If so, add it to the repo and use it as the Organization logo.
 - [ ] That the ETF Evaluator is still included in the free plan (taken from the Greek guide reviewed on 2026-10-06).
 
@@ -284,17 +287,25 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
   - filters dim the expected cards,
   - selecting brokers opens the compare panel,
   - no JS errors.
-- Layout: all 85 pages rendered at 375px and 1280px. No horizontal page overflow after this branch (2 pre-existing cases fixed) and no console errors. The changed priority pages were also reviewed visually.
+- Layout: all pages rendered at 375px and 1280px (85 in round 1, 75 after removal in round 2). No horizontal page overflow after this branch (2 pre-existing cases fixed) and no console errors. The changed priority pages were also reviewed visually.
+
+**Round 2 (2026-10-06):**
+
+- Redirects: `vercel.json` was validated with Vercel's `@vercel/routing-utils`, and requests were simulated through the compiled routes. All 10 legacy URLs return 301 to an existing `/brokers/` page in a single hop. No `/brokers/`, `/`, `/el/` or hub URL is redirected.
+- Internal links: 3,077 checked across 75 pages, `sitemap.xml`, `llms.txt` and the `reviewUrl` values in `brokers[]`. 0 broken.
+- Static broker cards and summary are identical to the JS render; filters and compare work, with no JS errors.
+- FAQ schema: 41 pages and 174 questions. Every question is visible on its page, and no new answer mismatch was introduced; this branch fixes 62 of the 92 on main. The remaining 30 are older paraphrased answers (backlog).
+- HTML validation unchanged vs main.
+- No overflow at 375px or 1280px on any of the 75 pages.
 
 **Not performed (blocked or out of scope):**
 
-- Live-site checks: redirects, status codes, response headers.
+- Live-site checks: deployed redirects, status codes, response headers. Redirects were verified against the config only; check them on the Vercel preview deployment.
 - Google Rich Results Test, Search Console URL Inspection, PageSpeed or Lighthouse field data.
 - Official broker fee verification.
 - Real-device testing.
 
 **Outstanding risks:**
 
-- Broker figures may be stale (A2 #4).
-- Legacy duplicates remain (A2 #8).
+- The round-2 broker figures came from you and from search snippets of official pages, not first-hand reads (A2 #4).
 - The comparison page's static table depends on staying in sync with `brokers[]` for no-JS crawlers. JS always re-renders it from the data for users and rendering crawlers.
