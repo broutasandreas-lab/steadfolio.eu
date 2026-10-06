@@ -117,6 +117,16 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .callout strong { color: var(--teal-bright); }
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
 .back-link:hover { color: var(--teal-bright); }
+.path-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 900px; margin: 0 auto 40px; }
+@media (max-width: 720px) { .path-grid { grid-template-columns: 1fr; } }
+.path-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 14px; padding: 24px 26px; }
+.path-card h2 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.path-card p { font-size: 14.5px; color: var(--text-dim); margin-bottom: 12px; }
+.path-card ol { margin-left: 20px; font-size: 14.5px; color: var(--text-dim); line-height: 1.7; }
+.path-card li { margin-bottom: 4px; }
+.path-card a { color: var(--text); border-bottom: 1px dotted var(--teal-dim); }
+.path-card a:hover { color: var(--teal-bright); }
+.paths-intro { text-align: center; color: var(--text-dim); font-size: 15px; margin: -4px auto 24px; max-width: 620px; }
 </style>
 </head>
 <body>
@@ -160,6 +170,35 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <h1>Investing, explained without the noise.</h1>
 <p>Short, honest reads on how investing actually works - no hype, no hot takes, no sales pitch.</p>
 <p lang="el" style="margin-top:14px; font-size:14.5px;"><a href="el/" hreflang="el" style="color: var(--teal-bright); border-bottom: 1px dotted var(--teal-dim);">Ελληνικά: Οδηγοί επενδύσεων για αρχάριους →</a></p>
+</div>
+</section>
+
+<section style="padding-top: 24px; padding-bottom: 8px;" id="paths">
+<div class="wrap">
+<div class="kicker" style="text-align:center;">Start here</div>
+<p class="paths-intro">Four learning paths, in a sensible reading order. Or browse every article below.</p>
+<div class="path-grid">
+<div class="path-card" id="path-start">
+<h2>Start Investing</h2>
+<p>Get ready, understand the basics, and make your first plan.</p>
+<ol><li><a href="blog-how-to-start-investing.html">How to Start Investing: A Step-by-Step Guide for Beginners</a></li><li><a href="blog-how-much-money-to-start-investing.html">How Much Money Do You Actually Need to Start Investing?</a></li><li><a href="blog-emergency-fund-before-investing.html">Why You Need an Emergency Fund Before You Start Investing</a></li><li><a href="blog-saving-vs-investing.html">Saving vs Investing: What's the Difference?</a></li><li><a href="blog-what-is-asset-allocation.html">What Is Asset Allocation, and How Do You Decide Yours?</a></li><li><a href="blog-beginner-investing-mistakes.html">5 Mistakes Almost Every Beginner Investor Makes</a></li></ol>
+</div>
+<div class="path-card" id="path-etfs">
+<h2>Understand ETFs</h2>
+<p>What you actually own, what it costs, and how to check it.</p>
+<ol><li><a href="blog-what-is-an-etf.html">What Is an ETF? A Beginner's Guide</a></li><li><a href="blog-what-is-index-fund.html">What Is an Index Fund? A Plain-English Guide for Beginners</a></li><li><a href="blog-how-to-evaluate-etf.html">How to Evaluate an ETF Before You Invest</a></li><li><a href="blog-what-are-ucits-etfs.html">What Are UCITS ETFs, and Why Do They Matter in Europe?</a></li><li><a href="blog-accumulating-vs-distributing-etfs.html">Accumulating vs Distributing ETFs: What's the Difference?</a></li><li><a href="blog-etf-domicile-withholding-tax.html">ETF Domicile and Withholding Tax: What European Investors Should Know</a></li></ol>
+</div>
+<div class="path-card" id="path-broker">
+<h2>Choose a Broker</h2>
+<p>Compare costs, savings plans and protection, then place your first order.</p>
+<ol><li><a href="blog-how-to-choose-a-broker.html">How to Choose a Brokerage Account: What Actually Matters</a></li><li><a href="broker-comparison.html">Compare Broker Fees and Features</a></li><li><a href="brokers/trade-republic.html">Trade Republic profile</a></li><li><a href="brokers/scalable-capital.html">Scalable Capital profile</a></li><li><a href="brokers/revolut.html">Revolut profile</a></li><li><a href="blog-how-to-buy-your-first-etf.html">How to Buy Your First ETF (A Step-by-Step Guide)</a></li></ol>
+</div>
+<div class="path-card" id="path-habits">
+<h2>Build Investing Habits</h2>
+<p>Invest regularly and stay steady when markets get loud.</p>
+<ol><li><a href="blog-building-an-investing-habit.html">How to Build an Investing Habit That Actually Sticks</a></li><li><a href="blog-dollar-cost-averaging.html">What Is Dollar-Cost Averaging, and Why Does It Work?</a></li><li><a href="blog-behavior-matters-more-than-strategy.html">Why Your Behavior Matters More Than Your Strategy</a></li><li><a href="blog-stock-market-crash.html">What Happens During a Stock Market Crash?</a></li><li><a href="blog-understanding-fomo-investing.html">Understanding FOMO: Why Everyone Else's Gains Feel Bigger</a></li><li><a href="blog-waiting-perfect-time-invest.html">Why Waiting for the Perfect Time to Invest Is Another Form of Chasing</a></li></ol>
+</div>
+</div>
 </div>
 </section>
 
@@ -373,8 +412,8 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 
 <a href="blog-what-is-index-fund.html" class="blog-card">
 <div class="tag">Foundations</div>
-<h2>What Is an Index Fund, and Why Do People Recommend Them?</h2>
-<p>Passive vs active investing, and why "boring" is often the point.</p>
+<h2>What Is an Index Fund? A Plain-English Guide for Beginners</h2>
+<p>How index funds work, how they differ from ETFs and active funds, what they cost, and what UCITS means in Europe.</p>
 <div class="read-more">Read the article →</div>
 </a>
 
