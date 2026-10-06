@@ -127,6 +127,41 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .path-card a { color: var(--text); border-bottom: 1px dotted var(--teal-dim); }
 .path-card a:hover { color: var(--teal-bright); }
 .paths-intro { text-align: center; color: var(--text-dim); font-size: 15px; margin: -4px auto 24px; max-width: 620px; }
+.path-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+/* Article explorer (filters + search) - progressive enhancement, hidden until JS runs */
+#articles { scroll-margin-top: 90px; }
+.explore-head { text-align: center; max-width: 620px; margin: 0 auto 28px; }
+.explore-head .kicker { margin-bottom: 10px; }
+.blog-tools { max-width: 900px; margin: 0 auto 22px; display: flex; flex-direction: column; gap: 14px; }
+.blog-tools[hidden] { display: none; }
+.blog-tools-row { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.blog-search { position: relative; width: 100%; max-width: 360px; }
+.blog-search > svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+.blog-search input { width: 100%; height: 44px; padding: 0 42px 0 38px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-family: var(--font-body); font-size: 16px; transition: border-color 0.15s; -webkit-appearance: none; appearance: none; }
+.blog-search input::placeholder { color: var(--text-muted); }
+.blog-search input::-webkit-search-cancel-button, .blog-search input::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+.blog-search input:hover { border-color: var(--teal-dim); }
+.blog-search input:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 2px; border-color: var(--teal); }
+.blog-search-clear { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: none; border: none; border-radius: 8px; color: var(--text-dim); cursor: pointer; }
+.blog-search-clear[hidden] { display: none; }
+.blog-search-clear:hover { color: var(--teal-bright); }
+.blog-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-chip { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 8px 14px; background: transparent; border: 1px solid var(--border); border-radius: 999px; color: var(--text-dim); font-family: var(--font-body); font-size: 14px; font-weight: 500; cursor: pointer; transition: color 0.15s, border-color 0.15s, background 0.15s; }
+.filter-chip:hover { color: var(--text); border-color: var(--teal-dim); }
+.filter-chip .chip-count { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+.filter-chip[aria-pressed="true"] { background: var(--teal-dim); border-color: var(--teal); color: var(--teal-bright); }
+.filter-chip[aria-pressed="true"] .chip-count { color: var(--teal-bright); }
+.filter-chip.is-empty:not([aria-pressed="true"]) { opacity: 0.5; }
+.blog-count { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+.blog-card[hidden] { display: none; }
+.blog-empty { max-width: 900px; margin: 0 auto; text-align: center; background: var(--card); border: 1px dashed var(--border); border-radius: 14px; padding: 36px 24px; }
+.blog-empty[hidden] { display: none; }
+.blog-empty h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: #fff; margin-bottom: 8px; overflow-wrap: anywhere; }
+.blog-empty p { font-size: 14.5px; color: var(--text-dim); margin-bottom: 18px; }
+.blog-empty-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.blog-empty-actions button { min-height: 40px; padding: 8px 16px; background: transparent; border: 1px solid var(--border); border-radius: 999px; color: var(--text); font-family: var(--font-body); font-size: 14px; font-weight: 500; cursor: pointer; transition: border-color 0.15s, color 0.15s; }
+.blog-empty-actions button:hover { border-color: var(--teal); color: var(--teal-bright); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 </style>
 </head>
 <body>
@@ -176,24 +211,28 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section style="padding-top: 24px; padding-bottom: 8px;" id="paths">
 <div class="wrap">
 <div class="kicker" style="text-align:center;">Start here</div>
-<p class="paths-intro">Four learning paths, in a sensible reading order. Or browse every article below.</p>
+<p class="paths-intro">Four learning paths, in a sensible reading order. Or <a href="#articles" style="color: var(--teal-bright); border-bottom: 1px dotted var(--teal-dim);">browse every article below</a>.</p>
 <div class="path-grid">
 <div class="path-card" id="path-start">
+<div class="path-label">Path 1 of 4</div>
 <h2>Start Investing</h2>
 <p>Get ready, understand the basics, and make your first plan.</p>
 <ol><li><a href="blog-how-to-start-investing.html">How to Start Investing: A Step-by-Step Guide for Beginners</a></li><li><a href="blog-how-much-money-to-start-investing.html">How Much Money Do You Actually Need to Start Investing?</a></li><li><a href="blog-emergency-fund-before-investing.html">Why You Need an Emergency Fund Before You Start Investing</a></li><li><a href="blog-saving-vs-investing.html">Saving vs Investing: What's the Difference?</a></li><li><a href="blog-what-is-asset-allocation.html">What Is Asset Allocation, and How Do You Decide Yours?</a></li><li><a href="blog-beginner-investing-mistakes.html">5 Mistakes Almost Every Beginner Investor Makes</a></li></ol>
 </div>
 <div class="path-card" id="path-etfs">
+<div class="path-label">Path 2 of 4</div>
 <h2>Understand ETFs</h2>
 <p>What you actually own, what it costs, and how to check it.</p>
 <ol><li><a href="blog-what-is-an-etf.html">What Is an ETF? A Beginner's Guide</a></li><li><a href="blog-what-is-index-fund.html">What Is an Index Fund? A Plain-English Guide for Beginners</a></li><li><a href="blog-how-to-evaluate-etf.html">How to Evaluate an ETF Before You Invest</a></li><li><a href="blog-what-are-ucits-etfs.html">What Are UCITS ETFs, and Why Do They Matter in Europe?</a></li><li><a href="blog-accumulating-vs-distributing-etfs.html">Accumulating vs Distributing ETFs: What's the Difference?</a></li><li><a href="blog-etf-domicile-withholding-tax.html">ETF Domicile and Withholding Tax: What European Investors Should Know</a></li></ol>
 </div>
 <div class="path-card" id="path-broker">
+<div class="path-label">Path 3 of 4</div>
 <h2>Choose a Broker</h2>
 <p>Compare costs, savings plans and protection, then place your first order.</p>
 <ol><li><a href="blog-how-to-choose-a-broker.html">How to Choose a Brokerage Account: What Actually Matters</a></li><li><a href="broker-comparison.html">Compare Broker Fees and Features</a></li><li><a href="brokers/trade-republic.html">Trade Republic profile</a></li><li><a href="brokers/scalable-capital.html">Scalable Capital profile</a></li><li><a href="brokers/revolut.html">Revolut profile</a></li><li><a href="blog-how-to-buy-your-first-etf.html">How to Buy Your First ETF (A Step-by-Step Guide)</a></li></ol>
 </div>
 <div class="path-card" id="path-habits">
+<div class="path-label">Path 4 of 4</div>
 <h2>Build Investing Habits</h2>
 <p>Invest regularly and stay steady when markets get loud.</p>
 <ol><li><a href="blog-building-an-investing-habit.html">How to Build an Investing Habit That Actually Sticks</a></li><li><a href="blog-dollar-cost-averaging.html">What Is Dollar-Cost Averaging, and Why Does It Work?</a></li><li><a href="blog-behavior-matters-more-than-strategy.html">Why Your Behavior Matters More Than Your Strategy</a></li><li><a href="blog-stock-market-crash.html">What Happens During a Stock Market Crash?</a></li><li><a href="blog-understanding-fomo-investing.html">Understanding FOMO: Why Everyone Else's Gains Feel Bigger</a></li><li><a href="blog-waiting-perfect-time-invest.html">Why Waiting for the Perfect Time to Invest Is Another Form of Chasing</a></li></ol>
@@ -202,9 +241,31 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </div>
 </section>
 
-<section style="padding-top: 24px;">
+<section style="padding-top: 24px;" id="articles">
 <div class="wrap">
-<div class="blog-grid">
+<div class="explore-head">
+<div class="kicker">Browse the library</div>
+<h2>Explore all articles</h2>
+</div>
+<div class="blog-tools" id="blogTools" hidden>
+<div class="blog-tools-row">
+<div class="blog-search">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+<label for="blogSearch" class="sr-only">Search articles</label>
+<input type="search" id="blogSearch" placeholder="Search articles..." autocomplete="off" spellcheck="false" enterkeyhint="search" aria-controls="blogGrid">
+<button type="button" class="blog-search-clear" id="blogSearchClear" aria-label="Clear search" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<div class="blog-filters" role="group" aria-label="Filter articles by category">
+<button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All Articles <span class="chip-count"></span></button>
+<button type="button" class="filter-chip" data-filter="Foundations" aria-pressed="false">Foundations <span class="chip-count"></span></button>
+<button type="button" class="filter-chip" data-filter="Mindset" aria-pressed="false">Mindset <span class="chip-count"></span></button>
+<button type="button" class="filter-chip" data-filter="Market Structure" aria-pressed="false">Market Structure <span class="chip-count"></span></button>
+<button type="button" class="filter-chip" data-filter="Comparison" aria-pressed="false">Comparison <span class="chip-count"></span></button>
+</div>
+</div>
+<p class="blog-count" id="blogCount" role="status" aria-live="polite"></p>
+</div>
+<div class="blog-grid" id="blogGrid">
 
 
 <a href="blog-betting-20-vs-investing-20.html" class="blog-card">
@@ -565,8 +626,116 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </a>
 
 </div>
+<div class="blog-empty" id="blogEmpty" hidden>
+<h3 id="blogEmptyTitle">No articles found</h3>
+<p>Try a different keyword, or browse by category instead.</p>
+<div class="blog-empty-actions">
+<button type="button" id="blogEmptyClear">Clear search</button>
+<button type="button" id="blogEmptyAll">Show all articles</button>
+</div>
+</div>
 </div>
 </section>
+
+<script>
+(function () {
+var tools = document.getElementById("blogTools");
+var grid = document.getElementById("blogGrid");
+if (!tools || !grid) return;
+var input = document.getElementById("blogSearch");
+var clearBtn = document.getElementById("blogSearchClear");
+var chips = Array.prototype.slice.call(tools.querySelectorAll(".filter-chip"));
+var countEl = document.getElementById("blogCount");
+var empty = document.getElementById("blogEmpty");
+var emptyTitle = document.getElementById("blogEmptyTitle");
+var emptyClear = document.getElementById("blogEmptyClear");
+var emptyAll = document.getElementById("blogEmptyAll");
+
+function norm(t) {
+return (t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim();
+}
+// Categories, titles and descriptions are read from each card's existing markup.
+var cards = Array.prototype.slice.call(grid.querySelectorAll(".blog-card")).map(function (el) {
+var tag = el.querySelector(".tag");
+var title = el.querySelector("h2");
+var desc = el.querySelector("p");
+var category = tag ? tag.textContent.trim() : "";
+return {
+el: el,
+category: category,
+text: norm((title ? title.textContent : "") + " " + (desc ? desc.textContent : "") + " " + category)
+};
+});
+var total = cards.length;
+var state = { category: "all", query: "" };
+
+function matchesQuery(card, terms) {
+for (var i = 0; i < terms.length; i++) { if (card.text.indexOf(terms[i]) === -1) return false; }
+return true;
+}
+function plural(n) { return n + (n === 1 ? " article" : " articles"); }
+
+function render() {
+var q = norm(state.query);
+var terms = q ? q.split(" ") : [];
+var shown = 0;
+var perCategory = {};
+cards.forEach(function (c) {
+var okQuery = matchesQuery(c, terms);
+if (okQuery) perCategory[c.category] = (perCategory[c.category] || 0) + 1;
+var visible = okQuery && (state.category === "all" || c.category === state.category);
+c.el.hidden = !visible;
+if (visible) shown++;
+});
+var queryTotal = terms.length ? 0 : total;
+if (terms.length) { Object.keys(perCategory).forEach(function (k) { queryTotal += perCategory[k]; }); }
+chips.forEach(function (chip) {
+var f = chip.getAttribute("data-filter");
+var n = f === "all" ? queryTotal : (perCategory[f] || 0);
+chip.querySelector(".chip-count").textContent = n;
+chip.classList.toggle("is-empty", n === 0);
+chip.setAttribute("aria-pressed", f === state.category ? "true" : "false");
+});
+clearBtn.hidden = !state.query;
+var filtered = state.category !== "all" || terms.length > 0;
+countEl.textContent = filtered ? "Showing " + shown + " of " + plural(total) : plural(total);
+if (shown === 0) {
+var bits = [];
+if (state.query.trim()) bits.push("\u201c" + state.query.trim() + "\u201d");
+if (state.category !== "all") bits.push("in " + state.category);
+emptyTitle.textContent = "No articles found" + (bits.length ? " for " + bits.join(" ") : "");
+}
+empty.hidden = shown !== 0;
+emptyClear.hidden = !state.query;
+emptyAll.hidden = state.category === "all";
+}
+
+chips.forEach(function (chip) {
+chip.addEventListener("click", function () {
+state.category = chip.getAttribute("data-filter");
+render();
+});
+});
+input.addEventListener("input", function () { state.query = input.value; render(); });
+input.addEventListener("keydown", function (e) {
+if (e.key === "Escape" && input.value) { e.preventDefault(); input.value = ""; state.query = ""; render(); }
+});
+clearBtn.addEventListener("click", function () {
+input.value = ""; state.query = ""; render(); input.focus();
+});
+emptyClear.addEventListener("click", function () {
+input.value = ""; state.query = ""; render(); input.focus();
+});
+emptyAll.addEventListener("click", function () {
+state.category = "all"; render();
+var first = chips[0]; if (first) first.focus();
+});
+
+tools.hidden = false;
+state.query = input.value;
+render();
+})();
+</script>
 
 <div class="trust-strip">
 <div class="wrap trust-row">
