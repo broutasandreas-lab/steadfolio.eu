@@ -174,6 +174,10 @@ h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 
 .cta-inline p { font-size: 15.5px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 14px 24px; border-radius: 10px; transition: background 0.15s; }
 .btn-primary:hover { background: var(--teal-bright); }
+.cta-note { font-size: 13.5px !important; color: var(--text-muted) !important; margin: 12px 0 0 !important; line-height: 1.6 !important; }
+.final-cta .cta-note { margin: 14px auto 0 !important; }
+.assumptions { font-size: 14.5px !important; line-height: 1.7 !important; }
+.assumptions li { margin-bottom: 6px !important; }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
 .sources { border-top: 1px solid var(--border-soft); margin-top: 48px; padding-top: 8px; }
@@ -235,7 +239,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="nav-right">
 <a href="../blog-what-is-an-etf.html" class="nav-lang" hreflang="en" lang="en" title="Read this page in English">EN</a>
 <a href="https://app.steadfolio.eu/login" class="nav-cta">Σύνδεση</a>
-<button class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+<button type="button" class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -386,7 +390,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </tbody>
 </table>
 </div>
-<p class="table-note">Υπολογισμός: 10.000 × (1 + καθαρή απόδοση)<sup>20</sup>. Για απλότητα δεν περιλαμβάνονται φόροι, προμήθειες και πληθωρισμός. Οι πραγματικές αποδόσεις δεν είναι σταθερές και μπορεί να είναι αρνητικές.</p>
+<p class="table-note">Υποθετικός υπολογισμός: 10.000 × (1 + καθαρή απόδοση)<sup>20</sup>, όπου καθαρή απόδοση = 5% μείον TER. Η απόδοση 5% είναι σταθερή παραδοχή, όχι πρόβλεψη· οι πραγματικές αποδόσεις αλλάζουν κάθε χρόνο και μπορεί να είναι αρνητικές. <strong>Κόστη:</strong> αφαιρείται μόνο το TER· δεν περιλαμβάνονται προμήθειες, spread και κόστος συναλλάγματος. <strong>Πληθωρισμός:</strong> δεν λαμβάνεται υπόψη (ονομαστικά ποσά). <strong>Φόροι:</strong> δεν αφαιρούνται.</p>
 <p>Η διαφορά ανάμεσα σε κόστος 0,10% και 1,00% φτάνει περίπου τα €4.100 στο ίδιο ποσό και στον ίδιο χρόνο. Το χαμηλό κόστος όμως δεν είναι το μόνο κριτήριο: ένα φθηνό ETF ενός πολύ στενού δείκτη μπορεί να είναι λιγότερο κατάλληλο για τον στόχο σου από ένα ελαφρώς ακριβότερο ευρύ ETF.</p>
 <h3>Παράδειγμα 2: η σταθερή προμήθεια στα μικρά ποσά</h3>
 <p>Όταν επενδύεις μικρά ποσά, μια σταθερή προμήθεια ανά αγορά έχει δυσανάλογα μεγάλο βάρος:</p>
@@ -405,8 +409,9 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 
 <div class="cta-inline">
 <p class="cta-inline-title">Εξασκήσου στην αξιολόγηση ETF χωρίς να επενδύσεις χρήματα</p>
-<p>Στο SteadFolio μπορείς να εξετάσεις κόστος, συμμετοχές και διασπορά με τον <strong>ETF Evaluator</strong>. Η Sofia, ο AI coach της εφαρμογής, σου εξηγεί τι σημαίνει κάθε στοιχείο. Η εφαρμογή είναι εκπαιδευτική και δεν προτείνει συγκεκριμένα προϊόντα. Η βασική σύγκριση ETF περιλαμβάνεται στο δωρεάν πρόγραμμα.</p>
+<p>Η <strong>Αξιολόγηση ETFs</strong> (ETF Evaluator) του SteadFolio παρουσιάζει μια επιλεγμένη λίστα γνωστών ETF με εξηγήσεις σε απλά λόγια. Μπορείς να τα φιλτράρεις ανά κατηγορία και περιοχή, να τα ταξινομήσεις κατά κόστος (TER) και να δεις επισημάνσεις για ρευστότητα, μόχλευση ή θεματική συγκέντρωση. Η Sofia, ο AI coach της εφαρμογής, εξηγεί τους όρους χωρίς να δίνει συστάσεις αγοράς ή πώλησης. Το εργαλείο είναι διαθέσιμο και στο δωρεάν πρόγραμμα. Τα στοιχεία του (π.χ. TER) είναι ενδεικτικά, οπότε επιβεβαίωνέ τα πάντα στα επίσημα έγγραφα του εκδότη.</p>
 <a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_etf_inline">Μάθε πώς να αξιολογείς ένα ETF →</a>
+<p class="cta-note">Η εφαρμογή ανοίγει στα αγγλικά. Για ελληνικά, πάτησε «ΕΛ» πάνω δεξιά και μετά «Εγγραφή».</p>
 </div>
 
 <h2 id="checklist">Checklist: τι να ελέγξεις πριν επιλέξεις ETF</h2>
@@ -476,7 +481,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="trust-strip">
 <div class="wrap trust-row">
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Εκπαιδευτικό περιεχόμενο, όχι επενδυτική συμβουλή</span>
-<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Χωρίς συστάσεις για προϊόντα</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Ο οδηγός δεν προτείνει συγκεκριμένα προϊόντα</span>
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> Χωρίς υποσχέσεις αποδόσεων</span>
 </div>
 </div>
@@ -484,10 +489,11 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section class="final-cta">
 <div class="wrap">
 <h2>Μάθε να αξιολογείς ETF πριν βάλεις χρήματα</h2>
-<p>Ξεκίνα δωρεάν: δομημένα μαθήματα, ETF Evaluator και η Sofia να σου εξηγεί κάθε όρο. Χωρίς πιστωτική κάρτα, χωρίς συστάσεις αγοράς.</p>
+<p>Ξεκίνα δωρεάν: μαθήματα στην Ακαδημία, Αξιολόγηση ETFs και η Sofia να σου εξηγεί κάθε όρο, χωρίς συστάσεις αγοράς ή πώλησης. Δεν απαιτείται πιστωτική κάρτα.</p>
 <div class="hero-ctas">
 <a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_etf_final">Ξεκίνα δωρεάν να μαθαίνεις επενδύσεις →</a>
 </div>
+<p class="cta-note">Η εφαρμογή ανοίγει στα αγγλικά. Για ελληνικά, πάτησε «ΕΛ» πάνω δεξιά και μετά «Εγγραφή».</p>
 </div>
 </section>
 </main>

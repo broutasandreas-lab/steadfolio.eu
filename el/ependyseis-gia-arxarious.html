@@ -173,6 +173,10 @@ h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 
 .cta-inline p { font-size: 15.5px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 14px 24px; border-radius: 10px; transition: background 0.15s; }
 .btn-primary:hover { background: var(--teal-bright); }
+.cta-note { font-size: 13.5px !important; color: var(--text-muted) !important; margin: 12px 0 0 !important; line-height: 1.6 !important; }
+.final-cta .cta-note { margin: 14px auto 0 !important; }
+.assumptions { font-size: 14.5px !important; line-height: 1.7 !important; }
+.assumptions li { margin-bottom: 6px !important; }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
 .sources { border-top: 1px solid var(--border-soft); margin-top: 48px; padding-top: 8px; }
@@ -234,7 +238,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="nav-right">
 <a href="../blog-how-to-start-investing.html" class="nav-lang" hreflang="en" lang="en" title="Read this page in English">EN</a>
 <a href="https://app.steadfolio.eu/login" class="nav-cta">Σύνδεση</a>
-<button class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+<button type="button" class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -327,7 +331,13 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <ul>
 <li><strong>Άδεια λειτουργίας.</strong> Στην Ελλάδα, η Επιτροπή Κεφαλαιαγοράς εποπτεύει τις επιχειρήσεις επενδυτικών υπηρεσιών και δημοσιεύει τις εποπτευόμενες εταιρείες. Ένας πάροχος με άδεια σε άλλο κράτος-μέλος της ΕΕ μπορεί να παρέχει υπηρεσίες στην Ελλάδα μέσω της διαδικασίας «διαβατηρίου». Στην περίπτωση αυτή, ελέγχεις την άδειά του στη χώρα έδρας του και στα μητρώα της ESMA.</li>
 <li><strong>Προειδοποιήσεις.</strong> Η Επιτροπή Κεφαλαιαγοράς και άλλες εποπτικές αρχές δημοσιεύουν προειδοποιήσεις για μη αδειοδοτημένες εταιρείες. Αν σου υπόσχονται «σίγουρες αποδόσεις», είναι σοβαρό προειδοποιητικό σημάδι.</li>
-<li><strong>Σύστημα αποζημίωσης επενδυτών.</strong> Στην Ελλάδα, για τις ΑΕΠΕΥ που συμμετέχουν σε αυτό, το Συνεγγυητικό Κεφάλαιο Εξασφάλισης Επενδυτικών Υπηρεσιών καλύπτει, υπό προϋποθέσεις, έως €30.000 ανά επενδυτή. Για τις επενδυτικές υπηρεσίες των τραπεζών προβλέπεται αντίστοιχη κάλυψη μέσω του σκέλους επενδύσεων του ΤΕΚΕ. Η κάλυψη ενεργοποιείται αν ο πάροχος αδυνατεί να επιστρέψει χρήματα ή τίτλους των πελατών του. Για παρόχους με έδρα σε άλλη χώρα της ΕΕ ισχύει συνήθως το σύστημα της χώρας τους, με δικά του όρια. Η ευρωπαϊκή οδηγία ορίζει ελάχιστη κάλυψη €20.000. <strong>Κανένα τέτοιο σύστημα δεν καλύπτει ζημιές από την πτώση της αγοράς.</strong></li>
+<li><strong>Σύστημα αποζημίωσης επενδυτών.</strong> Η κάλυψη εξαρτάται από το ίδρυμα στο οποίο έχεις τον λογαριασμό και από το σύστημα στο οποίο αυτό συμμετέχει. Στην Ελλάδα:
+<ul>
+<li>Για τις <strong>ΑΕΠΕΥ</strong> που είναι μέλη του, το <strong>Συνεγγυητικό Κεφάλαιο Εξασφάλισης Επενδυτικών Υπηρεσιών</strong> αποζημιώνει έως <strong>€30.000 ανά επενδυτή</strong>, για το σύνολο των απαιτήσεών του έναντι του ίδιου μέλους.</li>
+<li>Για τις επενδυτικές υπηρεσίες <strong>τραπεζών</strong> με άδεια στην Ελλάδα, το <strong>Σκέλος Κάλυψης Επενδύσεων του ΤΕΚΕ</strong> καλύπτει έως <strong>€30.000 ανά επενδυτή-πελάτη και πιστωτικό ίδρυμα</strong>.</li>
+<li>Για παρόχους με έδρα σε <strong>άλλη χώρα της ΕΕ</strong> ισχύει κατά κανόνα το σύστημα της χώρας έδρας τους, με δικούς του όρους και όρια. Η ευρωπαϊκή οδηγία 97/9/ΕΚ ορίζει ελάχιστη κάλυψη €20.000. Έλεγξε στους όρους του παρόχου σε ποιο σύστημα συμμετέχει.</li>
+</ul>
+Αυτά τα συστήματα ενεργοποιούνται μόνο όταν ο πάροχος αδυνατεί να επιστρέψει χρήματα ή χρηματοπιστωτικά μέσα που κατέχει για λογαριασμό σου, π.χ. λόγω αφερεγγυότητας. <strong>Δεν σε προστατεύουν από ζημιές λόγω πτώσης της αγοράς ή επειδή μια επένδυση έχασε αξία.</strong></li>
 </ul>
 <p>Όταν ανοίγεις λογαριασμό, ο πάροχος θα σου κάνει ερωτήσεις για τις γνώσεις και την εμπειρία σου. Είναι κανονική διαδικασία που προβλέπει η ευρωπαϊκή νομοθεσία (MiFID II) και αξίζει να την απαντήσεις ειλικρινά.</p>
 <h3>Χρεώσεις: τι να διαβάσεις στον τιμοκατάλογο</h3>
@@ -341,7 +351,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <p>Η <a href="../broker-comparison.html">ανεξάρτητη σύγκριση brokers</a> του SteadFolio (στα αγγλικά) συγκεντρώνει τις χρεώσεις δημοφιλών παρόχων χωρίς να προτείνει κάποιον συγκεκριμένα. Οι χρεώσεις αλλάζουν, οπότε επιβεβαίωνε πάντα στον επίσημο τιμοκατάλογο του παρόχου.</p>
 <div class="callout"><strong>Φορολογία:</strong> Οι επενδύσεις έχουν φορολογικές υποχρεώσεις (π.χ. δήλωση εισοδημάτων από μερίσματα ή τόκους). Οι κανόνες εξαρτώνται από την προσωπική σου κατάσταση και αλλάζουν. Αυτός ο οδηγός δεν καλύπτει φορολογικά θέματα· για αυτά συμβουλέψου λογιστή ή φοροτεχνικό.</div>
 
-<h2 id="50-100-ton-mina">Βήμα 5: Τι μπορεί να σημαίνουν €50 ή €100 τον μήνα</h2>
+<h2 id="ependysi-50-100-ton-mina">Βήμα 5: Τι μπορεί να σημαίνουν €50 ή €100 τον μήνα</h2>
 <p>Ένα από τα πιο συνηθισμένα ερωτήματα είναι αν «αξίζει» να επενδύεις μικρά ποσά. Ο παρακάτω πίνακας δείχνει τη μαθηματική πλευρά με <strong>υποθετικές</strong> σταθερές αποδόσεις. Δεν αποτελεί πρόβλεψη ή υπόσχεση.</p>
 <div class="table-wrap">
 <table class="data-table num">
@@ -357,7 +367,14 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </tbody>
 </table>
 </div>
-<p class="table-note">Μέθοδος: μελλοντική αξία μηνιαίων καταθέσεων στο τέλος κάθε μήνα, με μηνιαίο ανατοκισμό (ετήσιο ποσοστό ÷ 12). Οι πραγματικές αποδόσεις αλλάζουν κάθε χρόνο, μπορεί να είναι αρνητικές για μεγάλα διαστήματα και μειώνονται από κόστη και φόρους. Ο πληθωρισμός μειώνει επίσης την πραγματική αγοραστική αξία των ποσών.</p>
+<p class="table-note"><strong>Υποθετικοί υπολογισμοί. Παραδοχές:</strong></p>
+<ul class="assumptions">
+<li><strong>Απόδοση:</strong> σταθερή υποθετική μέση ετήσια απόδοση, με μηνιαίο ανατοκισμό (ετήσιο ποσοστό ÷ 12). Δεν βασίζεται σε ιστορικά στοιχεία και δεν αποτελεί πρόβλεψη· οι πραγματικές αποδόσεις αλλάζουν κάθε χρόνο και μπορεί να είναι αρνητικές.</li>
+<li><strong>Καταθέσεις:</strong> ίδιο ποσό στο τέλος κάθε μήνα.</li>
+<li><strong>Κόστη:</strong> δεν αφαιρούνται. Το ετήσιο κόστος του κεφαλαίου (TER), οι προμήθειες και το κόστος συναλλάγματος θα μείωναν το αποτέλεσμα.</li>
+<li><strong>Πληθωρισμός:</strong> δεν λαμβάνεται υπόψη. Τα ποσά είναι ονομαστικά· η πραγματική αγοραστική τους αξία στο μέλλον θα είναι μικρότερη.</li>
+<li><strong>Φόροι:</strong> δεν αφαιρούνται.</li>
+</ul>
 
 <div class="calc" id="elCalc" hidden>
 <p class="calc-title">Δοκίμασε τους δικούς σου αριθμούς</p>
@@ -366,8 +383,8 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <label>Χρόνια<input type="number" id="elCalcYears" min="1" max="50" step="1" value="20" inputmode="numeric"></label>
 <label>Υποθετική ετήσια απόδοση<select id="elCalcRate"><option value="0">0%</option><option value="0.02">2%</option><option value="0.05" selected>5%</option><option value="0.07">7%</option></select></label>
 </div>
-<p class="calc-out" aria-live="polite">Καταθέσεις: <strong id="elCalcDeposited">–</strong> · Υποθετική αξία: <strong id="elCalcValue">–</strong></p>
-<p class="table-note">Ίδιες παραδοχές με τον πίνακα. Εκπαιδευτικός υπολογισμός, όχι πρόβλεψη.</p>
+<p class="calc-out" aria-live="polite">Καταθέσεις: <strong id="elCalcDeposited">–</strong> · Υποθετική ονομαστική αξία: <strong id="elCalcValue">–</strong></p>
+<p class="table-note">Υποθετικός εκπαιδευτικός υπολογισμός, όχι πρόβλεψη. Ισχύουν οι ίδιες παραδοχές με τον πίνακα: σταθερή απόδοση, <strong>χωρίς αφαίρεση κόστους</strong> (TER, προμήθειες, συνάλλαγμα), <strong>χωρίς προσαρμογή για πληθωρισμό</strong> και <strong>χωρίς φόρους</strong>.</p>
 </div>
 
 <p>Τι δείχνουν οι αριθμοί; Πρώτον, ο <strong>χρόνος</strong> μετράει περισσότερο από όσο νομίζουμε: στα 30 χρόνια, το μεγαλύτερο μέρος της υποθετικής αξίας στα σενάρια 5% και 7% προέρχεται από την ανατοκισμένη απόδοση και όχι από τις καταθέσεις. Δεύτερον, για τα μικρά ποσά η <strong>συνέπεια</strong> είναι πιο σημαντική από το τέλειο timing. Τρίτον, τα μικρά ποσά δεν είναι «άχρηστα», αλλά είναι ευάλωτα στις σταθερές χρεώσεις. Μια προμήθεια €1 σε αγορά €50 ισοδυναμεί με 2% αμέσως. Δες περισσότερα για το <a href="../blog-dollar-cost-averaging.html">dollar-cost averaging</a> και για <a href="../blog-investing-50-a-month.html">την επένδυση €50 τον μήνα</a> (αγγλόφωνοι οδηγοί).</p>
@@ -388,15 +405,16 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <h2 id="exaskisi">Βήμα 6: Εξασκήσου πριν βάλεις πραγματικά χρήματα</h2>
 <p>Ένας ασφαλής τρόπος να μάθεις πώς θα αντιδράσεις σε μια πτώση είναι να τη ζήσεις πρώτα σε προσομοίωση. Πριν την πρώτη σου πραγματική αγορά μπορείς:</p>
 <ul>
-<li>να κάνεις <strong>εικονικές συναλλαγές (paper trading)</strong> με τρέχουσες τιμές και εικονικά χρήματα,</li>
-<li>να δεις σε <strong>προσομοιωτή τακτικής επένδυσης</strong> πώς θα εξελισσόταν ένα μηνιαίο ποσό σε πραγματικά ιστορικά σενάρια, μαζί με τις κρίσεις,</li>
+<li>να κάνεις <strong>εικονικές συναλλαγές (paper trading)</strong> με τιμές της αγοράς και εικονικά χρήματα,</li>
+<li>να δεις σε <strong>προσομοιωτή τακτικής επένδυσης</strong> πώς αλλάζει ένα μηνιαίο ποσό με διαφορετικές υποθετικές αποδόσεις, ακόμη και αρνητικές,</li>
 <li>να ακολουθήσεις μια <strong>δομημένη διαδρομή μάθησης</strong>, ώστε να καταλαβαίνεις τους όρους πριν τους χρειαστείς.</li>
 </ul>
 
 <div class="cta-inline">
 <p class="cta-inline-title">Ξεκίνα με τη δωρεάν διαδρομή μάθησης του SteadFolio</p>
-<p>Η <strong>Sofia</strong>, ο AI coach του SteadFolio, σε καθοδηγεί βήμα βήμα μέσα από την Academy, το Paper Trading και τον DCA Simulator. Εξηγεί τις έννοιες τη στιγμή που τις χρειάζεσαι, χωρίς να προτείνει τι να αγοράσεις. Το δωρεάν πρόγραμμα δεν απαιτεί πιστωτική κάρτα.</p>
+<p>Στο SteadFolio ξεκινάς με δομημένα μαθήματα στην <strong>Ακαδημία</strong> και εξασκείσαι με το <strong>Paper Trading</strong> και τον <strong>Προσομοιωτή DCA</strong>. Η <strong>Sofia</strong>, ο AI coach της εφαρμογής, απαντά στις ερωτήσεις σου και σου προτείνει το επόμενο βήμα μάθησης, χωρίς συστάσεις αγοράς ή πώλησης. Το δωρεάν πρόγραμμα έχει ημερήσιο όριο μηνυμάτων προς τη Sofia και δεν απαιτεί πιστωτική κάρτα.</p>
 <a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_beginners_inline">Ξεκίνα δωρεάν να μαθαίνεις επενδύσεις →</a>
+<p class="cta-note">Η εφαρμογή ανοίγει στα αγγλικά. Για ελληνικά, πάτησε «ΕΛ» πάνω δεξιά και μετά «Εγγραφή».</p>
 </div>
 
 <h2 id="checklist">Checklist πριν από την πρώτη σου επένδυση</h2>
@@ -427,7 +445,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </div>
 <div class="faq-item">
 <h3>Είναι οι επενδύσεις εγγυημένες όπως οι καταθέσεις;</h3>
-<p>Όχι. Οι επιλέξιμες τραπεζικές καταθέσεις καλύπτονται έως €100.000 ανά καταθέτη και ίδρυμα. Τα συστήματα αποζημίωσης επενδυτών καλύπτουν μόνο ορισμένες περιπτώσεις αφερεγγυότητας του παρόχου και ποτέ τις ζημιές από την πτώση της αγοράς.</p>
+<p>Όχι. Οι επιλέξιμες τραπεζικές καταθέσεις καλύπτονται από το ΤΕΚΕ έως €100.000 ανά καταθέτη και πιστωτικό ίδρυμα. Τα συστήματα αποζημίωσης επενδυτών είναι διαφορετικά: καλύπτουν μόνο την περίπτωση που ο πάροχος αδυνατεί να επιστρέψει τα χρήματα ή τους τίτλους σου, με όρια που εξαρτώνται από το ίδρυμα και το σύστημα στο οποίο συμμετέχει. Δεν καλύπτουν ποτέ ζημιές από την πτώση της αγοράς.</p>
 </div>
 <div class="faq-item">
 <h3>Μπορώ να μάθω να επενδύω χωρίς να ρισκάρω χρήματα;</h3>
@@ -445,10 +463,12 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <h2 id="piges">Πηγές και τρόπος σύνταξης</h2>
 <p class="review-note">Ο οδηγός συντάχθηκε από την ομάδα του SteadFolio με βάση επίσημες πηγές της ΕΕ, εποπτικών αρχών και παρόχων δεικτών. Ελέγχθηκε για τελευταία φορά στις <time datetime="2026-10-06">6 Οκτωβρίου 2026</time>. Στοιχεία που αλλάζουν συχνά (χρεώσεις, όρια, συνθέσεις δεικτών) καλό είναι να τα επιβεβαιώνεις πάντα στην τρέχουσα επίσημη πηγή.</p>
 <ul>
-<li><a href="https://www.teke.gr/" target="_blank" rel="noopener">Ταμείο Εγγύησης Καταθέσεων και Επενδύσεων (ΤΕΚΕ)</a></li>
-<li><a href="https://www.syneggiitiko.gr/" target="_blank" rel="noopener">Συνεγγυητικό Κεφάλαιο Εξασφάλισης Επενδυτικών Υπηρεσιών: θεσμικό πλαίσιο (ν. 2533/1997)</a></li>
+<li><a href="https://www.teke.gr/" target="_blank" rel="noopener">Ταμείο Εγγύησης Καταθέσεων και Επενδύσεων (ΤΕΚΕ): εγγύηση καταθέσεων και επενδύσεων</a></li>
+<li><a href="http://www.hcmc.gr/el/apozemiose-kai-chrematodotese-apo-to-teke" target="_blank" rel="noopener">Επιτροπή Κεφαλαιαγοράς: Αποζημίωση και χρηματοδότηση από το ΤΕΚΕ (Σκέλος Κάλυψης Επενδύσεων)</a></li>
+<li><a href="https://www.syneggiitiko.gr/apozimioseis/" target="_blank" rel="noopener">Συνεγγυητικό Κεφάλαιο Εξασφάλισης Επενδυτικών Υπηρεσιών: Αποζημιώσεις</a></li>
 <li><a href="http://www.hcmc.gr/el_GR/web/portal/diadikasia-oroi-ektase-kai-synepeies-apozemioses-apo-to-synengyetiko" target="_blank" rel="noopener">Επιτροπή Κεφαλαιαγοράς: Διαδικασία, όροι, έκταση και συνέπειες αποζημίωσης από το Συνεγγυητικό</a></li>
 <li><a href="https://eur-lex.europa.eu/legal-content/EL/TXT/?uri=CELEX:31997L0009" target="_blank" rel="noopener">Ευρωπαϊκή Ένωση, Οδηγία 97/9/ΕΚ για τα συστήματα αποζημίωσης των επενδυτών, EUR-Lex</a></li>
+<li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=LEGISSUM%3Al24038a" target="_blank" rel="noopener">EUR-Lex: Protecting investors when an investment firm fails (σύνοψη της Οδηγίας 97/9/ΕΚ, στα αγγλικά)</a></li>
 <li><a href="https://www.hcmc.gr/" target="_blank" rel="noopener">Επιτροπή Κεφαλαιαγοράς (εποπτευόμενες εταιρείες, ανακοινώσεις και προειδοποιήσεις για επενδυτές)</a></li>
 <li><a href="https://registers.esma.europa.eu/" target="_blank" rel="noopener">ESMA, Μητρώα εποπτευόμενων εταιρειών και κεφαλαίων</a></li>
 <li><a href="https://eur-lex.europa.eu/legal-content/EL/TXT/?uri=CELEX:32014L0065" target="_blank" rel="noopener">Ευρωπαϊκή Ένωση, Οδηγία 2014/65/ΕΕ (MiFID II), EUR-Lex</a></li>
@@ -463,7 +483,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="trust-strip">
 <div class="wrap trust-row">
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Εκπαιδευτικό περιεχόμενο, όχι επενδυτική συμβουλή</span>
-<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Χωρίς συστάσεις για προϊόντα</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Ο οδηγός δεν προτείνει συγκεκριμένα προϊόντα</span>
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> Χωρίς υποσχέσεις αποδόσεων</span>
 </div>
 </div>
@@ -471,10 +491,11 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section class="final-cta">
 <div class="wrap">
 <h2>Έτοιμος να μάθεις στην πράξη;</h2>
-<p>Ξεκίνα δωρεάν τη διαδρομή μάθησης με τη Sofia: μαθήματα βήμα βήμα, Paper Trading και προσομοιωτές, χωρίς πραγματικά χρήματα και χωρίς πιστωτική κάρτα.</p>
+<p>Ξεκίνα δωρεάν τη διαδρομή μάθησης: μαθήματα βήμα βήμα στην Ακαδημία, Paper Trading και Προσομοιωτής DCA με εικονικά χρήματα, και η Sofia για τις απορίες σου. Δεν απαιτείται πιστωτική κάρτα.</p>
 <div class="hero-ctas">
 <a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_beginners_final">Ξεκίνα δωρεάν με τη Sofia →</a>
 </div>
+<p class="cta-note">Η εφαρμογή ανοίγει στα αγγλικά. Για ελληνικά, πάτησε «ΕΛ» πάνω δεξιά και μετά «Εγγραφή».</p>
 </div>
 </section>
 </main>

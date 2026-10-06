@@ -174,6 +174,10 @@ h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 
 .cta-inline p { font-size: 15.5px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 14px 24px; border-radius: 10px; transition: background 0.15s; }
 .btn-primary:hover { background: var(--teal-bright); }
+.cta-note { font-size: 13.5px !important; color: var(--text-muted) !important; margin: 12px 0 0 !important; line-height: 1.6 !important; }
+.final-cta .cta-note { margin: 14px auto 0 !important; }
+.assumptions { font-size: 14.5px !important; line-height: 1.7 !important; }
+.assumptions li { margin-bottom: 6px !important; }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
 .sources { border-top: 1px solid var(--border-soft); margin-top: 48px; padding-top: 8px; }
@@ -235,7 +239,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="nav-right">
 <a href="../blog-what-is-the-sp-500.html" class="nav-lang" hreflang="en" lang="en" title="Read this page in English">EN</a>
 <a href="https://app.steadfolio.eu/login" class="nav-cta">Σύνδεση</a>
-<button class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+<button type="button" class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -323,7 +327,14 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 
 <h2 id="paradeigma">Υποθετικό παράδειγμα: €100 τον μήνα για 20 χρόνια</h2>
 <p>Το παράδειγμα δείχνει πώς λειτουργεί η τακτική μηνιαία επένδυση (dollar-cost averaging) κάτω από διαφορετικές <strong>υποθέσεις</strong>. Δεν προβλέπει την απόδοση του S&amp;P 500 ούτε κανενός ETF.</p>
-<p><strong>Παραδοχές:</strong> μηνιαία κατάθεση €100 για 240 μήνες (σύνολο €24.000). Σταθερή υποθετική μέση ετήσια απόδοση, με μηνιαίο ανατοκισμό. Χωρίς κόστη, φόρους και πληθωρισμό. Στην πραγματικότητα οι αποδόσεις δεν είναι ποτέ σταθερές.</p>
+<p><strong>Παραδοχές:</strong> μηνιαία κατάθεση €100 για 240 μήνες (σύνολο €24.000).</p>
+<ul class="assumptions">
+<li><strong>Απόδοση:</strong> σταθερή υποθετική μέση ετήσια απόδοση, με μηνιαίο ανατοκισμό (ετήσιο ποσοστό ÷ 12). Δεν βασίζεται σε ιστορικά στοιχεία και δεν αποτελεί πρόβλεψη· οι πραγματικές αποδόσεις αλλάζουν κάθε χρόνο και μπορεί να είναι αρνητικές.</li>
+<li><strong>Καταθέσεις:</strong> ίδιο ποσό στο τέλος κάθε μήνα.</li>
+<li><strong>Κόστη:</strong> δεν αφαιρούνται. Το ετήσιο κόστος του κεφαλαίου (TER), οι προμήθειες και το κόστος συναλλάγματος θα μείωναν το αποτέλεσμα.</li>
+<li><strong>Πληθωρισμός:</strong> δεν λαμβάνεται υπόψη. Τα ποσά είναι ονομαστικά· η πραγματική αγοραστική τους αξία στο μέλλον θα είναι μικρότερη.</li>
+<li><strong>Φόροι:</strong> δεν αφαιρούνται.</li>
+</ul>
 <div class="table-wrap">
 <table class="data-table num">
 <caption>Υποθετική αξία μετά από 20 χρόνια με €100 τον μήνα</caption>
@@ -340,9 +351,10 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <p>Στο σενάριο του 5%, η υποθετική αξία στο τέλος είναι περίπου €41.103. Αν όμως η αγορά έπεφτε <strong>35%</strong> τον τελευταίο χρόνο, πριν χρειαστείς τα χρήματα, η αξία θα έπεφτε σε περίπου <strong>€26.717</strong>. Αυτό είναι ελάχιστα πάνω από τα €24.000 που κατέθεσες. Η σειρά με την οποία έρχονται οι αποδόσεις έχει σημασία, ιδίως κοντά στο τέλος του χρονικού σου ορίζοντα. Γι' αυτό ο χρονικός ορίζοντας και το ταμείο έκτακτης ανάγκης είναι τόσο σημαντικά (δες τον <a href="ependyseis-gia-arxarious.html">οδηγό επενδύσεων για αρχάριους</a>).</p>
 
 <div class="cta-inline">
-<p class="cta-inline-title">Δοκίμασε το σενάριο με πραγματικά ιστορικά δεδομένα</p>
-<p>Ο <strong>DCA Simulator</strong> του SteadFolio δείχνει πώς θα εξελισσόταν μια τακτική μηνιαία επένδυση σε πραγματικά ιστορικά σενάρια αγοράς, μαζί με τις πτώσεις. Με το <strong>Paper Trading</strong> εξασκείσαι με τρέχουσες τιμές και εικονικά χρήματα. Και τα δύο είναι εκπαιδευτικά εργαλεία χωρίς κίνδυνο· δεν προτείνουν τι να αγοράσεις.</p>
+<p class="cta-inline-title">Δοκίμασε διαφορετικά σενάρια απόδοσης χωρίς ρίσκο</p>
+<p>Ο <strong>Προσομοιωτής DCA</strong> του SteadFolio δείχνει πώς εξελίσσεται μια σταθερή μηνιαία κατάθεση με τη μέση ετήσια απόδοση που ορίζεις εσύ, ακόμη και αρνητική. Τη συγκρίνει με τα μετρητά και με ένα σενάριο «hype» επένδυσης. Με το <strong>Paper Trading</strong> εξασκείσαι σε αγορές και πωλήσεις με τιμές της αγοράς και εικονικά χρήματα. Και τα δύο είναι εκπαιδευτικά εργαλεία, διαθέσιμα και στο δωρεάν πρόγραμμα, χωρίς πραγματικά χρήματα.</p>
 <a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_sp500_inline">Δοκίμασε τον προσομοιωτή επενδύσεων →</a>
+<p class="cta-note">Η εφαρμογή ανοίγει στα αγγλικά. Για ελληνικά, πάτησε «ΕΛ» πάνω δεξιά και μετά «Εγγραφή».</p>
 </div>
 
 <h2 id="kindynoi">Κίνδυνοι: συγκέντρωση, νόμισμα, μία χώρα</h2>
@@ -423,18 +435,19 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <div class="trust-strip">
 <div class="wrap trust-row">
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Εκπαιδευτικό περιεχόμενο, όχι επενδυτική συμβουλή</span>
-<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Χωρίς συστάσεις για προϊόντα</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Ο οδηγός δεν προτείνει συγκεκριμένα προϊόντα</span>
 <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> Χωρίς υποσχέσεις αποδόσεων</span>
 </div>
 </div>
 
 <section class="final-cta">
 <div class="wrap">
-<h2>Δες πώς συμπεριφέρεται μια τακτική επένδυση σε πραγματικές κρίσεις</h2>
-<p>Ο DCA Simulator και το Paper Trading του SteadFolio σού επιτρέπουν να εξασκηθείς χωρίς κίνδυνο, πριν επενδύσεις πραγματικά χρήματα.</p>
+<h2>Δες πώς αλλάζει μια τακτική επένδυση σε διαφορετικά σενάρια</h2>
+<p>Ο Προσομοιωτής DCA και το Paper Trading του SteadFolio σού επιτρέπουν να εξασκηθείς με εικονικά χρήματα, πριν επενδύσεις πραγματικά. Διαθέσιμα και στο δωρεάν πρόγραμμα.</p>
 <div class="hero-ctas">
 <a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_sp500_final">Δοκίμασε τον προσομοιωτή επενδύσεων →</a>
 </div>
+<p class="cta-note">Η εφαρμογή ανοίγει στα αγγλικά. Για ελληνικά, πάτησε «ΕΛ» πάνω δεξιά και μετά «Εγγραφή».</p>
 </div>
 </section>
 </main>
