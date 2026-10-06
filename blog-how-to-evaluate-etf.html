@@ -7,6 +7,13 @@
 <title>How to Evaluate an ETF: A 7-Point Checklist for Beginners | SteadFolio</title>
 <meta name="description" content="How do you evaluate an ETF? Use SteadFolio's free 7-point checklist to compare index, cost, diversification, liquidity, domicile and more before you invest.">
 <link rel="canonical" href="https://steadfolio.eu/blog-how-to-evaluate-etf.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SteadFolio">
+<meta property="og:title" content="How to Evaluate an ETF: A 7-Point Checklist for Beginners">
+<meta property="og:description" content="Check index, holdings, cost, tracking difference, size and liquidity, domicile and distribution before you invest, with a worked example and red flags.">
+<meta property="og:url" content="https://steadfolio.eu/blog-how-to-evaluate-etf.html">
+<meta property="og:image" content="https://steadfolio.eu/screenshots/screenshot-etf-evaluator.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -40,6 +47,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Line the two funds up against the same seven factors: index and exposure, holdings, cost, tracking difference, size and liquidity, domicile, and distribution and replication. Funds that look similar by name can differ meaningfully once you compare them factor by factor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are all \"world\" ETFs the same?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A fund tracking the MSCI World covers developed markets only, while funds tracking all-world indices such as the MSCI ACWI or FTSE All-World also include emerging markets. Check the index name and the factsheet's country breakdown, not just the word \"world\" in the fund name."
       }
     },
     {
@@ -104,7 +119,7 @@
       "url": "https://steadfolio.eu/logo-icon.png"
     }
   },
-  "dateModified": "2026-09-02",
+  "dateModified": "2026-10-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://steadfolio.eu/blog-how-to-evaluate-etf.html"
@@ -220,6 +235,17 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .back-link:hover { color: var(--teal-bright); }
 .faq-item { margin-bottom: 24px; }
 .faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+.article-body a:not(.btn-primary) { color: var(--teal-bright); text-decoration: underline; }
+table.compare { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; color: var(--text-dim); }
+table.compare th, table.compare td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+table.compare thead th { border-bottom: 1px solid var(--border); color: var(--text); font-family: var(--font-display); font-weight: 600; }
+.cta-inline { background: linear-gradient(180deg, rgba(34,197,139,0.08), var(--card) 70%); border: 1px solid var(--teal-dim); border-radius: 16px; padding: 26px 26px 28px; margin: 36px 0; }
+.cta-inline .cta-inline-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.cta-inline p { font-size: 15.5px; }
+.article-body ul.sources { font-size: 15px; }
+.tick-list { list-style: none; margin-left: 0 !important; }
+.tick-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.tick-list input { margin-top: 7px; accent-color: var(--teal); flex-shrink: 0; }
 </style>
 
 </head>
@@ -263,7 +289,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <a href="blog.html" class="back-link">← Back to Blog</a>
 <div class="kicker">Foundations</div>
 <h1>How to Evaluate an ETF: A Practical 7-Point Checklist</h1>
-<p class="article-meta">By <a href="about.html" style="color: var(--teal-bright);">The SteadFolio Team</a> · Last reviewed: September 2, 2026 · 8 min read · Educational content, not financial advice</p>
+<p class="article-meta">By <a href="about.html" style="color: var(--teal-bright);">The SteadFolio Team</a> · Last reviewed: October 6, 2026 · 10 min read · Educational content, not financial advice</p>
 </div>
 </section>
 
@@ -273,8 +299,9 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <p>If you're asking "how do I evaluate an ETF before investing?" — the short answer is: look past its past returns and check a small number of factors that determine what you'd actually own. Before comparing performance charts, check what index or market the ETF tracks, how diversified or concentrated its holdings are, its ongoing cost, its fund size and liquidity, how it replicates that index, whether it pays out or reinvests income (accumulating vs distributing), and — for many European investors — its domicile and regulatory structure.</p>
 
 <p>Two ETFs with almost identical names can differ meaningfully across these seven factors. The SteadFolio 7-Point ETF Checklist below walks through each one in plain language, then shows exactly how to apply it to a real, well-known fund.</p>
+<p>On this page: <a href="#checklist">the 7-point checklist</a> · <a href="#where-to-find">where to find each number</a> · <a href="#two-world-etfs">comparing two similar ETFs</a> · <a href="#worked-example">worked example</a> · <a href="#red-flags">red flags</a> · <a href="#printable-checklist">quick checklist</a></p>
 
-<h2>The SteadFolio 7-Point ETF Checklist</h2>
+<h2 id="checklist">The SteadFolio 7-Point ETF Checklist</h2>
 <p>Each point below follows the same pattern: what to check, why it matters, and what you should take away from it — not whether a specific ETF is "good" or "bad."</p>
 
 <h3>1. Index and objective</h3>
@@ -335,7 +362,39 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 </tbody></table>
 </div>
 
-<h2>Worked example: applying the checklist to a real ETF</h2>
+<h2 id="where-to-find">Where to find each number</h2>
+<p>You don't need paid tools. Almost everything on the checklist is published by the fund issuer, and EU rules require a standardised Key Information Document (KID) for retail investment products (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R1286" target="_blank" rel="noopener">PRIIPs Regulation</a>).</p>
+<div style="overflow-x:auto;">
+<table class="compare">
+<thead><tr><th>Checklist point</th><th>Where to look</th></tr></thead>
+<tbody>
+<tr><td><strong>Index and objective</strong></td><td>Fund name, factsheet (benchmark), and the index provider's own page</td></tr>
+<tr><td><strong>Holdings</strong></td><td>Issuer product page: full holdings list, top 10, sector and country breakdown</td></tr>
+<tr><td><strong>Total cost</strong></td><td>Factsheet (TER / ongoing charges), KID (cost section), plus your broker's fee schedule</td></tr>
+<tr><td><strong>Tracking difference</strong></td><td>Factsheet or annual report: fund return vs benchmark return, year by year</td></tr>
+<tr><td><strong>Size and liquidity</strong></td><td>Factsheet (fund size / AUM), your broker or exchange quote (bid-ask spread at the time you trade)</td></tr>
+<tr><td><strong>Domicile and structure</strong></td><td>Factsheet and KID (domicile, UCITS status), ISIN prefix (e.g. IE for Ireland, LU for Luxembourg)</td></tr>
+<tr><td><strong>Distribution and replication</strong></td><td>Fund name (Acc / Dist), factsheet (use of income, replication method)</td></tr>
+</tbody>
+</table>
+</div>
+<p>Use the fund's <strong>ISIN</strong> (a 12-character code such as IE00B4L5Y983) to be sure you're looking at the exact share class. The same fund can have several share classes and ticker symbols on different exchanges.</p>
+
+<h2 id="two-world-etfs">Comparing two similar ETFs: not every "world" fund is the same</h2>
+<p>The checklist is most useful when two funds look interchangeable. A common example for European investors is choosing between a <strong>"world" ETF</strong> and an <strong>"all-world" ETF</strong>:</p>
+<div style="overflow-x:auto;">
+<table class="compare">
+<thead><tr><th>Checklist point</th><th>MSCI World tracker</th><th>All-world tracker (e.g. MSCI ACWI, FTSE All-World)</th></tr></thead>
+<tbody>
+<tr><td><strong>Index and exposure</strong></td><td>Developed markets only</td><td>Developed <em>and</em> emerging markets</td></tr>
+<tr><td><strong>Holdings</strong></td><td>More than a thousand large and mid-sized companies</td><td>More companies, including emerging-market names</td></tr>
+<tr><td><strong>Cost, size, domicile</strong></td><td colspan="2">Varies by issuer and share class: compare the current factsheets side by side</td></tr>
+</tbody>
+</table>
+</div>
+<p>Neither is "better". They answer different questions: do you want emerging markets included, and in what proportion? Two funds tracking the <em>same</em> index are where cost and tracking difference become the deciding factors, because the exposure is already equal.</p>
+
+<h2 id="worked-example">Worked example: applying the checklist to a real ETF</h2>
 <p>This is a walkthrough of how to <strong>use</strong> the checklist — not a recommendation to buy this or any other fund. It uses one of the most widely held UCITS ETFs in Europe, the <strong>iShares Core MSCI World UCITS ETF (Acc)</strong> (ISIN IE00B4L5Y983, listed under tickers including IWDA and SWDA), because its facts are publicly documented on the issuer's own <a href="https://www.ishares.com/uk/individual/en/products/251882/ishares-msci-world-ucits-etf-acc-fund" target="_blank" rel="noopener">official iShares product page</a> and easy to verify independently.</p>
 <ol>
 <li><strong>Index and objective:</strong> Benchmark is the MSCI World Index (Net), a market-cap-weighted index of large- and mid-cap companies across 23 developed markets.</li>
@@ -350,8 +409,34 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <strong>Important:</strong> These figures were checked against the fund's <a href="https://www.ishares.com/uk/individual/en/products/251882/ishares-msci-world-ucits-etf-acc-fund" target="_blank" rel="noopener">official iShares product page and factsheet</a> (ISIN IE00B4L5Y983) around September 2026. ETF fees, size, holdings and other characteristics change over time — always check the fund's current KID/KIID and factsheet on the issuer's website before drawing any conclusion. This example is for illustration only and is not a recommendation to buy this or any other ETF.
 </div>
 
-<div class="callout">
-<strong>Practice it yourself:</strong> Learn the checklist, then practice evaluating an ETF yourself. SteadFolio's <a href="/#features" style="color: var(--teal-bright); text-decoration: underline;">ETF Evaluator</a> walks you through these same seven checks on a real portfolio, inside a guided, ad-free learning environment. Learn. Practice. Build. Invest.
+<h2 id="red-flags">Red flags worth a second look</h2>
+<p>None of these automatically makes an ETF wrong for everyone, but each one deserves a closer read of the KID before you buy:</p>
+<ul>
+<li><strong>Leveraged or inverse ETFs</strong> (names with "2x", "3x", "short" or "daily"): they usually reset their exposure every day, so over longer periods their returns can differ sharply from a simple multiple of the index. They are built for short-term trading, not long-term saving.</li>
+<li><strong>A very narrow or thematic index</strong>: a few dozen companies in one trend means you are betting on that theme, not owning a market.</li>
+<li><strong>A name that promises more than the index delivers</strong>: "global", "future", "innovation" or "dividend" tell you little until you read the index rules and holdings.</li>
+<li><strong>Very small or very new funds</strong>: small funds can be closed or merged by the issuer, and new funds have no tracking-difference history yet.</li>
+<li><strong>Cost that's hard to find</strong>: if you can't quickly see the ongoing charge in the factsheet and KID, slow down.</li>
+<li><strong>A wide bid-ask spread</strong> when you check the quote: you lose that gap the moment you buy.</li>
+</ul>
+
+<h2 id="printable-checklist">Your quick ETF checklist</h2>
+<p>Open the fund's factsheet and KID next to this list and tick off each question. If you can't answer one, that's the part to research next.</p>
+<ul class="tick-list">
+<li><label><input type="checkbox"> I can name the index this ETF tracks and explain what it includes and leaves out.</label></li>
+<li><label><input type="checkbox"> I've looked at the top 10 holdings and the country and sector breakdown.</label></li>
+<li><label><input type="checkbox"> I know the ongoing charge (TER) and what my broker charges to buy it.</label></li>
+<li><label><input type="checkbox"> I've checked how closely it has tracked its index, if it has a history.</label></li>
+<li><label><input type="checkbox"> I've checked fund size and the bid-ask spread on the exchange I'd use.</label></li>
+<li><label><input type="checkbox"> I know its domicile, that it's UCITS, and its ISIN.</label></li>
+<li><label><input type="checkbox"> I know whether it accumulates or distributes, and how it replicates the index.</label></li>
+<li><label><input type="checkbox"> It fits my plan, time horizon and the risk I can live with, not just last year's performance.</label></li>
+</ul>
+
+<div class="cta-inline">
+<p class="cta-inline-title">Practice evaluating ETFs without risking money</p>
+<p>SteadFolio's ETF Evaluator gives you a curated list of well-known ETFs with plain-language explanations. You can filter by category and region, sort by cost (TER), and see flags for things like liquidity, leverage or concentration in one sector or theme. Sofia, SteadFolio's AI coach, explains the terms without telling you what to buy or sell. It's included in the free plan. Figures such as TER are indicative, so always confirm them in the issuer's official documents.</p>
+<a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="en_etf_eval_inline">Try the ETF Evaluator free →</a>
 </div>
 
 <h2>Related ETF guides</h2>
@@ -359,18 +444,28 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <li>New to ETFs? Start with <a href="blog-what-is-an-etf.html" style="color: var(--teal-bright); text-decoration: underline;">What Is an ETF? A Beginner's Guide</a>.</li>
 <li>Investing from Europe? Read <a href="blog-what-are-ucits-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">What Are UCITS ETFs?</a>.</li>
 <li>Once you understand the fund, see <a href="blog-how-to-buy-your-first-etf.html" style="color: var(--teal-bright); text-decoration: underline;">How to Buy Your First ETF</a>.</li>
-<li>Choosing where to hold it? Read <a href="blog-how-to-choose-a-broker.html" style="color: var(--teal-bright); text-decoration: underline;">How to Choose a Brokerage Account</a>.</li>
+<li>Index funds vs ETFs vs active funds: <a href="blog-what-is-index-fund.html">What Is an Index Fund?</a>.</li>
+<li>Choosing where to hold it? Read <a href="blog-how-to-choose-a-broker.html" style="color: var(--teal-bright); text-decoration: underline;">How to Choose a Brokerage Account</a>, then compare fees and savings plans in the <a href="broker-comparison.html">broker comparison</a>.</li>
 <li>Ready to invest regularly? See <a href="blog-dollar-cost-averaging.html" style="color: var(--teal-bright); text-decoration: underline;">What Is Dollar-Cost Averaging?</a>.</li>
 </ul>
 
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item"><h3>What should I look at when evaluating an ETF?</h3><p>Start with what the ETF actually tracks, then check its holdings and concentration, ongoing cost, tracking difference, fund size and liquidity, domicile, and whether it accumulates or distributes income. The SteadFolio 7-Point Checklist above walks through each of these in order.</p></div>
 <div class="faq-item"><h3>How do I compare two ETFs?</h3><p>Line the two funds up against the same seven factors: index and exposure, holdings, cost, tracking difference, size and liquidity, domicile, and distribution and replication. Funds that look similar by name can differ meaningfully once you compare them factor by factor.</p></div>
+<div class="faq-item"><h3>Are all “world” ETFs the same?</h3><p>No. A fund tracking the MSCI World covers developed markets only, while funds tracking all-world indices such as the MSCI ACWI or FTSE All-World also include emerging markets. Check the index name and the factsheet's country breakdown, not just the word “world” in the fund name.</p></div>
 <div class="faq-item"><h3>Is a lower expense ratio always better?</h3><p>Not on its own. Cost matters, but only once you've confirmed two funds offer comparable exposure. A cheaper ETF that tracks a narrower or different index isn't automatically the better choice — compare what you're getting before comparing what it costs.</p></div>
 <div class="faq-item"><h3>What does tracking difference mean?</h3><p>Tracking difference is the gap between an ETF's actual return and the return of the index it aims to follow. Small gaps are normal because of fees, taxes and implementation; a persistent, larger gap is most useful when comparing funds that track the same index.</p></div>
 <div class="faq-item"><h3>What makes an ETF suitable for long-term investing?</h3><p>There's no single feature that makes an ETF right for the long term. What tends to matter over long holding periods is broad, understood exposure, a reasonable ongoing cost since fees compound over time, sufficient fund size and liquidity, and a structure — domicile, distribution policy, replication — that fits your situation.</p></div>
 <div class="faq-item"><h3>Does ETF fund size matter?</h3><p>Fund size can matter for practical reasons: larger funds often have tighter bid-ask spreads, and very small ETFs are sometimes closed by their issuer. Size alone doesn't tell you about the quality of the underlying index or its cost, so it's one factor among several, not a stand-alone signal.</p></div>
 <div class="faq-item"><h3>What is the difference between accumulating and distributing ETFs?</h3><p>Accumulating ETFs reinvest dividend income back into the fund automatically. Distributing ETFs pay that income out to investors as cash, typically on a set schedule. Neither is universally better — it depends on whether you want income paid out or reinvested automatically. See <a href="blog-accumulating-vs-distributing-etfs.html" style="color: var(--teal-bright); text-decoration: underline;">Accumulating vs Distributing ETFs</a> for the full comparison.</p></div>
+
+<h2>Sources</h2>
+<ul class="sources">
+<li>BlackRock iShares: <a href="https://www.ishares.com/uk/individual/en/products/251882/ishares-msci-world-ucits-etf-acc-fund" target="_blank" rel="noopener">iShares Core MSCI World UCITS ETF (Acc), official product page</a> (worked example figures).</li>
+<li>MSCI: <a href="https://www.msci.com/indexes/index/892400" target="_blank" rel="noopener">MSCI World Index</a> (index scope).</li>
+<li>EUR-Lex: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R1286" target="_blank" rel="noopener">Regulation (EU) No 1286/2014 (PRIIPs Key Information Documents)</a>.</li>
+<li>EUR-Lex: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0065" target="_blank" rel="noopener">Directive 2009/65/EC (UCITS)</a>.</li>
+</ul>
 
 </div>
 </section>
@@ -439,5 +534,6 @@ toggle.setAttribute("aria-expanded", "false");
 })();
 </script>
 <script src="/js/utm-forward.js" defer></script>
+<script src="/js/cta-tracking.js" defer></script>
 </body>
 </html>

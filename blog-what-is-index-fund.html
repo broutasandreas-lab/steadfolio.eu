@@ -4,9 +4,111 @@
 <script src="/js/cookie-consent.js" data-clarity="1" defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Is an Index Fund? - Steadfolio Blog</title>
-<meta name="description" content="A plain-language explanation of index funds: what they are, how they differ from active funds, and why they're such a common starting point for new investors.">
+<title>What Is an Index Fund? How It Works, Costs &amp; Risks | SteadFolio</title>
+<meta name="description" content="What is an index fund? A plain-English guide: how index funds work, index funds vs ETFs, what they cost, their risks, and what UCITS means for European investors.">
 <link rel="canonical" href="https://steadfolio.eu/blog-what-is-index-fund.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SteadFolio">
+<meta property="og:title" content="What Is an Index Fund? How It Works, Costs &amp; Risks">
+<meta property="og:description" content="How index funds work, how they differ from ETFs and active funds, what they cost, their risks, and what UCITS means for European investors.">
+<meta property="og:url" content="https://steadfolio.eu/blog-what-is-index-fund.html">
+<meta property="og:image" content="https://steadfolio.eu/screenshots/screenshot-dca-simulator.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://steadfolio.eu/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://steadfolio.eu/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "What Is an Index Fund?", "item": "https://steadfolio.eu/blog-what-is-index-fund.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is an Index Fund? A Plain-English Guide for Beginners",
+  "description": "How index funds work, how they differ from ETFs and active funds, what they cost, their risks, and what UCITS means for European investors.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "The SteadFolio Team",
+    "url": "https://steadfolio.eu/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SteadFolio",
+    "url": "https://steadfolio.eu/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://steadfolio.eu/logo-icon.png"
+    }
+  },
+  "dateModified": "2026-10-06",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://steadfolio.eu/blog-what-is-index-fund.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is an index fund the same as an ETF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not exactly. \"Index fund\" describes the strategy of tracking an index; \"ETF\" describes a fund that trades on a stock exchange. Many ETFs are index funds, but some ETFs are actively managed, and some index funds are traditional mutual funds that don't trade on an exchange."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are index funds safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No investment in shares is safe in the sense of guaranteed. A broad index fund removes the risk of one company sinking your investment, but it still falls when the overall market falls, sometimes sharply and for years. It suits money you can leave invested for a long time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does an index fund cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main cost is the yearly ongoing charge (TER), shown in the factsheet and the Key Information Document. Broad index funds are usually among the cheapest funds available. Also count broker fees, the bid-ask spread and any currency conversion costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I buy index funds in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most EU retail investors access index investing through UCITS ETFs bought via a broker, often with an automatic savings plan. Index mutual funds are also available through some banks and platforms, depending on your country."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do index funds pay dividends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the companies in the index pay dividends, the fund receives them. A distributing share class pays them out to you; an accumulating share class reinvests them inside the fund. Check the fund name or factsheet for \"Acc\" or \"Dist\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an index fund beat the market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By design, no. It aims to match its index, and after costs it will usually trail the index slightly. The argument for index funds is that many actively managed funds also fail to beat the market after their higher fees, and it's hard to know in advance which ones will."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -117,13 +219,23 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 .callout strong { color: var(--teal-bright); }
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-dim); margin-bottom: 20px; }
 .back-link:hover { color: var(--teal-bright); }
+.article-body a:not(.btn-primary) { color: var(--teal-bright); text-decoration: underline; }
+.faq-item { margin-bottom: 24px; }
+.faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+table.compare { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; color: var(--text-dim); }
+table.compare th, table.compare td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+table.compare thead th { border-bottom: 1px solid var(--border); color: var(--text); font-family: var(--font-display); font-weight: 600; }
+.cta-inline { background: linear-gradient(180deg, rgba(34,197,139,0.08), var(--card) 70%); border: 1px solid var(--teal-dim); border-radius: 16px; padding: 26px 26px 28px; margin: 36px 0; }
+.cta-inline .cta-inline-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.cta-inline p { font-size: 15.5px; }
+.article-body ul.sources { font-size: 15px; }
 </style>
 
 </head>
 <body>
 <header>
 <nav class="wrap">
-<a href="/" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>Steadfolio</a>
+<a href="/" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
 <div class="nav-links nav-mobile-hide">
 <a href="/#how">How it works</a>
 <a href="/#features">Features</a>
@@ -158,41 +270,145 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 <section class="page-hero" style="padding-bottom: 0;">
 <div class="wrap article-header">
 <a href="blog.html" class="back-link">← Back to Blog</a>
-<div class="kicker">Foundations</div>
-<h1>What Is an Index Fund, and Why Do People Recommend Them?</h1>
-<p class="article-meta">2 min read - Educational content, not financial advice</p>
+<div class="kicker">Understand ETFs</div>
+<h1>What Is an Index Fund? A Plain-English Guide for Beginners</h1>
+<p class="article-meta">By <a href="about.html" style="color: var(--teal-bright);">The SteadFolio Team</a> · Last reviewed: October 6, 2026 · 9 min read · Educational content, not financial advice</p>
 </div>
 </section>
 
 <section style="padding-top: 32px;">
 <div class="wrap article-body">
 
-<p>If you've read even a little about investing, you've probably noticed that "index funds" come up constantly - often framed as the default, boring-but-reliable option. Here's what they actually are, and why that reputation exists.</p>
-
-<h2>The basic idea</h2>
-<p>A market index - like the S&amp;P 500 - is simply a list of companies tracked together to represent a segment of the market. An <strong>index fund</strong> is a fund built to hold roughly the same companies, in similar proportions, so that its performance mirrors that index as closely as possible.</p>
-<p>Instead of trying to pick individual winning stocks, you're essentially buying a small slice of an entire market segment at once.</p>
-
-<h2>Why "boring" is often the point</h2>
-<p>Index funds aren't designed to beat the market - they're designed to <em>match</em> it, at a low cost. That might sound unambitious, but it's backed by a fairly uncomfortable statistic: the majority of actively-managed funds, run by professional managers trying to beat the market, fail to do so consistently over long periods, after fees.</p>
+<p>An <strong>index fund</strong> is an investment fund that tries to copy the performance of a market index, such as the MSCI World or the S&amp;P 500, instead of trying to beat it. It does this by holding the same securities as the index, in roughly the same proportions, and following the index's published rules for what goes in and what comes out.</p>
+<p>That simple design is why index funds tend to be cheap, broadly diversified and easy to understand. It is also why they can never do better than the market they track, and will fall with it when it falls. This guide explains how they work, how they differ from ETFs and actively managed funds, what they really cost, and what investors in Europe should check.</p>
 
 <div class="callout">
-<strong>Worth remembering:</strong> Past performance of any fund or index does not guarantee future results. Matching the market historically has worked out well over long time horizons, but it is not a guarantee for any specific future period.
+<strong>In short:</strong> an index fund follows a rulebook (the index) rather than a manager's opinions. You get the market's return, minus costs, including the bad years. Whether that suits you depends on your goals, time horizon and how you would react to a large fall.
 </div>
 
-<h2>What makes them different from a regular ETF?</h2>
-<p>Not every ETF is an index fund, and not every index fund is structured as an ETF - but the two ideas overlap a lot in practice. The key distinguishing feature is the <strong>strategy</strong>: passively tracking an index, rather than a fund manager actively picking and choosing holdings.</p>
-
-<h3>Passive vs active, in one sentence</h3>
+<h2>How an index fund works</h2>
+<p>An index is a list of securities chosen by a fixed set of rules. The <a href="https://www.msci.com/indexes/index/892400" target="_blank" rel="noopener">MSCI World Index</a>, for example, covers large and mid-sized companies across 23 developed countries. The <a href="blog-what-is-the-sp-500.html">S&amp;P 500</a> covers 500 leading US companies. The index provider decides the rules; the fund simply follows them.</p>
+<p>Most popular indices are <strong>market-cap weighted</strong>: the bigger a company's total market value, the bigger its share of the index. If one company makes up 5% of the index, it will make up about 5% of the fund. When the index provider adds or removes a company, the fund adjusts too. Nobody at the fund is deciding which companies look attractive.</p>
+<p>Funds copy their index in one of two broad ways:</p>
 <ul>
-<li><strong>Passive (index) fund:</strong> Aims to match a market index, typically with lower fees.</li>
-<li><strong>Active fund:</strong> A manager tries to pick investments to outperform the market, typically with higher fees.</li>
+<li><strong>Full replication:</strong> the fund buys every security in the index.</li>
+<li><strong>Sampling (optimized replication):</strong> for very large indices, the fund holds a representative subset designed to behave like the whole index.</li>
+</ul>
+<p>Some ETFs use <strong>synthetic replication</strong> instead, getting the index return through a swap agreement with a bank rather than holding the shares directly. The <a href="blog-how-to-evaluate-etf.html">ETF evaluation checklist</a> explains how to spot which method a fund uses.</p>
+
+<h3>A simple example</h3>
+<p>Suppose you put €100 into a fund tracking a world index with more than a thousand companies. You don't buy one company; you buy a tiny slice of every company in the index, weighted by size. If one company collapses, it is a small fraction of your €100. But if the whole market falls 20%, your fund falls by roughly the same amount, because it owns the whole market.</p>
+
+<h2>Index fund vs ETF: what's the difference?</h2>
+<p>People often use the two terms interchangeably, but they describe different things. <strong>"Index fund" describes the strategy</strong> (tracking an index). <strong>"ETF" describes the wrapper</strong> (a fund whose shares trade on a stock exchange). Many ETFs are index funds, but some ETFs are actively managed, and some index funds are traditional mutual funds that don't trade on an exchange at all.</p>
+
+<div style="overflow-x:auto;">
+<table class="compare">
+<thead><tr><th></th><th>Index mutual fund</th><th>Index ETF</th></tr></thead>
+<tbody>
+<tr><td><strong>How you buy it</strong></td><td>Directly from the fund company, a bank or a fund platform</td><td>Through a broker, on a stock exchange</td></tr>
+<tr><td><strong>Price you get</strong></td><td>One price per day, calculated after the market closes</td><td>Live market price during trading hours, plus a bid-ask spread</td></tr>
+<tr><td><strong>Strategy</strong></td><td>Tracks an index</td><td>Tracks an index (most ETFs), but active ETFs also exist</td></tr>
+<tr><td><strong>Regular investing</strong></td><td>Often available through the provider or platform</td><td>Many European brokers offer ETF savings plans</td></tr>
+<tr><td><strong>Costs to check</strong></td><td>Ongoing charges, any entry or exit fees, platform fees</td><td>Ongoing charges (TER), broker fees, spread, currency conversion</td></tr>
+</tbody>
+</table>
+</div>
+<p>For many retail investors in Europe, the most accessible way to buy an index fund today is a <a href="blog-what-are-ucits-etfs.html">UCITS ETF</a> held at a broker, often through an automatic savings plan. Index mutual funds exist too, but which ones you can buy depends on your country, bank and platform. Neither wrapper is automatically better: compare the total cost of the specific funds and accounts actually available to you.</p>
+
+<h2>Index funds vs actively managed funds</h2>
+<p>An <strong>active fund</strong> pays a manager and analysts to pick investments, aiming to beat a benchmark. That research costs money, so active funds usually charge more. Higher fees are a head start the manager has to overcome every single year.</p>
+<p>S&amp;P Dow Jones Indices tracks how this plays out in its <a href="https://www.spglobal.com/spdji/en/spiva/article/spiva-europe/" target="_blank" rel="noopener">SPIVA Europe scorecards</a>. Report after report has found that most actively managed equity funds sold in Europe trailed their benchmark over ten-year periods. That doesn't mean no active fund ever wins. It means it is hard to identify the winners in advance, and paying more does not reliably buy better results.</p>
+<ul>
+<li><strong>Index (passive) fund:</strong> aims to match an index, usually at lower cost, with no manager judgement about which companies to own.</li>
+<li><strong>Active fund:</strong> aims to beat a benchmark through selection, usually at higher cost, with results that depend on the manager.</li>
 </ul>
 
-<h2>Why beginners often start here</h2>
-<p>Index funds offer instant diversification (you're not betting on one company), typically lower fees than actively managed alternatives, and they don't require you to have an opinion about which specific company will do well. That combination makes them a common starting point - not because they're guaranteed to be the "best" choice for everyone, but because they remove several decisions that tend to trip up beginners.</p>
-<p>Inside Steadfolio, the Historical Data tool lets you explore how major indices have actually performed over long periods, so you can see this concept in real numbers rather than just in theory.</p>
-<p>If you're ready to put an index fund or any ETF through a proper check before investing, read our guide on <a href="blog-how-to-evaluate-etf.html" style="color: var(--teal-bright); text-decoration: underline;">how to evaluate an ETF before you invest</a>.</p>
+<h2>What does an index fund cost?</h2>
+<p>The headline number is the <strong>ongoing charge</strong>, often shown as the <strong>TER</strong> (total expense ratio). It is a percentage of your investment taken each year inside the fund, so you never see a separate bill. You'll find it in the fund's factsheet and in its Key Information Document (KID), which EU rules require for retail investment products (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R1286" target="_blank" rel="noopener">PRIIPs Regulation</a>).</p>
+<p>The TER isn't the whole cost. Also check:</p>
+<ul>
+<li><strong>Broker or platform fees:</strong> per-order fees, account fees or savings-plan fees.</li>
+<li><strong>Bid-ask spread:</strong> the gap between buying and selling prices on the exchange.</li>
+<li><strong>Currency conversion:</strong> if the fund trades in a currency other than your account's.</li>
+<li><strong>Tracking difference:</strong> how far the fund's actual return lagged (or beat) its index after all internal costs.</li>
+</ul>
+
+<h3>Why small fee differences matter</h3>
+<p>On €10,000, a 0.20% yearly charge is about €20 a year; a 1.50% charge is about €150. The gap grows over time because fees are taken every year from a growing balance.</p>
+<div class="callout">
+<strong>Hypothetical illustration:</strong> €200 invested every month for 25 years (€60,000 in total), assuming a constant 6% yearly return before fees. With a 0.20% yearly fee, the simplified result is roughly <strong>€134,400</strong>. With a 1.50% fee it is roughly <strong>€110,600</strong>, about €23,800 less. Real returns are never constant, and this ignores taxes, trading costs and inflation. It shows the effect of fees, not a forecast.
+</div>
+<p>Cost matters, but only after you've confirmed two funds give you the exposure you want. A cheaper fund tracking a narrower or different index is not automatically the better choice.</p>
+
+<h2>Diversification: what it does and doesn't do</h2>
+<p>Owning hundreds or thousands of companies means no single company's failure can sink your investment. That is the main practical benefit of index investing, and why it is a common starting point. (See <a href="blog-what-is-diversification.html">What Is Diversification?</a> for the wider picture.)</p>
+<p>But diversification inside one index has limits:</p>
+<ul>
+<li><strong>It doesn't protect you from the whole market falling.</strong> In a broad market crash, a broad index fund falls too.</li>
+<li><strong>Market-cap weighting concentrates.</strong> The largest companies, sectors and countries get the biggest weights. A "world" fund can be heavily tilted towards one country or a handful of large companies. Check the factsheet's top-10 holdings and country breakdown.</li>
+<li><strong>The index defines the limits.</strong> A developed-markets index leaves out emerging markets; an S&amp;P 500 fund holds only US companies; a thematic index can hold just a few dozen stocks in one industry.</li>
+</ul>
+
+<h2>The risks of index funds</h2>
+<ul>
+<li><strong>Market risk:</strong> you receive the market's losses as well as its gains, and there is no manager trying to sidestep a downturn. Prices can fall sharply and stay down for years. Read <a href="blog-stock-market-crash.html">what happens during a stock market crash</a>.</li>
+<li><strong>Concentration risk:</strong> as above, cap-weighted indices can lean heavily on a few names or one country.</li>
+<li><strong>Currency risk:</strong> a euro-based investor holding a fund of US or global companies is also exposed to exchange-rate moves, even if the fund itself is priced in euros.</li>
+<li><strong>Tracking risk:</strong> the fund's return can drift from the index because of costs, taxes and how it replicates.</li>
+<li><strong>Behavior risk:</strong> for many people the biggest risk is selling in a panic during a fall. A plan you can stick with matters more than picking the perfect fund. See <a href="blog-behavior-matters-more-than-strategy.html">why behavior matters more than strategy</a>.</li>
+</ul>
+
+<h2>Index funds in Europe: UCITS, domicile and income</h2>
+<p>If you invest from the EU, a few European specifics affect which index funds you can buy and how they work:</p>
+<ul>
+<li><strong>UCITS:</strong> most index ETFs sold to EU retail investors are UCITS funds, an EU framework with rules on diversification, custody of assets and investor information (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0065" target="_blank" rel="noopener">UCITS Directive</a>). Read <a href="blog-what-are-ucits-etfs.html">What Are UCITS ETFs?</a> for what the label does and doesn't guarantee.</li>
+<li><strong>KID availability:</strong> because EU brokers must provide a KID to retail clients, many US-domiciled ETFs are generally not offered to EU retail investors. Most Europeans therefore use European-domiciled versions of the same indices.</li>
+<li><strong>Domicile and withholding tax:</strong> where a fund is based can affect how much dividend tax is lost before income reaches the fund. See <a href="blog-etf-domicile-withholding-tax.html">ETF domicile and withholding tax</a>.</li>
+<li><strong>Accumulating vs distributing:</strong> some share classes reinvest dividends automatically, others pay them out. Neither is universally better. See <a href="blog-accumulating-vs-distributing-etfs.html">Accumulating vs Distributing ETFs</a>.</li>
+<li><strong>Your own taxes:</strong> how gains and dividends are taxed depends on your country of tax residence. Check local rules or a qualified tax adviser.</li>
+</ul>
+
+<h2>How to start with index funds, step by step</h2>
+<ol>
+<li><strong>Make sure you're ready.</strong> Essentials covered, an emergency buffer in place, expensive debt under control. See <a href="blog-emergency-fund-before-investing.html">should you build an emergency fund first?</a></li>
+<li><strong>Decide what market you want to own.</strong> A broad world index, a single region, or a mix with bonds. <a href="blog-what-is-asset-allocation.html">Asset allocation</a> explains the trade-offs.</li>
+<li><strong>Compare specific funds</strong> that track it, using the <a href="blog-how-to-evaluate-etf.html">7-point ETF checklist</a>.</li>
+<li><strong>Choose where to hold it.</strong> Compare broker fees, savings plans and currency costs in the <a href="broker-comparison.html">broker comparison</a>.</li>
+<li><strong>Automate a regular amount.</strong> <a href="blog-dollar-cost-averaging.html">Dollar-cost averaging</a> removes the pressure of picking the right day.</li>
+<li><strong>Leave it alone.</strong> Review once or twice a year, not every day.</li>
+</ol>
+
+<div class="cta-inline">
+<p class="cta-inline-title">See how index investing has actually behaved</p>
+<p>SteadFolio's Historical Data tool lets you explore long-term index performance, including the crashes, and the DCA Simulator shows how regular contributions could grow at a return you choose, compared with holding cash. Learning tools only: Sofia, SteadFolio's AI coach, explains concepts but never tells you what to buy. Free to start.</p>
+<a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="en_indexfund_inline">Explore index history in SteadFolio →</a>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>Is an index fund the same as an ETF?</h3><p>Not exactly. "Index fund" describes the strategy of tracking an index; "ETF" describes a fund that trades on a stock exchange. Many ETFs are index funds, but some ETFs are actively managed, and some index funds are traditional mutual funds that don't trade on an exchange.</p></div>
+<div class="faq-item"><h3>Are index funds safe?</h3><p>No investment in shares is safe in the sense of guaranteed. A broad index fund removes the risk of one company sinking your investment, but it still falls when the overall market falls, sometimes sharply and for years. It suits money you can leave invested for a long time.</p></div>
+<div class="faq-item"><h3>How much does an index fund cost?</h3><p>The main cost is the yearly ongoing charge (TER), shown in the factsheet and the Key Information Document. Broad index funds are usually among the cheapest funds available. Also count broker fees, the bid-ask spread and any currency conversion costs.</p></div>
+<div class="faq-item"><h3>Can I buy index funds in Europe?</h3><p>Yes. Most EU retail investors access index investing through UCITS ETFs bought via a broker, often with an automatic savings plan. Index mutual funds are also available through some banks and platforms, depending on your country.</p></div>
+<div class="faq-item"><h3>Do index funds pay dividends?</h3><p>If the companies in the index pay dividends, the fund receives them. A distributing share class pays them out to you; an accumulating share class reinvests them inside the fund. Check the fund name or factsheet for "Acc" or "Dist".</p></div>
+<div class="faq-item"><h3>Can an index fund beat the market?</h3><p>By design, no. It aims to match its index, and after costs it will usually trail the index slightly. The argument for index funds is that many actively managed funds also fail to beat the market after their higher fees, and it's hard to know in advance which ones will.</p></div>
+
+<h2>Sources</h2>
+<ul class="sources">
+<li>MSCI: <a href="https://www.msci.com/indexes/index/892400" target="_blank" rel="noopener">MSCI World Index</a> (index scope and methodology).</li>
+<li>S&amp;P Dow Jones Indices: <a href="https://www.spglobal.com/spdji/en/spiva/article/spiva-europe/" target="_blank" rel="noopener">SPIVA Europe Scorecard</a> (active funds vs benchmarks).</li>
+<li>EUR-Lex: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0065" target="_blank" rel="noopener">Directive 2009/65/EC (UCITS)</a>.</li>
+<li>EUR-Lex: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R1286" target="_blank" rel="noopener">Regulation (EU) No 1286/2014 (PRIIPs Key Information Documents)</a>.</li>
+<li>ESMA: <a href="https://www.esma.europa.eu/investor-corner" target="_blank" rel="noopener">Investor corner</a> (EU investor education and warnings).</li>
+</ul>
+
+<h2>Keep learning</h2>
+<ul>
+<li>Next: <a href="blog-how-to-evaluate-etf.html">How to Evaluate an ETF: A 7-Point Checklist</a></li>
+<li>The wrapper explained: <a href="blog-what-is-an-etf.html">What Is an ETF? A Beginner's Guide</a></li>
+<li>The most-followed index: <a href="blog-what-is-the-sp-500.html">What Is the S&amp;P 500?</a></li>
+<li>Putting it into practice: <a href="blog-how-to-buy-your-first-etf.html">How to Buy Your First ETF</a></li>
+</ul>
 
 </div>
 </section>
@@ -217,7 +433,7 @@ footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
 
 <footer>
 <div class="wrap footer-row">
-<span>© 2026 Steadfolio. Educational content only - not financial advice.</span>
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
 <div class="footer-social">
 <a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
@@ -261,5 +477,6 @@ toggle.setAttribute("aria-expanded", "false");
 })();
 </script>
 <script src="/js/utm-forward.js" defer></script>
+<script src="/js/cta-tracking.js" defer></script>
 </body>
 </html>
