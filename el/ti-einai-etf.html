@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<script src="/js/cookie-consent.js" data-clarity="1" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Τι είναι τα ETF; Οδηγός για αρχάριους από την Ελλάδα | SteadFolio</title>
+<meta name="description" content="Τι είναι ένα ETF, πώς λειτουργεί, τι σημαίνει UCITS, accumulating ή distributing, ποια κόστη μετράνε και τι να ελέγξεις πριν επιλέξεις. Απλά, με παραδείγματα.">
+<link rel="canonical" href="https://steadfolio.eu/el/ti-einai-etf.html">
+<link rel="alternate" hreflang="el" href="https://steadfolio.eu/el/ti-einai-etf.html">
+<link rel="alternate" hreflang="en" href="https://steadfolio.eu/blog-what-is-an-etf.html">
+<link rel="alternate" hreflang="x-default" href="https://steadfolio.eu/blog-what-is-an-etf.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SteadFolio">
+<meta property="og:locale" content="el_GR">
+<meta property="og:title" content="Τι είναι τα ETF; Οδηγός για αρχάριους από την Ελλάδα | SteadFolio">
+<meta property="og:description" content="Τι είναι ένα ETF, πώς λειτουργεί, τι σημαίνει UCITS, accumulating ή distributing, ποια κόστη μετράνε και τι να ελέγξεις πριν επιλέξεις. Απλά, με παραδείγματα.">
+<meta property="og:url" content="https://steadfolio.eu/el/ti-einai-etf.html">
+<meta property="og:image" content="https://steadfolio.eu/screenshots/screenshot-etf-evaluator.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="../favicon-64.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Τι είναι τα ETF; Πώς λειτουργούν και τι πρέπει να γνωρίζεις",
+  "description": "Τι είναι ένα ETF, πώς λειτουργεί, τι σημαίνει UCITS, accumulating ή distributing, ποια κόστη μετράνε και τι να ελέγξεις πριν επιλέξεις. Απλά, με παραδείγματα.",
+  "inLanguage": "el",
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "author": {
+    "@type": "Organization",
+    "name": "Η ομάδα του SteadFolio",
+    "url": "https://steadfolio.eu/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SteadFolio",
+    "url": "https://steadfolio.eu/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://steadfolio.eu/logo-icon.png"
+    }
+  },
+  "image": "https://steadfolio.eu/screenshots/screenshot-etf-evaluator.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://steadfolio.eu/el/ti-einai-etf.html"
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "@id": "https://steadfolio.eu/el/"
+  },
+  "keywords": [
+    "ETF",
+    "UCITS",
+    "επενδύσεις για αρχάριους",
+    "TER"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "SteadFolio",
+      "item": "https://steadfolio.eu/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Οδηγοί στα ελληνικά",
+      "item": "https://steadfolio.eu/el/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Τι είναι τα ETF",
+      "item": "https://steadfolio.eu/el/ti-einai-etf.html"
+    }
+  ]
+}
+</script>
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #6f837a;
+--font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+.skip-link { position: absolute; left: -9999px; top: 8px; background: var(--teal); color: #06231a; padding: 8px 14px; border-radius: 8px; z-index: 200; }
+.skip-link:focus { left: 16px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 600px) { .wrap { padding: 0 16px; } }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { max-width: 1500px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 28px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; white-space: nowrap; }
+.nav-lang { font-size: 13.5px; color: var(--text-dim); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; white-space: nowrap; }
+.nav-lang:hover { color: var(--text); border-color: var(--teal); }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 1100px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+@media (max-width: 1100px) { .nav-toggle { display: flex; } }
+@media (max-width: 420px) { .nav-lang { display: none; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+section { padding: 72px 0; }
+.kicker { font-size: 13.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 5vw, 44px); line-height: 1.18; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 3.2vw, 29px); line-height: 1.25; letter-spacing: -0.015em; color: #fff; }
+.page-hero { padding: 56px 0 8px; text-align: center; }
+.page-hero .lead { max-width: 620px; margin: 18px auto 0; color: var(--text-dim); font-size: 17px; }
+.breadcrumbs { font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px; }
+.breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.breadcrumbs li + li::before { content: "›"; margin-right: 6px; }
+.breadcrumbs a { color: var(--text-dim); }
+.breadcrumbs a:hover { color: var(--teal-bright); }
+.article-header { max-width: 760px; margin: 0 auto; text-align: center; }
+.article-meta { font-size: 13.5px; color: var(--text-muted); margin-top: 18px; }
+.article-meta a { color: var(--teal-bright); }
+.lang-switch { display: inline-block; margin-top: 12px; font-size: 13.5px; color: var(--text-dim); border-bottom: 1px dotted var(--text-muted); }
+.lang-switch:hover { color: var(--teal-bright); }
+.article-body { max-width: 720px; margin: 0 auto; }
+.article-body p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
+.article-body h2 { font-size: clamp(22px, 3vw, 26px); margin: 48px 0 16px; scroll-margin-top: 90px; }
+.article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin: 28px 0 12px; }
+.article-body ul, .article-body ol { margin: 0 0 20px 22px; color: var(--text-dim); font-size: 16.5px; line-height: 1.8; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--text); }
+.article-body a:not(.btn-primary) { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 2px; }
+.answer-box { background: var(--card); border: 1px solid var(--teal-dim); border-radius: 14px; padding: 22px 24px; margin: 0 0 32px; }
+.answer-box p { margin-bottom: 0; }
+.answer-box .answer-label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 8px; }
+.callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 15.5px; color: var(--text-dim); line-height: 1.7; }
+.callout strong { color: var(--teal-bright); }
+.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; border: 1px solid var(--border-soft); border-radius: 12px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 520px; }
+.data-table caption { text-align: left; padding: 14px 14px 6px; font-size: 13.5px; font-weight: 600; color: var(--text); }
+.data-table th, .data-table td { text-align: left; vertical-align: top; padding: 11px 14px; border-top: 1px solid var(--border-soft); color: var(--text-dim); line-height: 1.55; }
+.data-table thead th { color: var(--text); font-weight: 600; font-size: 13.5px; background: var(--bg-2); }
+.data-table tbody th { color: var(--text); font-weight: 600; }
+.data-table.num td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table-note { font-size: 14px !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+.etf-name { font-weight: 600; color: var(--text) !important; background: var(--bg-2); border: 1px dashed var(--border); border-radius: 10px; padding: 14px 18px; text-align: center; }
+.checklist { list-style: none; margin-left: 0 !important; }
+.checklist li { position: relative; padding-left: 30px; }
+.checklist li::before { content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 16px; border: 2px solid var(--teal); border-radius: 4px; }
+.cta-inline { background: linear-gradient(180deg, rgba(34,197,139,0.08), var(--card) 70%); border: 1px solid var(--teal-dim); border-radius: 16px; padding: 26px 26px 28px; margin: 36px 0; }
+.cta-inline .cta-inline-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.cta-inline p { font-size: 15.5px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15.5px; padding: 14px 24px; border-radius: 10px; transition: background 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); }
+.faq-item { margin-bottom: 24px; }
+.faq-item h3 { margin-top: 0; margin-bottom: 8px; }
+.sources { border-top: 1px solid var(--border-soft); margin-top: 48px; padding-top: 8px; }
+.sources ul { font-size: 15px; }
+.sources .review-note { font-size: 15px; }
+.related { display: grid; gap: 12px; margin: 8px 0 20px; }
+.related a.related-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; text-decoration: none !important; color: var(--text) !important; }
+.related a.related-card:hover { border-color: var(--teal); }
+.related .related-card span { display: block; font-size: 14px; color: var(--text-dim); margin-top: 4px; }
+.calc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin: 8px 0 28px; }
+.calc-title { font-weight: 700; color: var(--text) !important; margin-bottom: 14px !important; }
+.calc-fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+@media (max-width: 600px) { .calc-fields { grid-template-columns: 1fr; } }
+.calc label { display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--text-dim); }
+.calc input, .calc select { background: var(--bg-2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font: inherit; font-size: 16px; }
+.calc-out { margin-bottom: 6px !important; }
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 22px 0; margin-top: 56px; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 14px 36px; flex-wrap: wrap; font-size: 14.5px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+.final-cta { text-align: center; }
+.final-cta p { color: var(--text-dim); margin: 10px auto 0; max-width: 560px; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+.hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1040px; margin: 0 auto; }
+@media (max-width: 900px) { .hub-grid { grid-template-columns: 1fr; } }
+.hub-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; transition: border-color 0.2s; }
+.hub-card:hover { border-color: var(--teal); }
+.hub-card .tag { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 10px; }
+.hub-card h2 { font-size: 20px; line-height: 1.3; margin-bottom: 10px; }
+.hub-card p { font-size: 15px; color: var(--text-dim); flex-grow: 1; }
+.hub-card .read-more { margin-top: 14px; font-size: 14px; color: var(--teal-bright); font-weight: 600; }
+.hub-note { max-width: 720px; margin: 36px auto 0; color: var(--text-dim); font-size: 15.5px; text-align: center; }
+.hub-note a { color: var(--teal-bright); text-decoration: underline; }
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--text-dim); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.footer-links a { white-space: nowrap; }
+.footer-links a:hover { color: var(--text); }
+.footer-social { display: flex; align-items: center; gap: 14px; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); }
+.footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Μετάβαση στο περιεχόμενο</a>
+<header>
+<nav class="wrap" aria-label="Κύρια πλοήγηση">
+<a href="../index.html" class="brand"><span class="brand-mark"><img src="../logo-icon.png" alt="" width="34" height="34"></span>SteadFolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="./">Οδηγοί στα ελληνικά</a>
+<a href="../index.html#features">Εργαλεία (EN)</a>
+<a href="../journey.html">Η διαδρομή σου (EN)</a>
+<a href="../pricing.html">Τιμές (EN)</a>
+<a href="../blog.html">Blog (EN)</a>
+<a href="../about.html">Σχετικά (EN)</a>
+<a href="../faq.html">FAQ (EN)</a>
+</div>
+<div class="nav-right">
+<a href="../blog-what-is-an-etf.html" class="nav-lang" hreflang="en" lang="en" title="Read this page in English">EN</a>
+<a href="https://app.steadfolio.eu/login" class="nav-cta">Σύνδεση</a>
+<button class="nav-toggle" id="navToggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="./">Οδηγοί στα ελληνικά</a>
+<a href="../index.html#features">Εργαλεία (EN)</a>
+<a href="../journey.html">Η διαδρομή σου (EN)</a>
+<a href="../pricing.html">Τιμές (EN)</a>
+<a href="../blog.html">Blog (EN)</a>
+<a href="../about.html">Σχετικά (EN)</a>
+<a href="../faq.html">FAQ (EN)</a>
+</div>
+</header>
+<main id="main">
+<article>
+<section class="page-hero" style="padding-bottom: 0;">
+<div class="wrap article-header">
+<nav class="breadcrumbs" aria-label="Διαδρομή">
+<ol>
+<li><a href="../index.html">SteadFolio</a></li>
+<li><a href="./">Οδηγοί στα ελληνικά</a></li>
+<li aria-current="page">Τι είναι τα ETF</li>
+</ol>
+</nav>
+<div class="kicker">Βασικές έννοιες</div>
+<h1>Τι είναι τα ETF; Πώς λειτουργούν και τι πρέπει να γνωρίζεις</h1>
+<p class="article-meta">Από την <a href="../about.html">ομάδα του SteadFolio</a> · Τελευταία ενημέρωση: <time datetime="2026-10-06">6 Οκτωβρίου 2026</time> · 12 λεπτά ανάγνωση · Εκπαιδευτικό περιεχόμενο, όχι επενδυτική συμβουλή</p>
+<a href="../blog-what-is-an-etf.html" class="lang-switch" hreflang="en" lang="en">Read this guide in English →</a>
+</div>
+</section>
+
+<section style="padding-top: 32px; padding-bottom: 24px;">
+<div class="wrap article-body">
+<div class="answer-box">
+<p class="answer-label">Η σύντομη απάντηση</p>
+<p><strong>Ένα ETF (Exchange-Traded Fund) είναι ένα επενδυτικό κεφάλαιο που κατέχει πολλούς τίτλους μαζί (π.χ. εκατοντάδες μετοχές ή ομόλογα) και διαπραγματεύεται στο χρηματιστήριο σαν μία μετοχή.</strong> Με μία αγορά αποκτάς ένα μικρό κομμάτι από όλο το «καλάθι». Τα περισσότερα ETF απλώς ακολουθούν έναν δείκτη, όπως τον S&amp;P 500 ή έναν παγκόσμιο δείκτη μετοχών. Δεν είναι εγγυημένα: η αξία τους ανεβαίνει και πέφτει μαζί με την αξία όσων κατέχουν.</p>
+</div>
+
+<p>Αν ψάχνεις τι είναι τα ETF, πιθανότατα έχεις ήδη ακούσει ότι είναι «ο απλός τρόπος να ξεκινήσεις». Αυτό είναι εν μέρει αλήθεια, αλλά μόνο αν καταλαβαίνεις τι αγοράζεις. Σε αυτόν τον οδηγό θα δεις πώς λειτουργεί ένα ETF, ποια είναι η διαφορά από τις μεμονωμένες μετοχές, τι σημαίνει <strong>UCITS</strong> για όποιον επενδύει από την Ελλάδα ή άλλη χώρα της ΕΕ, και ποια σημεία να ελέγξεις πριν επιλέξεις ένα.</p>
+
+<h2 id="pos-leitourgei">Πώς λειτουργεί ένα ETF</h2>
+<p>Σκέψου το ETF σαν ένα κοινό «δοχείο». Μια εταιρεία διαχείρισης (ο πάροχος του ETF) συγκεντρώνει χρήματα από πολλούς επενδυτές και αγοράζει με αυτά τους τίτλους που ορίζει η επενδυτική πολιτική του κεφαλαίου. Συνήθως ο στόχος είναι να αναπαράγει όσο πιο πιστά γίνεται έναν <strong>δείκτη</strong>, δηλαδή μια λίστα εταιρειών με συγκεκριμένους κανόνες επιλογής και στάθμισης.</p>
+<p>Εσύ δεν αγοράζεις απευθείας τις μετοχές του δείκτη. Αγοράζεις <strong>μερίδια του ETF</strong> μέσω μιας χρηματιστηριακής ή επενδυτικής εταιρείας (broker), όπως θα αγόραζες μια μετοχή. Η τιμή του μεριδίου αλλάζει όσο είναι ανοιχτό το χρηματιστήριο και κινείται κοντά στην αξία των τίτλων που κατέχει το κεφάλαιο.</p>
+<h3>Τρία πράγματα που αξίζει να ξέρεις από την αρχή</h3>
+<ul>
+<li><strong>Τα περισσότερα ETF είναι «παθητικά».</strong> Δεν προσπαθούν να επιλέξουν τις «καλύτερες» μετοχές· ακολουθούν έναν δείκτη. Γι' αυτό το κόστος τους είναι συνήθως χαμηλότερο από πολλά ενεργά διαχειριζόμενα αμοιβαία κεφάλαια.</li>
+<li><strong>Τα στοιχεία του κεφαλαίου φυλάσσονται χωριστά.</strong> Σε ένα ευρωπαϊκό ETF τύπου UCITS, τα περιουσιακά στοιχεία του κεφαλαίου τηρούνται από θεματοφύλακα και διαχωρίζονται από τα στοιχεία της εταιρείας διαχείρισης. Αυτό προστατεύει από ορισμένους οργανωτικούς κινδύνους· <em>δεν</em> προστατεύει από την πτώση των αγορών.</li>
+<li><strong>Δεν υπάρχει εγγυημένη απόδοση.</strong> Αν πέσουν οι μετοχές που κατέχει το ETF, πέφτει και η αξία του μεριδίου σου.</li>
+</ul>
+
+<h2 id="etf-vs-metoxes">ETF ή μεμονωμένες μετοχές;</h2>
+<p>Μια μετοχή σού δίνει μερίδιο σε <em>μία</em> εταιρεία. Ένα μετοχικό ETF σού δίνει ταυτόχρονα μερίδιο σε πολλές. Η διαφορά δεν είναι μόνο τεχνική· αλλάζει τον τύπο του κινδύνου που αναλαμβάνεις και τον χρόνο που χρειάζεται να αφιερώσεις.</p>
+<div class="table-wrap">
+<table class="data-table">
+<caption>Εκπαιδευτική σύγκριση: μεμονωμένη μετοχή και ευρύ μετοχικό ETF</caption>
+<thead><tr><th scope="col">Κριτήριο</th><th scope="col">Μία μετοχή</th><th scope="col">Ευρύ μετοχικό ETF</th></tr></thead>
+<tbody>
+<tr><th scope="row">Τι κατέχεις</th><td>Μερίδιο σε μία εταιρεία</td><td>Μικρά μερίδια σε δεκάδες έως χιλιάδες εταιρείες</td></tr>
+<tr><th scope="row">Κίνδυνος μίας εταιρείας</th><td>Υψηλός: αν η εταιρεία καταρρεύσει, η επένδυση μπορεί να μηδενιστεί</td><td>Περιορισμένος: μία εταιρεία είναι μικρό μέρος του συνόλου</td></tr>
+<tr><th scope="row">Κίνδυνος αγοράς</th><td>Ναι</td><td>Ναι, δεν εξαλείφεται</td></tr>
+<tr><th scope="row">Έρευνα που απαιτείται</th><td>Ανάλυση της εταιρείας, του κλάδου, της αποτίμησης</td><td>Κατανόηση του δείκτη, του κόστους και της δομής του κεφαλαίου</td></tr>
+<tr><th scope="row">Συνεχές κόστος</th><td>Κανένα ετήσιο κόστος διαχείρισης</td><td>Ετήσιο κόστος (TER), που αφαιρείται αυτόματα από την αξία του κεφαλαίου</td></tr>
+<tr><th scope="row">Συχνός πειρασμός</th><td>Κυνήγι «της επόμενης μεγάλης ευκαιρίας»</td><td>Υπερβολικές αλλαγές ανάμεσα σε πολλά παρόμοια ETF</td></tr>
+</tbody>
+</table>
+</div>
+<p>Δεν υπάρχει «σωστή» απάντηση για όλους. Πολλοί αρχάριοι όμως ξεκινούν από ευρέα ETF επειδή δεν χρειάζεται να στοιχηματίσουν σε μία μόνο εταιρεία. Αν θέλεις να καταλάβεις πρώτα τι είναι μια μετοχή, δες τον (αγγλόφωνο) οδηγό μας <a href="../blog-what-is-a-stock.html">τι είναι μια μετοχή</a>.</p>
+
+<h2 id="pleonektimata-kindynoi">Πλεονεκτήματα, περιορισμοί και κίνδυνοι</h2>
+<h3>Γιατί πολλοί αρχάριοι επιλέγουν ETF</h3>
+<ul>
+<li><strong>Διασπορά με μία αγορά.</strong> Ένα ευρύ ETF απλώνει τα χρήματά σου σε πολλές εταιρείες, κλάδους και, ανάλογα με τον δείκτη, χώρες.</li>
+<li><strong>Διαφάνεια.</strong> Οι πάροχοι δημοσιεύουν τον δείκτη, το κόστος και, συνήθως, τις συμμετοχές του κεφαλαίου.</li>
+<li><strong>Χαμηλό συνεχές κόστος</strong> στα περισσότερα ευρέα ETF δεικτών, σε σύγκριση με πολλά ενεργά κεφάλαια.</li>
+<li><strong>Ευκολία στη σταδιακή επένδυση.</strong> Αρκετοί πάροχοι επιτρέπουν προγράμματα μηνιαίων αγορών ή κλασματικά μερίδια, οπότε μπορείς να επενδύεις μικρά ποσά τακτικά.</li>
+</ul>
+<h3>Τι δεν κάνει ένα ETF</h3>
+<ul>
+<li><strong>Δεν σε προστατεύει από πτώση της αγοράς.</strong> Αν πέσει όλη η αγορά μετοχών, θα πέσει και ένα μετοχικό ETF.</li>
+<li><strong>Δεν είναι πάντα διαφοροποιημένο.</strong> Ένα θεματικό ETF (π.χ. ενός μόνο κλάδου) μπορεί να είναι πολύ συγκεντρωμένο.</li>
+<li><strong>Δεν ακολουθεί τον δείκτη τέλεια.</strong> Το κόστος και ο τρόπος αναπαραγωγής δημιουργούν μια μικρή απόκλιση από τον δείκτη (tracking difference).</li>
+<li><strong>Μπορεί να έχει συναλλαγματικό κίνδυνο.</strong> Ένα ETF που διαπραγματεύεται σε ευρώ μπορεί να κατέχει μετοχές σε δολάρια. Οι κινήσεις του δολαρίου επηρεάζουν την αξία σε ευρώ.</li>
+</ul>
+<div class="callout"><strong>Προσοχή στα σύνθετα προϊόντα:</strong> Τα ETF με μόχλευση («2x», «3x») ή τα αντίστροφα ETF («short», «inverse») είναι σχεδιασμένα κυρίως για βραχυπρόθεσμη χρήση. Σε περιόδους διακυμάνσεων, η απόδοσή τους μπορεί να αποκλίνει σημαντικά από αυτό που περιμένει κανείς. Δεν είναι εργαλεία για να μάθεις τα βασικά.</div>
+
+<h2 id="typoi">Τύποι ETF</h2>
+<ul>
+<li><strong>Ευρέα μετοχικά ETF</strong>: ακολουθούν μεγάλους δείκτες, παγκόσμιους (π.χ. MSCI ACWI, FTSE All-World), περιφερειακούς (Ευρώπη, αναδυόμενες αγορές) ή χώρας (π.χ. <a href="ti-einai-sp-500.html">τον S&amp;P 500 για τις ΗΠΑ</a>).</li>
+<li><strong>ETF ομολόγων</strong>: κατέχουν κρατικά ή εταιρικά ομόλογα. Έχουν συνήθως μικρότερες διακυμάνσεις από τα μετοχικά, όχι όμως μηδενικές· επηρεάζονται για παράδειγμα από τις αλλαγές επιτοκίων.</li>
+<li><strong>Κλαδικά και θεματικά ETF</strong>: εστιάζουν σε έναν κλάδο (τεχνολογία, υγεία) ή σε ένα «θέμα». Είναι πιο συγκεντρωμένα.</li>
+<li><strong>ETF μεικτής κατανομής</strong>: συνδυάζουν μετοχές και ομόλογα σε προκαθορισμένη αναλογία.</li>
+<li><strong>Προϊόντα εμπορευμάτων (π.χ. χρυσός)</strong>: στην Ευρώπη συχνά δεν είναι ETF αλλά <strong>ETC</strong> (Exchange-Traded Commodities), με διαφορετική νομική δομή. Αξίζει να το ελέγχεις πριν τα θεωρήσεις ισοδύναμα.</li>
+</ul>
+
+<h2 id="ucits">UCITS: γιατί σε αφορά όταν επενδύεις από την Ελλάδα</h2>
+<p><strong>UCITS</strong> (στα ελληνικά ΟΣΕΚΑ, «Οργανισμοί Συλλογικών Επενδύσεων σε Κινητές Αξίες») είναι το ευρωπαϊκό πλαίσιο κανόνων για επενδυτικά κεφάλαια που διατίθενται σε ιδιώτες επενδυτές. Θέτει κανόνες για τη διασπορά, τη φύλαξη των περιουσιακών στοιχείων και την πληροφόρηση των επενδυτών. Ένα κεφάλαιο που έχει λάβει άδεια ως UCITS σε ένα κράτος-μέλος μπορεί να διατίθεται και σε άλλα κράτη της ΕΕ.</p>
+<p>Στην πράξη, αυτό σημαίνει δύο πράγματα για όποιον επενδύει από την Ελλάδα:</p>
+<ol>
+<li><strong>Θα επιλέγεις κυρίως ανάμεσα σε UCITS ETF.</strong> Πολλά δημοφιλή αμερικανικά ETF που βλέπεις σε αγγλόφωνα βίντεο συνήθως δεν διατίθενται σε ιδιώτες επενδυτές της ΕΕ. Ένας βασικός λόγος είναι ότι τα προϊόντα που διατίθενται σε ιδιώτες στην ΕΕ πρέπει να συνοδεύονται από το <strong>Έγγραφο Βασικών Πληροφοριών (KID)</strong> που προβλέπει ο κανονισμός PRIIPs. Πολλοί αμερικανοί πάροχοι δεν το εκδίδουν.</li>
+<li><strong>Πολλά UCITS ETF έχουν έδρα στην Ιρλανδία ή στο Λουξεμβούργο.</strong> Αυτό συχνά φαίνεται και στον κωδικό ISIN, που ξεκινά με «IE» ή «LU». Η έδρα επηρεάζει τεχνικά θέματα, όπως τη φορολόγηση των μερισμάτων στο επίπεδο του κεφαλαίου. Για λεπτομέρειες δες τον αγγλόφωνο οδηγό μας για <a href="../blog-etf-domicile-withholding-tax.html">την έδρα των ETF και την παρακράτηση φόρου</a>.</li>
+</ol>
+<div class="callout"><strong>Τι <u>δεν</u> σημαίνει UCITS:</strong> Δεν σημαίνει «ασφαλές» ούτε «εγγυημένο». Ένα UCITS ETF μετοχών μπορεί να χάσει σημαντικό μέρος της αξίας του σε μια πτωτική αγορά. Η σήμανση αφορά τη ρυθμιστική δομή και την προστασία του επενδυτή, όχι τον επενδυτικό κίνδυνο. Περισσότερα στον αγγλόφωνο οδηγό <a href="../blog-what-are-ucits-etfs.html">What Are UCITS ETFs</a>.</div>
+
+<h2 id="acc-dist">Accumulating ή distributing;</h2>
+<p>Πολλά ETF διατίθενται σε δύο εκδόσεις («κατηγορίες μεριδίων») που ακολουθούν τον ίδιο δείκτη:</p>
+<ul>
+<li><strong>Accumulating (Acc), συσσωρευτικά:</strong> τα μερίσματα που εισπράττει το κεφάλαιο επανεπενδύονται αυτόματα μέσα στο ETF. Δεν λαμβάνεις πληρωμές· η επανεπένδυση αντικατοπτρίζεται στην αξία του μεριδίου.</li>
+<li><strong>Distributing (Dist ή Dis), διανεμητικά:</strong> το κεφάλαιο καταβάλλει περιοδικά μερίσματα στον λογαριασμό σου, συνήθως σε τριμηνιαία ή εξαμηνιαία βάση. Μπορείς να τα κρατήσεις ή να τα επανεπενδύσεις μόνος σου.</li>
+</ul>
+<p>Η επιλογή εξαρτάται από το αν θέλεις τακτικό εισόδημα ή αυτόματη επανεπένδυση. Παίζουν ρόλο επίσης η απλότητα στη διαχείριση και η φορολογική μεταχείριση στη δική σου περίπτωση. <strong>Δεν κάνουμε φορολογικές δηλώσεις σε αυτόν τον οδηγό</strong>, επειδή η φορολογική μεταχείριση εξαρτάται από την προσωπική σου κατάσταση και την ισχύουσα νομοθεσία. Για αυτό το κομμάτι συμβουλέψου λογιστή ή φοροτεχνικό. Η γενική διαφορά εξηγείται αναλυτικά στον οδηγό μας <a href="../blog-accumulating-vs-distributing-etfs.html">Accumulating vs Distributing ETFs</a>.</p>
+
+<h2 id="paradeigma-onoma">Πρακτικό παράδειγμα: πώς «διαβάζεις» το όνομα ενός ETF</h2>
+<p>Τα ονόματα των ETF μοιάζουν δυσανάγνωστα, αλλά συνήθως περιέχουν σχεδόν όλη τη βασική πληροφορία. Πάρε το παρακάτω <strong>φανταστικό</strong> παράδειγμα (δεν αντιστοιχεί σε πραγματικό προϊόν):</p>
+<p class="etf-name">Πάροχος&nbsp;X · Global&nbsp;Equity · UCITS&nbsp;ETF · USD · (Acc)</p>
+<div class="table-wrap">
+<table class="data-table">
+<caption>Τι σημαίνει κάθε κομμάτι του ονόματος</caption>
+<thead><tr><th scope="col">Κομμάτι</th><th scope="col">Τι σου λέει</th><th scope="col">Τι να ελέγξεις</th></tr></thead>
+<tbody>
+<tr><th scope="row">Πάροχος X</th><td>Η εταιρεία διαχείρισης του κεφαλαίου</td><td>Ότι υπάρχει επίσημο factsheet και KID στην ιστοσελίδα της</td></tr>
+<tr><th scope="row">Global Equity</th><td>Παγκόσμιες μετοχές, γενικά</td><td>Ποιον <em>ακριβώς</em> δείκτη ακολουθεί, πόσες εταιρείες και χώρες περιλαμβάνει</td></tr>
+<tr><th scope="row">UCITS ETF</th><td>Ευρωπαϊκό ρυθμιζόμενο κεφάλαιο που διαπραγματεύεται στο χρηματιστήριο</td><td>Τον ISIN (π.χ. «IE…» ή «LU…») και τη χώρα έδρας</td></tr>
+<tr><th scope="row">USD</th><td>Συνήθως το νόμισμα βάσης του κεφαλαίου. <strong>Δεν</strong> σημαίνει απαραίτητα ότι το αγοράζεις σε δολάρια</td><td>Σε ποιο χρηματιστήριο και σε ποιο νόμισμα θα το αγοράσεις (π.χ. EUR στη Xetra)</td></tr>
+<tr><th scope="row">(Acc)</th><td>Συσσωρευτική κατηγορία μεριδίων</td><td>Αν σου ταιριάζει η επανεπένδυση ή προτιμάς διανομή (Dist)</td></tr>
+</tbody>
+</table>
+</div>
+<p>Συχνή παρανόηση: «Αφού το αγοράζω σε ευρώ, δεν έχω συναλλαγματικό κίνδυνο». Αν το ETF κατέχει κυρίως αμερικανικές μετοχές, η αξία του σε ευρώ επηρεάζεται από τη σχέση ευρώ-δολαρίου, όποιο κι αν είναι το νόμισμα διαπραγμάτευσης. Εξαίρεση αποτελούν οι κατηγορίες μεριδίων με αντιστάθμιση συναλλάγματος («EUR Hedged»), που έχουν όμως συνήθως λίγο υψηλότερο κόστος.</p>
+
+<h2 id="kostos">Ποια κόστη πρέπει να καταλαβαίνει ένας αρχάριος</h2>
+<p>Το κόστος είναι ένα από τα λίγα πράγματα στις επενδύσεις που μπορείς να ελέγξεις. Υπάρχουν τέσσερα διαφορετικά επίπεδα:</p>
+<ol>
+<li><strong>TER / ongoing charges (συνεχές κόστος):</strong> ετήσιο ποσοστό που αφαιρείται αυτόματα από την αξία του κεφαλαίου. Δεν θα δεις ξεχωριστή χρέωση.</li>
+<li><strong>Προμήθεια συναλλαγής του broker:</strong> σταθερό ποσό ή ποσοστό ανά αγορά ή πώληση. Ορισμένοι πάροχοι έχουν μηδενική προμήθεια σε συγκεκριμένα προγράμματα, αλλά μπορεί να χρεώνουν αλλού.</li>
+<li><strong>Spread (διαφορά τιμής αγοράς-πώλησης):</strong> μικρό κρυφό κόστος σε κάθε συναλλαγή. Είναι συνήθως μικρότερο σε μεγάλα ETF με υψηλή εμπορευσιμότητα.</li>
+<li><strong>Κόστος μετατροπής συναλλάγματος:</strong> ισχύει αν αγοράζεις σε νόμισμα διαφορετικό από αυτό του λογαριασμού σου.</li>
+</ol>
+<h3>Παράδειγμα 1: πόσο μετράει το ετήσιο κόστος σε βάθος χρόνου</h3>
+<p>Υποθετικό σενάριο: <strong>€10.000</strong> επενδύονται εφάπαξ για <strong>20 χρόνια</strong>, με υποθετική μέση ετήσια απόδοση 5% πριν από το κόστος του κεφαλαίου. Η απόδοση αυτή είναι <em>παραδοχή για τον υπολογισμό</em>, όχι πρόβλεψη. Η μόνη διαφορά ανάμεσα στα σενάρια είναι το TER:</p>
+<div class="table-wrap">
+<table class="data-table num">
+<caption>Υποθετική αξία μετά από 20 χρόνια, ανάλογα με το ετήσιο κόστος</caption>
+<thead><tr><th scope="col">Ετήσιο κόστος (TER)</th><th scope="col">Καθαρή ετήσια απόδοση</th><th scope="col">Αξία μετά από 20 χρόνια</th></tr></thead>
+<tbody>
+<tr><td>0,10%</td><td>4,90%</td><td>≈ €26.032</td></tr>
+<tr><td>0,20%</td><td>4,80%</td><td>≈ €25.540</td></tr>
+<tr><td>0,50%</td><td>4,50%</td><td>≈ €24.117</td></tr>
+<tr><td>1,00%</td><td>4,00%</td><td>≈ €21.911</td></tr>
+</tbody>
+</table>
+</div>
+<p class="table-note">Υπολογισμός: 10.000 × (1 + καθαρή απόδοση)<sup>20</sup>. Για απλότητα δεν περιλαμβάνονται φόροι, προμήθειες και πληθωρισμός. Οι πραγματικές αποδόσεις δεν είναι σταθερές και μπορεί να είναι αρνητικές.</p>
+<p>Η διαφορά ανάμεσα σε κόστος 0,10% και 1,00% φτάνει περίπου τα €4.100 στο ίδιο ποσό και στον ίδιο χρόνο. Το χαμηλό κόστος όμως δεν είναι το μόνο κριτήριο: ένα φθηνό ETF ενός πολύ στενού δείκτη μπορεί να είναι λιγότερο κατάλληλο για τον στόχο σου από ένα ελαφρώς ακριβότερο ευρύ ETF.</p>
+<h3>Παράδειγμα 2: η σταθερή προμήθεια στα μικρά ποσά</h3>
+<p>Όταν επενδύεις μικρά ποσά, μια σταθερή προμήθεια ανά αγορά έχει δυσανάλογα μεγάλο βάρος:</p>
+<div class="table-wrap">
+<table class="data-table num">
+<caption>Προμήθεια ως ποσοστό του ποσού κάθε αγοράς (υποθετικές χρεώσεις)</caption>
+<thead><tr><th scope="col">Ποσό αγοράς</th><th scope="col">Προμήθεια €1</th><th scope="col">Προμήθεια €2,50</th></tr></thead>
+<tbody>
+<tr><td>€50</td><td>2,0%</td><td>5,0%</td></tr>
+<tr><td>€100</td><td>1,0%</td><td>2,5%</td></tr>
+<tr><td>€500</td><td>0,2%</td><td>0,5%</td></tr>
+</tbody>
+</table>
+</div>
+<p>Γι' αυτό, αν σκοπεύεις να επενδύεις €50 ή €100 τον μήνα, αξίζει να ελέγξεις αν ο πάροχός σου προσφέρει πρόγραμμα τακτικών αγορών (savings plan) και με τι χρεώσεις. Εναλλακτικά, μπορείς να αγοράζεις λιγότερο συχνά με μεγαλύτερο ποσό. Δες και τον <a href="ependyseis-gia-arxarious.html#paroxos">οδηγό για αρχάριους</a> για το πώς διαβάζεις τις χρεώσεις ενός broker.</p>
+
+<div class="cta-inline">
+<p class="cta-inline-title">Εξασκήσου στην αξιολόγηση ETF χωρίς να επενδύσεις χρήματα</p>
+<p>Στο SteadFolio μπορείς να εξετάσεις κόστος, συμμετοχές και διασπορά με τον <strong>ETF Evaluator</strong>. Η Sofia, ο AI coach της εφαρμογής, σου εξηγεί τι σημαίνει κάθε στοιχείο. Η εφαρμογή είναι εκπαιδευτική και δεν προτείνει συγκεκριμένα προϊόντα. Η βασική σύγκριση ETF περιλαμβάνεται στο δωρεάν πρόγραμμα.</p>
+<a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_etf_inline">Μάθε πώς να αξιολογείς ένα ETF →</a>
+</div>
+
+<h2 id="checklist">Checklist: τι να ελέγξεις πριν επιλέξεις ETF</h2>
+<p>Δεν χρειάζεται να «βρεις το καλύτερο ETF». Χρειάζεται να καταλαβαίνεις τι αγοράζεις. Οι παρακάτω ερωτήσεις απαντώνται συνήθως από το <strong>factsheet</strong> και το <strong>KID</strong> του κεφαλαίου:</p>
+<ul class="checklist">
+<li><strong>Ποιον δείκτη ακολουθεί;</strong> Πόσες εταιρείες, ποιες χώρες, ποιους κλάδους περιλαμβάνει;</li>
+<li><strong>Είναι UCITS;</strong> Ποιος είναι ο ISIN και ποια η χώρα έδρας;</li>
+<li><strong>Πόσο είναι το TER;</strong> Και πόσο απέκλινε ιστορικά από τον δείκτη (tracking difference);</li>
+<li><strong>Πόσο μεγάλο είναι το κεφάλαιο;</strong> Πολύ μικρά κεφάλαια έχουν μεγαλύτερη πιθανότητα να κλείσουν ή να συγχωνευθούν.</li>
+<li><strong>Πώς αναπαράγει τον δείκτη;</strong> Με φυσική αγορά των τίτλων ή με συνθετικό τρόπο (swap);</li>
+<li><strong>Accumulating ή distributing;</strong></li>
+<li><strong>Σε ποιο χρηματιστήριο και νόμισμα θα το αγοράσεις;</strong> Θα πληρώσεις μετατροπή συναλλάγματος;</li>
+<li><strong>Ποιος είναι ο δείκτης κινδύνου (SRI 1–7) στο KID;</strong> Είσαι άνετος με διακυμάνσεις αυτού του μεγέθους;</li>
+<li><strong>Ταιριάζει με τον χρονικό σου ορίζοντα;</strong> Θα χρειαστείς αυτά τα χρήματα τα επόμενα χρόνια;</li>
+<li><strong>Μπορείς να το εξηγήσεις σε μία πρόταση;</strong> Αν όχι, ίσως δεν είναι ακόμα η ώρα.</li>
+</ul>
+<p>Για μια πιο αναλυτική διαδικασία βήμα προς βήμα, δες τον αγγλόφωνο οδηγό μας <a href="../blog-how-to-evaluate-etf.html">How to Evaluate an ETF</a>.</p>
+
+<h2 id="faq">Συχνές ερωτήσεις</h2>
+<div class="faq-item">
+<h3>Τι είναι το ETF με απλά λόγια;</h3>
+<p>Ένα «καλάθι» με πολλές μετοχές ή ομόλογα, που αγοράζεις και πουλάς στο χρηματιστήριο σαν μία μετοχή. Με ένα μερίδιο αποκτάς έκθεση σε όλους τους τίτλους του καλαθιού.</p>
+</div>
+<div class="faq-item">
+<h3>Μπορώ να αγοράσω ETF από την Ελλάδα;</h3>
+<p>Ναι, μέσω μιας εποπτευόμενης επιχείρησης παροχής επενδυτικών υπηρεσιών που προσφέρει πρόσβαση σε χρηματιστήρια όπου διαπραγματεύονται ETF. Ως ιδιώτης επενδυτής στην ΕΕ θα επιλέγεις συνήθως UCITS ETF. Πριν ανοίξεις λογαριασμό, έλεγξε ότι ο πάροχος έχει άδεια από την Επιτροπή Κεφαλαιαγοράς ή από εποπτική αρχή άλλου κράτους-μέλους της ΕΕ.</p>
+</div>
+<div class="faq-item">
+<h3>Είναι τα ETF κατάλληλα για αρχάριους;</h3>
+<p>Πολλοί αρχάριοι ξεκινούν με ευρέα ETF δεικτών επειδή προσφέρουν διασπορά και σχετικά απλή δομή. Το αν ένα συγκεκριμένο ETF ταιριάζει σε εσένα εξαρτάται από τους στόχους, τον χρονικό ορίζοντα και την ανοχή σου στον κίνδυνο. Τα ETF με μόχλευση και τα αντίστροφα ETF γενικά δεν είναι κατάλληλα για να μάθεις τα βασικά.</p>
+</div>
+<div class="faq-item">
+<h3>Μπορώ να χάσω χρήματα με ένα ETF;</h3>
+<p>Ναι. Η αξία ενός ETF ακολουθεί την αξία όσων κατέχει. Ένα μετοχικό ETF μπορεί να χάσει σημαντικό μέρος της αξίας του σε μια πτωτική αγορά και να χρειαστεί χρόνια για να ανακάμψει, αν ανακάμψει.</p>
+</div>
+<div class="faq-item">
+<h3>Ποια η διαφορά ETF και αμοιβαίου κεφαλαίου;</h3>
+<p>Και τα δύο είναι συλλογικά επενδυτικά κεφάλαια. Το ETF διαπραγματεύεται στο χρηματιστήριο σε συνεχή τιμή κατά τη διάρκεια της συνεδρίασης. Ένα παραδοσιακό αμοιβαίο κεφάλαιο αγοράζεται ή εξαγοράζεται συνήθως μία φορά την ημέρα, στην καθαρή αξία μεριδίου, μέσω του διαχειριστή ή διανομέα. Τα περισσότερα ETF ακολουθούν δείκτες, ενώ πολλά αμοιβαία κεφάλαια είναι ενεργά διαχειριζόμενα, με συνήθως υψηλότερο κόστος.</p>
+</div>
+<div class="faq-item">
+<h3>Χρειάζομαι πολλά χρήματα για να αγοράσω ETF;</h3>
+<p>Όχι απαραίτητα. Η τιμή ενός μεριδίου μπορεί να είναι από λίγα ευρώ έως μερικές εκατοντάδες, και ορισμένοι πάροχοι προσφέρουν κλασματικά μερίδια ή προγράμματα τακτικών αγορών με μικρά ποσά. Πρόσεξε όμως το βάρος της προμήθειας στα μικρά ποσά (δες το παράδειγμα παραπάνω).</p>
+</div>
+
+
+<h2 id="sxetikoi-odigoi">Συνέχισε με</h2>
+<div class="related">
+<a class="related-card" href="ti-einai-sp-500.html">S&amp;P 500: τι είναι και πώς επενδύεις μέσω ETF<span>Ο πιο γνωστός δείκτης, οι κίνδυνοι συγκέντρωσης και νομίσματος.</span></a>
+<a class="related-card" href="ependyseis-gia-arxarious.html">Επενδύσεις για αρχάριους: βήμα βήμα<span>Από το ταμείο έκτακτης ανάγκης έως την πρώτη επένδυση.</span></a>
+</div>
+
+<div class="sources">
+<h2 id="piges">Πηγές και τρόπος σύνταξης</h2>
+<p class="review-note">Ο οδηγός συντάχθηκε από την ομάδα του SteadFolio με βάση επίσημες πηγές της ΕΕ, εποπτικών αρχών και παρόχων δεικτών. Ελέγχθηκε για τελευταία φορά στις <time datetime="2026-10-06">6 Οκτωβρίου 2026</time>. Στοιχεία που αλλάζουν συχνά (χρεώσεις, όρια, συνθέσεις δεικτών) καλό είναι να τα επιβεβαιώνεις πάντα στην τρέχουσα επίσημη πηγή.</p>
+<ul>
+<li><a href="https://eur-lex.europa.eu/legal-content/EL/TXT/?uri=CELEX:32009L0065" target="_blank" rel="noopener">Ευρωπαϊκή Ένωση, Οδηγία 2009/65/ΕΚ για τους ΟΣΕΚΑ (UCITS), EUR-Lex</a></li>
+<li><a href="https://eur-lex.europa.eu/legal-content/EL/TXT/?uri=CELEX:32014R1286" target="_blank" rel="noopener">Ευρωπαϊκή Ένωση, Κανονισμός (ΕΕ) 1286/2014 για τα έγγραφα βασικών πληροφοριών (PRIIPs KID), EUR-Lex</a></li>
+<li><a href="https://registers.esma.europa.eu/" target="_blank" rel="noopener">ESMA, Μητρώα εποπτευόμενων εταιρειών και κεφαλαίων</a></li>
+<li><a href="https://www.hcmc.gr/" target="_blank" rel="noopener">Επιτροπή Κεφαλαιαγοράς (εποπτευόμενες εταιρείες, ανακοινώσεις και προειδοποιήσεις για επενδυτές)</a></li>
+</ul>
+<p><strong>Σημαντική σημείωση:</strong> Το περιεχόμενο αυτής της σελίδας είναι αποκλειστικά εκπαιδευτικό. Δεν αποτελεί επενδυτική, φορολογική ή νομική συμβουλή, ούτε σύσταση για αγορά ή πώληση οποιουδήποτε χρηματοοικονομικού μέσου. Οι επενδύσεις ενέχουν κίνδυνο απώλειας κεφαλαίου. Οι προηγούμενες αποδόσεις δεν αποτελούν ένδειξη μελλοντικών αποδόσεων. Τα αριθμητικά παραδείγματα βασίζονται σε υποθετικές παραδοχές.</p>
+</div>
+</div>
+</section>
+</article>
+
+<div class="trust-strip">
+<div class="wrap trust-row">
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/></svg> Εκπαιδευτικό περιεχόμενο, όχι επενδυτική συμβουλή</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12l6 6 10-14"/></svg> Χωρίς συστάσεις για προϊόντα</span>
+<span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg> Χωρίς υποσχέσεις αποδόσεων</span>
+</div>
+</div>
+
+<section class="final-cta">
+<div class="wrap">
+<h2>Μάθε να αξιολογείς ETF πριν βάλεις χρήματα</h2>
+<p>Ξεκίνα δωρεάν: δομημένα μαθήματα, ETF Evaluator και η Sofia να σου εξηγεί κάθε όρο. Χωρίς πιστωτική κάρτα, χωρίς συστάσεις αγοράς.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary" data-sf-cta="el_etf_final">Ξεκίνα δωρεάν να μαθαίνεις επενδύσεις →</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap footer-row">
+<span>© 2026 SteadFolio. Εκπαιδευτικό περιεχόμενο, όχι επενδυτική συμβουλή.</span>
+<div class="footer-social">
+<a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="Το SteadFolio στο Facebook">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
+</a>
+<a href="https://www.instagram.com/steadfolio/" target="_blank" rel="noopener" aria-label="Το SteadFolio στο Instagram">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+</a>
+<a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="Το SteadFolio στο LinkedIn">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="Κριτικές για το SteadFolio στο Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
+</a>
+</div>
+<div class="footer-links">
+<a href="./">Οδηγοί στα ελληνικά</a>
+<a href="../blog.html" lang="en">Blog (EN)</a>
+<a href="../about.html">Σχετικά (EN)</a>
+<a href="../terms.html">Όροι (EN)</a>
+<a href="../privacy.html">Απόρρητο (EN)</a>
+<a href="../cookie-policy.html">Cookies (EN)</a>
+</div>
+</div>
+</footer>
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+<script src="/js/cta-tracking.js" defer></script>
+<script src="/js/utm-forward.js" defer></script>
+</body>
+</html>
