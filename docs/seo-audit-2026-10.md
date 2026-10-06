@@ -41,7 +41,7 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 | 1 | Broker profiles had no static inbound links; they were reachable only through `reviewUrl` links injected by JS | all 10 `/brokers/*.html` | High | Static link graph: 0 inbound links each | Cross-links on every profile, static summary table, "Choose a Broker" path | **Fixed** (now 9–11 static inbound links each) |
 | 2 | Comparison content was JS-only. Static HTML had the filter chips and headings but no broker data. FAQPage schema described questions not visible on the page | `/broker-comparison.html` | High | ~238 words of static text; FAQ questions absent from visible text | Pre-rendered cards (identical to JS output), static summary table re-rendered from `brokers[]`, guide, visible FAQ | **Fixed** |
 | 3 | Index fund guide was thin (~490 words, "2 min read"), with no canonical, schema or sources. Its H1 said "Why Do People **Recommend** Them?", at odds with the no-recommendation positioning | `/blog-what-is-index-fund.html` | High (priority page) | Page source | Full rewrite (see B) | **Fixed** |
-| 4 | Broker fees out of date. Revolut (Greece) now offers 0 commission-free orders on Standard and Plus, 5 on Premium and 10 on Metal/Ultra. Revolut's investing entity was misattributed to Revolut Bank UAB. The Scalable Capital profile omitted €0 PRIME ETF purchases of €250+ on the FREE plan | `/broker-comparison.html` (data, static cards, summary), `/brokers/revolut.html`, `/brokers/scalable-capital.html`, `/brokers/trade-republic.html` (cross-reference) | High (YMYL accuracy) | Figures supplied by the site owner and matched by search-index snippets of help.revolut.com (en-GR) and de.scalable.capital/en/trading-costs. Official sites still blocked here, so not read first-hand | Corrected (round 2, 2026-10-06). Revolut commission beyond the allowance and paid-plan prices could not be confirmed, so they are marked "Check source" instead of showing old figures. No "verified" date moved; changed fields are labelled "updated 2026-10-06" | **Fixed; confirm before merge** |
+| 4 | Broker fees out of date. Revolut (Greece): allowances, commission beyond them, investment-plan exception, plan prices and investing entity were wrong or missing, and "0.45%+" FX was unsupported. Scalable Capital: €0 PRIME ETF purchase terms were not tied to EIX, and Xetra/gettex fees were missing | `/broker-comparison.html` (data, static cards, summary, notes), `/brokers/revolut.html`, `/brokers/scalable-capital.html`, `/brokers/trade-republic.html` (cross-reference) | Round 3 figures verified by the site owner against official Greek Revolut pages and Scalable Capital's cost schedule (2026-10-06). The agent's environment could not open those sites; official-domain search results matched, and confirmed Ultra €60 is introductory | Corrected in rounds 2–3. Verification dates moved only for the confirmed figures. FX is now plan-dependent wording without a percentage. Revolut is tagged for automatic investing (investment plans) | **Fixed** |
 | 5 | 64 indexable pages had no canonical tag | see inventory | Medium | Parsed `<head>` | Self-referencing canonical added | **Fixed** |
 | 6 | FAQPage JSON-LD did not match visible FAQ. Four articles carried the "Is investing gambling?" questions copied from another page, and the gambling article's 4th question differed from its visible FAQ | `/blog-betting-20-vs-investing-20.html`, `/blog-investing-50-a-month.html`, `/blog-psychology-quick-money.html`, `/blog-waiting-perfect-time-invest.html`, `/blog-is-investing-gambling.html` | Medium | Schema vs visible-text comparison | Schema rebuilt from each page's visible FAQ | **Fixed** |
 | 7 | Six published, linked articles missing from sitemap.xml | `/blog-how-to-buy-your-first-etf.html`, `/blog-is-investing-gambling.html`, `/blog-investing-50-a-month.html`, `/blog-betting-20-vs-investing-20.html`, `/blog-psychology-quick-money.html`, `/blog-waiting-perfect-time-invest.html` | Medium | Sitemap vs files | Added | **Fixed** |
@@ -230,12 +230,10 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 **P1: accuracy and duplicates**
 
 1. **Re-verify all broker figures** first-hand against official pages, then update `LAST_VERIFIED` in `broker-comparison.html` and each profile's "last verified" line. For Revolut and Scalable Capital, confirm:
-   - the round-2 corrections,
-   - the Revolut commission beyond the allowance (search snippets show €1 per order in Greece),
-   - Revolut paid-plan prices,
-   - Scalable Capital venue fees (snippets mention €1.99 on Xetra, with gettex following from 2026-09-01).
+   - the remaining Aug-11 figures (Scalable PRIME+ price and EIX €0.99; Revolut fractional, inactivity and withdrawal fees),
+   - the other 8 brokers.
 
-   Replace each "Check source" with a figure only once it has been confirmed.
+   Revolut and Scalable trading costs were re-verified on 2026-10-06.
 2. ~~Legacy root broker duplicates~~: done in round 2 (A2 #8).
 3. **Real author attribution:** name the founder or authors on About and article bylines, with `Person` schema. Only use true, verifiable details.
 
@@ -263,9 +261,8 @@ There was also no per-URL Search Console data, so the GSC figures in the brief w
 **Needs human confirmation (TODO)**
 
 - [ ] Author or founder name, role and any relevant (real) credentials, for About, bylines and schema.
-- [ ] Round-2 broker corrections (Revolut allowances and entity, Scalable PRIME ETF terms): confirm first-hand on the official pages.
-- [ ] Revolut commission beyond the allowance, and paid-plan prices (currently "Check source").
-- [ ] Scalable Capital venue-specific fees (Xetra/gettex).
+- [x] Revolut and Scalable Capital trading costs and plan prices verified (2026-10-06, round 3).
+- [ ] Revolut's currency exchange terms for your plan. The page uses plan-dependent wording taken from search results for the official Greek help centre; consider adding figures once confirmed first-hand.
 - [ ] Whether `steadfolio-icon-1080.png` exists anywhere. If so, add it to the repo and use it as the Organization logo.
 - [ ] That the ETF Evaluator is still included in the free plan (taken from the Greek guide reviewed on 2026-10-06).
 
