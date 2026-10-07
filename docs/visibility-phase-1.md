@@ -1,13 +1,33 @@
 # Visibility Phase 1: decisions and open items
 
-Prepared 2026-10-07 on top of `main` after PRs #13 and #14. Internal; `docs/` is excluded from deploys.
+Prepared 2026-10-07 on top of `main` after PRs #13 and #14, updated by the remediation pass the same day. Internal; `docs/` is excluded from deploys.
+
+## What matters, and what is only housekeeping
+
+**Important / meaningful (these are the point of Phase 1)**
+
+- Product truth: the public site describes only what the product does today (Free) and labels SteadFolio+ and broker connection as planned.
+- Accurate, consistent entity definition across homepage, About, FAQ, pricing, meta/OG, JSON-LD and `llms.txt`.
+- Author accountability: articles are published by "The SteadFolio Team"; About names the founder/editor, states the operator per the Terms, and explains what a review date means.
+- Source quality and honest review/update dates (no `datePublished`, review dates only where claims were checked).
+- Article and BreadcrumbList structured data that matches the visible page.
+- Canonicals, crawlability, indexability, sitemap accuracy.
+- Internal linking (audited only in this pass, see below).
+- Authoritative references on factual claims (EUR-Lex, ECB, Eurostat, NBER, official broker pages).
+- Useful original content (nothing new was added in Phase 1).
+
+**Useful semantic housekeeping, not major Google visibility levers**
+
+- **FAQPage schema.** Kept because it matches the visible FAQ text and costs nothing. It is not a current Google rich-result opportunity: Google limited FAQ rich results to well-known government and health sites in 2023. Do not expect search appearance or ranking gains from it. `scripts/check_site.py` checks that every FAQ question in the schema is visible on the page.
+- **`llms.txt`.** Kept as a plain-text site guide. It is experimental and ecosystem-specific: it is not a documented Google ranking factor, Google AI Overviews signal or proven GEO mechanism, and some AI tools may ignore it. It describes the site; it does not replace crawlable, well-sourced pages.
 
 ## Rules used
 
-- **Dates.** No `datePublished` anywhere: real publication dates are not recorded in the repo. "Last reviewed: October 7, 2026" and `dateModified: 2026-10-07` appear only on 13 articles whose claims were individually checked in this pass (arithmetic recomputed, or the claim confirmed against a primary source). The other 33 older articles carry no date. `about.html` says what a review date means.
-- **Authorship.** The repo names no person, so the author stays the organisation: "The SteadFolio Team" (the existing model on the reworked articles and the Greek pages). `about.html` states the operator as described in the Terms (an individual based in Greece). Naming a person is a decision for the owner.
-- **Sources.** Only primary or authoritative sources, only where they back a specific claim. The sandbox could not open EUR-Lex, ECB or ESMA directly; claims were confirmed through search results from the official domains, and URLs reuse patterns already on the site.
+- **Dates.** No `datePublished` anywhere: real publication dates are not recorded in the repo. "Last reviewed: October 7, 2026" and `dateModified: 2026-10-07` appear only on 13 articles whose claims were individually checked in this pass (arithmetic recomputed, or the claim confirmed against official-domain search results). The other 33 older articles carry no date. `about.html` says what a review date means.
+- **Authorship.** Article author stays the organisation, "The SteadFolio Team". `about.html` has a restrained founder/editor section (Andreas Broutas, Founder & Editor). No article carries a named personal reviewer, because no named human review has taken place.
+- **Sources.** Only primary or authoritative sources, only where they back a specific claim. The sandbox could not open EUR-Lex, ECB, ESMA, broker sites or Trustpilot directly; claims were confirmed through search results from the official domains, and the owner should spot-check the new links.
 - **Pricing.** SteadFolio+ is shown as planned and not purchasable, with no price. The planned €9.99 / €89.90 figures are deliberately not published.
+- **Structured data restraint.** No Review, AggregateRating, FinancialProduct, InvestmentOrDeposit, Person or third-party-rating markup. `founder` is not in the Organization JSON-LD because the homepage does not show it.
 
 ## Factual corrections made
 
@@ -22,13 +42,33 @@ Prepared 2026-10-07 on top of `main` after PRs #13 and #14. Internal; `docs/` is
 | `brokers/degiro.html` | `<title>` said "Trading 212" | Now "DEGIRO Review 2026..." |
 | `pricing.html`, `faq.html`, `journey.html`, `best-tools-to-learn-investing.html` | Stale Free/Plus and broker-sync claims | See the PR description |
 
-## Not changed, needs the owner
+## Remediation pass
 
-- Trading 212's and DEGIRO's "official source" links point at UK pages (Invest ISA/SIPP fee article; `degiro.com/uk`). Check they are the right regulatory entity for EU readers.
-- Trustpilot is in the Organization `sameAs`. Keep it only if that profile is claimed and live.
-- The Free list on `pricing.html` carries over Watchlist, Panic Mode, progress and streaks, ETF comparison and proactive-style features from the old page. Confirm they are still Free.
-- 33 older articles have no review date and 36 have no sources section. Many are conceptual, but statistics-bearing ones (S&P 500 history, bull/bear durations, lump sum vs DCA, REITs, pensions) need a human review against sources before they get a date.
+- **Broker sources.** DEGIRO now links its official Greek pages (`degiro.gr`: costs overview, ETF Core Selection, who supervises DEGIRO) instead of `degiro.com/uk`. The unsupported "restructured its fee model in October 2025" sentence was removed. Trading 212 no longer says "Invest and ISA accounts" (ISA is UK-only), links entity-specific official pages (supported countries, who regulates), notes that the fee article also covers UK ISA/SIPP products this page does not use, and says that Trading 212's supported-countries list places Greece with Trading 212 Markets Ltd (CySEC) while the entity depends on where the user registers.
+- **Founder / accountability.** New "Who is behind SteadFolio" section on `about.html`. No credentials, adviser or regulated status is claimed.
+- **Product-claim regression audit.** Two wording problems of our own were fixed on `pricing.html`: "limited daily quota" (the owner brief says only "limited quota") and "Personalized news for your holdings" (now "Personalized news").
+
+## Needs the owner
+
+- **Broker figures were not re-verified against the new Greek DEGIRO pages.** The "Last verified: August 11, 2026" date on the DEGIRO profile and comparison rows predates the source swap. Spot-check: stock commission "€2-4.90", FX 0.25%, "€2.50 per exchange" connectivity (the UK page describes it as a maximum of 0.25% of portfolio value, capped at €2.50), and the Core Selection fair-use rule (UK page: the €1 handling fee applies to the first trade per instrument per month; an opposite trade or one under 1,000 triggers an extra €2). Confirm the legal entity wording ("flatexDEGIRO Bank AG" on the page; search results show "SE").
+- **Trading 212 figures not re-verified for the Greek entity.** The 0.15% FX fee and €0 commission come from the fees article, which has per-entity sections. The profile lists four entities including "Trading 212 Ltd (FSC, Bulgaria)"; confirm that entity is still current.
+- **Free-plan wording to confirm against the app:** "Personalized news" (exact Free behaviour), "one financial goal with monthly check-ins", and the "What-If analysis against a benchmark" wording (the old page said one benchmark on Free).
+- **Trustpilot** remains in the Organization `sameAs`. The URL could not be opened from the sandbox and a search found no profile. By construction `trustpilot.com/review/steadfolio.eu` is keyed to the domain, so it cannot point at another company, but please confirm it exists. No rating data is used in markup.
 - Page-level OG images are the logo or an app screenshot; dedicated share images would help.
+- 33 older articles have no review date and 36 have no sources section. Statistics-bearing ones (S&P 500 history, bull/bear durations, lump sum vs DCA, REITs, pensions) need a human review against sources before they get a date.
+
+## Possible later improvement: `datePublished`
+
+First-commit dates from git span 2026-07-20 to 2026-08-21 and could be reconstructed per article. They are the date a file was first committed, not necessarily the date it was published, so confirm against Vercel deployment history before using them. Not applied.
+
+## Internal linking audit (no links added in the remediation pass)
+
+- 50 English articles; about 154 unique in-text article-to-article links (about 3.1 per article), about 246 including "Read next" and "Continue reading" boxes (about 4.9).
+- No article is a true orphan: every one is linked from the blog hub and the sitemap.
+- 13 articles have no in-text inbound link from another article. Four have no inbound link from any other article at all (near-orphans, linked only from the blog hub): `esg-sustainable-investing`, `how-to-research-an-investment`, `pension-retirement-accounts`, `what-is-a-reit`. Two more (`feeling-behind-on-investing`, `robo-advisors-vs-learning-yourself`) have a single "Read next" box link. The other seven are reached only through boxes.
+- Four articles have no in-text outbound article link: `how-markets-really-work`, `robo-advisors-vs-learning-yourself`, `understanding-fomo-investing`, `what-are-bonds`.
+- Poorly connected clusters: the behaviour/psychology set (about 9 articles, linked mainly by boxes), the "specific topics" set (ESG, pensions, REITs, crypto, robo-advisors), and the macro set (inflation, recession, bonds, liquidity). The ETF/UCITS/accumulating/broker cluster is well connected.
+- Design the link architecture separately, from user journeys and search intent.
 
 ## Check
 

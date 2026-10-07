@@ -14,6 +14,11 @@ Hard checks (exit code 1 on failure):
   - vercel.json redirect sources no longer exist as files, destinations do
   - FAQ pages: number of FAQPage questions equals number of visible questions
   - hreflang pairs are reciprocal
+  - product-truth lint: no upgrade/checkout/"cancel anytime"/"unlimited Sofia"
+    language, broker connection only ever described as planned or unavailable,
+    SteadFolio brand casing, no credentials on the About page
+  - structured-data restraint: no Review/AggregateRating/FinancialProduct/
+    InvestmentOrDeposit/Person types and no datePublished on English pages
 
 --report additionally prints the soft reports (trust coverage, product-claim
 and brand greps) used in the visibility review.
@@ -235,6 +240,8 @@ def main():
         if not os.path.exists(d):
             err(f"vercel.json: redirect destination {dst} missing")
 
+    lint(parsed)
+
     print(f"Checked {len(allp)} pages, {len(locs)} sitemap URLs, {len(vj.get('redirects', []))} redirects.")
 
     if report:
@@ -246,6 +253,53 @@ def main():
             print(" -", e)
         sys.exit(1)
     print("All hard checks passed.")
+
+
+FORBIDDEN_TEXT = [
+    r"Upgrade to", r"Upgrade now", r"Unlimited Sofia", r"[Uu]nlimited (portfolio )?screenshot",
+    r"[Cc]ancel anytime", r"[Cc]heckout", r"Buy SteadFolio\+", r"Subscribe now", r"Steadfolio", r"STEADFOLIO",
+    r"[Rr]eviewed by",
+]
+FORBIDDEN_LD_TYPES = {"Review", "AggregateRating", "Rating", "FinancialProduct", "InvestmentOrDeposit", "Person"}
+CREDENTIALS = r"\b(CFA|CFP|MBA|MSc|PhD|certified|chartered|licensed|FCA-authorised|registered adviser|investment professional)\b"
+PLANNED = r"planned|not (yet )?available|isn't available|doesn't currently|not currently|no way|coming soon|still being built|building toward|connecting a broker so"
+
+
+def visible_text(raw):
+    body = re.sub(r"<script.*?</script>|<style.*?</style>|<svg.*?</svg>", " ", raw, flags=re.S)
+    return norm(html.unescape(re.sub(r"<[^>]+>", " ", body)))
+
+
+def lint(parsed):
+    for p, (raw, h) in parsed.items():
+        text = visible_text(raw)
+        for pat in FORBIDDEN_TEXT:
+            if re.search(pat, text):
+                err(f"{p}: forbidden phrase /{pat}/")
+        # broker connection must always be qualified as planned / unavailable
+        for m in re.finditer(r"[^.]*\b(broker (connection|sync)|connect(ing)? (a|your) broker)\b[^.]*\.", text, re.I):
+            s = m.group(0)
+            if not re.search(PLANNED, s, re.I) and not re.search(r"no requirement|don't", s, re.I):
+                err(f"{p}: broker connection not qualified as planned/unavailable: {s.strip()[:120]!r}")
+        # SteadFolio+ must never be presented as purchasable
+        for m in re.finditer(r"[^.]*SteadFolio\+[^.]*\.", text):
+            s = m.group(0)
+            if re.search(r"\b(buy|purchase|subscribe|sign up for)\b", s, re.I) and not re.search(
+                    r"\b(can't|cannot|no way|not|nothing|never|before|no)\b", s, re.I):
+                err(f"{p}: SteadFolio+ may read as purchasable: {s.strip()[:120]!r}")
+        for block in h.ld:
+            j = json.loads(block)
+            for node in (j if isinstance(j, list) else [j]):
+                t = node.get("@type")
+                for ty in (t if isinstance(t, list) else [t]):
+                    if ty in FORBIDDEN_LD_TYPES:
+                        err(f"{p}: restricted JSON-LD type {ty}")
+        # Greek guides were created on a recorded date (2026-10-06, see git); English pages have none
+        if "datePublished" in raw and not p.startswith("el/"):
+            err(f"{p}: datePublished present (publication dates are not recorded)")
+    about = visible_text(parsed["about.html"][0])
+    if re.search(CREDENTIALS, about):
+        err("about.html: credential-like wording found")
 
 
 def soft_reports(parsed):
