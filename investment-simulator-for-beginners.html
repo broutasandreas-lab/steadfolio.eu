@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/js/cookie-consent.js" data-clarity="1" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Simulator for Beginners | SteadFolio</title>
+<meta name="description" content="Practice long-term investing with virtual money: Paper Trading at real market prices, DCA and compounding with assumptions you choose, portfolio allocation and historical crisis scenarios. Free to start. Educational only.">
+<link rel="canonical" href="https://steadfolio.eu/investment-simulator-for-beginners.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SteadFolio">
+<meta property="og:title" content="Investment Simulator for Beginners">
+<meta property="og:description" content="Beginner-friendly investing simulators: Paper Trading, DCA and compounding, portfolio allocation and historical crises, using virtual money. Free to start. Educational only.">
+<meta property="og:url" content="https://steadfolio.eu/investment-simulator-for-beginners.html">
+<meta property="og:image" content="https://steadfolio.eu/screenshots/screenshot-paper-trading.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://steadfolio.eu/investment-simulator-for-beginners.html",
+  "url": "https://steadfolio.eu/investment-simulator-for-beginners.html",
+  "name": "Investment Simulator for Beginners",
+  "description": "Practice long-term investing with virtual money: Paper Trading at real market prices, DCA and compounding with assumptions you choose, portfolio allocation and historical crisis scenarios. Free to start. Educational only.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://steadfolio.eu/#website" },
+  "publisher": { "@id": "https://steadfolio.eu/#organization" },
+  "about": { "@id": "https://steadfolio.eu/#app" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SteadFolio", "item": "https://steadfolio.eu/" },
+    { "@type": "ListItem", "position": 2, "name": "Investment simulator for beginners", "item": "https://steadfolio.eu/investment-simulator-for-beginners.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an investment simulator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An investment simulator lets you practice investing decisions with virtual money instead of real money. In SteadFolio, depending on the tool, practice uses virtual money, real market prices, historical market events or assumptions you choose: Paper Trading, a DCA and compounding simulator, a Portfolio Simulator and historical crisis scenarios. They are built to teach how long-term investing works, not to predict returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Paper Trading the same as real investing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Paper Trading uses €10,000 in virtual money at real market prices, so no real order is placed and no real money is gained or lost. It is useful for learning how buying, selling and holding work, but it cannot reproduce the emotional experience of watching real savings lose value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use SteadFolio without investing real money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can learn and practice without connecting a brokerage account or depositing any money. SteadFolio does not execute real investments; if you later invest for real, you do that with a broker you choose, and you can track the holdings in SteadFolio manually."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SteadFolio designed for trading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. SteadFolio is built for learning and practicing long-term investing, not day trading. It does not offer technical-analysis or day-trading tools, stock picks or trading signals. Paper Trading actively encourages holding positions rather than quick in-and-out trades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the investment simulator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Paper Trading, the DCA Simulator, the Portfolio Simulator and the 2008 financial crisis and COVID-19 (2020) historical scenarios are part of the free plan today, with no credit card. SteadFolio+ is a planned paid tier that is not available yet and nothing needs to be bought."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<style>
+:root {
+--bg: #070b10; --bg-2: #090f16; --card: #0d1620; --card-hover: #101c28;
+--border: #1c2b3a; --border-soft: #142330; --teal: #22c58b; --teal-bright: #34d399;
+--teal-dim: #17442f; --text: #eef4f1; --text-dim: #9fb3ad; --text-muted: #56685f;
+--font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif; --font-mono: 'IBM Plex Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6;
+background-image: radial-gradient(ellipse 900px 500px at 15% -5%, rgba(34,197,139,0.10), transparent), radial-gradient(ellipse 700px 500px at 90% 15%, rgba(34,197,139,0.06), transparent); }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(7,11,16,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
+nav.wrap { max-width: 1500px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 32px; font-size: 14.5px; color: var(--text-dim); }
+.nav-links a { transition: color 0.15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a.active { color: var(--teal-bright); }
+.nav-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 14.5px; }
+.nav-mobile-hide { display: flex; }
+@media (max-width: 1220px) { .nav-mobile-hide { display: none; } }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -8px -8px 0; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; }
+@media (max-width: 1220px) { .nav-toggle { display: flex; } }
+.mobile-nav { display: none; flex-direction: column; padding: 4px 32px 18px; border-top: 1px solid var(--border-soft); background: var(--bg); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 13px 0; font-size: 15px; color: var(--text-dim); border-bottom: 1px solid var(--border-soft); }
+.mobile-nav a:last-child { border-bottom: none; }
+
+section { padding: 60px 0; }
+.kicker { font-family: var(--font-mono); font-size: 14.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 46px); line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3.2vw, 30px); letter-spacing: -0.015em; color: #fff; }
+.page-hero { padding: 60px 0 8px; text-align: center; }
+.page-hero p { max-width: 620px; margin: 16px auto 0; color: var(--text-dim); font-size: 17px; }
+
+.page-hero p.hero-link { font-size: 15px; margin-top: 12px; }
+.page-hero p.hero-link a { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Journey timeline */
+.journey { max-width: 780px; margin: 0 auto; position: relative; }
+.stage { position: relative; padding: 0 0 64px 56px; border-left: 2px dashed var(--border); margin-left: 20px; }
+.stage:last-child { border-left: 2px dashed transparent; padding-bottom: 0; }
+.stage-num { position: absolute; left: -21px; top: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--card); border: 2px solid var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: var(--teal-bright); font-size: 16px; }
+.stage-label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 8px; }
+.stage h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 12px; }
+.stage > p { color: var(--text-dim); font-size: 16px; margin-bottom: 16px; }
+.stage-tools { list-style: none; margin: 16px 0; display: grid; gap: 10px; }
+.stage-tools li { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 14.5px; color: var(--text-dim); }
+.stage-tools li strong { color: var(--text); }
+.connection { background: var(--bg-2); border: 1px solid var(--border-soft); border-left: 3px solid var(--teal); border-radius: 10px; padding: 16px 20px; margin-top: 18px; font-size: 14.5px; color: var(--text-dim); }
+.stage-screenshot { margin-top: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.stage-screenshot .screenshot-topbar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); }
+.stage-screenshot .screenshot-topbar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.stage-screenshot img { display: block; width: 100%; height: auto; }
+.connection strong { color: var(--teal-bright); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+
+.loop-note { text-align: center; max-width: 560px; margin: 0 auto 60px; }
+.loop-note p { color: var(--text-dim); font-size: 15.5px; }
+
+.profile-box { max-width: 780px; margin: 60px auto 0; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; position: relative; overflow: hidden; }
+.profile-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 420px 260px at 50% 0%, rgba(34,197,139,0.12), transparent); pointer-events: none; }
+.profile-box h2 { position: relative; text-align: center; }
+.profile-box ul { position: relative; list-style: none; margin: 24px auto 0; max-width: 480px; }
+.profile-box li { display: flex; gap: 10px; padding: 8px 0; font-size: 15px; color: var(--text-dim); }
+.profile-box li svg { flex-shrink: 0; color: var(--teal-bright); margin-top: 3px; }
+.profile-box .companion-line { position: relative; text-align: center; margin-top: 24px; color: var(--text-dim); font-size: 15px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.profile-box .companion-line strong { color: var(--teal-bright); }
+
+.not-box { max-width: 780px; margin: 40px auto 0; }
+.not-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media (max-width: 620px) { .not-grid { grid-template-columns: 1fr; } }
+.not-item { background: var(--bg-2); border: 1px solid var(--border-soft); border-radius: 12px; padding: 20px 22px; font-size: 14.5px; color: var(--text-dim); }
+.not-item strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+.trust-strip { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-2); padding: 26px 0; margin-top: 60px; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 15px; color: var(--text-dim); }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row svg { flex-shrink: 0; color: var(--teal); }
+
+.final-cta { text-align: center; }
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #06231a; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-bright); transform: translateY(-2px); }
+
+footer { border-top: 1px solid var(--border-soft); padding: 40px 0; opacity: 0.62; transition: opacity 0.25s; }
+footer:hover { opacity: 1; }
+.footer-row { max-width: 1320px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13.5px; color: var(--text-muted); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.footer-links a { white-space: nowrap; }
+.footer-links a:hover { color: var(--text-dim); }
+.footer-social { display: flex; align-items: center; gap: 14px; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); color: var(--text-dim); transition: color 0.15s, border-color 0.15s; }
+.footer-social a:hover { color: var(--teal-bright); border-color: var(--teal); }
+
+/* Simulator page additions */
+.page-hero .hero-ctas { margin-top: 24px; }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); color: var(--text); font-weight: 500; font-size: 15px; padding: 13px 24px; border-radius: 10px; transition: border-color 0.15s, color 0.15s; }
+.btn-secondary:hover { border-color: var(--teal); color: var(--teal-bright); }
+.answer-box { max-width: 780px; margin: 36px auto 0; background: var(--card); border: 1px solid var(--teal-dim); border-radius: 14px; padding: 22px 26px; }
+.answer-box .label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 8px; }
+.answer-box p { color: var(--text-dim); font-size: 16px; }
+.answer-box p + p { margin-top: 10px; }
+.prose { max-width: 780px; margin: 0 auto; }
+.wrap.prose { max-width: 844px; }
+.prose h2 { margin-bottom: 16px; }
+.prose p { color: var(--text-dim); font-size: 16.5px; margin-bottom: 16px; }
+.prose p strong { color: var(--text); }
+.prose a, .sim-card a, .faq-item a, .fine-print a { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 2px; }
+.sim-list { max-width: 780px; margin: 28px auto 0; display: grid; gap: 22px; }
+.sim-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.sim-card .stage-label { margin-bottom: 6px; }
+.sim-card h3 { font-family: var(--font-display); font-size: 21px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+.sim-card p { color: var(--text-dim); font-size: 15.5px; margin-bottom: 12px; }
+.sim-card .teaches { background: var(--bg-2); border: 1px solid var(--border-soft); border-left: 3px solid var(--teal); border-radius: 10px; padding: 12px 16px; font-size: 14.5px; color: var(--text-dim); margin-top: 14px; margin-bottom: 0; }
+.sim-card .teaches strong { color: var(--teal-bright); }
+.sim-card .stage-screenshot { margin-top: 20px; }
+.sim-card .stage-screenshot img { max-width: 100%; }
+.can-grid { max-width: 780px; margin: 24px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 700px) { .can-grid { grid-template-columns: 1fr; } .sim-card { padding: 22px 18px; } }
+.can-col { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; }
+.can-col h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 12px; }
+.can-col.cant { border-color: var(--border-soft); background: var(--bg-2); }
+.can-col ul { list-style: none; }
+.can-col li { font-size: 14.5px; color: var(--text-dim); padding: 7px 0 7px 22px; position: relative; }
+.can-col li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.can-col.cant li::before { background: var(--text-muted); }
+.can-col li strong { color: var(--text); }
+.fit-grid { max-width: 780px; margin: 24px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 620px) { .fit-grid { grid-template-columns: 1fr; } }
+.faq-list { max-width: 780px; margin: 24px auto 0; }
+.faq-item { border-top: 1px solid var(--border-soft); padding: 20px 0; }
+.faq-item:last-child { border-bottom: 1px solid var(--border-soft); }
+.faq-item h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.faq-item p { color: var(--text-dim); font-size: 15.5px; }
+.fine-print { max-width: 780px; margin: 0 auto; border: 1px solid var(--border-soft); border-radius: 12px; padding: 18px 22px; font-size: 14px; color: var(--text-muted); background: var(--bg-2); }
+.fine-print strong { color: var(--text-dim); }
+.related-row { max-width: 780px; margin: 28px auto 0; display: flex; flex-wrap: wrap; gap: 12px; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a href="/" class="brand"><span class="brand-mark"><img src="logo-icon.png" alt="SteadFolio logo"></span>SteadFolio</a>
+<div class="nav-links nav-mobile-hide">
+<a href="/#how">How it works</a>
+<a href="/#features">Features</a>
+<a href="/#mission">Why not just AI?</a>
+<a href="journey.html">Your Journey</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+<div class="nav-right">
+<a href="https://app.steadfolio.eu/login" class="nav-cta">Login</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+<a href="/#how">How it works</a>
+<a href="/#features">Features</a>
+<a href="/#mission">Why not just AI?</a>
+<a href="journey.html">Your Journey</a>
+<a href="pricing.html">Pricing</a>
+<a href="broker-comparison.html">Compare Brokers</a>
+<a href="best-tools-to-learn-investing.html">Compare Learning Tools</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+</div>
+</header>
+
+<main>
+<section class="page-hero">
+<div class="wrap">
+<div class="kicker">Investing simulators</div>
+<h1>Practice investing before you risk real money.</h1>
+<p>SteadFolio's investment simulators let a beginner practice long-term investing with virtual money: Paper Trading at real market prices, DCA and compounding simulation with assumptions you choose, portfolio allocation, and historical market crises.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start practicing free →</a>
+<a href="journey.html" class="btn-secondary">See the full learning journey</a>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0; padding-bottom:20px;">
+<div class="wrap">
+<div class="answer-box">
+<div class="label">In short</div>
+<p>SteadFolio is a guided investment education platform for beginner and long-term investors, with particular relevance for people investing in Europe. Its practice tools use virtual money, so nothing real is at stake, and they are free today.</p>
+<p>It is built for learning and practicing long-term investing, not day trading. It teaches and lets you practice; it does not execute real investments.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap prose">
+<h2>Why practice before investing real money?</h2>
+<p>Reading about investing and actually doing it are different skills. Most beginners meet their first real market drop with real savings on the line, which is an expensive way to find out how they react.</p>
+<p>A simulator moves that first experience somewhere safe. You can see how an order works, what happens to a position when prices move, how regular monthly investing builds up over years, and how a portfolio behaves when markets fall, all without putting savings at stake. Mistakes made in practice cost nothing and are often the most useful part.</p>
+<p>The aim is not to find a winning trick. It is to arrive at your first real investment already familiar with the mechanics and with your own reactions.</p>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap prose">
+<h2>Investing practice, not a trading game</h2>
+<p>Many simulators are built around fast trading, charts and leaderboards. SteadFolio's practice tools are designed around a different goal: understanding long-term investing.</p>
+<div class="fit-grid">
+<div class="not-item"><strong>What practice means here</strong>Holding positions, letting time and compounding work, comparing allocations, and rehearsing how you would behave in a market crisis.</div>
+<div class="not-item"><strong>What it deliberately isn't</strong>No technical analysis, no day-trading tools, no stock picks or trading signals, and no goal of rapid in-and-out positions.</div>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap">
+<div class="prose">
+<h2>Four simulators, four different lessons</h2>
+<p><strong>Paper Trading teaches mechanics. DCA simulation teaches time and compounding. Portfolio simulation teaches allocation. Historical scenarios teach behaviour under stress.</strong> Each answers a different beginner question, and together they cover what a first-time investor needs to see before using real money.</p>
+</div>
+<div class="sim-list">
+
+<div class="sim-card">
+<div class="stage-label">Paper Trading</div>
+<h3>Learn how buying, selling and holding work</h3>
+<p>Paper Trading gives you €10,000 in virtual money to invest in real ETFs and stocks at real market prices. You place practice buys and sells, watch your positions rise and fall, and see your total value, cash and gain or loss update.</p>
+<p>The tool nudges you to hold positions for a while rather than make quick in-and-out trades, because that is where long-term investing is actually learned.</p>
+<p class="teaches"><strong>Teaches: mechanics.</strong> How orders, positions, cash and gains and losses fit together.</p>
+<div class="stage-screenshot">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-paper-trading.png" alt="Paper Trading tool showing €10,000 in virtual money, real ETF and stock prices, and buy/sell controls" loading="lazy">
+</div>
+</div>
+
+<div class="sim-card">
+<div class="stage-label">DCA &amp; Compounding Simulator</div>
+<h3>See what regular investing does over time</h3>
+<p>Choose a monthly amount, a time horizon and an assumed annual return, then compare systematic dollar-cost averaging with simply holding cash. The returns are assumptions you set, so the tool shows how the mechanism works, not what will happen. If you want the concept first, read <a href="blog-dollar-cost-averaging.html">what dollar-cost averaging is</a>.</p>
+<p class="teaches"><strong>Teaches: time and compounding.</strong> Why starting early and staying consistent can matter more than the size of any single contribution.</p>
+<div class="stage-screenshot">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-dca-simulator.png" alt="DCA and Compounding Simulator showing growth over 15 years" loading="lazy">
+</div>
+</div>
+
+<div class="sim-card">
+<div class="stage-label">Portfolio Simulator</div>
+<h3>Compare how different allocations behave</h3>
+<p>Model a full allocation, how your money is split across different kinds of investments, before committing to one. Seeing how mixes differ makes ideas like diversification and risk concrete. For background, see <a href="blog-what-is-asset-allocation.html">what asset allocation is</a>.</p>
+<p class="teaches"><strong>Teaches: allocation.</strong> How the split of a portfolio, more than any single holding, shapes its behaviour.</p>
+</div>
+
+<div class="sim-card">
+<div class="stage-label">Historical Scenarios</div>
+<h3>Rehearse a market crisis without the real loss</h3>
+<p>Step into the decision seat during real historical events. The 2008 financial crisis and the 2020 COVID-19 crash are included in the free plan today. You choose whether to sell, hold or buy more, see what actually happened, and Sofia walks you through the behavioural side: why panic-selling often does more damage than the drop itself.</p>
+<p class="teaches"><strong>Teaches: behaviour under stress.</strong> How you tend to react when markets fall, which is hard to learn from theory alone.</p>
+<div class="stage-screenshot">
+<div class="screenshot-topbar"><span></span><span></span><span></span></div>
+<img src="screenshots/screenshot-historical-scenario.png" alt="Historical Scenario Challenge simulating the 2008 financial crisis, with options to sell, hold or buy more" loading="lazy">
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap prose">
+<h2>What simulators can teach, and what they can't</h2>
+<p>Simulators are a good way to learn mechanics. They are not a preview of your real results, and it is worth being clear about the limits.</p>
+<div class="can-grid">
+<div class="can-col">
+<h3>What practice can teach</h3>
+<ul>
+<li>How buying, selling and holding work</li>
+<li>How regular investing and time interact</li>
+<li>How different allocations change a portfolio's behaviour</li>
+<li>How past crises unfolded, and what each choice would have meant</li>
+<li>Your own habits, before real money is involved</li>
+</ul>
+</div>
+<div class="can-col cant">
+<h3>What it can't reproduce</h3>
+<ul>
+<li><strong>The emotional impact of real losses.</strong> Watching virtual money fall is not the same as watching your savings fall.</li>
+<li><strong>Future returns.</strong> Results depend on past data or on assumptions you choose; they are not forecasts.</li>
+<li><strong>Proof of skill.</strong> Doing well in practice does not show you will invest well with real money.</li>
+<li><strong>Your personal situation,</strong> such as your income, savings and time horizon.</li>
+</ul>
+</div>
+</div>
+<p style="margin-top:20px;">Simulated losses cannot reproduce the emotional impact of real ones. Simulation is a learning tool, not proof that you are ready to invest or that a strategy will work with real money.</p>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap prose">
+<h2>How practice connects to lessons and Sofia</h2>
+<p>The simulators are one part of a connected path rather than a standalone toy. The Academy's structured tracks teach the concepts first. When you finish a track, Sofia, SteadFolio's AI education coach, suggests a relevant next step, such as moving from "Getting Started in Practice" into Paper Trading.</p>
+<p>After a scenario, Sofia can explain the reasoning and behaviour involved. She teaches how to think about investing; she never recommends what to buy or sell. The free plan includes a daily message limit for Sofia.</p>
+<p>The full flow is covered in <a href="journey.html">your learning journey, from onboarding to reflection</a>.</p>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap prose">
+<h2>From practice to your real portfolio</h2>
+<p>When you start investing for real, you can add your actual holdings to SteadFolio manually and look at them with Portfolio Audit, XIRR and goal check-ins, so the concepts you practiced apply to your own numbers. The simulators and the real portfolio share one place, so what you learn in practice carries over.</p>
+<p>SteadFolio does not connect to broker accounts today and does not place real orders. A broker is where real investments are made; if you are deciding on one, see our <a href="broker-comparison.html">broker comparison</a>. SteadFolio is available in English and in <a href="el/">Greek</a>.</p>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap prose">
+<h2>Where SteadFolio fits</h2>
+<div class="fit-grid">
+<div class="not-item"><strong>Compared with a broker</strong>A broker executes real investments. SteadFolio teaches and lets you practice; it does not execute real investments.</div>
+<div class="not-item"><strong>Compared with a trading simulator</strong>The practice tools are designed around long-term investing education, not rapid trading.</div>
+<div class="not-item"><strong>Compared with a general chatbot</strong>Sofia is connected to the structured SteadFolio learning path and to the portfolio you track here.</div>
+<div class="not-item"><strong>Compared with a reference site</strong>The lessons, practice tools and portfolio context are connected in one place. For a broader view, see <a href="best-tools-to-learn-investing.html">how investing learning tools compare</a>.</div>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap">
+<div class="prose"><h2>Common questions about investment simulators</h2></div>
+<div class="faq-list">
+<div class="faq-item">
+<h3>What is an investment simulator?</h3>
+<p>An investment simulator lets you practice investing decisions with virtual money instead of real money. In SteadFolio, depending on the tool, practice uses virtual money, real market prices, historical market events or assumptions you choose: Paper Trading, a DCA and compounding simulator, a Portfolio Simulator and historical crisis scenarios. They are built to teach how long-term investing works, not to predict returns.</p>
+</div>
+<div class="faq-item">
+<h3>Is Paper Trading the same as real investing?</h3>
+<p>No. Paper Trading uses €10,000 in virtual money at real market prices, so no real order is placed and no real money is gained or lost. It is useful for learning how buying, selling and holding work, but it cannot reproduce the emotional experience of watching real savings lose value.</p>
+</div>
+<div class="faq-item">
+<h3>Can I use SteadFolio without investing real money?</h3>
+<p>Yes. You can learn and practice without connecting a brokerage account or depositing any money. SteadFolio does not execute real investments; if you later invest for real, you do that with a broker you choose, and you can track the holdings in SteadFolio manually.</p>
+</div>
+<div class="faq-item">
+<h3>Is SteadFolio designed for trading?</h3>
+<p>No. SteadFolio is built for learning and practicing long-term investing, not day trading. It does not offer technical-analysis or day-trading tools, stock picks or trading signals. Paper Trading actively encourages holding positions rather than quick in-and-out trades.</p>
+</div>
+<div class="faq-item">
+<h3>Is the investment simulator free?</h3>
+<p>Yes. Paper Trading, the DCA Simulator, the Portfolio Simulator and the 2008 financial crisis and COVID-19 (2020) historical scenarios are part of the free plan today, with no credit card. SteadFolio+ is a planned paid tier that is not available yet and nothing needs to be bought.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding-top:0;">
+<div class="wrap">
+<p class="fine-print"><strong>Educational only.</strong> Simulations use virtual money and illustrate how concepts work. They do not predict future returns, and past market behaviour does not guarantee future results. Investing involves risk, including the loss of capital. SteadFolio does not provide personal financial advice, stock picks, trading signals or recommendations to buy or sell any investment.</p>
+</div>
+</section>
+
+<section class="final-cta" style="padding-top:20px;">
+<div class="wrap">
+<h2 style="margin:0;">Practice first. Learn before real money is involved.</h2>
+<p style="color:var(--text-dim); margin-top:10px;">Start free, with no credit card, and go at your own pace.</p>
+<div class="hero-ctas">
+<a href="https://app.steadfolio.eu" class="btn-primary">Start practicing free →</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-row">
+<span>© 2026 SteadFolio. Educational content only - not financial advice.</span>
+<div class="footer-social">
+<a href="https://www.facebook.com/profile.php?id=61592617561199" target="_blank" rel="noopener" aria-label="SteadFolio on Facebook">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V10.5H8v3h2.17V21h3.33z"/></svg>
+</a>
+<a href="https://www.instagram.com/steadfolio/" target="_blank" rel="noopener" aria-label="SteadFolio on Instagram">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+</a>
+<a href="https://www.linkedin.com/company/steadfolio" target="_blank" rel="noopener" aria-label="SteadFolio on LinkedIn">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg>
+</a>
+<a href="https://www.trustpilot.com/review/steadfolio.eu" target="_blank" rel="noopener" aria-label="SteadFolio reviews on Trustpilot">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.25 4.5L18 22l-6-4.5L6 22l2.25-8L2 9.5h7.5z"/></svg>
+</a>
+</div>
+<div class="footer-links">
+<a href="/#how">How it works</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<a href="cookie-policy.html">Cookie Policy</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+var toggle = document.getElementById("navToggle");
+var panel = document.getElementById("mobileNav");
+if (!toggle || !panel) return;
+toggle.addEventListener("click", function () {
+var isOpen = panel.classList.toggle("open");
+toggle.classList.toggle("active", isOpen);
+toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+panel.querySelectorAll("a").forEach(function (a) {
+a.addEventListener("click", function () {
+panel.classList.remove("open");
+toggle.classList.remove("active");
+toggle.setAttribute("aria-expanded", "false");
+});
+});
+})();
+</script>
+<script src="/js/utm-forward.js" defer></script>
+</body>
+</html>

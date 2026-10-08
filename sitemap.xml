@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://steadfolio.eu/</loc>
-<lastmod>2026-10-07</lastmod>
+<lastmod>2026-10-08</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
 </url>
@@ -26,7 +26,13 @@
 </url>
 <url>
 <loc>https://steadfolio.eu/journey.html</loc>
-<lastmod>2026-10-07</lastmod>
+<lastmod>2026-10-08</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://steadfolio.eu/investment-simulator-for-beginners.html</loc>
+<lastmod>2026-10-08</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -44,7 +50,7 @@
 </url>
 <url>
 <loc>https://steadfolio.eu/best-tools-to-learn-investing.html</loc>
-<lastmod>2026-10-07</lastmod>
+<lastmod>2026-10-08</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -428,7 +434,7 @@
 </url>
 <url>
 <loc>https://steadfolio.eu/el/</loc>
-<lastmod>2026-10-06</lastmod>
+<lastmod>2026-10-08</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -446,7 +452,7 @@
 </url>
 <url>
 <loc>https://steadfolio.eu/el/ependyseis-gia-arxarious.html</loc>
-<lastmod>2026-10-06</lastmod>
+<lastmod>2026-10-08</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
